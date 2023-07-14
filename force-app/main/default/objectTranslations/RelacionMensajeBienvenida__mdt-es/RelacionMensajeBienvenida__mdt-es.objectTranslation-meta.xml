@@ -13,7 +13,7 @@
         <layout>Formato Relacion Mensaje Bienvenida</layout>
         <sections>
             <label></label>
-            <section>Vínculos personalizados</section>
+            <section>Custom Links</section>
         </sections>
     </layouts>
 </CustomObjectTranslation>

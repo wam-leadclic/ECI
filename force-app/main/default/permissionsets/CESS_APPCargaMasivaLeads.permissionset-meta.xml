@@ -57,11 +57,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>AMCM__c.CESS_IDDisplayAdvertisments__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>AMCM__c.CMCreatedDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -173,6 +168,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>AMCM__c.ConversionDateAG__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AMCM__c.ConversionDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -747,12 +747,42 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.Avance_de_este_Bloque__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.NumeroUATsDeEsteBloque__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.PesoBloqueFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.PesoUATIndividual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.SumaAvances__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>CTI_Rules__c.IdExterno__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>CTI_Rules__c.active__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CTI_Rules__c.campaign__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -963,6 +993,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>CampaignMember.ClientOrLeadNumber__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>CampaignMember.ConversionDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1327,6 +1362,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ComentariosUAT__c.Comentarios__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ComentariosUAT__c.Fecha__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ComentariosUAT__c.UATId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.AgeFormula__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1507,11 +1557,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Contact.inprogress_cti__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Contact.isFraudulent__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1688,11 +1733,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Event.IdExterno__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Event.Propiedad_diferente__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2897,6 +2937,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.LinkAppAceleradores__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.LoanPurpose__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3272,6 +3317,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Snapshot__c.CESS_Equipo_de_Venta__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot__c.Fecha_de_cierre__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Snapshot__c.Nombre_de_Oportunidad__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Task.CESS_AreaUserAssigned__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3338,11 +3398,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Task.IdExterno__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Task.Propiedad_diferente__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3767,6 +3822,101 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>UAT__c.Asunto__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Avance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.CategoriaFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ClaveUATPrincipal__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ClaveUAT__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.DependenciaDeOtrasUATs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Descripcion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.FechaDeEjecucion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PerfilUsuarioPruebas__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PesoUAT__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PreCondicionesFuncionales__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PreCondicionesTecnicas__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PruebaEjecutadaPor__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ReferenciaAdopcion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ResultadoEsperado__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.StartDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.SubcategoriaFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.UsuarioDePrueba__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>User.CESS_Area__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3778,6 +3928,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>User.DB_Region__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Equipo__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

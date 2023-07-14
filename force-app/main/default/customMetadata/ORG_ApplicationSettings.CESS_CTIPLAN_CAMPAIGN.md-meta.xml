@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">CP - CESS_LEADS</value>
+        <value xsi:type="xsd:string">CP - TEST_CESS_LEADS</value>
     </values>
     <values>
         <field>Value_integracion__c</field>

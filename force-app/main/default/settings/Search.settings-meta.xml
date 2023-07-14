@@ -73,6 +73,12 @@
         <searchSettingsByObject>
             <enhancedLookupEnabled>false</enhancedLookupEnabled>
             <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
+            <name>BloqueFuncionalUATs__c</name>
+            <resultsPerPageCount>25</resultsPerPageCount>
+        </searchSettingsByObject>
+        <searchSettingsByObject>
+            <enhancedLookupEnabled>false</enhancedLookupEnabled>
+            <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
             <name>CRMWebClient__Activity_Attribute__c</name>
             <resultsPerPageCount>0</resultsPerPageCount>
         </searchSettingsByObject>
@@ -123,6 +129,12 @@
             <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
             <name>CollaborationGroup</name>
             <resultsPerPageCount>25</resultsPerPageCount>
+        </searchSettingsByObject>
+        <searchSettingsByObject>
+            <enhancedLookupEnabled>false</enhancedLookupEnabled>
+            <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
+            <name>ComentariosUAT__c</name>
+            <resultsPerPageCount>0</resultsPerPageCount>
         </searchSettingsByObject>
         <searchSettingsByObject>
             <enhancedLookupEnabled>false</enhancedLookupEnabled>
@@ -224,12 +236,6 @@
             <enhancedLookupEnabled>false</enhancedLookupEnabled>
             <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
             <name>EngagementChannelType</name>
-            <resultsPerPageCount>25</resultsPerPageCount>
-        </searchSettingsByObject>
-        <searchSettingsByObject>
-            <enhancedLookupEnabled>false</enhancedLookupEnabled>
-            <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
-            <name>EnhancedLetterhead</name>
             <resultsPerPageCount>25</resultsPerPageCount>
         </searchSettingsByObject>
         <searchSettingsByObject>
@@ -373,6 +379,12 @@
         <searchSettingsByObject>
             <enhancedLookupEnabled>false</enhancedLookupEnabled>
             <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
+            <name>Snapshot__c</name>
+            <resultsPerPageCount>0</resultsPerPageCount>
+        </searchSettingsByObject>
+        <searchSettingsByObject>
+            <enhancedLookupEnabled>false</enhancedLookupEnabled>
+            <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
             <name>SocialPersona</name>
             <resultsPerPageCount>25</resultsPerPageCount>
         </searchSettingsByObject>
@@ -392,6 +404,12 @@
             <enhancedLookupEnabled>false</enhancedLookupEnabled>
             <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
             <name>TextoArgumentario__c</name>
+            <resultsPerPageCount>25</resultsPerPageCount>
+        </searchSettingsByObject>
+        <searchSettingsByObject>
+            <enhancedLookupEnabled>false</enhancedLookupEnabled>
+            <lookupAutoCompleteEnabled>false</lookupAutoCompleteEnabled>
+            <name>UAT__c</name>
             <resultsPerPageCount>25</resultsPerPageCount>
         </searchSettingsByObject>
         <searchSettingsByObject>

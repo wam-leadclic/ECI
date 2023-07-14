@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PruebaEjecutadaPor__c</fullName>
+    <description>Quién ejecuta la prueba</description>
+    <externalId>false</externalId>
+    <label>Prueba ejecutada por</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Leadclic Solutions</fullName>
+                <default>false</default>
+                <label>Leadclic Solutions</label>
+            </value>
+            <value>
+                <fullName>Agente Básicos</fullName>
+                <default>false</default>
+                <label>Agente Básicos</label>
+            </value>
+            <value>
+                <fullName>Agente Blecis</fullName>
+                <default>false</default>
+                <label>Agente Blecis</label>
+            </value>
+            <value>
+                <fullName>Administrador del Sistema</fullName>
+                <default>false</default>
+                <label>Administrador del Sistema</label>
+            </value>
+            <value>
+                <fullName>Agente Básicos | Préstamos</fullName>
+                <default>false</default>
+                <label>Agente Básicos | Préstamos</label>
+            </value>
+            <value>
+                <fullName>Agente Préstamos</fullName>
+                <default>false</default>
+                <label>Agente Préstamos</label>
+            </value>
+            <value>
+                <fullName>CESS-Supervisor</fullName>
+                <default>false</default>
+                <label>CESS-Supervisor</label>
+            </value>
+            <value>
+                <fullName>Vacío</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vacío</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

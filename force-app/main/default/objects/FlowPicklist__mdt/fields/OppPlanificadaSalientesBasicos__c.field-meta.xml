@@ -41,6 +41,12 @@
                 <default>false</default>
                 <label>Pdte aceptación Cïa</label>
             </value>
+            <value>
+                <fullName>Pdte aceptación Cía</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pdte aceptación Cía</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

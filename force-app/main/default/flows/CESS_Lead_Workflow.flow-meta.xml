@@ -605,7 +605,7 @@
                 <leftValueReference>myVariable_current.result_cti__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_30_myRule_28_2058956145</elementReference>
+                    <elementReference>formula_30_myRule_28_8865661344</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1208,7 +1208,7 @@
                 <leftValueReference>myVariable_current.OwnerId</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_50_myRule_48_7944948081</elementReference>
+                    <elementReference>formula_50_myRule_48_0804671023</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1602,7 +1602,7 @@
             <label>ClickToCall?</label>
         </rules>
     </decisions>
-    <description>Acciones relacionadas al flujo de Lead. Corrección condición Llamada entrante en C2C, y se añade nodo Incoming Call. Acciones relacionadas al flujo de Lead. Corrige problema de longitud en la descripción del riesgo y notifica al dueño en caso de cambio de propiedad</description>
+    <description>Con valores de PROD, Corrección condición Llamada entrante en C2C, y se añade nodo Incoming Call. Acciones relacionadas al flujo de Lead. Corrige problema de longitud en la descripción del riesgo y notifica al dueño en caso de cambio de propiedad</description>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
@@ -1610,7 +1610,7 @@
                 <stringValue>$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_ClickToCall_Text.Value__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_8_A1_9837682044</name>
+        <name>formula_10_myRule_8_A1_0181399665</name>
         <dataType>String</dataType>
         <expression>{!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_ClickToCall_Text.Value__c}</expression>
     </formulas>
@@ -1622,7 +1622,7 @@
 IF( ISBLANK(TEXT([Lead].line_insurance__c)) , &quot;&quot;, &quot;_&quot; &amp; TEXT([Lead].line_insurance__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_13_myRule_12_A1_6521730031</name>
+        <name>formula_13_myRule_12_A1_3062859567</name>
         <dataType>String</dataType>
         <expression>TEXT({!myVariable_current.source_manualrecord__c} ) &amp; 
 IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot;_&quot; &amp; TEXT({!myVariable_current.line_insurance__c}))</expression>
@@ -1636,7 +1636,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
 [Lead].risk_gender__c , 255)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_16_myRule_15_A5_5197863473</name>
+        <name>formula_16_myRule_15_A5_2022391924</name>
         <dataType>String</dataType>
         <expression>LEFT(
 {!myVariable_current.riskinsured_birthdate__c} &amp; &quot; &quot; &amp; 
@@ -1651,7 +1651,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
 [Lead].risk_gender__c , 255)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_17_myRule_15_A4_4333066980</name>
+        <name>formula_17_myRule_15_A4_2143047199</name>
         <dataType>String</dataType>
         <expression>LEFT(
 {!myVariable_current.riskinsured_birthdate__c} &amp; &quot; &quot; &amp; 
@@ -1670,7 +1670,7 @@ IF( [Lead].risk_copayment__c, &quot;SI &quot; , &quot;NO &quot; ) )  &amp;
 IF( ISBLANK([Lead].risk_postalcode__c ) , &quot;&quot;, &quot;[&quot; &amp; [Lead].risk_postalcode__c  &amp; &quot;]&quot; ) ,255)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_18_myRule_15_A3_7094333509</name>
+        <name>formula_18_myRule_15_A3_9309867050</name>
         <dataType>String</dataType>
         <expression>LEFT(
 IF (ISBLANK({!myVariable_current.riskinsured_number__c}), &quot;&quot;, &quot;Asegurados: &quot;&amp; TEXT({!myVariable_current.riskinsured_number__c}) &amp; &quot; &quot;) &amp;
@@ -1690,7 +1690,7 @@ IF( ISBLANK({!myVariable_current.risk_postalcode__c} ) , &quot;&quot;, &quot;[&q
 IF( ISBLANK([Lead].risk_postalcode__c ) , &quot;&quot;, &quot; [&quot; &amp; [Lead].risk_postalcode__c  &amp; &quot;]&quot; ) ,255)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_19_myRule_15_A2_7496807493</name>
+        <name>formula_19_myRule_15_A2_8224594566</name>
         <dataType>String</dataType>
         <expression>LEFT(
 {!myVariable_current.risk_propertytype__c}   &amp; &quot; &quot; &amp;
@@ -1707,7 +1707,7 @@ IF( ISBLANK({!myVariable_current.risk_postalcode__c} ) , &quot;&quot;, &quot; [&
 IF( ISBLANK([Lead].risk_postalcode__c ) , &quot;&quot;, &quot; [&quot; &amp; [Lead].risk_postalcode__c  &amp; &quot;]&quot; ) , 255)</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_20_myRule_15_A1_6721996748</name>
+        <name>formula_20_myRule_15_A1_9162864525</name>
         <dataType>String</dataType>
         <expression>LEFT(
 {!myVariable_current.risk_brandmodel__c}  &amp; &quot; &quot; &amp;
@@ -1721,7 +1721,7 @@ IF( ISBLANK({!myVariable_current.risk_postalcode__c} ) , &quot;&quot;, &quot; [&
                 <stringValue>NULLVALUE([Lead].contact_attempts__c, 0)  + 1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_23_myRule_22_A1_4279037150</name>
+        <name>formula_23_myRule_22_A1_8385224657</name>
         <dataType>Number</dataType>
         <expression>NULLVALUE({!myVariable_current.contact_attempts__c}, 0)  + 1</expression>
         <scale>18</scale>
@@ -1733,7 +1733,7 @@ IF( ISBLANK({!myVariable_current.risk_postalcode__c} ) , &quot;&quot;, &quot; [&
                 <stringValue>NULLVALUE([Lead].contact_attempts__c, 0)  + 1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_26_myRule_25_A1_4252173001</name>
+        <name>formula_26_myRule_25_A1_4269602007</name>
         <dataType>Number</dataType>
         <expression>NULLVALUE({!myVariable_current.contact_attempts__c}, 0)  + 1</expression>
         <scale>18</scale>
@@ -1746,7 +1746,7 @@ IF( ISBLANK({!myVariable_current.risk_postalcode__c} ) , &quot;&quot;, &quot; [&
 IF( ISBLANK(TEXT([Lead].line_insurance__c)) , &quot;&quot;, &quot;_&quot; &amp; TEXT([Lead].line_insurance__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A4_3399372332</name>
+        <name>formula_2_myRule_1_A4_2955632309</name>
         <dataType>String</dataType>
         <expression>&quot;Llamada Entrante&quot; &amp; 
 IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot;_&quot; &amp; TEXT({!myVariable_current.line_insurance__c}))</expression>
@@ -1758,7 +1758,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Resultado_Ocupado.Value__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_30_myRule_28_2058956145</name>
+        <name>formula_30_myRule_28_8865661344</name>
         <dataType>String</dataType>
         <expression>{!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Resultado_Ocupado.Value__c}</expression>
     </formulas>
@@ -1769,7 +1769,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>NULLVALUE([Lead].contact_attempts__c, 0)  + 1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_31_myRule_28_A1_3473407313</name>
+        <name>formula_31_myRule_28_A1_6544910152</name>
         <dataType>Number</dataType>
         <expression>NULLVALUE({!myVariable_current.contact_attempts__c}, 0)  + 1</expression>
         <scale>18</scale>
@@ -1781,7 +1781,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Resultado_Planificada.Value__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_35_myRule_33_A1_0115424858</name>
+        <name>formula_35_myRule_33_A1_7819318256</name>
         <dataType>String</dataType>
         <expression>{!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Resultado_Planificada.Value__c}</expression>
     </formulas>
@@ -1792,7 +1792,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>$User.Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_39_myRule_37_A1_1393102438</name>
+        <name>formula_39_myRule_37_A1_4612670967</name>
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
     </formulas>
@@ -1803,7 +1803,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>[Lead].Owner:User.cti_ani__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A3_0143866820</name>
+        <name>formula_3_myRule_1_A3_3388064200</name>
         <dataType>String</dataType>
         <expression>{!myVariable_current.Owner:User.cti_ani__c}</expression>
     </formulas>
@@ -1814,7 +1814,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>NOW() </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_40_myRule_37_A1_0591167683</name>
+        <name>formula_40_myRule_37_A1_7738500541</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1826,7 +1826,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
 IF( ISBLANK(TEXT([Lead].line_insurance__c)) , &quot;&quot;, &quot;_&quot; &amp; TEXT([Lead].line_insurance__c))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_0518530980</name>
+        <name>formula_4_myRule_1_A1_0603686224</name>
         <dataType>String</dataType>
         <expression>TEXT({!myVariable_current.source_manualrecord__c} ) &amp; 
 IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot;_&quot; &amp; TEXT({!myVariable_current.line_insurance__c}))</expression>
@@ -1838,7 +1838,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>$User.Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_50_myRule_48_7944948081</name>
+        <name>formula_50_myRule_48_0804671023</name>
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
     </formulas>
@@ -1849,7 +1849,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>UPPER([Lead].document_number__c) </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_53_myRule_52_A1_2834444942</name>
+        <name>formula_53_myRule_52_A1_4936059349</name>
         <dataType>String</dataType>
         <expression>UPPER({!myVariable_current.document_number__c})</expression>
     </formulas>
@@ -1860,7 +1860,7 @@ IF( ISBLANK(TEXT({!myVariable_current.line_insurance__c})) , &quot;&quot;, &quot
                 <stringValue>$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_ClickToCall_Text.Value__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_8_A1_0481978940</name>
+        <name>formula_9_myRule_8_A1_4491470985</name>
         <dataType>String</dataType>
         <expression>{!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_ClickToCall_Text.Value__c}</expression>
     </formulas>
@@ -1940,7 +1940,7 @@ CONTAINS([Lead].Owner:User.cti_dnis__c , $CustomMetadata.ORG_ApplicationSettings
 CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_ClickToCall_Number.Value__c} ) 
 &amp;&amp; !ISPICKVAL({!myVariable_current.source_manualrecord__c}, &quot;Llamada Entrante&quot;)</expression>
     </formulas>
-    <interviewLabel>CESS_Lead_Workflow-5_InterviewLabel</interviewLabel>
+    <interviewLabel>CESS_Lead_Workflow-6_InterviewLabel</interviewLabel>
     <label>CESS - Lead - Workflow</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2045,7 +2045,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>source_cess__c</field>
             <value>
-                <elementReference>formula_13_myRule_12_A1_6521730031</elementReference>
+                <elementReference>formula_13_myRule_12_A1_3062859567</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2213,7 +2213,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>risk_description__c</field>
             <value>
-                <elementReference>formula_20_myRule_15_A1_6721996748</elementReference>
+                <elementReference>formula_20_myRule_15_A1_9162864525</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -2345,7 +2345,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>risk_description__c</field>
             <value>
-                <elementReference>formula_19_myRule_15_A2_7496807493</elementReference>
+                <elementReference>formula_19_myRule_15_A2_8224594566</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -2477,7 +2477,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>risk_description__c</field>
             <value>
-                <elementReference>formula_18_myRule_15_A3_7094333509</elementReference>
+                <elementReference>formula_18_myRule_15_A3_9309867050</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -2609,7 +2609,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>risk_description__c</field>
             <value>
-                <elementReference>formula_17_myRule_15_A4_4333066980</elementReference>
+                <elementReference>formula_17_myRule_15_A4_2143047199</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -2741,7 +2741,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>risk_description__c</field>
             <value>
-                <elementReference>formula_16_myRule_15_A5_5197863473</elementReference>
+                <elementReference>formula_16_myRule_15_A5_2022391924</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -2922,7 +2922,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>source_cess__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_0518530980</elementReference>
+                <elementReference>formula_4_myRule_1_A1_0603686224</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -3137,7 +3137,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>MobilePhone</field>
             <value>
-                <elementReference>formula_3_myRule_1_A3_0143866820</elementReference>
+                <elementReference>formula_3_myRule_1_A3_3388064200</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -3354,7 +3354,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>source_cess__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A4_3399372332</elementReference>
+                <elementReference>formula_2_myRule_1_A4_2955632309</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3509,7 +3509,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>contact_attempts__c</field>
             <value>
-                <elementReference>formula_23_myRule_22_A1_4279037150</elementReference>
+                <elementReference>formula_23_myRule_22_A1_8385224657</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3628,7 +3628,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>contact_attempts__c</field>
             <value>
-                <elementReference>formula_26_myRule_25_A1_4252173001</elementReference>
+                <elementReference>formula_26_myRule_25_A1_4269602007</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3747,7 +3747,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>contact_attempts__c</field>
             <value>
-                <elementReference>formula_31_myRule_28_A1_3473407313</elementReference>
+                <elementReference>formula_31_myRule_28_A1_6544910152</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3879,7 +3879,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             <field>result_cti__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>formula_35_myRule_33_A1_0115424858</elementReference>
+                <elementReference>formula_35_myRule_33_A1_7819318256</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -3998,7 +3998,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_39_myRule_37_A1_1393102438</elementReference>
+                <elementReference>formula_39_myRule_37_A1_4612670967</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4034,7 +4034,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>datetime_closed__c</field>
             <value>
-                <elementReference>formula_40_myRule_37_A1_0591167683</elementReference>
+                <elementReference>formula_40_myRule_37_A1_7738500541</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -4283,7 +4283,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>document_number__c</field>
             <value>
-                <elementReference>formula_53_myRule_52_A1_2834444942</elementReference>
+                <elementReference>formula_53_myRule_52_A1_4936059349</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -4963,7 +4963,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>campaign__c</field>
             <value>
-                <elementReference>formula_9_myRule_8_A1_0481978940</elementReference>
+                <elementReference>formula_9_myRule_8_A1_4491470985</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4999,7 +4999,7 @@ CONTAINS({!myVariable_current.Owner:User.cti_dnis__c} , {!$CustomMetadata.ORG_Ap
             </processMetadataValues>
             <field>source_cess__c</field>
             <value>
-                <elementReference>formula_10_myRule_8_A1_9837682044</elementReference>
+                <elementReference>formula_10_myRule_8_A1_0181399665</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

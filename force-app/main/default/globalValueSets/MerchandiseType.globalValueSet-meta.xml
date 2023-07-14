@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <customValue>
-        <fullName>ELECTRONICA</fullName>
+        <fullName>Electrónica</fullName>
         <default>false</default>
-        <label>ELECTRONICA</label>
+        <label>Electrónica</label>
     </customValue>
     <customValue>
         <fullName>GAE</fullName>
@@ -11,9 +11,9 @@
         <label>GAE</label>
     </customValue>
     <customValue>
-        <fullName>MOVILES</fullName>
+        <fullName>Móviles</fullName>
         <default>false</default>
-        <label>MOVILES</label>
+        <label>Móviles</label>
     </customValue>
     <customValue>
         <fullName>PAE</fullName>

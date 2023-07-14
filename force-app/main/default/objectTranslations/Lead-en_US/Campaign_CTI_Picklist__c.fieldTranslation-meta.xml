@@ -4,10 +4,6 @@
     <label></label>
     <name>Campaign_CTI_Picklist__c</name>
     <picklistValues>
-        <masterLabel>CP - CESS_BLECIS_SEV</masterLabel>
-        <translation></translation>
-    </picklistValues>
-    <picklistValues>
         <masterLabel>CP - CESS_LEADS</masterLabel>
         <translation></translation>
     </picklistValues>
@@ -17,6 +13,18 @@
     </picklistValues>
     <picklistValues>
         <masterLabel>CP - CESS_VC</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - TEST_CESS_BLECIS_SEV</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - TEST_CESS_LEADS</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - TEST_CESS_VC</masterLabel>
         <translation></translation>
     </picklistValues>
 </CustomFieldTranslation>

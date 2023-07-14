@@ -656,7 +656,7 @@
                 <stringValue>NOT([Lead].sent_cti__c ) &amp;&amp; NOT(ISBLANK([Lead].cti_error__c ))</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_9_A1_4112132908</name>
+        <name>formula_10_myRule_9_A1_1284735765</name>
         <dataType>Boolean</dataType>
         <expression>NOT({!myVariable_current.sent_cti__c} ) &amp;&amp; NOT(ISBLANK({!myVariable_current.cti_error__c} ))</expression>
     </formulas>
@@ -1076,7 +1076,7 @@
             </processMetadataValues>
             <field>cti_errorcheck__c</field>
             <value>
-                <elementReference>formula_10_myRule_9_A1_4112132908</elementReference>
+                <elementReference>formula_10_myRule_9_A1_1284735765</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>

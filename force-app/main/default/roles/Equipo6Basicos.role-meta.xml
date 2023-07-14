@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Equipo 6 Básicos</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Coordinador6</parentRole>
+    <parentRole>Coordinador_6</parentRole>
 </Role>

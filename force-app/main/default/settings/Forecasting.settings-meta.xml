@@ -106,142 +106,146 @@
         <isQuantity>false</isQuantity>
         <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
         <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
-        <masterLabel>Oportunidades</masterLabel>
+        <masterLabel>Opportunities</masterLabel>
         <name>OpportunityRevenue</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -261,7 +265,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -269,7 +273,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -321,7 +325,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -353,7 +357,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -361,11 +365,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -401,11 +405,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -417,7 +421,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -429,15 +433,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -445,11 +449,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -461,11 +465,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -485,11 +489,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -521,7 +525,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -545,7 +549,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -553,7 +557,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -573,11 +577,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -585,7 +589,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -597,7 +601,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -639,15 +643,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -660,7 +665,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -668,10 +673,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -680,29 +685,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -710,26 +715,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -767,142 +772,146 @@
         <isQuantity>true</isQuantity>
         <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
         <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
-        <masterLabel>Oportunidades</masterLabel>
+        <masterLabel>Opportunities</masterLabel>
         <name>OpportunityQuantity</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -922,7 +931,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -930,7 +939,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -982,7 +991,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1014,7 +1023,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1022,11 +1031,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1062,11 +1071,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1078,7 +1087,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1090,15 +1099,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1106,11 +1115,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1122,11 +1131,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1146,11 +1155,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1182,7 +1191,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1206,7 +1215,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1214,7 +1223,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1234,11 +1243,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1246,7 +1255,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1258,7 +1267,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1300,15 +1309,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -1321,7 +1331,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -1329,10 +1339,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -1341,29 +1351,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -1371,26 +1381,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -1428,146 +1438,150 @@
         <isQuantity>false</isQuantity>
         <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
         <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
-        <masterLabel>Familias de productos</masterLabel>
+        <masterLabel>Product Families</masterLabel>
         <name>OpportunityLineItemRevenue</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SPLITAMOUNT</field>
-            <label>Importe de previsión</label>
+            <label>Forecasted Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1587,7 +1601,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1595,7 +1609,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1647,7 +1661,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1679,7 +1693,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1687,11 +1701,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1727,11 +1741,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1743,7 +1757,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1755,15 +1769,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1771,11 +1785,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1787,11 +1801,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1811,11 +1825,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1847,7 +1861,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1871,7 +1885,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1879,7 +1893,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1899,11 +1913,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1911,7 +1925,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1923,7 +1937,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1966,15 +1980,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -1987,7 +2002,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -1995,10 +2010,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -2007,29 +2022,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -2037,26 +2052,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -2094,142 +2109,146 @@
         <isQuantity>true</isQuantity>
         <managerAdjustableCategoryApiNames>bestcaseforecast</managerAdjustableCategoryApiNames>
         <managerAdjustableCategoryApiNames>commitforecast</managerAdjustableCategoryApiNames>
-        <masterLabel>Familias de productos</masterLabel>
+        <masterLabel>Product Families</masterLabel>
         <name>OpportunityLineItemQuantity</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2249,7 +2268,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2257,7 +2276,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2309,7 +2328,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2341,7 +2360,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2349,11 +2368,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2389,11 +2408,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2405,7 +2424,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2417,15 +2436,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2433,11 +2452,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2449,11 +2468,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2473,11 +2492,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2509,7 +2528,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2533,7 +2552,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2541,7 +2560,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2561,11 +2580,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2573,7 +2592,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2585,7 +2604,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2627,15 +2646,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -2648,7 +2668,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -2656,10 +2676,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -2668,29 +2688,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -2698,26 +2718,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -2759,142 +2779,146 @@
         <name>OpportunityRevenueProductDate</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SPLITAMOUNT</field>
-            <label>Importe de previsión</label>
+            <label>Forecasted Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2914,7 +2938,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2922,7 +2946,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2974,7 +2998,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3006,7 +3030,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3014,11 +3038,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3054,11 +3078,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3070,7 +3094,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3082,15 +3106,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3098,11 +3122,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3114,11 +3138,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3138,11 +3162,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3174,7 +3198,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3198,7 +3222,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3206,7 +3230,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3226,11 +3250,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3238,7 +3262,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3250,7 +3274,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3293,15 +3317,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -3314,7 +3339,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -3322,10 +3347,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -3334,29 +3359,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -3364,26 +3389,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -3425,138 +3450,142 @@
         <name>OpportunityQuantityProductDate</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3576,7 +3605,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3584,7 +3613,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3636,7 +3665,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3668,7 +3697,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3676,11 +3705,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3716,11 +3745,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3732,7 +3761,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3744,15 +3773,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3760,11 +3789,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3776,11 +3805,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3800,11 +3829,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3836,7 +3865,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3860,7 +3889,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3868,7 +3897,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3888,11 +3917,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3900,7 +3929,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3912,7 +3941,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3954,15 +3983,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -3975,7 +4005,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -3983,10 +4013,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -3995,29 +4025,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -4025,26 +4055,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -4086,142 +4116,146 @@
         <name>OpportunityRevenueScheduleDate</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SPLITAMOUNT</field>
-            <label>Importe de previsión</label>
+            <label>Forecasted Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4241,7 +4275,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4249,7 +4283,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4301,7 +4335,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4333,7 +4367,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4341,11 +4375,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4381,11 +4415,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4397,7 +4431,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4409,15 +4443,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4425,11 +4459,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4441,11 +4475,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4465,11 +4499,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4501,7 +4535,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4525,7 +4559,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4533,7 +4567,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4553,11 +4587,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4565,7 +4599,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4577,7 +4611,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4620,15 +4654,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -4641,7 +4676,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -4649,10 +4684,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -4661,29 +4696,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -4691,26 +4726,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>
@@ -4752,138 +4787,142 @@
         <name>OpportunityQuantityScheduleDate</name>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NAME</field>
-            <label>Nombre de la oportunidad</label>
+            <label>Opportunity Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.NAME</field>
-            <label>Nombre de cliente</label>
+            <label>Cliente Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.QUANTITY</field>
-            <label>Cantidad</label>
+            <label>Quantity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <label>Fecha de cierre</label>
+            <label>Close Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.STAGE_NAME</field>
-            <label>Etapa</label>
+            <label>Stage</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PROBABILITY</field>
-            <label>Probabilidad (%)</label>
+            <label>Probability (%)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FORECAST_CATEGORY</field>
-            <label>Categoría de previsión</label>
+            <label>Forecast Category</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>FULL_NAME</field>
-            <label>Nombre completo del propietario</label>
+            <label>Owner Full Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.CONTRACT_NUMBER</field>
-            <label>Número de contrato</label>
+            <label>Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CONTRACT.NAME</field>
-            <label>Nombre del contrato</label>
+            <label>Contract Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.AMOUNT</field>
-            <label>Importe</label>
+            <label>Amount</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.ALIAS</field>
-            <label>Alias del propietario de la oportunidad</label>
+            <label>Opportunity Owner Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.FIRST_NAME</field>
-            <label>Nombre del propietario</label>
+            <label>Owner First Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CORE.USERS.LAST_NAME</field>
-            <label>Apellidos del propietario</label>
+            <label>Owner Last Name</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>DESCRIPTION</field>
-            <label>Descripción</label>
+            <label>Description</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.EXP_AMOUNT</field>
-            <label>Ingresos previstos</label>
+            <label>Expected Revenue</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LEAD_SOURCE</field>
-            <label>Origen del candidato</label>
+            <label>Lead Source</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.NEXT_STEP</field>
-            <label>Siguiente paso</label>
+            <label>Next Step</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.PRIVATE</field>
-            <label>Privada</label>
+            <label>Private</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.TYPE</field>
-            <label>Tipo</label>
+            <label>Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>UPDATEDBY_USER.ALIAS</field>
-            <label>Última modificación por alias</label>
+            <label>Last Modified By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>CREATEDBY_USER.ALIAS</field>
-            <label>Creado por alias</label>
+            <label>Created By Alias</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>SYNCEDQUOTE.NAME</field>
-            <label>Presupuesto sincronizado</label>
+            <label>Synced Quote</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CLOSED</field>
-            <label>Cerrado</label>
+            <label>Closed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.WON</field>
-            <label>Ganadas</label>
+            <label>Won</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>ACCOUNT.SITE</field>
-            <label>Sitio de la cuenta</label>
+            <label>Cliente Site</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_YEAR</field>
-            <label>Año fiscal</label>
+            <label>Fiscal Year</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_QUARTER</field>
-            <label>Trimestre fiscal</label>
+            <label>Fiscal Quarter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.FISCAL_PERIOD</field>
-            <label>Periodo fiscal</label>
+            <label>Fiscal Period</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
-            <label>Última actividad</label>
+            <label>Last Activity</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.CREATED_DATE</field>
-            <label>Fecha de creación</label>
+            <label>Created Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <label>Fecha de la última modificación</label>
+            <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZD</field>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
             <label>Acelerador Ofrecido</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca1xx</field>
             <label>Actividad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4903,7 +4942,7 @@
             <label>Aprobador Del Oportunidad 4</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <label>Aprobador Del Oportunidad 5</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4911,7 +4950,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4963,7 +5002,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4995,7 +5034,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5003,11 +5042,11 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTm</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000HpgP1</field>
             <label>Equipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5043,11 +5082,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTg</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5059,7 +5098,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5071,15 +5110,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000ukZI</field>
+            <field>00N1X00000ca1y7</field>
             <label>Importe Acelerador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTf</field>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5087,11 +5126,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTp</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5103,11 +5142,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTq</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5127,11 +5166,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTo</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5163,7 +5202,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5187,7 +5226,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5195,7 +5234,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5215,11 +5254,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTb</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5227,7 +5266,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5239,7 +5278,7 @@
             <label>URL Fichero de Gabración</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <label>Usuario Creador</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5281,15 +5320,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
-            <field>00N5q000000ukZD</field>
-            <field>00N5q000000ukZ8</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
-            <field>00N0900000ImaRC</field>
+            <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N5q000000uYTd</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -5302,7 +5342,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N5q000000uYTs</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -5310,10 +5350,10 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N5q000000uYTe</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N5q000000uYTm</field>
-            <field>00N0900000IoQUY</field>
+            <field>00N1X00000OhI2c</field>
+            <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
             <field>00N0900000B5Z3e</field>
@@ -5322,29 +5362,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N5q000000uYTg</field>
-            <field>00N5q000000uSEs</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N5q000000uYTu</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N5q000000ukZI</field>
-            <field>00N5q000000uYTf</field>
-            <field>00N5q000000uYTc</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N5q000000uYTp</field>
-            <field>00N5q000000uYTn</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N5q000000uYTq</field>
-            <field>00N5q000000uYTk</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N5q000000uYTo</field>
-            <field>00N5q000000uYTi</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -5352,26 +5392,26 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N5q000000uYTr</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N5q000000uYTj</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N5q000000uYTl</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N5q000000uYTb</field>
-            <field>00N5q000000uYTt</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N5q000000uYTh</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
-            <field>00N0900000IncYp</field>
+            <field>00N1X00000HT7PQ</field>
             <field>00N0900000B5Z3K</field>
         </opportunityListFieldsUnselectedSettings>
         <ownerAdjustableCategoryApiNames>bestcaseforecast</ownerAdjustableCategoryApiNames>

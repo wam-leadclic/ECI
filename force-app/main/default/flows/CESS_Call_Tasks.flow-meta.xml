@@ -465,7 +465,7 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
             <assignToReference>myCollection_myRule_31_A1recipientIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>formula_32_myRule_31_A1_2325463567</elementReference>
+                <elementReference>formula_32_myRule_31_A1_8553160380</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -481,7 +481,7 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
             <assignToReference>myCollection_myRule_34_A1recipientIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>formula_36_myRule_34_A1_5146639521</elementReference>
+                <elementReference>formula_36_myRule_34_A1_9048454717</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -497,7 +497,7 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
             <assignToReference>myCollection_myRule_38_A1recipientIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>formula_40_myRule_38_A1_8989047104</elementReference>
+                <elementReference>formula_40_myRule_38_A1_6710212371</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -708,47 +708,23 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision3</targetReference>
+            <targetReference>myDecision2</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.CallObject</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>CTI CALL?</label>
+            <label>CTI ANI ?</label>
         </rules>
     </decisions>
     <decisions>
@@ -995,6 +971,61 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
         <processMetadataValues>
             <name>index</name>
             <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.CallObject</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>CTI CALL?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
                 <numberValue>5.0</numberValue>
             </value>
         </processMetadataValues>
@@ -1051,37 +1082,6 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
                 <targetReference>myRule_29_A1</targetReference>
             </connector>
             <label>Llamada Finalizada?</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision3</name>
-        <label>myDecision3</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision5</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_4</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>formula_myRule_4</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_4_A1</targetReference>
-            </connector>
-            <label>CTI ANI ?</label>
         </rules>
     </decisions>
     <decisions>
@@ -1773,7 +1773,7 @@ Las llamadas entradas tipificadas como Gestión de Ventas o Gestión de Cartera 
                 <stringValue>DATEVALUE([Task].CESS_Fecha_Planificada__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_6_A1_2474883198</name>
+        <name>formula_10_myRule_6_A1_9383751607</name>
         <dataType>Date</dataType>
         <expression>DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} )</expression>
     </formulas>
@@ -1786,7 +1786,7 @@ MID(TEXT([Task].CESS_Fecha_Planificada__c +VALUE($CustomMetadata.ORG_Application
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_6_A1_4502416862</name>
+        <name>formula_11_myRule_6_A1_9718214133</name>
         <dataType>String</dataType>
         <expression>&quot;Llamada Planificada &quot; &amp; LPAD(TEXT(DAY(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; LPAD(TEXT(MONTH(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; TEXT(YEAR(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24)))  &amp; &quot; &quot; &amp;
 MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24), LEN(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))-8,5)</expression>
@@ -1798,7 +1798,7 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>DATEVALUE([Task].CESS_Fecha_Planificada__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_15_myRule_13_A1_9548556683</name>
+        <name>formula_15_myRule_13_A1_5009879476</name>
         <dataType>Date</dataType>
         <expression>DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} )</expression>
     </formulas>
@@ -1811,7 +1811,7 @@ MID(TEXT([Task].CESS_Fecha_Planificada__c +VALUE($CustomMetadata.ORG_Application
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_16_myRule_13_A1_5383472918</name>
+        <name>formula_16_myRule_13_A1_8478934496</name>
         <dataType>String</dataType>
         <expression>&quot;Llamada Planificada &quot; &amp; LPAD(TEXT(DAY(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; LPAD(TEXT(MONTH(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; TEXT(YEAR(DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24)))  &amp; &quot; &quot; &amp;
 MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24), LEN(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))-8,5)</expression>
@@ -1823,7 +1823,7 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>NOW() </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_21_myRule_18_A3_9387134864</name>
+        <name>formula_21_myRule_18_A3_1409954552</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1834,7 +1834,7 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>NOW() </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_22_myRule_18_A2_4628975760</name>
+        <name>formula_22_myRule_18_A2_5580618868</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1845,7 +1845,7 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_25_myRule_24_A4_1660865853</name>
+        <name>formula_25_myRule_24_A4_5031682816</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1856,7 +1856,7 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>$User.Id </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_26_myRule_24_A3_5899563791</name>
+        <name>formula_26_myRule_24_A3_6664659382</name>
         <dataType>String</dataType>
         <expression>{!$User.Id}</expression>
     </formulas>
@@ -1867,9 +1867,42 @@ MID(TEXT({!myVariable_current.CESS_Fecha_Planificada__c} +VALUE({!$CustomMetadat
                 <stringValue>NOW() </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_27_myRule_24_A2_6622126642</name>
+        <name>formula_27_myRule_24_A2_6816417681</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>{!$User.Id}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_32_myRule_31_A1_8553160380</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>{!$User.Id}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_36_myRule_34_A1_9048454717</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>{!$User.Id}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_40_myRule_38_A1_6710212371</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -1880,7 +1913,7 @@ MID(TEXT([Task].CreatedDate+VALUE($CustomMetadata.ORG_ApplicationSettings__mdt.O
 </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_1651064090</name>
+        <name>formula_4_myRule_3_A1_9275150823</name>
         <dataType>String</dataType>
         <expression>&quot;Llamada &quot; &amp;  TEXT({!myVariable_current.CallType})  &amp; &quot; - &quot; &amp;  {!myVariable_current.CallDisposition}  &amp; &quot; &quot; &amp; LPAD(TEXT(DAY(DATEVALUE({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; LPAD(TEXT(MONTH(DATEVALUE({!myVariable_current.CreatedDate}+ VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; TEXT(YEAR(DATEVALUE({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24)))  &amp; &quot; &quot; &amp;
 MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24), LEN(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.ORG_Time.Value__c} )/24))-8,5)</expression>
@@ -1889,43 +1922,10 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>{!$User.Id}</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_32_myRule_31_A1_2325463567</name>
-        <dataType>String</dataType>
-        <expression>{!$User.Id}</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>{!$User.Id}</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_36_myRule_34_A1_5146639521</name>
-        <dataType>String</dataType>
-        <expression>{!$User.Id}</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>{!$User.Id}</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_40_myRule_38_A1_8989047104</name>
-        <dataType>String</dataType>
-        <expression>{!$User.Id}</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
                 <stringValue>DATEVALUE([Task].CESS_Fecha_Planificada__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_6_A2_8709065687</name>
+        <name>formula_8_myRule_6_A2_4590799987</name>
         <dataType>Date</dataType>
         <expression>DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} )</expression>
     </formulas>
@@ -1936,9 +1936,20 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
                 <stringValue>DATEVALUE([Task].CESS_Fecha_Planificada__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_6_A2_8130313492</name>
+        <name>formula_9_myRule_6_A2_5749139504</name>
         <dataType>Date</dataType>
         <expression>DATEVALUE({!myVariable_current.CESS_Fecha_Planificada__c} )</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISNEW() &amp;&amp; NOT(ISBLANK([Task].inin_ani__c ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW() &amp;&amp; NOT(ISBLANK({!myVariable_current.inin_ani__c} ))</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -1976,18 +1987,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
 
 &amp;&amp;  BEGINS({!myVariable_current.WhoId}, &quot;00Q&quot;)</expression>
     </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>ISNEW() &amp;&amp; NOT(ISBLANK([Task].inin_ani__c ))</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_4</name>
-        <dataType>Boolean</dataType>
-        <expression>ISNEW() &amp;&amp; NOT(ISBLANK({!myVariable_current.inin_ani__c} ))</expression>
-    </formulas>
-    <interviewLabel>CESS_Call_Tasks-2_InterviewLabel</interviewLabel>
+    <interviewLabel>CESS_Call_Tasks-3_InterviewLabel</interviewLabel>
     <label>CESS - Call Tasks</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2092,7 +2092,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_15_myRule_13_A1_9548556683</elementReference>
+                <elementReference>formula_15_myRule_13_A1_5009879476</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2128,7 +2128,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_16_myRule_13_A1_5383472918</elementReference>
+                <elementReference>formula_16_myRule_13_A1_8478934496</elementReference>
             </value>
         </inputAssignments>
         <object>Task</object>
@@ -2366,7 +2366,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>datetime_lastcallrecorded__c</field>
             <value>
-                <elementReference>formula_22_myRule_18_A2_4628975760</elementReference>
+                <elementReference>formula_22_myRule_18_A2_5580618868</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2521,7 +2521,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>datetime_lastcallrecorded__c</field>
             <value>
-                <elementReference>formula_21_myRule_18_A3_9387134864</elementReference>
+                <elementReference>formula_21_myRule_18_A3_1409954552</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2581,18 +2581,18 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
         <processMetadataValues>
             <name>reference</name>
             <value>
-                <stringValue>[Task]</stringValue>
+                <stringValue>[Task].Assigned To ID (User)</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>setDefaultSubject</label>
+        <label>Set User</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myDecision3</targetReference>
+            <targetReference>myDecision2</targetReference>
         </connector>
         <filters>
             <processMetadataValues>
@@ -2604,7 +2604,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>myVariable_current.Id</elementReference>
+                <elementReference>myVariable_current.OwnerId</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -2623,7 +2623,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Subject</stringValue>
+                    <stringValue>CTI - ANI</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -2635,15 +2635,51 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Formula</stringValue>
+                    <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Subject</field>
+            <field>cti_ani__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_1651064090</elementReference>
+                <elementReference>myVariable_current.inin_ani__c</elementReference>
             </value>
         </inputAssignments>
-        <object>Task</object>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>CTI - DNIS</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>cti_dnis__c</field>
+            <value>
+                <elementReference>myVariable_current.inin_dnis__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>User</object>
     </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
@@ -2904,7 +2940,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>datetime_firstcall__c</field>
             <value>
-                <elementReference>formula_27_myRule_24_A2_6622126642</elementReference>
+                <elementReference>formula_27_myRule_24_A2_6816417681</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -3036,7 +3072,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_26_myRule_24_A3_5899563791</elementReference>
+                <elementReference>formula_26_myRule_24_A3_6664659382</elementReference>
             </value>
         </inputAssignments>
         <object>Lead</object>
@@ -3119,7 +3155,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>datetime_lastcall__c</field>
             <value>
-                <elementReference>formula_25_myRule_24_A4_1660865853</elementReference>
+                <elementReference>formula_25_myRule_24_A4_5031682816</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3544,15 +3580,15 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
         <processMetadataValues>
             <name>reference</name>
             <value>
-                <stringValue>[Task].Assigned To ID (User)</stringValue>
+                <stringValue>[Task]</stringValue>
             </value>
         </processMetadataValues>
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_4_A1</name>
-        <label>Set User</label>
-        <locationX>400</locationX>
+        <name>myRule_3_A1</name>
+        <label>setDefaultSubject</label>
+        <locationX>300</locationX>
         <locationY>200</locationY>
         <connector>
             <targetReference>myDecision5</targetReference>
@@ -3567,7 +3603,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>myVariable_current.OwnerId</elementReference>
+                <elementReference>myVariable_current.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -3586,7 +3622,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>CTI - ANI</stringValue>
+                    <stringValue>Subject</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3598,51 +3634,15 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Reference</stringValue>
+                    <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>cti_ani__c</field>
+            <field>Subject</field>
             <value>
-                <elementReference>myVariable_current.inin_ani__c</elementReference>
+                <elementReference>formula_4_myRule_3_A1_9275150823</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>String</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>CTI - DNIS</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>cti_dnis__c</field>
-            <value>
-                <elementReference>myVariable_current.inin_dnis__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>User</object>
+        <object>Task</object>
     </recordUpdates>
     <recordUpdates>
         <processMetadataValues>
@@ -3722,7 +3722,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_10_myRule_6_A1_2474883198</elementReference>
+                <elementReference>formula_10_myRule_6_A1_9383751607</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3758,7 +3758,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_11_myRule_6_A1_4502416862</elementReference>
+                <elementReference>formula_11_myRule_6_A1_9718214133</elementReference>
             </value>
         </inputAssignments>
         <object>Task</object>
@@ -3841,7 +3841,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>CloseDate</field>
             <value>
-                <elementReference>formula_8_myRule_6_A2_8709065687</elementReference>
+                <elementReference>formula_8_myRule_6_A2_4590799987</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3877,7 +3877,7 @@ MID(TEXT({!myVariable_current.CreatedDate}+VALUE({!$CustomMetadata.ORG_Applicati
             </processMetadataValues>
             <field>nextcontact_date__c</field>
             <value>
-                <elementReference>formula_9_myRule_6_A2_8130313492</elementReference>
+                <elementReference>formula_9_myRule_6_A2_5749139504</elementReference>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

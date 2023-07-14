@@ -9,7 +9,7 @@ INTRODUCIR USERNAMES separado por ;</value>
     </values>
     <values>
         <field>Value__c</field>
-        <value xsi:type="xsd:string">lferrandiz@elcorteingles.es;soporte.salesforce.eci@elcorteingles.es;cess.integration@elcorteingles.es;elcorteingles@leadclic.com.cess;alessandro.dallagata2@cess.elcorteingles.com</value>
+        <value xsi:type="xsd:string">raquelsanchez@cess.elcorteingles.com;lferrandiz@elcorteingles.es;soporte.salesforce.eci@elcorteingles.es;cess.integration@elcorteingles.es;elcorteingles@leadclic.com.cess;alessandro.dallagata2@cess.elcorteingles.com</value>
     </values>
     <values>
         <field>Value_integracion__c</field>

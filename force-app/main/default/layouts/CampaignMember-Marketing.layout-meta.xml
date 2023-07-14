@@ -93,7 +93,7 @@
         <label>Origen - Fuente</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>SourceManualRecord__c</field>
             </layoutItems>
             <layoutItems>
@@ -332,7 +332,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h5q000000yaj6</masterLabel>
+        <masterLabel>00h7Z000001WSNf</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -16,10 +16,10 @@
     </values>
     <values>
         <field>ScreenFlowName__c</field>
-        <value xsi:type="xsd:string">Básicos</value>
+        <value xsi:type="xsd:string">Blecis</value>
     </values>
     <values>
         <field>ScreenFlow_URL__c</field>
-        <value xsi:type="xsd:string">/flow/Flujo_Llamada_Entrantes_Basicos</value>
+        <value xsi:type="xsd:string">/flow/Flujo_Llamada_Entrantes_Blecis</value>
     </values>
 </CustomMetadata>

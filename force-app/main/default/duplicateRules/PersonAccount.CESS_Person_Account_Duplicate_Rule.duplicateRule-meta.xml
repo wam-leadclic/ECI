@@ -5,16 +5,16 @@
     <alertText>El registro ya existe en el sistema. Se han creado los miembros de campaña correctamente a no ser que el Lead o Cliente que está en el sistema esté registrado cómo fraudulento. (DuplicateFound:02)</alertText>
     <description>Duplicate Rule for Person Account using the CESS Person Account Matching Rule</description>
     <duplicateRuleFilter>
-        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR (5 AND 6))</booleanFilter>
         <duplicateRuleFilterItems>
-            <field>PersonEmail</field>
-            <operation>notEqual</operation>
-            <value></value>
+            <field>RecordType</field>
+            <operation>equals</operation>
+            <value>CESS - Cliente Personal</value>
             <sortOrder>1</sortOrder>
             <table>PersonAccount</table>
         </duplicateRuleFilterItems>
         <duplicateRuleFilterItems>
-            <field>PersonMobilePhone</field>
+            <field>PersonEmail</field>
             <operation>notEqual</operation>
             <value></value>
             <sortOrder>2</sortOrder>
@@ -28,10 +28,24 @@
             <table>PersonAccount</table>
         </duplicateRuleFilterItems>
         <duplicateRuleFilterItems>
-            <field>personal_document__pc</field>
+            <field>PersonMobilePhone</field>
             <operation>notEqual</operation>
             <value></value>
             <sortOrder>4</sortOrder>
+            <table>PersonAccount</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>TipoDocumentoAUX__pc</field>
+            <operation>notEqual</operation>
+            <value></value>
+            <sortOrder>5</sortOrder>
+            <table>PersonAccount</table>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>personal_document__pc</field>
+            <operation>notEqual</operation>
+            <value></value>
+            <sortOrder>6</sortOrder>
             <table>PersonAccount</table>
         </duplicateRuleFilterItems>
     </duplicateRuleFilter>
@@ -46,6 +60,10 @@
         <objectMapping>
             <inputObject>PersonAccount</inputObject>
             <mappingFields>
+                <inputField>PersonEmail</inputField>
+                <outputField>Email</outputField>
+            </mappingFields>
+            <mappingFields>
                 <inputField>PersonMobilePhone</inputField>
                 <outputField>MobilePhone</outputField>
             </mappingFields>
@@ -54,16 +72,12 @@
                 <outputField>document_number__c</outputField>
             </mappingFields>
             <mappingFields>
-                <inputField>PersonOtherPhone</inputField>
+                <inputField>Phone</inputField>
                 <outputField>Phone</outputField>
             </mappingFields>
             <mappingFields>
                 <inputField>TipoDocumentoAUX__pc</inputField>
                 <outputField>DocumentTypeAUX__c</outputField>
-            </mappingFields>
-            <mappingFields>
-                <inputField>PersonEmail</inputField>
-                <outputField>Email</outputField>
             </mappingFields>
             <outputObject>Lead</outputObject>
         </objectMapping>

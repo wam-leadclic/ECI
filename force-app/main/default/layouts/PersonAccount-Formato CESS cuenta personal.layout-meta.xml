@@ -2,7 +2,8 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
@@ -151,12 +152,12 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Account.SendEmail_Acc_Agente</actionName>
+            <actionName>NewCase</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewCase</actionName>
+            <actionName>Account.SendEmail_Acc_Agente</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>

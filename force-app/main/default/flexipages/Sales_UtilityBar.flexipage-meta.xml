@@ -7,9 +7,6 @@
         <componentInstances>
             <componentName>console:history</componentName>
         </componentInstances>
-        <componentInstances>
-            <componentName>runtime_sales_todo_list:unifiedToDoListAuraWrapper</componentName>
-        </componentInstances>
         <name>utilityItems</name>
         <type>Region</type>
     </flexiPageRegions>

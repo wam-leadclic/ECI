@@ -4,7 +4,7 @@
     <label>CESS Services</label>
     <oauthConfig>
         <callbackUrl>http://localhost</callbackUrl>
-        <consumerKey>3MVG9SOw8KERNN090cQ2oFvme6lajLBd8Q9D80NIs8sEf3yLtY_wBNizEmbjiVSh3o26pW..s11kJQdb1pWiR</consumerKey>
+        <consumerKey>3MVG9KlmwBKoC7U0tQGO2yaWKdcPi4_7EtS7BBxInlQFprPyG7lJKMaqrdGHKreBHOzI3sTHeIgLYnP.Dz89Y</consumerKey>
         <scopes>Api</scopes>
         <scopes>Full</scopes>
     </oauthConfig>

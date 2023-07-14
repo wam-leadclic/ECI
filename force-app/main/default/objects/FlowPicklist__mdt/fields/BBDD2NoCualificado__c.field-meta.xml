@@ -42,14 +42,15 @@
                 <label>Llamada cortada</label>
             </value>
             <value>
-                <fullName>No asegurable</fullName>
-                <default>false</default>
-                <label>No asegurable</label>
-            </value>
-            <value>
                 <fullName>Asegurado en MM</fullName>
                 <default>false</default>
                 <label>Asegurado en MM</label>
+            </value>
+            <value>
+                <fullName>No compra por telefono</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No compra por telefono</label>
             </value>
         </valueSetDefinition>
     </valueSet>

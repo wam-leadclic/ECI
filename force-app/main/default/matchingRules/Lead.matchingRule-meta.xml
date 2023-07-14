@@ -38,38 +38,6 @@
         <ruleStatus>Inactive</ruleStatus>
     </matchingRules>
     <matchingRules>
-        <fullName>LeadsDuplicados2</fullName>
-        <booleanFilter>1 OR 2 OR 3 OR (4 AND 5)</booleanFilter>
-        <description>Regla de coincidencia duplicada para Leads, para solucionar el Bug de las reglas de duplicados</description>
-        <label>Leads Duplicados 2</label>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>Phone</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>MobilePhone</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>Email</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>document_number__c</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>document_type__c</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <ruleStatus>Active</ruleStatus>
-    </matchingRules>
-    <matchingRules>
         <fullName>leadsDuplicados</fullName>
         <booleanFilter>1 OR 2 OR 5 OR (3 AND 4)</booleanFilter>
         <description>Control de duplicados por teléfono, móvil, tipo de documento o número de documento</description>

@@ -19,16 +19,6 @@
                 <field>WhoId</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
-                <field>Station__c</field>
-                <uiBehavior>Edit</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
-                <field>CampaignMemberId__c</field>
-                <uiBehavior>Edit</uiBehavior>
-            </quickActionLayoutItems>
         </quickActionLayoutColumns>
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
@@ -43,11 +33,6 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>WhatId</field>
-                <uiBehavior>Edit</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
-                <field>CampanaInboundIVR__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>

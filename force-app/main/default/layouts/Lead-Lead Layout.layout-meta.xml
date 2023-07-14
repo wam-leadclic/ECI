@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -34,14 +35,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Rating</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>cti_duplicatecheck__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>sourceWeb__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -95,7 +88,12 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Additional Information</label>
-        <layoutColumns/>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>cti_duplicatecheck__c</field>
+            </layoutItems>
+        </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -148,49 +146,54 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Delete</actionName>
-            <actionType>StandardButton</actionType>
+            <actionName>Lead.Nuevo_correo</actionName>
+            <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Clone</actionName>
+            <actionName>Delete</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Convert</actionName>
+            <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentNote</actionName>
-            <actionType>QuickAction</actionType>
+            <actionName>Convert</actionName>
+            <actionType>StandardButton</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>LogACall</actionName>
+            <actionName>FeedItem.ContentNote</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewTask</actionName>
+            <actionName>LogACall</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>NewEvent</actionName>
+            <actionName>NewTask</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
+            <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>8</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
+            <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>9</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>10</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -270,7 +273,7 @@
     <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0N00000XJHWD</masterLabel>
+        <masterLabel>00h09000008p7V3</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

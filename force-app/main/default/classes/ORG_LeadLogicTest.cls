@@ -4,6 +4,7 @@
 * @group        Test
 * @description  Test class for ORG_LeadLogicTest
 * @Revision     AUTHOR            DATE          Reason
+                MMV - LCS         30/03/2022    Se comentan todas las clases de test que no se usan
                 MMV - LCS         22/03/2022    Modificación para la refactorización y cambio del modelo del dato  
 **********************************************************************************/
 @isTest

@@ -17,37 +17,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Parent</field>
+            <field>ActualCost</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>NumberOfConvertedLeads</field>
+            <field>HierarchyActualCost</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>HierarchyNumberOfConvertedLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>NumberOfLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HierarchyNumberOfLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>NumberOfContacts</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HierarchyNumberOfContacts</field>
+            <field>ScriptUrl__c</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -62,12 +42,47 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ActualCost</field>
+            <field>Id</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>HierarchyActualCost</field>
+            <field>CampaignMemberRecordType</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RecordType</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>NumberOfContacts</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HierarchyNumberOfContacts</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>NumberOfConvertedLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HierarchyNumberOfConvertedLeads</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -77,17 +92,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Description</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Status</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Description</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -97,17 +107,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>StartDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
+            <field>ExpectedResponse</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -121,8 +121,28 @@
             <table>Campaign</table>
         </columns>
         <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastActivityDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>NumberOfLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HierarchyNumberOfLeads</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -147,32 +167,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>NumberOfWonOpportunities</field>
+            <field>Parent</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>AmountWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HierarchyNumberOfWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Owner</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ExpectedResponse</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ScriptUrl__c</field>
+            <field>LineInsurance__c</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -187,22 +187,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>StartDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Status</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Type</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CampaignMemberRecordType</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
             <table>Campaign</table>
         </columns>
         <columns>
@@ -217,370 +212,30 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>AmountWonOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>HierarchyAmountWonOpportunities</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LineInsurance__c</field>
+            <field>NumberOfWonOpportunities</field>
             <table>Campaign</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RecordType</field>
+            <field>HierarchyNumberOfWonOpportunities</field>
             <table>Campaign</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.IsActive</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.ScriptUrl__c</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Parent</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfConvertedLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfConvertedLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfContacts</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfLeads</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfContacts</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.BudgetedCost</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyBudgetedCost</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.ActualCost</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyActualCost</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.CreatedBy</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Description</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Status</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.CreatedDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.EndDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.StartDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.LastModifiedDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Id</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.ExpectedRevenue</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyExpectedRevenue</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Name</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberSent</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberSent</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.AmountWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Owner</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.LineInsurance__c</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.ExpectedResponse</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.NumberOfResponses</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyNumberOfResponses</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.Type</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.CampaignMemberRecordType</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.RecordType</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.LastActivityDate</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.LastModifiedBy</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.AmountAllOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyAmountAllOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Parent.HierarchyAmountWonOpportunities</field>
-            <table>Campaign</table>
-        </columns>
-        <masterLabel>Campañas</masterLabel>
+        <masterLabel>Campaigns</masterLabel>
     </sections>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastName</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Title</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Email</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>IsPrimary</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Status</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Fax</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MemberLastModifiedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FirstRespondedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MemberCreatedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MemberId</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MobilePhone</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>DoNotCall</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>FirstName</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Name</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>InsuranceCompany__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HasOptedOutOfEmail</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>HasResponded</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Phone</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskPostalCode__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
+            <field>CallIdentifier__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -590,22 +245,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CampaignCess__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ReferenceCampaign__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CallIdentifier__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Campaign__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CampaignCess__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -615,7 +260,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>ReferenceCampaign__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>QuoteCode__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskPostalCode__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -625,42 +280,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>InsuranceCompany__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contact</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>IsReachable__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CTISkill__c</field>
+            <field>CreatedBy</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CTIClosed__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskDescription__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskAddress__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>EmailSended__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTISend__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTIDeleteError__c</field>
+            <field>CreatedDate</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -670,7 +310,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CTIClosed__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>CTIOrder__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CTISkill__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -680,7 +330,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RiskDescription__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>DescriptionMerchandise__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskAddress__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DoNotCall</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -690,12 +355,37 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Email</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>EmailSended__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HasOptedOutOfEmail</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>CTISent__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CTISend__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>CTIErrorCheck__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CTIDeleteError__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -710,7 +400,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ECommerceStatus__c</field>
+            <field>CTIError__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -720,27 +410,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>MarketingStage__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>IsPreview__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>DatetimeLastCall__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskOwnerLicenseDate__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CTIError__c</field>
+            <field>ECommerceStatus__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -750,12 +425,32 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RiskPolicyHolderLicenseDate__c</field>
+            <field>MarketingStage__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Fax</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DatetimeLastCall__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RiskDriverLicenseDate__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskOwnerLicenseDate__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskPolicyHolderLicenseDate__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -770,12 +465,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RiskPolicyHolderBirthdate__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskDriverBirthdate__c</field>
+            <field>RenewalDate__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -785,12 +475,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RiskInsuredBirthdate__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskDriverBirthdate__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>RIskOwnerBirthdate__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RenewalDate__c</field>
+            <field>RiskPolicyHolderBirthdate__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -800,7 +500,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ManagementsSF__c</field>
+            <field>FirstName</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>FirstRespondedDate</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Name</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -810,7 +520,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RiskInsuredBirthdate__c</field>
+            <field>ManagementsSF__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -820,27 +530,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>RiskModel__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskSquareMetres__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MarketingClosed__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskLocation__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESSIdPricing__c</field>
+            <field>RelatedCTICampaignMemberId__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -850,7 +540,97 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CESSIdGoogleAnalytics__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESSIdPricing__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>AmountMerchandise__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsPrimary</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastName</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskLocation__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskBrand__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MarketingClosed__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SourceType__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MemberCreatedDate</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MemberId</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MemberLastModifiedDate</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskSquareMetres__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MobilePhone</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskCategory__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskModel__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -865,57 +645,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SourceType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskBrand__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskCategory__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESSIdGoogleAnalytics__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RelatedCTICampaignMemberId__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LeadHeader__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>DocumentNumber__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SystemAttempts__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CampaignMemberNumber__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskOptionCapitalInsured__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SourceWeb__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -925,7 +655,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SourceCess__c</field>
+            <field>DocumentNumber__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -935,7 +665,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SystemAttempts__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ClientOrLeadNumber__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CampaignMemberNumber__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -945,12 +685,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RiskOptionCapitalInsured__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Opportunity__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CTIRule__c</field>
+            <field>SourceWeb__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SourceCess__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -960,42 +710,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>BusinessLinesProhibited__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BussinesLineProhibited__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Pipeline__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BusinessLinesContracted__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskProvince__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>BusinessLineContracted__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LeadSource__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OtherRiskData__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1005,7 +720,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CTIBusinessLinesContracted__c</field>
+            <field>OtherRiskData__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Phone</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Pipeline__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1015,7 +740,37 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>RiskProvince__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>LineInsurance__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BusinessLineContracted__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BussinesLineProhibited__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BusinessLinesContracted__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CTIBusinessLinesContracted__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>BusinessLinesProhibited__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1025,52 +780,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CTIRule__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>HasResponded</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Result__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskECICard__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MerchandiseType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Gender__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SalesSlip__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskVersion__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>RiskPropertyType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>DocumentType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ResultCTI__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESSScoring__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1080,17 +805,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SFURLPop__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ManagementType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CampaingTypeCESS__c</field>
+            <field>Gender__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1100,20 +815,75 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Status</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SalesSlip__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskECICard__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CampaingTypeCESS__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>DocumentType__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ManagementType__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MerchandiseType__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskPropertyType__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Title</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ResultCTI__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SFURLPop__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESSScoring__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RiskVersion__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>WebSource__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CampaignRecordType__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy.CreatedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <masterLabel>Miembros de campaña</masterLabel>
+        <masterLabel>Campaign Members</masterLabel>
     </sections>
     <sections>
         <columns>
@@ -1151,22 +921,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Lead.Status</field>
+            <field>Lead.ConvertedDate</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Lead.CreatedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead.datetime_firstcall__c</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead.source_datetime__c</field>
+            <field>Lead.Owner</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
@@ -1176,27 +936,29 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Lead.ConvertedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Lead.cti_closed__c</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Lead.Owner</field>
+            <field>Lead.source_datetime__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead.datetime_firstcall__c</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead.Status</field>
+            <table>Campaign.CampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Lead.CreatedDate</field>
             <table>Campaign.CampaignMembers</table>
         </columns>
         <masterLabel>Datos Lead</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead.LastModifiedDate</field>
-            <table>Campaign.CampaignMembers</table>
-        </columns>
-        <masterLabel>Campaign Members</masterLabel>
     </sections>
 </ReportType>

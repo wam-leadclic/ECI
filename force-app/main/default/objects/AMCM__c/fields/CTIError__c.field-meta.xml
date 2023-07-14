@@ -4,7 +4,7 @@
     <description>Error devuelto por CTI al intentar insertar el registro</description>
     <externalId>false</externalId>
     <label>Error Envío CTI</label>
-    <length>131072</length>
+    <length>500</length>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

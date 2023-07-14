@@ -23,11 +23,11 @@
         <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>CESS_OpportunityApprover4__c</name>
+                <name>CESS_OpportunityApprover3__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>CESS_OpportunityApprover5__c</name>
+                <name>CESS_OpportunityApprover2__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
@@ -35,11 +35,11 @@
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>CESS_OpportunityApprover3__c</name>
+                <name>CESS_OpportunityApprover4__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>CESS_OpportunityApprover2__c</name>
+                <name>CESS_OpportunityApprover5__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>

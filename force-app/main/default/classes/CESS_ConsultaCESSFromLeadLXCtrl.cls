@@ -4,8 +4,6 @@
  * @group        Console
  * @description  Apex Controller of the Lightning Component 'CESS_ConsultaCESSFromLead'
  * @Revision
- *              AUTOR   FECHA           DESCRIPCION
-                MMV     06/11/2022      Se añade el return false para que notifique del error, en caso de que lo haya
 **********************************************************************************/
 
 public with sharing class CESS_ConsultaCESSFromLeadLXCtrl {
@@ -79,7 +77,6 @@ public with sharing class CESS_ConsultaCESSFromLeadLXCtrl {
             update accountToUpdate;
         } catch(DmlException e) {
             System.debug('An unexpected error has occurred: ' + e.getMessage());
-            return false;
         }
 
         return true;

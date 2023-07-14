@@ -16,11 +16,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>MensajeBienvenida__c</field>
+                <field>ScreenFlowName__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>CampanaInboundIVR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MensajeBienvenida__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -35,14 +39,6 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>NamespacePrefix</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Medio__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ScreenFlowName__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -70,7 +66,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>false</editHeading>
-        <label>Vínculos personalizados</label>
+        <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
@@ -82,7 +78,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h5q000000yaj0</masterLabel>
+        <masterLabel>00h1X000004TDVm</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

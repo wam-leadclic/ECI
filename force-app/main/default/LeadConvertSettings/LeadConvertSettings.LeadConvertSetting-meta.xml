@@ -56,12 +56,40 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
+            <inputField>call_identifier__c</inputField>
+            <outputField>call_identifier__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>campaign__c</inputField>
+            <outputField>campaign__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>campaign_cti__c</inputField>
+            <outputField>CTI_Campaign__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>reference_campaign__c</inputField>
+            <outputField>Reference_campaign__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>insurance_company__c</inputField>
+            <outputField>insurance_company__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>recorded_filename__c</inputField>
+            <outputField>recorded_filename__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>skill__c</inputField>
             <outputField>Skill__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>quote_code__c</inputField>
             <outputField>quote_code__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>risk_description__c</inputField>
+            <outputField>risk_description__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>renewal_date__c</inputField>
@@ -90,22 +118,6 @@
         <mappingFields>
             <inputField>Lead_Referrer__c</inputField>
             <outputField>Lead_Referrer__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>source_type__c</inputField>
-            <outputField>source_type__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>referencesource_type__c</inputField>
-            <outputField>referencesource_type__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Referrer_LeadNumber__c</inputField>
-            <outputField>Referrer_Number__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>referencedocument_number__c</inputField>
-            <outputField>referencedocument_number__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>lead_number__c</inputField>
@@ -144,32 +156,20 @@
             <outputField>CESS_Scoring__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>risk_description__c</inputField>
-            <outputField>risk_description__c</outputField>
+            <inputField>source_type__c</inputField>
+            <outputField>source_type__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>call_identifier__c</inputField>
-            <outputField>call_identifier__c</outputField>
+            <inputField>referencesource_type__c</inputField>
+            <outputField>referencesource_type__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>campaign__c</inputField>
-            <outputField>campaign__c</outputField>
+            <inputField>Referrer_LeadNumber__c</inputField>
+            <outputField>Referrer_Number__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>campaign_cti__c</inputField>
-            <outputField>CTI_Campaign__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>reference_campaign__c</inputField>
-            <outputField>Reference_campaign__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>insurance_company__c</inputField>
-            <outputField>insurance_company__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>recorded_filename__c</inputField>
-            <outputField>recorded_filename__c</outputField>
+            <inputField>referencedocument_number__c</inputField>
+            <outputField>referencedocument_number__c</outputField>
         </mappingFields>
         <outputObject>Opportunity</outputObject>
     </objectMapping>

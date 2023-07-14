@@ -207,7 +207,7 @@ Error - {!myVariable_current.error__c}
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myCollection_myRule_1_A2recipientIds</name>
         <dataType>String</dataType>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -144,21 +143,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>FeedItem.ContentNote</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>6</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>8</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>7</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -187,6 +171,21 @@
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentNote</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>6</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>7</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>8</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -263,6 +262,19 @@
         <fields>CORE.USERS.FULL_NAME</fields>
         <relatedList>RelatedHistoryList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>TASK.SUBJECT</fields>
+        <fields>TASK.WHO_NAME</fields>
+        <fields>TASK.WHAT_NAME</fields>
+        <fields>ACTIVITY.TASK</fields>
+        <fields>TASK.DUE_DATE</fields>
+        <fields>TASK.STATUS</fields>
+        <fields>TASK.CLOSED</fields>
+        <fields>TASK.PRIORITY</fields>
+        <fields>CORE.USERS.FULL_NAME</fields>
+        <fields>TASK.LAST_UPDATE</fields>
+        <relatedList>Activity.RelatedOpportunity__c</relatedList>
+    </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -270,7 +282,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0N00000XJHWC</masterLabel>
+        <masterLabel>00h09000008p7V0</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

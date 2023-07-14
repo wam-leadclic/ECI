@@ -1934,7 +1934,7 @@
         <object>Opportunity</object>
     </recordUpdates>
     <startElementReference>isChangedDecision11_myRule_10_OwnerId</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
