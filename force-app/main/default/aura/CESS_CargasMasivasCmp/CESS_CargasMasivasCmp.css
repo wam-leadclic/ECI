@@ -1,0 +1,14 @@
+.THIS .slds-select_container{
+    width: 30%;
+    margin: auto;
+}
+.THIS .select span{
+    font-size: initial;
+    font-weight: bold;
+}
+
+.THIS .select{
+    margin:auto;
+    width: 50%;
+	text-align: center;
+}

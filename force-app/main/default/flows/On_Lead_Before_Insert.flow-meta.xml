@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asigno la descripción del riesgo con la información: 
+Fecha Nacimiento Asegurado(s)
+Sexo del Riesgo</description>
+        <name>AsignoRiskDescriptionAccidentes</name>
+        <label>AsignoRiskDescriptionAccidentes</label>
+        <locationX>1106</locationX>
+        <locationY>2903</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.risk_description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AccidentesFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno esta información: 
+Campaña con valor 	ClickToCall
+Origen - CESS con valor ClickToCall
+Medio con valor Web</description>
+        <name>AssignClickToCallValues</name>
+        <label>AssignClickToCallValues</label>
+        <locationX>1040</locationX>
+        <locationY>2447</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.campaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ClickToCall</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ClickToCall</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Web</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RiskDescriptionIsNull</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno estos valores:
+
+Campaña con valor CESS
+Origen - CESS: TEXT([Lead].source_manualrecord__c ) &amp; 
+IF( ISBLANK(TEXT([Lead].line_insurance__c)) , &quot;&quot;, &quot;_&quot; &amp; TEXT([Lead].line_insurance__c)).
+Medio con el valor Manual</description>
+        <name>AssignManualRecordOnLead</name>
+        <label>AssignManualRecordOnLead</label>
+        <locationX>842</locationX>
+        <locationY>2015</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.campaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CESS</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OrigenCESSManualFilled</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Manual</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsClickToCallLead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno estos valores:
+
+Campaña con valor CESS
+Origen - CESS: TEXT([Lead].source_manualrecord__c ) &amp; 
+IF( ISBLANK(TEXT([Lead].line_insurance__c)) , &quot;&quot;, &quot;_&quot; &amp; TEXT([Lead].line_insurance__c)).
+Medio con el valor Manual</description>
+        <name>AssignManualRecordOnLead_0</name>
+        <label>AssignManualRecordOnLead</label>
+        <locationX>1106</locationX>
+        <locationY>2015</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.campaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CESS</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OrigenCESSNull</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Telefono</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.source_manualrecord__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Llamada Entrante</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsClickToCallLead</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos  el valor de la regla CTI de ramo, campaña cess y campaña cti al lead</description>
+        <name>assignReglaCTIValuesToLead</name>
+        <label>Asignamos Valores de la Regla CTI al Lead</label>
+        <locationX>655</locationX>
+        <locationY>1247</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.line_insurance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.line_insurance__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.campaign_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cess__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.campaign_cti__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cti__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Campaign_CTI_Picklist__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cti__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ORG_ApplicationSetting_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos el valor de la regla CTI de ramo, campaña cess y campaña cti y el valor de la regla general de orden y skill al lead</description>
+        <name>assignReglaCTIValuesToLeadWithSkillOrder</name>
+        <label>Asignamos Valores de la Regla CTI al Lead</label>
+        <locationX>919</locationX>
+        <locationY>1247</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.line_insurance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.line_insurance__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.campaign_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cess__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.campaign_cti__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cti__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.order__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.skill__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.skill__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Campaign_CTI_Picklist__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getReglasCTI.campaign_cti__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ORG_ApplicationSetting_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno la descripción del riesgo con esta información: 
+Número de Asegurados si está relleno. Si no lo está pondrá Asegurados:
+Si código postal está relleno pondrá Copago
+SI, si copago está marcado. Si no lo está pondrá un NO
+Código Postal si está relleno</description>
+        <name>AssignRiskDescriprionSalud</name>
+        <label>AssignRiskDescriprionSalud</label>
+        <locationX>578</locationX>
+        <locationY>2903</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.risk_description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SaludFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno el valor de Descripción del riesgo con esta información: 
+Modelo y Marca
+Modalidad
+Código Postal si está relleno</description>
+        <name>AssignRiskDescriptionAutos</name>
+        <label>AssignRiskDescriptionAutos</label>
+        <locationX>50</locationX>
+        <locationY>2903</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.risk_description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AutosMotosFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno la Descripción del riesgo con esta información: 
+Tipo de Vivienda
+Propietario o Inquilino
+Código Postal si está relleno</description>
+        <name>AssignRiskDescriptionHogar</name>
+        <label>AssignRiskDescriptionHogar</label>
+        <locationX>314</locationX>
+        <locationY>2903</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.risk_description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>HogarFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno la Descripción del riesgo con la información:
+Fecha Nacimiento Asegurado(s)
+Sexo del Riesgo</description>
+        <name>AssignRiskDescriptionVida</name>
+        <label>AssignRiskDescriptionVida</label>
+        <locationX>842</locationX>
+        <locationY>2903</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.risk_description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VidaFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asignamos el valor del Campaign CTI Picklist al campo Campaign CTI</description>
+        <name>Set_CampaignCTI</name>
+        <label>Set Campaign CTI</label>
+        <locationX>1304</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.campaign_cti__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Campaign_CTI_Picklist__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_medioOrigenCESSRelleno</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos en el campo Campaign CTI Picklist el valor de Campaign CTI</description>
+        <name>Set_CampaignCTIPicklist</name>
+        <label>Set Campaign CTI Picklist</label>
+        <locationX>1040</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Campaign_CTI_Picklist__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.campaign_cti__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_medioOrigenCESSRelleno</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>CESS</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>CESS</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Comprueba si la campaña está vacía</description>
+        <name>CampanaVacia</name>
+        <label>¿Campaña vacía ?</label>
+        <locationX>1172</locationX>
+        <locationY>1775</locationY>
+        <defaultConnector>
+            <targetReference>IsClickToCallLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.campaign__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SourceManualRecordIsFilled</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si el cmapo Campaign CTI Picklist está vacío rellenamos con el dato de Campaign CTI</description>
+        <name>Decision_CampaignCTIPicklistVacio</name>
+        <label>¿Campaign CTI Picklist vacio?</label>
+        <locationX>1172</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Set_CampaignCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>CampaignCTIPicklistVacio_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Campaign_CTI_Picklist__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_CampaignCTIPicklist</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el medio de Lead es BLECIS.</description>
+        <name>Decision_EsBlecis</name>
+        <label>Es Blecis?</label>
+        <locationX>787</locationX>
+        <locationY>1127</locationY>
+        <defaultConnector>
+            <targetReference>assignReglaCTIValuesToLeadWithSkillOrder</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>EsBlecis_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.source_type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLECIS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assignReglaCTIValuesToLead</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si están los campos Medio, Campaña y Origen CESS rellenos</description>
+        <name>Decision_medioOrigenCESSRelleno</name>
+        <label>Están Medio y Origen CESS rellenos?</label>
+        <locationX>1172</locationX>
+        <locationY>767</locationY>
+        <defaultConnector>
+            <targetReference>ORG_ApplicationSetting_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>medioOrigenCESSRelleno_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.source_type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.source_cess__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getReglasCTI</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si encontró un registro de Reglas CTI</description>
+        <name>existsReglaCTI</name>
+        <label>Encontró registro?</label>
+        <locationX>985</locationX>
+        <locationY>1007</locationY>
+        <defaultConnector>
+            <targetReference>ORG_ApplicationSetting_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Existe Registro</defaultConnectorLabel>
+        <rules>
+            <name>existReglaCTIRecord</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getReglasCTI</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_EsBlecis</targetReference>
+            </connector>
+            <label>Existe Registro</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el Lead hay que asignarlo a la campaña de ClickToCall</description>
+        <name>IsClickToCallLead</name>
+        <label>IsClickToCallLead</label>
+        <locationX>1172</locationX>
+        <locationY>2327</locationY>
+        <defaultConnector>
+            <targetReference>RiskDescriptionIsNull</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesClickToCallLead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner:User.cti_dnis__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ValueClickToCall</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignClickToCallValues</targetReference>
+            </connector>
+            <label>YesClickToCallLead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos que Descripción del riesgo está relleno</description>
+        <name>RiskDescriptionIsNull</name>
+        <label>RiskDescriptionIsNull</label>
+        <locationX>1172</locationX>
+        <locationY>2663</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesRiskDescriptionIsNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.risk_description__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>WhatLineInsurance</targetReference>
+            </connector>
+            <label>YesRiskDescriptionIsNull</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>El campo Origen - Registro Manual está relleno</description>
+        <name>SourceManualRecordIsFilled</name>
+        <label>SourceManualRecordIsFilled</label>
+        <locationX>974</locationX>
+        <locationY>1895</locationY>
+        <defaultConnector>
+            <targetReference>AssignManualRecordOnLead_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.source_manualrecord__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.source_manualrecord__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Llamada Entrante</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignManualRecordOnLead</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SwitchOff</name>
+        <label>SwitchOff</label>
+        <locationX>1535</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SwitchOffLead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_CampaignCTIPicklistVacio</targetReference>
+            </connector>
+            <label>SwitchOffLead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>En función del riesgo se rellenará la descripción de riesgo</description>
+        <name>WhatLineInsurance</name>
+        <label>WhatLineInsurance</label>
+        <locationX>710</locationX>
+        <locationY>2783</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Autos</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.line_insurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Autos/Motos</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignRiskDescriptionAutos</targetReference>
+            </connector>
+            <label>Autos</label>
+        </rules>
+        <rules>
+            <name>Hogar</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.line_insurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hogar</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignRiskDescriptionHogar</targetReference>
+            </connector>
+            <label>Hogar</label>
+        </rules>
+        <rules>
+            <name>Salud</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.line_insurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salud</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignRiskDescriprionSalud</targetReference>
+            </connector>
+            <label>Salud</label>
+        </rules>
+        <rules>
+            <name>Vida</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.line_insurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vida</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignRiskDescriptionVida</targetReference>
+            </connector>
+            <label>Vida</label>
+        </rules>
+        <rules>
+            <name>Accidentes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.line_insurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accidentes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoRiskDescriptionAccidentes</targetReference>
+            </connector>
+            <label>Accidentes</label>
+        </rules>
+    </decisions>
+    <description>Se ejecuta en la creación de Leads. Solo para funcionalidades exclusivas de la creación que solo impacten al propio Lead
+05/10 MMV: Se rellena Campaign CTI Picklist (si no viene relleno) con el dato de campaign_cti
+11/11 MMV: Se busca la regla CTI solo por source_type__c y source_cess__c
+24/01 MSC: Se dejan como están los campos Orden y Skill si vienen rellenados
+09/02 MSC: Modificar para dejar Orden y Skill sin modificación si es de BLECIS.</description>
+    <formulas>
+        <name>AccidentesFormula</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+ {!$Record.riskinsured_birthdate__c} &amp; &quot; &quot; &amp; 
+{!$Record.risk_gender__c} , 255)</expression>
+    </formulas>
+    <formulas>
+        <name>AutosMotosFormula</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+{!$Record.risk_model__c} &amp; &quot; &quot; &amp;
+{!$Record.risk_brand__c}
+&amp; &quot; &quot; &amp;{!$Record.risk_version__c} &amp; &quot; &quot; &amp;
+{!$Record.risk_category__c}  &amp;
+IF( ISBLANK(
+{!$Record.risk_postalcode__c}) , &quot;&quot;, &quot; [&quot; &amp;
+{!$Record.risk_postalcode__c}  &amp; &quot;]&quot; ) , 255)</expression>
+    </formulas>
+    <formulas>
+        <name>HogarFormula</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+{!$Record.risk_propertytype__c} &amp; &quot; &quot; &amp;
+{!$Record.risk_tenant__c}  &amp;
+IF( ISBLANK({!$Record.risk_postalcode__c}) , &quot;&quot;, &quot; [&quot; &amp;{!$Record.risk_postalcode__c}  &amp; &quot;]&quot; ) ,255
+
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OrigenCESSManualFilled</name>
+        <dataType>String</dataType>
+        <expression>IF(
+   ISBLANK({!$Record.source_cess__c}),  
+   TEXT({!$Record.source_manualrecord__c}) &amp; IF(ISBLANK(TEXT({!$Record.line_insurance__c})) , &quot;&quot;, &quot;_&quot; &amp; 
+   TEXT({!$Record.line_insurance__c})),
+   {!$Record.source_cess__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OrigenCESSNull</name>
+        <dataType>String</dataType>
+        <expression>&quot;Llamada Entrante&quot; &amp; 
+IF(ISBLANK(TEXT({!$Record.line_insurance__c})), &quot;&quot;,&quot;_&quot; &amp; TEXT({!$Record.line_insurance__c}))</expression>
+    </formulas>
+    <formulas>
+        <name>SaludFormula</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+IF (ISBLANK({!$Record.riskinsured_number__c}), &quot;&quot;, &quot;Asegurados: &quot;&amp; TEXT({!$Record.riskinsured_number__c}) &amp; &quot; &quot;) &amp;
+
+IF( ISBLANK({!$Record.risk_postalcode__c} ), &quot;&quot;, &quot;Copago: &quot; &amp; 
+IF({!$Record.risk_copayment__c},&quot;SI &quot; , &quot;NO &quot; ) )  &amp;
+
+IF( ISBLANK({!$Record.risk_postalcode__c}  ) , &quot;&quot;, &quot;[&quot; &amp;{!$Record.risk_postalcode__c}  &amp; &quot;]&quot; ) ,255)</expression>
+    </formulas>
+    <formulas>
+        <name>VidaFormula</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+ {!$Record.riskinsured_birthdate__c} &amp; &quot; &quot; &amp; 
+{!$Record.risk_gender__c} , 255)</expression>
+    </formulas>
+    <interviewLabel>On Lead Before Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Lead Before Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Obtenemos la regla CTI que coincida con los campos rellenos</description>
+        <name>getReglasCTI</name>
+        <label>Obtenemos Reglas CTI</label>
+        <locationX>985</locationX>
+        <locationY>887</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>existsReglaCTI</targetReference>
+        </connector>
+        <filters>
+            <field>source_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.source_type__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>source_cess__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.source_cess__c</elementReference>
+            </value>
+        </filters>
+        <object>CTI_Rules__c</object>
+    </recordLookups>
+    <recordLookups>
+        <name>ORG_ApplicationSetting_0</name>
+        <label>ORG ApplicationSetting</label>
+        <locationX>1172</locationX>
+        <locationY>1655</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CampanaVacia</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_ClickToCall_Number</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+        <outputAssignments>
+            <assignToReference>ValueClickToCall</assignToReference>
+            <field>Value__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <startElementReference>SwitchOff</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>ClickToCall</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ClickToCall</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Contiene el Número del usuario CTI</description>
+        <name>ValueClickToCall</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

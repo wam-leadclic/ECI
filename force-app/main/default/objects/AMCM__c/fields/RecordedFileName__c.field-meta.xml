@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordedFileName__c</fullName>
+    <description>Ruta y fichero de la grabación manual de CTI.</description>
+    <externalId>false</externalId>
+    <label>CTI Fichero de Grabación</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

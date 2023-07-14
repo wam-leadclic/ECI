@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTIErrorCampDesactivada__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Muestra con un check si la campaña ha generado error.</description>
+    <externalId>false</externalId>
+    <label>Error CTI Campaña desactivada</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

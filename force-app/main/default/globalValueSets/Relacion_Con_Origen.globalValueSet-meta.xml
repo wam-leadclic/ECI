@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Cónyuge</fullName>
+        <default>false</default>
+        <label>Cónyuge</label>
+    </customValue>
+    <customValue>
+        <fullName>Padres</fullName>
+        <default>false</default>
+        <label>Padres</label>
+    </customValue>
+    <customValue>
+        <fullName>Hijos</fullName>
+        <default>false</default>
+        <label>Hijos</label>
+    </customValue>
+    <customValue>
+        <fullName>Otros</fullName>
+        <default>false</default>
+        <label>Otros</label>
+    </customValue>
+    <customValue>
+        <fullName>Misma Tarjeta ECI</fullName>
+        <default>false</default>
+        <label>Misma Tarjeta ECI</label>
+    </customValue>
+    <masterLabel>Relacion Con Origen</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

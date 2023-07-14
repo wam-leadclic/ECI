@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Mensaje Bienvenida Email</label>
+    <protected>false</protected>
+    <values>
+        <field>CampanaInboundIVR__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Medio__c</field>
+        <value xsi:type="xsd:string">Email</value>
+    </values>
+    <values>
+        <field>MensajeBienvenida__c</field>
+        <value xsi:type="xsd:string">Test de mensaje de bienvenida cuando el medio es Email (Sólo Salientes Básicos)</value>
+    </values>
+    <values>
+        <field>ScreenFlowName__c</field>
+        <value xsi:type="xsd:string">Básicos</value>
+    </values>
+    <values>
+        <field>ScreenFlow_URL__c</field>
+        <value xsi:type="xsd:string">/flow/Flujo_Llamadas_Salientes_Basicos</value>
+    </values>
+</CustomMetadata>

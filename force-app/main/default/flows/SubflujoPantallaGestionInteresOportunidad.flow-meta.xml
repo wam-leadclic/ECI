@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <description>Excluye el interés de OPORTUNIDAD de la lista de intereses, agregándola a la variable de  Intereses Excluidos</description>
+        <name>ExcluirInteres</name>
+        <label>ExcluirInteres</label>
+        <locationX>611</locationX>
+        <locationY>2972</locationY>
+        <assignmentItems>
+            <assignToReference>InteresExcluido</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>OpportunityVariable.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asignamos al contacto el nuevo email</description>
+        <name>Set_Email</name>
+        <label>Set_Email</label>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
+        <assignmentItems>
+            <assignToReference>RecuperamosContact.Email</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_EmailValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ActualizamosContacto</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos el valor de motivo de ganancia a la variable de entrada</description>
+        <name>Set_EntradaMotivoGanancia</name>
+        <label>Set_EntradaMotivoGanancia</label>
+        <locationX>248</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MotivoPerdidaOGanancia</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_OppGanadaValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_VariablesEntrada</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Almacena en la variable de entrada el motivo de perdida de la oportunidad</description>
+        <name>Set_EntradaMotivoPerdida</name>
+        <label>Set_EntradaMotivoPerdida</label>
+        <locationX>512</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MotivoPerdidaOGanancia</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_OppPerdidaValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_VariablesEntrada</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Ponemos a True la variable de mensaje de error de la póliza para que se muestre el mensaje</description>
+        <name>Set_MensajeErrorPolizaTrue</name>
+        <label>Set_MensajeErrorPolizaTrue</label>
+        <locationX>171</locationX>
+        <locationY>2522</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MensajeErrorPoliza</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S01_PantallaAsignarPoliza</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos true a la MostrarErrorEmailDuplicado para que muestre el mensaje de error, reasignamos el valor al screen y ocultamos el mensaje de error de validación del email</description>
+        <name>Set_MostrarErrorEmailDuplicadoTrue</name>
+        <label>Set_MostrarErrorEmailDuplicadoTrue</label>
+        <locationX>50</locationX>
+        <locationY>1514</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorEmailDuplicado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorEmailValidacion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Elegir_estado_oportunidad</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos true a la variable mostrar error email validacion para que muestre el mensaje de error y reasignamos el valor introducido para email</description>
+        <name>Set_MostrarErrorEmailValidacionTrue</name>
+        <label>Set_MostrarErrorEmailValidacionTrue</label>
+        <locationX>578</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorEmailValidacion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorEmailDuplicado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Elegir_estado_oportunidad</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos los valores de la pantalla a las variables de entrada</description>
+        <name>Set_VariablesEntrada</name>
+        <label>Set_VariablesEntrada</label>
+        <locationX>380</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>Var_EntradaEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_EmailValue</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_EstadoOportunidad</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Estado_oportunidad</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_EmailValido</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetGanadaOpp</name>
+        <label>Set Ganada Opp</label>
+        <locationX>83</locationX>
+        <locationY>2090</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Contratado</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.Win_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_OppGanadaValue</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.AceleradorOfrecido__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Picklist_AceleradorOfrecido</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.ImporteAcelerador__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_ImporteAcelerador</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.line_insurance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>var_RamoAceleradorOfrecido</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S01_PantallaAsignarPoliza</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetOppAplazado</name>
+        <label>Set Opp Aplazado</label>
+        <locationX>875</locationX>
+        <locationY>2090</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.PostponementReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_OppPlanificadaValue</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PlanificarLlamada</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PantallaPlanificarLlamada</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SetOppPerdida</name>
+        <label>Set Opp Perdida</label>
+        <locationX>567</locationX>
+        <locationY>2090</locationY>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Perdido</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>OpportunityVariable.Loss_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var_OppPerdidaValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>OppBlecisYMotivoSoloGratuito</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Ganada</name>
+        <choiceText>Ganada</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Ganada</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Perdida</name>
+        <choiceText>Perdida</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Perdida</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Planificada</name>
+        <choiceText>Planificada</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Planificada</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>UniqueName</name>
+        <choiceText xsi:nil="true"/>
+        <dataType>String</dataType>
+        <value>
+            <stringValue> </stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>Comprobamos que el email tiene un formato válido</description>
+        <name>Decision_EmailValido</name>
+        <label>Decision_EmailValido</label>
+        <locationX>380</locationX>
+        <locationY>1082</locationY>
+        <defaultConnector>
+            <targetReference>Set_MostrarErrorEmailValidacionTrue</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>EmailValido_No</defaultConnectorLabel>
+        <rules>
+            <name>EmailValido_Si</name>
+            <conditionLogic>(1 AND (2 OR 3) AND 4 ) OR ( NOT(1) AND 3 AND NOT(4) )</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_ValidarEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Ganada</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Perdida</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_EmailValue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_ContactosDuplicados</targetReference>
+            </connector>
+            <label>EmailValido_Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el email está informado.</description>
+        <name>Decision_EstaEmailRelleno</name>
+        <label>Decision_EstaEmailRelleno?</label>
+        <locationX>611</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Estado_de_la_oportunidad</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>EstaEmailRelleno?_Si</defaultConnectorLabel>
+        <rules>
+            <name>EstaEmailRelleno_No</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>RecuperamosContact.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Ganada</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Perdida</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_OppGanadaOPerdida</targetReference>
+            </connector>
+            <label>EstaEmailRelleno?_No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si ya existe algún registro con el email introducido</description>
+        <name>Decision_Hay_duplicados</name>
+        <label>Decision_¿Hay duplicados?</label>
+        <locationX>182</locationX>
+        <locationY>1406</locationY>
+        <defaultConnector>
+            <targetReference>Set_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>¿Hay duplicados?_No</defaultConnectorLabel>
+        <rules>
+            <name>Hay_duplicados_Si</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_ContactosDuplicados</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_LeadsDuplicados</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_MostrarErrorEmailDuplicadoTrue</targetReference>
+            </connector>
+            <label>¿Hay duplicados?_Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si la opp es ganada o perdida</description>
+        <name>Decision_OppGanadaOPerdida</name>
+        <label>Decision_OppGanadaOPerdida?</label>
+        <locationX>380</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Set_EntradaMotivoPerdida</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>OppGanadaOPerdida?_Perdida</defaultConnectorLabel>
+        <rules>
+            <name>OppGanadaOPerdida_Ganada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Ganada</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_EntradaMotivoGanancia</targetReference>
+            </connector>
+            <label>OppGanadaOPerdida?_Ganada</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si la poliza está informada revisando el campo de la oportunidad</description>
+        <name>Decision_PolizaInformada</name>
+        <label>Decision_PolizaInformada?</label>
+        <locationX>83</locationX>
+        <locationY>2414</locationY>
+        <defaultConnector>
+            <targetReference>Set_MensajeErrorPolizaTrue</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>PolizaInformada?_No</defaultConnectorLabel>
+        <rules>
+            <name>PolizaInformada_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_RecuperamosLaOpp.policy_number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_OPP_StageReasons</targetReference>
+            </connector>
+            <label>PolizaInformada?_Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Estado_de_la_oportunidad</name>
+        <label>Estado de la oportunidad</label>
+        <locationX>611</locationX>
+        <locationY>1982</locationY>
+        <defaultConnectorLabel>Otros</defaultConnectorLabel>
+        <rules>
+            <name>Oportunidad_Ganada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Ganada</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetGanadaOpp</targetReference>
+            </connector>
+            <label>Oportunidad Ganada</label>
+        </rules>
+        <rules>
+            <name>OportunidadPerdida</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Perdida</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetOppPerdida</targetReference>
+            </connector>
+            <label>Oportunidad Perdida</label>
+        </rules>
+        <rules>
+            <name>OportunidadPlanificada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Estado_oportunidad</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Planificada</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetOppAplazado</targetReference>
+            </connector>
+            <label>Oportunidad planificada</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OppBlecisYMotivoSoloGratuito</name>
+        <label>Opp Blecis Y Motivo Solo gratuito</label>
+        <locationX>567</locationX>
+        <locationY>2198</locationY>
+        <defaultConnector>
+            <targetReference>Update_OPP_StageReasons</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Si_OppBlecisYMotivoSoloGratuito</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityVariable.Loss_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Solo gratuito</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OpportunityVariable.CTI_Campaign__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>BLECIS</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pantalla_MostrarInformacionLegal</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>1007</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SwitchOff</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowCampaignMember__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>TextosArgumentario</targetReference>
+            </connector>
+            <label>SwitchOff</label>
+        </rules>
+    </decisions>
+    <description>Gestiona los intereses de la oportunidad y llama al Componente Lightning de Schedule CALL (HEADER dinámico incorporado con imagen como recurso estático y textos de objeto Textos de Argumentario) Trata la salida del flujo y planificación de llamadas
+
+29/08: Se añade el componente para seleccionar la póliza para permitir cerrar la oportunidad
+31/08: Se cambia l actualización de la opp para no pisar los cambios actualizados por el cmp de pólizas
+19/10 AMT: Se cambian las cabeceras de las pantallas
+20/10 AMT: Borrado variable header
+20/10 NRG: Añadido consolidación de pantalla y motivos de perdida para medio prestamos
+21/10 NRG: Movido la validación de email a antes de ganar-perder-aplazar la opp
+02/11 NRG: Añadido motivo de ganancia cuando el medio es blecis
+02/11 NRG: Añadido nuevo campo email para ganar la opp
+28/11 MMV: Cambio para usar IsConverted en lugar de ConvertedContactId
+29/05/2023 JCB: Se añade pantalla para mostrar información legal para Opps Blecis y Motivo Perdida Solo gratuito.
+27/06/2023 JCB: Se añade Lista de selección dependiente AceleradorOfrecido-Ramo-ImporteAcelerador
+30/06/2023 JCB: Se añade Ramo salud a Acelerador Ofrecido</description>
+    <dynamicChoiceSets>
+        <description>Valores si/no si se ha ofrecido Acelerador</description>
+        <name>AceleradorOfrecido_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>AceleradorOfrecido__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorAccidentes_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorAccidentes__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorAutos_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorAutos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorDecesos_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorDecesos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorHogar_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorHogar__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorSaludo_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorSalud__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para importes Acelerador Ofrecido del Ramo correspondiente</description>
+        <name>ImporteAceleradorVida_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ImporteAceleradorVida__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>MotivosAplazadoChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>PostponementReason__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>MotivosGanadaChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Win_Reason__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>MotivosPerdidaChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Loss_Reason__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist de motivo de ganancia cuando el medio es BBDD</description>
+        <name>PicklistOppGanadaBBDDSalientes</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppGanadaSalientesBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist con los valores de motivo de ganancia para entrantes basicos</description>
+        <name>picklistOppGanadaEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppGanadaEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist de motivo ganancia cuando el medio es prestamos</description>
+        <name>PicklistOppGanadaPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppGanadaPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de ganancia cuando el flujo es salientes basicos</description>
+        <name>PicklistOppGanadaSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppGanadaSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de perdida cuando el medio es BBDD</description>
+        <name>PicklistOppPerdidaBBDD</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaSalientesBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>valores picklist de motivo de perdida para medio blecis</description>
+        <name>PicklistOppPerdidaBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de perdida de entrantes basicos</description>
+        <name>PicklistOppPerdidaEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para opp perdida con el medio  prestamos</description>
+        <name>PicklistOppPerdidaPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de perdida de salientes basicos</description>
+        <name>PicklistOppPerdidaSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo aplazamiento cuando el medio es BBDD</description>
+        <name>PicklistOppPlanificadaBBDD</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaSalientesBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo aplazamiento cuando el medio es blecis</description>
+        <name>PicklistOppPlanificadaBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>valores picklist para entrantes básicos</description>
+        <name>PicklistOppPlanificadaEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores motivo aplazamiento cuando el medio es prestamos</description>
+        <name>PicklistOppPlanificadaPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de aplazamiento salientes basicos</description>
+        <name>PicklistOppPlanificadaSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores lista de selección Ramo</description>
+        <name>Ramo_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>line_insurance__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist para Ramo que tienen importes definidos para el Acelerador Ofrecido</description>
+        <name>RamoAceleradorOfrecido_ChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RamosAceleradorOfrecido__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <description>Recogemos el valor del campo email que esté relleno</description>
+        <name>For_EmailValue</name>
+        <dataType>String</dataType>
+        <expression>IF( 
+  NOT( ISBLANK( {!ScreenContactEmailGanada.value} ) ), 
+  {!ScreenContactEmailGanada.value}, 
+  {!ScreenContactEmailPerdida.value}
+ )</expression>
+    </formulas>
+    <formulas>
+        <description>Fórmula para el texto que se mostrará referente al envío de información legar (Email, SMS o locución legal)</description>
+        <name>Formula_TextoInformacionLegal</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!RecuperamosContact.Email})), {!$Label.InformacionLegalEmail}&amp;{!RecuperamosContact.Email}, IF( OR( BEGINS({!RecuperamosContact.MobilePhone}, &quot;6&quot;), BEGINS({!RecuperamosContact.MobilePhone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!RecuperamosContact.MobilePhone}, IF(OR(BEGINS({!RecuperamosContact.Phone}, &quot;6&quot;), BEGINS({!RecuperamosContact.Phone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!RecuperamosContact.Phone}, {!$Label.InfomracionLegalLocucion})))</expression>
+    </formulas>
+    <formulas>
+        <description>Comprobamos a través de regex que el email tiene el formato correcto</description>
+        <name>Formula_ValidarEmail</name>
+        <dataType>Boolean</dataType>
+        <expression>REGEX( {!For_EmailValue} , &quot;^\\(([a-zA-Z0-9 _\\-\\.\\+]+)\\)\\ ([a-zA-Z0-9\n&quot; +
+               &quot;_\\!\\#\\$\\%\\&amp;amp;\\&apos;\\*\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\\n&quot; +
+                &quot;.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\w\n&quot; +
+                &quot;_\\!\\#\\$\\%\\&amp;amp;\\&apos;\\*\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3}\n&quot; +
+                &quot;)$|^([a-zA-Z0-9 \\w\n&quot; +
+                &quot;_\\!\\#\\$\\%\\&amp;amp;\\&apos;\\*\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\\n&quot; +
+                &quot;.[0-9]{1,3}\\.)|(([a-zA-Z0-9_\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Variable importe acelerador especificado por pantalla</description>
+        <name>Var_ImporteAcelerador</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK(  {!Picklist_ImporteAutos})  ),  {!Picklist_ImporteAutos} , 
+IF( NOT( ISBLANK(  {!Picklist_AceleradorHogar} ) ),  {!Picklist_AceleradorHogar} ,  
+IF( NOT( ISBLANK(  {!Picklist_AceleradorVida} ) ),  {!Picklist_AceleradorVida} , 
+IF( NOT( ISBLANK( {!Picklist_AceleradorAccidentes}  ) ),  {!Picklist_AceleradorAccidentes} , 
+IF( NOT( ISBLANK(  {!Picklist_AceleradorDecesos}  ) ), {!Picklist_AceleradorDecesos} , 
+IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud} , &quot;&quot;
+))))))</expression>
+    </formulas>
+    <formulas>
+        <description>Almacena el valor del picklist que se haya mostrado de Opp Ganada</description>
+        <name>Var_OppGanadaValue</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK( TEXT( {!PicklistOppGanadaBBDDSalientes} ) ) ), TEXT( {!PicklistOppGanadaBBDDSalientes} ),
+ IF ( NOT( ISBLANK( TEXT( {!picklistOppGanadaEntrantesBasicos} ) ) ), TEXT( {!picklistOppGanadaEntrantesBasicos} ), 
+  IF( NOT( ISBLANK( TEXT( {!PicklistOppGanadaPrestamos} ) ) ), TEXT( {!PicklistOppGanadaPrestamos} ),
+   IF( NOT( ISBLANK( TEXT( {!PicklistOppGanadaSalientesBasicos} ) ) ), TEXT( {!PicklistOppGanadaSalientesBasicos} ),
+     IF ( NOT( ISBLANK( TEXT( {!MotivosGanadaChoiceSet} ) ) ), TEXT( {!MotivosGanadaChoiceSet} ),&quot;Error: No hay valor&quot;
+     )
+   )
+  )
+ )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Almacena el valor de Opp Perdida del picklist que se haya mostrado en la pantalla</description>
+        <name>Var_OppPerdidaValue</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK( TEXT( {!PicklistOppPerdidaBBDD} ) ) ), TEXT( {!PicklistOppPerdidaBBDD} ),
+ IF ( NOT( ISBLANK( TEXT( {!PicklistOppPerdidaBlecis} ) ) ), TEXT( {!PicklistOppPerdidaBlecis} ), 
+  IF( NOT( ISBLANK( TEXT( {!PicklistOppPerdidaEntrantesBasicos} ) ) ), TEXT( {!PicklistOppPerdidaEntrantesBasicos} ),
+   IF( NOT( ISBLANK( TEXT( {!PicklistOppPerdidaPrestamos} ) ) ), TEXT( {!PicklistOppPerdidaPrestamos} ),
+    IF( NOT( ISBLANK( TEXT( {!PicklistOppPerdidaSalientesBasicos} ) ) ), TEXT( {!PicklistOppPerdidaSalientesBasicos} ),
+     IF ( NOT( ISBLANK( TEXT( {!MotivosPerdidaChoiceSet} ) ) ), TEXT( {!MotivosPerdidaChoiceSet} ) ,&quot;Error: No hay valor&quot;
+     )
+    )
+   )
+  )
+ )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Almacena el valor de Opp Planificada del picklist que se haya mostrado en la screen</description>
+        <name>Var_OppPlanificadaValue</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK( TEXT( {!PicklistOppPlanificadaBBDD} ) ) ), TEXT( {!PicklistOppPlanificadaBBDD} ),
+ IF ( NOT( ISBLANK( TEXT( {!PicklistOppPlanificadaBlecis} ) ) ), TEXT( {!PicklistOppPlanificadaBlecis} ), 
+  IF( NOT( ISBLANK( TEXT( {!PicklistOppPlanificadaEntrantesBasicos} ) ) ), TEXT( {!PicklistOppPlanificadaEntrantesBasicos} ),
+   IF( NOT( ISBLANK( TEXT( {!PicklistOppPlanificadaPrestamos} ) ) ), TEXT( {!PicklistOppPlanificadaPrestamos} ),
+    IF( NOT( ISBLANK( TEXT( {!PicklistOppPlanificadaSalientesBasicos} ) ) ), TEXT( {!PicklistOppPlanificadaSalientesBasicos} ),
+     IF( NOT( ISBLANK( TEXT( {!MotivosAplazadoChoiceSet} ) ) ), TEXT( {!MotivosAplazadoChoiceSet} ) ,&quot;Error: No hay valor&quot;
+     )
+    )
+   )
+  )
+ )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Dependiendo si se ha ofrecido acelerador, se toma el Ramo existente previamente o el nuevo Ramo definido por el usuario.</description>
+        <name>var_RamoAceleradorOfrecido</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK(  {!Picklist_RamoAceleradorOfrecido} ) ), {!Picklist_RamoAceleradorOfrecido},  TEXT({!OpportunityVariable.line_insurance__c}))</expression>
+    </formulas>
+    <interviewLabel>Subflujo Pantalla Gestion Oportunidad {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Pantalla Gestion Interes Oportunidad</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Buscamos si existe algún contacto en la bbdd con este email</description>
+        <name>Get_ContactosDuplicados</name>
+        <label>Get_ContactosDuplicados</label>
+        <locationX>182</locationX>
+        <locationY>1190</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_LeadsDuplicados</targetReference>
+        </connector>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>For_EmailValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>OpportunityVariable.Account.PersonContactId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_LeadsDuplicados</name>
+        <label>Get_LeadsDuplicados</label>
+        <locationX>182</locationX>
+        <locationY>1298</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_Hay_duplicados</targetReference>
+        </connector>
+        <filters>
+            <field>Email</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>For_EmailValue</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsConverted</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recuperamos la opp después de asignar la póliza para comprobar si efectivamente se ha informado.</description>
+        <name>Get_RecuperamosLaOpp</name>
+        <label>Get_RecuperamosLaOpp</label>
+        <locationX>83</locationX>
+        <locationY>2306</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_PolizaInformada</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityVariable.Id</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recuperamos el contacto relacionada con la oportunidad</description>
+        <name>RecuperamosContact</name>
+        <label>Recuperamos el Contact</label>
+        <locationX>611</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Elegir_estado_oportunidad</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityVariable.Account.PersonContactId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
+        <name>TextosArgumentario</name>
+        <label>TextosArgumentario</label>
+        <locationX>611</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RecuperamosContact</targetReference>
+        </connector>
+        <filters>
+            <field>Flujo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SubflujoPantallaGestionInteresOportunidad</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Idioma__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.LanguageLocaleKey</elementReference>
+            </value>
+        </filters>
+        <object>TextoArgumentario__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <description>Actualizamos el contacto con el nuevo email</description>
+        <name>ActualizamosContacto</name>
+        <label>Actualizamos el Contacto</label>
+        <locationX>314</locationX>
+        <locationY>1622</locationY>
+        <connector>
+            <targetReference>Estado_de_la_oportunidad</targetReference>
+        </connector>
+        <inputReference>RecuperamosContact</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza la oportunidad, solo los campos de StageName y Reasons (Win, Loss, Postponement) para que no pise lo actualizado por el componente de Polizas</description>
+        <name>Update_OPP_StageReasons</name>
+        <label>Update Oportunidad Stage &amp; Reasons</label>
+        <locationX>611</locationX>
+        <locationY>2864</locationY>
+        <connector>
+            <targetReference>ExcluirInteres</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityVariable.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AceleradorOfrecido__c</field>
+            <value>
+                <elementReference>OpportunityVariable.AceleradorOfrecido__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ImporteAcelerador__c</field>
+            <value>
+                <elementReference>OpportunityVariable.ImporteAcelerador__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Loss_Reason__c</field>
+            <value>
+                <elementReference>OpportunityVariable.Loss_Reason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PostponementReason__c</field>
+            <value>
+                <elementReference>OpportunityVariable.PostponementReason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <elementReference>OpportunityVariable.StageName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Win_Reason__c</field>
+            <value>
+                <elementReference>OpportunityVariable.Win_Reason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>line_insurance__c</field>
+            <value>
+                <elementReference>OpportunityVariable.line_insurance__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <screens>
+        <name>Elegir_estado_oportunidad</name>
+        <label>Elegir estado oportunidad</label>
+        <locationX>611</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Decision_EstaEmailRelleno</targetReference>
+        </connector>
+        <fields>
+            <name>S00_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Estado_oportunidad</name>
+            <choiceReferences>Ganada</choiceReferences>
+            <choiceReferences>Perdida</choiceReferences>
+            <choiceReferences>Planificada</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_EstadoOportunidad</elementReference>
+            </defaultValue>
+            <fieldText>Estado oportunidad</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoGanadaScreenDefault</name>
+            <choiceReferences>MotivosGanadaChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Ganada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoGanadaScreenEntrantesBasicos</name>
+            <choiceReferences>picklistOppGanadaEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Ganada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoGanadaScreenSalientesBasicos</name>
+            <choiceReferences>PicklistOppGanadaSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Ganada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoGanadaScreenSalientesBBDD</name>
+            <choiceReferences>PicklistOppGanadaBBDDSalientes</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Ganada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoGanadaScreenSalientesPrestamos</name>
+            <choiceReferences>PicklistOppGanadaPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Ganada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadaScreenDefault</name>
+            <choiceReferences>MotivosAplazadoChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadoScreenEntrantesBasicos</name>
+            <choiceReferences>PicklistOppPlanificadaEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadoScreenSalientesBasicos</name>
+            <choiceReferences>PicklistOppPlanificadaSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadoScreenSalientesBBDD</name>
+            <choiceReferences>PicklistOppPlanificadaBBDD</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadoScreenBlecis</name>
+            <choiceReferences>PicklistOppPlanificadaBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoAplazadoScreenSalientesPrestamos</name>
+            <choiceReferences>PicklistOppPlanificadaPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazada</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenDefault</name>
+            <choiceReferences>MotivosPerdidaChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenEntrantesBasicos</name>
+            <choiceReferences>PicklistOppPerdidaEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenBlecis</name>
+            <choiceReferences>PicklistOppPerdidaBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenSalientesBasicos</name>
+            <choiceReferences>PicklistOppPerdidaSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenPrestamos</name>
+            <choiceReferences>PicklistOppPerdidaPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MotivoPerdidaScreenSalientesBBDD</name>
+            <choiceReferences>PicklistOppPerdidaBBDD</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Var_MotivoPerdidaOGanancia</elementReference>
+            </defaultValue>
+            <fieldText>Motivo Perdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorOfrecido</name>
+            <choiceReferences>AceleradorOfrecido_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_RamoAceleradorOfrecido</name>
+            <choiceReferences>RamoAceleradorOfrecido_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Ramo</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_ImporteAutos</name>
+            <choiceReferences>ImporteAceleradorAutos_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorHogar</name>
+            <choiceReferences>ImporteAceleradorHogar_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorVida</name>
+            <choiceReferences>ImporteAceleradorVida_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorAccidentes</name>
+            <choiceReferences>ImporteAceleradorAccidentes_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorDecesos</name>
+            <choiceReferences>ImporteAceleradorDecesos_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Picklist_AceleradorSalud</name>
+            <choiceReferences>ImporteAceleradorSaludo_ChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Importe acelerador ofrecido</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Elegir_estado_oportunidad_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Pantalla_MostrarInformacionLegal</name>
+        <label>Pantalla_MostrarInformacionLegal</label>
+        <locationX>435</locationX>
+        <locationY>2306</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_OPP_StageReasons</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayText_InformacionLegal</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(16, 121, 18);&quot;&gt;{!Formula_TextoInformacionLegal}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Antes aquí se incorporaba el LWC, ahora solo se muestra el mensaje</description>
+        <name>PantallaPlanificarLlamada</name>
+        <label>PantallaPlanificarLlamada</label>
+        <locationX>875</locationX>
+        <locationY>2198</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_OPP_StageReasons</targetReference>
+        </connector>
+        <fields>
+            <name>S02_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TextoPlanificarLlamada</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto2__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Pantalla para , en caso de que se quiera cerrar la oportunidad como ganada se pueda seleccionar una póliza</description>
+        <name>S01_PantallaAsignarPoliza</name>
+        <label>S01 Pantalla Asignar Póliza</label>
+        <locationX>83</locationX>
+        <locationY>2198</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_RecuperamosLaOpp</targetReference>
+        </connector>
+        <fields>
+            <name>S01_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>CmpCESS_SelecClientPolicyModal</name>
+            <extensionName>c:CESS_SelecClientPolicyModal</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>OpportunityVariable.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>sObjectName</name>
+                <value>
+                    <stringValue>Opportunity</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>errorPoliza</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(255, 0, 0);&quot;&gt;Debe seleccionar número de póliza para continuar.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Switch</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>CTICampaignMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Lista de IDs de intereses excluidos para filtrar los Intereses obtenidos (CM, CMAG y OPP). Este parámetro de entrada en este flujo se pasa y devuelve en los flujos en los que se puede estar tratando y por tanto excluyendo un nuevo interés.</description>
+        <name>InteresExcluido</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>OpportunityVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Variable que controla que se muestre o no el planificador de llamada cuando se cierra el argumentario. Es de salida puesto que el flujo principal debe controlar que se haya indicado la planificación.</description>
+        <name>PlanificarLlamada</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Almacena el valor introducido en el Screen para email</description>
+        <name>Var_EntradaEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Almacena el valor del estado de la oportunidad seleccionado en el screen</description>
+        <name>Var_EstadoOportunidad</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el nombre de la persona con la que estamos hablando y que vendrá del lead o del contacto.</description>
+        <name>Var_INOUT_Heading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Imagen de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el ícono que se muestra en la cabecera.</description>
+        <name>Var_INOUT_HeadingIcon</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de subcabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el el interés (Ramo) que se está tratando en ese momento y que depende de dónde provenga el interés.</description>
+        <name>Var_INOUT_SubHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Indica si se debe mostrar el mensaje de error para póliza o no</description>
+        <name>Var_MensajeErrorPoliza</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Indica si se debe mostrar el mensaje de error para un email duplicado</description>
+        <name>Var_MostrarErrorEmailDuplicado</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Indica si mostrar el error de mensaje de validación</description>
+        <name>Var_MostrarErrorEmailValidacion</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Almacena el valor de motivo de perdida o de ganancia</description>
+        <name>Var_MotivoPerdidaOGanancia</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

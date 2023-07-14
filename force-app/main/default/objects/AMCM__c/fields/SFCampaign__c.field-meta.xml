@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFCampaign__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Campaña de SF al que está asociado</description>
+    <externalId>false</externalId>
+    <label>Campaña SF</label>
+    <referenceTo>Campaign</referenceTo>
+    <relationshipLabel>Miembros de campaña AG</relationshipLabel>
+    <relationshipName>Miembros_de_campa_a_AG</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

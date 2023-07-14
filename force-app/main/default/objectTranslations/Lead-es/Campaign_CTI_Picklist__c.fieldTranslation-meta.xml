@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>Campaign_CTI_Picklist__c</name>
+    <picklistValues>
+        <masterLabel>CP - CESS_BLECIS_SEV</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - CESS_LEADS</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - CESS_PRESTAMOS</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CP - CESS_VC</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

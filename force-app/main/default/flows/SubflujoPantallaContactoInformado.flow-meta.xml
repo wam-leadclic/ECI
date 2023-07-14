@@ -1,0 +1,2243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <description>Asigna a true la variable para que el flujo principal vuelva a la pantalla de  intereses</description>
+        <name>AsignaVolverAPantallaIntereses</name>
+        <label>Asigna Volver a Pantalla Intereses</label>
+        <locationX>2624</locationX>
+        <locationY>1430</locationY>
+        <assignmentItems>
+            <assignToReference>VolverAPantallaIntereses</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_CMMKToCMAG</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Marca la variable de PlanificarLlamada para que se trate en el flujo principal (variable de salida)</description>
+        <name>MarcaPlanificarLlamada</name>
+        <label>MarcaPlanificarLlamada</label>
+        <locationX>2426</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>PlanificarLlamada</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AsignaVolverAPantallaIntereses</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Desactiva las marcas de los errores para que no aparezcan sin necesidad</description>
+        <name>Set_DesactivaMarcasErrores</name>
+        <label>Set Desactiva Marcas errores</label>
+        <locationX>1469</locationX>
+        <locationY>2150</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorPasaporte</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorDuplicado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorNumDocumentoInvalido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_SeCumplenValidaciones</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Marca el interés excluido de salida para CMAG</description>
+        <name>Set_InteresExcluidoCMAG</name>
+        <label>Set_InteresExcluidoCMMAG</label>
+        <locationX>2756</locationX>
+        <locationY>1670</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_InteresExcluido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MCAGVariable.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Marca el interés excluido de salida para CMMKT</description>
+        <name>Set_InteresExcluidoCMMKT</name>
+        <label>Set_InteresExcluidoCMMKT</label>
+        <locationX>2492</locationX>
+        <locationY>1670</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_InteresExcluido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MKTCMVariable.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asignamos true a la variable mostrarErrorNoCualificacion para que se muestre el mensaje de error</description>
+        <name>Set_mostrarErrorNoCualificacionTrue</name>
+        <label>Set_mostrarErrorNoCualificacionTrue</label>
+        <locationX>2954</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorNoCualificacion</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>InformedContactScreen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Ponemos true a la variable que nos indica que hay que mostrar el mensaje de error para pasaporte y ocultamos los demás errores</description>
+        <name>Set_MostrarErrorPasaporteTrue</name>
+        <label>Set_MostrarErrorPasaporteTrue</label>
+        <locationX>1898</locationX>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorPasaporte</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_NumDocumentoValido</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Ocultamos el mensaje de error de duplicidad</description>
+        <name>Set_MostrarMensajeErrorDuplicadoFalse</name>
+        <label>Set_MostrarMensajeErrorDuplicadoFalse</label>
+        <locationX>1106</locationX>
+        <locationY>3866</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorDuplicado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorNumDocumentoInvalido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorPasaporte</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Mostramos el mensaje de error de duplicidad y asignamos a las variables de entrada los datos que se escribieron en la pantalla</description>
+        <name>Set_MostrarMensajeErrorDuplicadoTrueYVariablesEntrada</name>
+        <label>Set_MostrarMensajeErrorDuplicadoTrueYVariablesEntrada</label>
+        <locationX>1634</locationX>
+        <locationY>2750</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorDuplicado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_MostrarMensajeErrorFalse</name>
+        <label>Set MostrarMensajeErrorFalse</label>
+        <locationX>2162</locationX>
+        <locationY>2510</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarErrorPasaporte</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_NumDocumentoValido</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Mostramos el mensaje de error de número de documento inválido y asignamos a las variables de entrada los datos que se escribieron en la pantalla</description>
+        <name>Set_MostrarMensajeErrorNumDocumentoInvalido</name>
+        <label>Set Mostrar Mensaje Error NumDocumento Invalido</label>
+        <locationX>1898</locationX>
+        <locationY>2846</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorNumDocumentoInvalido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Mostramos el mensaje de error de número de documento inválido y asignamos a las variables de entrada los datos que se escribieron en la pantalla</description>
+        <name>Set_MostrarMensajeErrorNumDocumentoInvalidoTrueYVariablesEntrada</name>
+        <label>Set_MostrarMensajeErrorNumDocumentoInvalidoTrueYVariablesEntrada</label>
+        <locationX>578</locationX>
+        <locationY>3110</locationY>
+        <assignmentItems>
+            <assignToReference>Var_MostrarMensajeErrorNumDocumentoInvalido</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Se asigna los valores previos/originales de Document Type y Document Numer</description>
+        <name>Set_PriorValuesDocument</name>
+        <label>Set PriorValuesDocument</label>
+        <locationX>627</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>priorDocumentNumber</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EntradaNumeroDocumento</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>priorDocumentType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EntradaDocumentType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Se asigna el ramo seleccionado (desde pantalla)  al CampaignMember</description>
+        <name>Set_RamoCampaignMember</name>
+        <label>Set_RamoCampaignMember</label>
+        <locationX>363</locationX>
+        <locationY>1358</locationY>
+        <assignmentItems>
+            <assignToReference>MKTCMVariable.LineInsurance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RamoPicklist</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>EsRamoHome</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Se asigna el ramo seleccionado (desde pantalla) al miembro de campaña gestionado.</description>
+        <name>Set_RamoCampaignMemberAG</name>
+        <label>Set_RamoCampaignMemberAG</label>
+        <locationX>627</locationX>
+        <locationY>1358</locationY>
+        <assignmentItems>
+            <assignToReference>MCAGVariable.LineInsurance__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RamoPicklist</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>EsRamoHome</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Actualizamos las variables de entrada con la información de la pantalla Solo el FirstName</description>
+        <name>Set_VariableEntradaFirstName</name>
+        <label>Set Variable Entrada FirstName</label>
+        <locationX>1469</locationX>
+        <locationY>1694</locationY>
+        <assignmentItems>
+            <assignToReference>EntradaFirstName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextFirstName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_RellenoContactId</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Actualizamos las variables de entrada con la información de la pantalla Solo el Tipo y Número de documento</description>
+        <name>Set_VariablesEntradaDocumento</name>
+        <label>Set Variables Entrada Documento</label>
+        <locationX>1557</locationX>
+        <locationY>1934</locationY>
+        <assignmentItems>
+            <assignToReference>EntradaDocumentType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PicklistTipoDeDocumento</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EntradaNumeroDocumento</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TextNumeroDeDocumento</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_DesactivaMarcasErrores</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>CambioDeTomador</name>
+        <choiceText>Cambio de tomador</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cambio de tomador</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ConsultaNoVentaATC</name>
+        <choiceText>Consulta NO Venta - AC</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Consulta NO Venta - ATC</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>GestiondeCartera</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11.36px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;Gestión de Cartera&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Gestión de Cartera</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Llamadacortada</name>
+        <choiceText>Llamada cortada</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Llamada cortada</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Mercanciaalextranjeroodeempresa</name>
+        <choiceText>Mercancía al extranjero o de empresa</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Mercancía al extranjero o de empresa</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>MercanciaDevuelta</name>
+        <choiceText>Mercancia devuelta</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Mercancia devuelta</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoCoincidenDatosVerificacion</name>
+        <choiceText>No coinciden datos verificacion</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No coinciden datos verificacion</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoColabora</name>
+        <choiceText>{!ResultCM}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No colabora</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoCompraPorTelefono</name>
+        <choiceText>No compra por teléfono</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No compra por teléfono</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoContentoConECI</name>
+        <choiceText>No contento con ECI</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No contento con ECI</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Ofertafueradefecha</name>
+        <choiceText>Oferta fuera de fecha</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Oferta fuera de fecha</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>OtrosProductos</name>
+        <choiceText>Otros Productos</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Otros Productos</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>PrefiereiraCentrocomercial</name>
+        <choiceText>Prefiere ir a Centro comercial</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Prefiere ir a Centro comercial</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>salientesble</name>
+        <choiceText>salientesble</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>salientesble</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>YaContratado</name>
+        <choiceText>Ya contratado</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Ya contratado</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Si</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>CallAgainDecision</name>
+        <label>¿Llamar de nuevo?</label>
+        <locationX>2624</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Decision_SeHaSeleccionadoMotivoNoCualificado</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiLlamarDeNuevo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CallAgainQuestion</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PlanificacionDeLlamada</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Dependiendo de si es CMMKT o CMAG actualizamos el interés excluido correspondiente</description>
+        <name>Decision_CMMKToCMAG</name>
+        <label>Decision CMMKT o CMAG</label>
+        <locationX>2624</locationX>
+        <locationY>1550</locationY>
+        <defaultConnector>
+            <targetReference>Set_InteresExcluidoCMAG</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>CMMKToCMAG_AG</defaultConnectorLabel>
+        <rules>
+            <name>CMMKToCMAG_MKT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MKTCMVariable</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_InteresExcluidoCMMKT</targetReference>
+            </connector>
+            <label>CMMKToCMAG_MKT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si está relleno se actualiza el contacto, si no el Lead</description>
+        <name>Decision_ContactIdRelleno</name>
+        <label>¿Esta relleno el ContactId?</label>
+        <locationX>182</locationX>
+        <locationY>2750</locationY>
+        <defaultConnector>
+            <targetReference>ActualizaLeadCamposObligatorios</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ContactIdRelleno_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CTICampaignMember.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ActualizaContactoCamposObligatorios</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el error que da es de validación</description>
+        <name>Decision_ErrorDeValidacion</name>
+        <label>Decision_ErrorDeValidacion</label>
+        <locationX>710</locationX>
+        <locationY>2990</locationY>
+        <defaultConnector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>ErrorDeValidacion_No</defaultConnectorLabel>
+        <rules>
+            <name>ErrorDeValidacion_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Flow.FaultMessage</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>FIELD_CUSTOM_VALIDATION_EXCEPTION</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_MostrarMensajeErrorNumDocumentoInvalidoTrueYVariablesEntrada</targetReference>
+            </connector>
+            <label>ErrorDeValidacion_Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si existe un duplicado</description>
+        <name>Decision_HayDuplicados</name>
+        <label>Decision_HayDuplicados</label>
+        <locationX>908</locationX>
+        <locationY>2630</locationY>
+        <defaultConnector>
+            <targetReference>Set_MostrarMensajeErrorDuplicadoTrueYVariablesEntrada</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Hay Duplicados_Si</defaultConnectorLabel>
+        <rules>
+            <name>Decision_HayDuplicados_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_BuscarContactoDuplicado</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_LeadDuplicado</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_ContactIdRelleno</targetReference>
+            </connector>
+            <label>HayDuplicados_No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si el número de documento es tiene más de 9 dígitos no es válido y hay que mostrar error</description>
+        <name>Decision_NumDocumentoValido</name>
+        <label>¿Número Documento Válido?</label>
+        <locationX>2030</locationX>
+        <locationY>2726</locationY>
+        <defaultConnector>
+            <targetReference>S02_DatosClienteEnlace</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Si</defaultConnectorLabel>
+        <rules>
+            <name>NumDocumentoValido_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_DocumentNumberLength</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>9.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_MostrarMensajeErrorNumDocumentoInvalido</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si se ha seleccionado pasaporte y no es un usuario supervisor muestra el error</description>
+        <name>Decision_PasaporteValido</name>
+        <label>¿Pasaporte Válido?</label>
+        <locationX>2030</locationX>
+        <locationY>2390</locationY>
+        <defaultConnector>
+            <targetReference>Set_MostrarMensajeErrorFalse</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Si</defaultConnectorLabel>
+        <rules>
+            <name>PasaporteValido_No</name>
+            <conditionLogic>1 AND NOT(2) AND NOT(3) AND 4 AND 5 AND (6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>PicklistTipoDeDocumento</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASSPORT</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Supervisor</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Coordinador</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Qualities</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Responsable Contact</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorDocumentType</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>EntradaDocumentType</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorDocumentNumber</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>EntradaNumeroDocumento</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_MostrarErrorPasaporteTrue</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si NO está relleno se asignan las variables actualizadas a las de entrada</description>
+        <name>Decision_RellenoContactId</name>
+        <label>¿Esta relleno el ContactId?</label>
+        <locationX>1469</locationX>
+        <locationY>1814</locationY>
+        <defaultConnector>
+            <targetReference>Set_VariablesEntradaDocumento</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>RellenoContactId_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CTICampaignMember.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_DesactivaMarcasErrores</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si la validación de pasaporte se cumple</description>
+        <name>Decision_SeCumplenValidaciones</name>
+        <label>¿Se cumplen las validaciones?</label>
+        <locationX>1469</locationX>
+        <locationY>2270</locationY>
+        <defaultConnector>
+            <targetReference>Decision_PasaporteValido</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SeCumplenValidaciones_Si</name>
+            <conditionLogic>( (1 AND (2 OR 5 OR 6 OR 7 OR (8 AND 9)) ) OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>PicklistTipoDeDocumento</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASSPORT</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Supervisor</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>PicklistTipoDeDocumento</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASSPORT</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>For_DocumentNumberLength</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>9.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Coordinador</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Qualitites</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Responsable Contact</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorDocumentNumber</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>EntradaNumeroDocumento</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorDocumentType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>EntradaDocumentType</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_LeadDuplicado</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si se ha seleccionado un motivo de no cualificado de entre todos los picklsits</description>
+        <name>Decision_SeHaSeleccionadoMotivoNoCualificado</name>
+        <label>Decision_SeHaSeleccionadoMotivoNoCualificado</label>
+        <locationX>2822</locationX>
+        <locationY>878</locationY>
+        <defaultConnector>
+            <targetReference>Set_mostrarErrorNoCualificacionTrue</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>SeHaSeleccionadoMotivoNoCualificado_No</defaultConnectorLabel>
+        <rules>
+            <name>SeHaSeleccionado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>valorResultadoFinal</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Error: No hay valor</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateResultCMMKT</targetReference>
+            </connector>
+            <label>SeHaSeleccionadoMotivoNoCualificado_Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validamos si el ramo es Home</description>
+        <name>EsRamoHome</name>
+        <label>EsRamoHome</label>
+        <locationX>627</locationX>
+        <locationY>1574</locationY>
+        <defaultConnector>
+            <targetReference>Set_VariableEntradaFirstName</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ramo_Home</name>
+            <conditionLogic>1 OR (2 AND 3) OR 4 OR (5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>MKTCMVariable.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Home</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>MKTCMVariable</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>MKTCMVariable.LineInsurance__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>MCAGVariable.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Home</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>MCAGVariable</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>MCAGVariable.LineInsurance__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>S02_DatosClienteEnlace</targetReference>
+            </connector>
+            <label>Ramo Home</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Decisión a la pregunta de si el cliente quiere ser informado</description>
+        <name>InformedDecision</name>
+        <label>¿Quiere ser informado?</label>
+        <locationX>1625</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>CallAgainDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiQuiere</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GiveInformationQuestion</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetLead</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Se evalúa si es un tipo de Miembro de Campaña Gestionado o Estándar.</description>
+        <name>TipoCampaignMember</name>
+        <label>TipoCampaignMember</label>
+        <locationX>627</locationX>
+        <locationY>1238</locationY>
+        <defaultConnector>
+            <targetReference>EsRamoHome</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>MKT_CM</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MKTCMVariable</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RamoPicklist</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RamoCampaignMember</targetReference>
+            </connector>
+            <label>MKT CM</label>
+        </rules>
+        <rules>
+            <name>AGCM</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MCAGVariable</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RamoPicklist</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RamoCampaignMemberAG</targetReference>
+            </connector>
+            <label>AG CM</label>
+        </rules>
+    </decisions>
+    <description>Pantalla Contacto quiere ser informado (HEADER dinámico incorporado con imagen como recurso estático y texto del objeto Texto de Argumentarios) Trata la salida del flujo y planificación de llamadas
+02/09 MHG: Se arregla la salida de interés excluido porque no tenía en cuenta el interés adicional (MCAG__c)
+30/09 AC: Cambio de preguntas por Textos Argumentario variables
+17/10 Nestor: Consolidacion de pantallas
+18/10 Nestor: Eliminado Get_EnlaceTarificador (Ahora se obtiene a través del objeto Textos de Argumentarios)
+20/10 AMT: Cambios en las cabeceras de las pantallas
+20/10 AMT: Eliminada variable header
+21/10 NRG: Añadido cierre de CMAG para causuistica &quot;No informado&quot;
+27/10 MMV: Control para validar que el número de documento no sea mayor de 9 dígitos
+28/11 MMV: Cambio filtrar la búsqueda de duplicados por los leads No convertidos
+18/04 JLQ: Se añaden los roles definidos como supervisor
+09/05/2023 JCB Corrección validación Pasaporte, revisión de asignación variable MostrarErrorPasaporte.
+22/05/23 SER Se añade comprobación para que el ramo nunca sea Home en una conversión del Lead
+29/05/2023 JCB Comprobación para que MKTCMVariable.Ramo sea != Home ó null y evitar que se creen oportunidades de este Ramo.</description>
+    <dynamicChoiceSets>
+        <description>Valores picklist para medio BBDD o BBDD2</description>
+        <name>PicklistNoCualificadoBBDD</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores no cualificado por defecto</description>
+        <name>PicklistNoCualificadoDefault</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoDefault__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para no cualificado en entrantes basicos</description>
+        <name>PicklistNoCualificadoEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para no cualificado para entrantes blecis</description>
+        <name>PicklistNoCualificadoEntrantesBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoEntrantesBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para no cualificado en entrantes prestamos</description>
+        <name>PicklistNoCualificadoEntrantesPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoEntrantesPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores para no cualificado para salientes basicos</description>
+        <name>PicklistNoCualificadoSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para no cualificado en salientes blecis</description>
+        <name>PicklistNoCualificadoSalientesBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificado_SalientesBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para no cualificado cuando el medio es prestamos en salientes basicos</description>
+        <name>PicklistNoCualificadoSalientesPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>NoCualificadoSalientesPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Picklist de Resultado de campaign Member</description>
+        <name>ResultCM</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Result__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Set de valores de ramo del lead</description>
+        <name>SetRamo</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>line_insurance__c</picklistField>
+        <picklistObject>Lead</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Lista de valores del campo Tipo de documento</description>
+        <name>TipoDocumentoPCS</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>document_type__c</picklistField>
+        <picklistObject>Lead</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Campo tipo de gestion de miembro de campaña</description>
+        <name>TipoGestionCM</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>ManagementType__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <description>Longitud del Número de documento introducido en el formulario</description>
+        <name>For_DocumentNumberLength</name>
+        <dataType>Number</dataType>
+        <expression>LEN({!TextNumeroDeDocumento})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Parseamos el valor de getMetadataNumIntentos a number</description>
+        <name>numIntentosTotales</name>
+        <dataType>Number</dataType>
+        <expression>VALUE({!getMetadataNumIntentos.Value__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Variable en la que se almacena el valor final del campo resultado, comprobará todos los picklist y recogerá el valor del que no esté nulo.</description>
+        <name>valorResultadoFinal</name>
+        <dataType>String</dataType>
+        <expression>IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoDefault} ) ) ), TEXT( {!PicklistNoCualificadoDefault} ),
+ IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoBBDD} ) ) ), TEXT( {!PicklistNoCualificadoBBDD} ),
+  IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoEntrantesBasicos} ) ) ), TEXT( {!PicklistNoCualificadoEntrantesBasicos} ),
+    IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoEntrantesBlecis} ) ) ), TEXT( {!PicklistNoCualificadoEntrantesBlecis} ),
+     IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoEntrantesPrestamos} ) ) ), TEXT( {!PicklistNoCualificadoEntrantesPrestamos} ),
+      IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoSalientesBasicos} ) ) ), TEXT( {!PicklistNoCualificadoSalientesBasicos} ),
+       IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoSalientesBlecis} ) ) ), TEXT( {!PicklistNoCualificadoSalientesBlecis} ),
+        IF( NOT( ISBLANK( TEXT( {!PicklistNoCualificadoSalientesPrestamos} ) ) ), TEXT( {!PicklistNoCualificadoSalientesPrestamos} ), &quot;Error: No hay valor&quot;
+        )
+       )
+      )
+     )
+    )
+  )
+ )
+)</expression>
+    </formulas>
+    <interviewLabel>Subflujo Pantalla Contacto {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Pantalla Contacto Informado</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Buscamos que ya exista un contacto con el tipo de documento y número de documento especificado en el screen.</description>
+        <name>Get_BuscarContactoDuplicado</name>
+        <label>Get Contacto Duplicado</label>
+        <locationX>908</locationX>
+        <locationY>2510</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_HayDuplicados</targetReference>
+        </connector>
+        <filters>
+            <field>personal_document__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>document_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PicklistTipoDeDocumento</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>personal_document__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TextNumeroDeDocumento</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.ContactId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Buscamos Leads por ese tipo y número de documento</description>
+        <name>Get_LeadDuplicado</name>
+        <label>Get Lead Duplicado</label>
+        <locationX>908</locationX>
+        <locationY>2390</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_BuscarContactoDuplicado</targetReference>
+        </connector>
+        <filters>
+            <field>document_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PicklistTipoDeDocumento</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>document_number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TextNumeroDeDocumento</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>document_number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.LeadId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsConverted</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtenemos el contacto para verificar y completar su Número de documento</description>
+        <name>GetContacto</name>
+        <label>Get Contacto</label>
+        <locationX>627</locationX>
+        <locationY>878</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_PriorValuesDocument</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.ContactId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputAssignments>
+            <assignToReference>EntradaFirstName</assignToReference>
+            <field>FirstName</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>EntradaDocumentType</assignToReference>
+            <field>document_type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>EntradaNumeroDocumento</assignToReference>
+            <field>personal_document__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtenemos el Lead para confirmar o rellenar el número de documento</description>
+        <name>GetLead</name>
+        <label>Get Lead</label>
+        <locationX>627</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetContacto</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.LeadId</elementReference>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <outputAssignments>
+            <assignToReference>EntradaFirstName</assignToReference>
+            <field>FirstName</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Leadid</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>EntradaNumeroDocumento</assignToReference>
+            <field>document_number__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>EntradaDocumentType</assignToReference>
+            <field>document_type__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>RamoLead</assignToReference>
+            <field>line_insurance__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtenemos el metadata del número de intentos máximos</description>
+        <name>getMetadataNumIntentos</name>
+        <label>Get Metadata NumIntentos</label>
+        <locationX>1625</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getMetadataResultadoCTI</targetReference>
+        </connector>
+        <filters>
+            <field>Label</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS - CTI - Numero maximo de intentos</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtenemos el metadata del último resultado CTI</description>
+        <name>getMetadataResultadoCTI</name>
+        <label>Get Metadata ResultadoCTI</label>
+        <locationX>1625</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>TextosArgumentario</targetReference>
+        </connector>
+        <filters>
+            <field>Label</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS - CTI - Resultado CTI No Contesta</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
+        <name>TextosArgumentario</name>
+        <label>TextosArgumentario</label>
+        <locationX>1625</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>InformedContactScreen</targetReference>
+        </connector>
+        <filters>
+            <field>Flujo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SubflujoPantallaContactoInformado</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Idioma__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.LanguageLocaleKey</elementReference>
+            </value>
+        </filters>
+        <object>TextoArgumentario__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <description>Actualiza el contacto (si es un contacto) con los datos obligatorios para la conversión</description>
+        <name>ActualizaContactoCamposObligatorios</name>
+        <label>Actualiza el Contacto (Campos Obligatotrios)</label>
+        <locationX>50</locationX>
+        <locationY>2870</locationY>
+        <connector>
+            <targetReference>UpdateMKTCM</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.ContactId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>EntradaFirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>document_type__c</field>
+            <value>
+                <elementReference>EntradaDocumentType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>personal_document__c</field>
+            <value>
+                <elementReference>EntradaNumeroDocumento</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el Lead (si es un Lead) con los campos obligatorios para la conversión</description>
+        <name>ActualizaLeadCamposObligatorios</name>
+        <label>Actualiza el Lead (Campos Obligatorios)</label>
+        <locationX>314</locationX>
+        <locationY>2870</locationY>
+        <connector>
+            <targetReference>UpdateLeadShowCESSInfo</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Decision_ErrorDeValidacion</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.LeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>EntradaFirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>document_number__c</field>
+            <value>
+                <elementReference>EntradaNumeroDocumento</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>document_type__c</field>
+            <value>
+                <elementReference>EntradaDocumentType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>line_insurance__c</field>
+            <value>
+                <elementReference>RamoPicklist</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el campo show_cessinfo__c a false para que no falle la conversión</description>
+        <name>UpdateLeadShowCESSInfo</name>
+        <label>Update Lead (ShowCESSInfo)</label>
+        <locationX>314</locationX>
+        <locationY>2990</locationY>
+        <connector>
+            <targetReference>UpdateMKTCM</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CTICampaignMember.LeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>show_cessinfo__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el status y el resultado del miembro de campaña adiciona (si ha sido seleccionado en la pantalla de intereses)</description>
+        <name>UpdateMCAGAdicional</name>
+        <label>Update MCAG Adicional</label>
+        <locationX>182</locationX>
+        <locationY>3626</locationY>
+        <faultConnector>
+            <targetReference>PantallaMensajeErrorUpdateMCAG</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MCAGVariable.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>LineInsurance__c</field>
+            <value>
+                <elementReference>MCAGVariable.LineInsurance__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <stringValue>Presentar Oferta</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AMCM__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateMKTCM</name>
+        <label>Update MKT CM</label>
+        <locationX>182</locationX>
+        <locationY>3506</locationY>
+        <connector>
+            <targetReference>UpdateMCAGAdicional</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>PantallaMensajeErrorUpdateMCAG</targetReference>
+        </faultConnector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MKTCMVariable.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>LineInsurance__c</field>
+            <value>
+                <elementReference>MKTCMVariable.LineInsurance__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <stringValue>Presentar Oferta</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el campo resultado para miembros de campaña gestionados u adicionales</description>
+        <name>UpdateResultCMAG</name>
+        <label>Update Result CMAG</label>
+        <locationX>2690</locationX>
+        <locationY>1118</locationY>
+        <connector>
+            <targetReference>AsignaVolverAPantallaIntereses</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MCAGVariable.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ManagementType__c</field>
+            <value>
+                <elementReference>TipoGestionCM</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <elementReference>valorResultadoFinal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AMCM__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el campo resultado</description>
+        <name>UpdateResultCMMKT</name>
+        <label>Update Result CMMKT</label>
+        <locationX>2690</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>UpdateResultCMAG</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MKTCMVariable.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ManagementType__c</field>
+            <value>
+                <elementReference>TipodeGestion</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <elementReference>valorResultadoFinal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <screens>
+        <name>InformedContactScreen</name>
+        <label>Pantalla de Contacto Informado</label>
+        <locationX>1625</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>InformedDecision</targetReference>
+        </connector>
+        <fields>
+            <name>S01_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>GiveInformationQuestion</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>{!TextosArgumentario.Etiqueta1__c}</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>errorMensaje</name>
+            <fieldText>&lt;p&gt;Se ha superado el número de intentos de llamadas permitidos.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>CallAgainQuestion</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>{!TextosArgumentario.Etiqueta2__c}</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionDefault</name>
+            <choiceReferences>PicklistNoCualificadoDefault</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionBBDD</name>
+            <choiceReferences>PicklistNoCualificadoBBDD</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionEntrantesBasicos</name>
+            <choiceReferences>PicklistNoCualificadoEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionEntrantesBlecis</name>
+            <choiceReferences>PicklistNoCualificadoEntrantesBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionEntrantesPrestamos</name>
+            <choiceReferences>PicklistNoCualificadoEntrantesPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionSalientesBasicos</name>
+            <choiceReferences>PicklistNoCualificadoSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionSalientesBlecis</name>
+            <choiceReferences>PicklistNoCualificadoSalientesBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PantallaMotivoNoCualificacionSalientesPrestamos</name>
+            <choiceReferences>PicklistNoCualificadoSalientesPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>El motivo de no cualificacion</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>errorNoMotivoNoCualificado</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto6__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>TipodeGestion</name>
+            <choiceReferences>TipoGestionCM</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Tipo de Gestión</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Muestra un mensaje de error</description>
+        <name>PantallaMensajeErrorUpdateMCAG</name>
+        <label>PantallaMensajeError</label>
+        <locationX>1106</locationX>
+        <locationY>3746</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Set_MostrarMensajeErrorDuplicadoFalse</targetReference>
+        </connector>
+        <fields>
+            <name>S03_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MensajeErrorUpdateMCAG</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto5__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: var(--lwc-colorBackgroundInput,rgb(255, 255, 255)); color: var(--lwc-colorTextWeak,rgb(68, 68, 68)); font-size: var(--lwc-fontSize3,0.8125rem); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Permite rellenar los datos del cliente y link a un sistema externo para que el agente pueda presentar la oferta</description>
+        <name>S02_DatosClienteEnlace</name>
+        <label>S02 Datos Cliente y Enlace</label>
+        <locationX>627</locationX>
+        <locationY>1118</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>TipoCampaignMember</targetReference>
+        </connector>
+        <fields>
+            <name>S02_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TextEnlaceTarificador</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto3__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>MensajeConfirmarDatos</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto4__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>TextFirstName</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>EntradaFirstName</elementReference>
+            </defaultValue>
+            <fieldText>Nombre</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PicklistTipoDeDocumento</name>
+            <choiceReferences>TipoDocumentoPCS</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>EntradaDocumentType</elementReference>
+            </defaultValue>
+            <fieldText>Tipo de Documento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>errorPasaporte</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0); font-size: 14px;&quot;&gt;El usuario debe ser un&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Supervisor&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0); font-size: 14px;&quot;&gt;&amp;nbsp;para poder seleccionar pasaporte.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>TextNumeroDeDocumento</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>EntradaNumeroDocumento</elementReference>
+            </defaultValue>
+            <fieldText>Número de Documento</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>errorNumDocumentoInvalido</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;El &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Número de Documento&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt; no es un número de {!EntradaDocumentType} válido.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>readOnlyTipoYNumeroDocumento</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tipo de Documento&lt;/p&gt;&lt;p&gt;{!EntradaDocumentType}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Número de Documento&lt;/p&gt;&lt;p&gt;{!EntradaNumeroDocumento}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>errorDuplicado</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Ya existe un &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Contacto&lt;/strong&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt; con este número de documento&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>RamoPicklist</name>
+            <choiceReferences>SetRamo</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Ramo</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>ErrorRamoHome</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(234, 7, 7);&quot;&gt;No se puede convertir un Lead con &lt;/span&gt;&lt;strong style=&quot;color: rgb(234, 7, 7);&quot;&gt;Ramo=Home, &lt;/strong&gt;&lt;span style=&quot;color: rgb(234, 7, 7);&quot;&gt;ni crear oportunidades para éste ramo, por favor cambia el Ramo (no puede dejar este campo en blanco).&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(15, 61, 92); font-family: Roboto, sans-serif; font-size: 12pt;&quot;&gt;Link a un sistema externo para que el agente pueda presentar la oferta&lt;/span&gt;&lt;/p&gt;</helpText>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>getMetadataNumIntentos</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <description>Muestra el planificador de llamadas</description>
+        <name>PlanificacionDeLlamada</name>
+        <label>Planificación de Llamada</label>
+        <locationX>2426</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>MarcaPlanificarLlamada</targetReference>
+        </connector>
+        <flowName>SubflujoPantallaPlanificacionLlamada</flowName>
+        <inputAssignments>
+            <name>CTICMVariable</name>
+            <value>
+                <elementReference>CTICampaignMember</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>MCAdicionalVariable</name>
+            <value>
+                <elementReference>MCAGVariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>MKTCMVariable</name>
+            <value>
+                <elementReference>MKTCMVariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_Heading</name>
+            <value>
+                <elementReference>Var_INOUT_Heading</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_HeadingIcon</name>
+            <value>
+                <elementReference>Var_INOUT_HeadingIcon</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_SubHeading</name>
+            <value>
+                <elementReference>Var_INOUT_SubHeading</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_Heading</assignToReference>
+            <name>Var_INOUT_Heading</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_HeadingIcon</assignToReference>
+            <name>Var_INOUT_HeadingIcon</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_SubHeading</assignToReference>
+            <name>Var_INOUT_SubHeading</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <description>CTI Campaign Member</description>
+        <name>CTICampaignMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Contiene el tipo de documento del Lead o Contacto</description>
+        <name>EntradaDocumentType</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Contiene el nombre del Lead o del Contacto</description>
+        <name>EntradaFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Contiene el número de documento del Lead o Contacto</description>
+        <name>EntradaNumeroDocumento</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Leadid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Registro de entrada por si se está tratando un interés adicional</description>
+        <name>MCAGVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AMCM__c</objectType>
+    </variables>
+    <variables>
+        <name>MKTCMVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Variable que controla que se muestre o no el planificador de llamada cuando se cierra el argumentario. Es de salida puesto que el flujo principal debe controlar que se haya indicado la planificación.</description>
+        <name>PlanificarLlamada</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Almacena variable original de Document Number</description>
+        <name>priorDocumentNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Almacena valor original de Document Type</description>
+        <name>priorDocumentType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Ramo actual del lead</description>
+        <name>RamoLead</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Nos indica si la llamada es blecis</description>
+        <name>Var_EsBlecis</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Nos indica si el flujo es entrantes</description>
+        <name>Var_EsEntrantes</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el nombre de la persona con la que estamos hablando y que vendrá del lead o del contacto.</description>
+        <name>Var_INOUT_Heading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Imagen de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el ícono que se muestra en la cabecera.</description>
+        <name>Var_INOUT_HeadingIcon</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de subcabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el el interés (Ramo) que se está tratando en ese momento y que depende de dónde provenga el interés.</description>
+        <name>Var_INOUT_SubHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Variable que nos indica si mostrar o no el mensaje de error de no seleccionar motivo de no cualificacion</description>
+        <name>Var_MostrarErrorNoCualificacion</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable que nos indica si se debe mostrar el mensaje de error para pasaporte</description>
+        <name>Var_MostrarErrorPasaporte</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable que nos indica si mostrar el mensaje de error para contacto duplicado o no</description>
+        <name>Var_MostrarMensajeErrorDuplicado</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable que nos indica si debemos mostrar el mensaje de error para un numero de documento invalido</description>
+        <name>Var_MostrarMensajeErrorNumDocumentoInvalido</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable de salida que marca el interés excluido en caso de que lo hubiera</description>
+        <name>Var_OUT_InteresExcluido</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Variable de salida que se rellena a true cuando hay que volver a la pantalla de intereses</description>
+        <name>VolverAPantallaIntereses</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

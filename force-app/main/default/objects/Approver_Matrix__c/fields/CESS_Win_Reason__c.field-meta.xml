@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CESS_Win_Reason__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>No usar, pendiente incluir dentro de un proceso de aprobación</inlineHelpText>
+    <label>Motivo de Ganancia</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Por garantías del producto</fullName>
+                <default>false</default>
+                <label>Por garantías del producto</label>
+            </value>
+            <value>
+                <fullName>Por precio</fullName>
+                <default>false</default>
+                <label>Por precio</label>
+            </value>
+            <value>
+                <fullName>Confianza en ECI</fullName>
+                <default>false</default>
+                <label>Confianza en ECI</label>
+            </value>
+            <value>
+                <fullName>Mediación CESS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mediación CESS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

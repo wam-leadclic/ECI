@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Field_Registro_Manual</fullName>
+    <active>false</active>
+    <description>Valida que el medio o el origen deben tener valor.</description>
+    <errorConditionFormula>RecordType.DeveloperName = &quot;CESS_LeadDefault&quot;
+&amp;&amp; ISBLANK( TEXT(Lead__r.source_type__c ))
+&amp;&amp; ISBLANK( TEXT (Lead__r.source_manualrecord__c ))
+&amp;&amp; ISBLANK( $User.cti_ani__c )</errorConditionFormula>
+    <errorDisplayField>SourceManualRecord__c</errorDisplayField>
+    <errorMessage>Debe indicar el origen o el medio.</errorMessage>
+</ValidationRule>

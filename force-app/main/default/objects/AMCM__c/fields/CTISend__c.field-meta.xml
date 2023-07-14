@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTISend__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Marcar a verdadero dispara el proceso para insertar este registro en su campaña CTI de marcador</description>
+    <externalId>false</externalId>
+    <label>Enviar CTI</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

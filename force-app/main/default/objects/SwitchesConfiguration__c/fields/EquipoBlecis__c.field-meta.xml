@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EquipoBlecis__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo para descativar reglas de validación del Perfil CESS - Venta a Distancia Sevilla</description>
+    <externalId>false</externalId>
+    <label>Equipo Blecis</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

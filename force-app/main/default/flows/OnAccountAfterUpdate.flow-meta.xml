@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Añade el registro modificado de CM CTI a la lista para actualizar</description>
+        <name>AsignacionCMCTI</name>
+        <label>Asignación CM CTI</label>
+        <locationX>162</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>CMCTIsActualizar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>LoopCMCTIs</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopCMCTIs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigna el campo Enviar a CTI a verdadero para que se envíe el registro a CTI</description>
+        <name>AsignaEnviarCTITrue</name>
+        <label>Asigna Enviar a CTI a true</label>
+        <locationX>162</locationX>
+        <locationY>935</locationY>
+        <assignmentItems>
+            <assignToReference>LoopCMCTIs.CTISend__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AsignacionCMCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Incrementamos en un segundo la fecha y hora planificada para que se lance la actualización en CTI</description>
+        <name>Set_IncrementaFechaHoraPlanificada</name>
+        <label>Set Incrementa Fecha/Hora Planificada</label>
+        <locationX>138</locationX>
+        <locationY>1727</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Tareas.CESS_Fecha_Planificada__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_FechaHoraPlanificadaIncrementada</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_Task_Update</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Tareas</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Tareas</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Si el cliente tiene llamadas planificadas FUTURAS, se actualizan para que se envíe el nuevo teléfono</description>
+        <name>Decision_ClienteTieneLlamadasPlanificadas</name>
+        <label>¿El Cliente tiene llamadas planificadas?</label>
+        <locationX>182</locationX>
+        <locationY>1487</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ClienteTieneLlamadasPlanificadas_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Task_PlanificadasFuturas</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Tareas</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si está en alguna campaña hay que actualizar los registro CM CTI para enviarlos a PureCloud</description>
+        <name>Decision_ContactoEstaEnCampanaCTI</name>
+        <label>¿El Contacto está en alguna campaña de CTI?</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <defaultConnector>
+            <targetReference>Get_Task_PlanificadasFuturas</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ContactoEstaEnCampanaCTI_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_CMCTIParaEsteContact</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LoopCMCTIs</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si ha cambiado algún teléfono del cliente, mandamos la modificación a CTI</description>
+        <name>Decision_HaCambiadoAlgunTelefono</name>
+        <label>¿Ha cambiado algún teléfono?</label>
+        <locationX>380</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>HaCambiadoAlgunTelefono_Si</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PersonMobilePhone</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Phone</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_RecordTypeId_CMCTI</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Si se cambia alguno de los campos del cuenta que van a CM CTI,  se marca sendCTI = true para forzar el reenvío a Genesys
+
+25/11 MMV: Elimina la actualización de CTISend__c en CM CTI si hay cambio de datos en Lead. Las tareas planificadas si se envían con el cambio (solo cambio de teléfonos)</description>
+    <formulas>
+        <description>Formula para incrementar en un segundo la fecha/hora planificada de la tarea</description>
+        <name>For_FechaHoraPlanificadaIncrementada</name>
+        <dataType>DateTime</dataType>
+        <expression>{!Loop_Tareas.CESS_Fecha_Planificada__c} + 0.000011</expression>
+    </formulas>
+    <interviewLabel>On Account After Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Account After Update</label>
+    <loops>
+        <description>Itera las tareas para cambiar su fecha de planificación</description>
+        <name>Loop_Tareas</name>
+        <label>Loop Tareas</label>
+        <locationX>50</locationX>
+        <locationY>1607</locationY>
+        <collectionReference>Get_Task_PlanificadasFuturas</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_IncrementaFechaHoraPlanificada</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Task_Schedule</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Itera los registro de CMCTI encontrados</description>
+        <name>LoopCMCTIs</name>
+        <label>CM CTI - Bucle</label>
+        <locationX>74</locationX>
+        <locationY>815</locationY>
+        <collectionReference>CMCTIs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AsignaEnviarCTITrue</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Task_PlanificadasFuturas</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Obtiene el registro de CM CTI del contacto si existe</description>
+        <name>Get_CMCTIParaEsteContact</name>
+        <label>Get CM CTI para este contact</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_ContactoEstaEnCampanaCTI</targetReference>
+        </connector>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_RecordTypeId_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PersonContactId</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <outputReference>CMCTIs</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>LeadId</queriedFields>
+        <queriedFields>ContactId</queriedFields>
+        <queriedFields>SourceCess__c</queriedFields>
+        <queriedFields>SourceType__c</queriedFields>
+        <queriedFields>Campaign__c</queriedFields>
+        <queriedFields>CampaignCess__c</queriedFields>
+        <queriedFields>BusinessLineContracted__c</queriedFields>
+        <queriedFields>BussinesLineProhibited__c</queriedFields>
+        <queriedFields>CampaignCTI__c</queriedFields>
+        <queriedFields>CTIOrder__c</queriedFields>
+        <queriedFields>CTISkill__c</queriedFields>
+        <queriedFields>ClientOrLeadNumber__c</queriedFields>
+        <queriedFields>LineInsurance__c</queriedFields>
+        <queriedFields>SFURLPop__c</queriedFields>
+        <queriedFields>RiskPostalCode__c</queriedFields>
+        <queriedFields>CTISend__c</queriedFields>
+        <queriedFields>CTISent__c</queriedFields>
+        <queriedFields>ManagementsCess__c</queriedFields>
+        <queriedFields>ManagementsSF__c</queriedFields>
+        <queriedFields>Age__c</queriedFields>
+        <queriedFields>Gender__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene el Id del tipo de registro de Campaign Member CTI</description>
+        <name>Get_RecordTypeId_CMCTI</name>
+        <label>Get RecordTypeId CM CTI</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_CMCTIParaEsteContact</targetReference>
+        </connector>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CampaignMember</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CTI</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene las tareas de tipo planificadas futuras</description>
+        <name>Get_Task_PlanificadasFuturas</name>
+        <label>Get Tareas Planificadas futuras</label>
+        <locationX>182</locationX>
+        <locationY>1367</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_ClienteTieneLlamadasPlanificadas</targetReference>
+        </connector>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PersonContactId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Schedule Call</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CESS_Fecha_Planificada__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </filters>
+        <object>Task</object>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Task_Schedule</name>
+        <label>Update Schedule Task</label>
+        <locationX>50</locationX>
+        <locationY>1943</locationY>
+        <inputReference>Var_Task_Update</inputReference>
+    </recordUpdates>
+    <startElementReference>Decision_HaCambiadoAlgunTelefono</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Lista de CM CTIs encontrados del contacto</description>
+        <name>CMCTIs</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Lista de los CM CTIs ya modificados que hay que actualizar</description>
+        <name>CMCTIsActualizar</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Variable que contiene las tareas a actualizar con el incremento en la fecha/hora planificada</description>
+        <name>Var_Task_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

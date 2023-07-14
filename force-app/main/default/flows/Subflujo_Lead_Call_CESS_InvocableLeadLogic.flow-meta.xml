@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Realiza la llamada al método sentCTI_crl de la clase InvocableLeadLogic</description>
+        <name>InvocableLeadLogic</name>
+        <label>Invocable Lead Logic - sentCTI_crl</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <actionName>CESS_InvocableLeadLogic</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>leadId</name>
+            <value>
+                <elementReference>LeadId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>method</name>
+            <value>
+                <stringValue>sentCTI_crl</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <description>Switch para deshabilitar esta función en el custom metadata</description>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Switch_Off</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>InvocableLeadLogic</targetReference>
+            </connector>
+            <label>Switch Off</label>
+        </rules>
+    </decisions>
+    <description>Hace la llamada sentCTI_crl para la clase invocableLeadLogic. Esto es para que se envíe el Lead a CRL(SGC) y se recuperen datos de ese sistema externo</description>
+    <interviewLabel>Subflujo- Lead Call CESS InvocableLeadLogic {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo- Lead Call CESS InvocableLeadLogic</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Switch</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>LeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

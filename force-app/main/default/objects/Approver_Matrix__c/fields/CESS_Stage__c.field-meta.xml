@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CESS_Stage__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>No usar, pendiente incluir dentro de un proceso de aprobación</inlineHelpText>
+    <label>Etapa</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vencimiento Futuro</fullName>
+                <default>false</default>
+                <label>Vencimiento Futuro</label>
+            </value>
+            <value>
+                <fullName>Cualificación</fullName>
+                <default>false</default>
+                <label>Cualificación</label>
+            </value>
+            <value>
+                <fullName>Propuesta</fullName>
+                <default>false</default>
+                <label>Propuesta</label>
+            </value>
+            <value>
+                <fullName>Contratado</fullName>
+                <default>false</default>
+                <label>Contratado</label>
+            </value>
+            <value>
+                <fullName>Perdido</fullName>
+                <default>false</default>
+                <label>Perdido</label>
+            </value>
+            <value>
+                <fullName>Suplemento - Aumento</fullName>
+                <default>false</default>
+                <label>Suplemento - Aumento</label>
+            </value>
+            <value>
+                <fullName>Suplemento - Disminución</fullName>
+                <default>false</default>
+                <label>Suplemento - Disminución</label>
+            </value>
+            <value>
+                <fullName>No Realizado</fullName>
+                <default>false</default>
+                <label>No Realizado</label>
+            </value>
+            <value>
+                <fullName>Póliza Anulada</fullName>
+                <default>false</default>
+                <label>Póliza Anulada</label>
+            </value>
+            <value>
+                <fullName>Cobrado</fullName>
+                <default>false</default>
+                <label>Cobrado</label>
+            </value>
+            <value>
+                <fullName>Tramitado CIA</fullName>
+                <default>false</default>
+                <label>Tramitado CIA</label>
+            </value>
+            <value>
+                <fullName>Tramitado REC</fullName>
+                <default>false</default>
+                <label>Tramitado REC</label>
+            </value>
+            <value>
+                <fullName>No procede información</fullName>
+                <default>false</default>
+                <label>No procede información</label>
+            </value>
+            <value>
+                <fullName>Duplicado Documentación</fullName>
+                <default>false</default>
+                <label>Duplicado Documentación</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Default</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>policy_number__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>Win_Reason__c</fieldNames>
+        <picklistValueName>Contratado</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Type</fieldNames>
+        <fieldNames>risk_description__c</fieldNames>
+        <fieldNames>quote_code__c</fieldNames>
+        <info>&lt;p&gt;Obtenga información para realizar la mejor oferta que se ajuste a las necesidades del cliente.&lt;/p&gt;&lt;p&gt;Almacene los datos principales de la oferta y cualquier observación que pudiera ser de utilidad posteriormente.&lt;/p&gt;</info>
+        <picklistValueName>Cualificación</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Loss_Reason__c</fieldNames>
+        <picklistValueName>Perdido</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>quote_code__c</fieldNames>
+        <fieldNames>renewal_date__c</fieldNames>
+        <fieldNames>insurance_company__c</fieldNames>
+        <fieldNames>Loss_Reason__c</fieldNames>
+        <fieldNames>Win_Reason__c</fieldNames>
+        <info>&lt;p&gt;Haga seguimiento a su oferta. Mantenga el contacto.&lt;/p&gt;&lt;p&gt;Identifique y gestione los puntos que no son del total agrado del cliente.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Propuesta</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>renewal_date__c</fieldNames>
+        <fieldNames>nextcontact_date__c</fieldNames>
+        <info>&lt;p&gt;Esperar a estar más cerca del vencimiento del seguro para realizar propuesta.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Planifique el contacto con al menos un mes de anticipación.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;De ser posible intente obtener los motivos por los cuales se estaría interesado o se valoraría un cambio de seguro.&lt;/p&gt;</info>
+        <picklistValueName>Vencimiento Futuro</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

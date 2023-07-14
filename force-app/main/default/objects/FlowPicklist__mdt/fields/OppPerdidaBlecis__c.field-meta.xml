@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppPerdidaBlecis__c</fullName>
+    <description>Valores picklist para oportunidad perdida cuando el medio es Blecis</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppPerdida/Blecis</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Solo gratuito</fullName>
+                <default>true</default>
+                <label>Solo gratuito</label>
+            </value>
+            <value>
+                <fullName>Mejores coberturas otras Cías</fullName>
+                <default>false</default>
+                <label>Mejores coberturas otras Cías</label>
+            </value>
+            <value>
+                <fullName>No venta por precio</fullName>
+                <default>false</default>
+                <label>No venta por precio</label>
+            </value>
+            <value>
+                <fullName>Cobertura por seguro Hogar</fullName>
+                <default>false</default>
+                <label>Cobertura por seguro Hogar</label>
+            </value>
+            <value>
+                <fullName>Es un regalo</fullName>
+                <default>false</default>
+                <label>Es un regalo</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

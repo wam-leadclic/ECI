@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>todas</fullName>
+    <columns>MasterLabel</columns>
+    <columns>CampanaInboundIVR__c</columns>
+    <columns>ScreenFlowName__c</columns>
+    <columns>ScreenFlow_URL__c</columns>
+    <columns>Medio__c</columns>
+    <columns>MensajeBienvenida__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>todas</label>
+    <language>en_US</language>
+</ListView>

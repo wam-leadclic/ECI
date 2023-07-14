@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Elimina los Stages de Basicos de $Flow.ActiveStages</description>
+        <name>Exclude_StagesBasicos</name>
+        <label>Exclude_StagesBasicos</label>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.ActiveStages</assignToReference>
+            <operator>RemoveAll</operator>
+            <value>
+                <elementReference>Stage_070</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Elimina los Stages de Blecis de $Flow.ActiveStages</description>
+        <name>Exclude_StagesBlecis</name>
+        <label>Exclude_StagesBlecis</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.ActiveStages</assignToReference>
+            <operator>RemoveAll</operator>
+            <value>
+                <elementReference>Stage_040</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decision_BasicosBlecis</name>
+        <label>¿Básicos o Blecis¿</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnector>
+            <targetReference>Exclude_StagesBasicos</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Blecis</defaultConnectorLabel>
+        <rules>
+            <name>BasicosBlecis_Basicos</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_IN_Basicos</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Exclude_StagesBlecis</targetReference>
+            </connector>
+            <label>Básicos</label>
+        </rules>
+    </decisions>
+    <description>Subflujo que define las Stages que se usarán para el rastro en la cabecera del Argumentario
+26/10 AMT: Se elimina la stage de Venta cruzada para Blecis.</description>
+    <interviewLabel>Argumentario_Subflow_DefinicionStages {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Argumentario_Subflow_DefinicionStages</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <stages>
+        <description>Pasos previos de la llamada básicamente la &quot;Bienvenida&quot; por el momento</description>
+        <name>Stage_010</name>
+        <isActive>true</isActive>
+        <label>Inicio</label>
+        <stageOrder>10</stageOrder>
+    </stages>
+    <stages>
+        <description>Se inicia este Stage cuando se empieza con la toma de datos de contacto o la revisión de los mismos</description>
+        <name>Stage_020</name>
+        <isActive>true</isActive>
+        <label>Datos de Contacto</label>
+        <stageOrder>20</stageOrder>
+    </stages>
+    <stages>
+        <description>(También podría denominarse Selección de Interes) Se inicia este Stage cuando se entra en la pantalla de gestión de intereses y se va a seleccionar uno</description>
+        <name>Stage_030</name>
+        <isActive>true</isActive>
+        <label>Gestión Intereses</label>
+        <stageOrder>30</stageOrder>
+    </stages>
+    <stages>
+        <description>Solo para Blecis y se inicia cuando se entra en los 2 subflujos de gestión de la mercancía (Comprador y destinatario)</description>
+        <name>Stage_040</name>
+        <isActive>true</isActive>
+        <label>Gestión Mercancía</label>
+        <stageOrder>40</stageOrder>
+    </stages>
+    <stages>
+        <description>Se inicia cuando llega el momento de informar al contacto de forma previa a que muestre o no un interés por la contratación</description>
+        <name>Stage_050</name>
+        <isActive>true</isActive>
+        <label>Realizar presupuesto</label>
+        <stageOrder>50</stageOrder>
+    </stages>
+    <stages>
+        <description>Se inicia cuando se llega a la fase en la que está el &quot;go&quot; o &quot;no-go&quot; de la contratación y se cierra cuando se han completado las gestiones y opciones</description>
+        <name>Stage_060</name>
+        <isActive>true</isActive>
+        <label>Cierre de Oportunidad</label>
+        <stageOrder>60</stageOrder>
+    </stages>
+    <stages>
+        <description>Se inicia cuando se seleccionan nuevos intereses y termina cuando se completa la gestión y se finaliza la llamada</description>
+        <name>Stage_070</name>
+        <isActive>true</isActive>
+        <label>Venta cruzada</label>
+        <stageOrder>70</stageOrder>
+    </stages>
+    <stages>
+        <description>Se inicia cuando se llega a la finalización de la llamada</description>
+        <name>Stage_080</name>
+        <isActive>true</isActive>
+        <label>Finalizar llamada</label>
+        <stageOrder>80</stageOrder>
+    </stages>
+    <startElementReference>Decision_BasicosBlecis</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Parámetro de entrada que si es verdadero indica que estamos en un flujo de Básicos, en caso contrario estamos en Blecis</description>
+        <name>Var_IN_Basicos</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

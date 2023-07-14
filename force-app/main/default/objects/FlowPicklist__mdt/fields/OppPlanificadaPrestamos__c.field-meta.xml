@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppPlanificadaPrestamos__c</fullName>
+    <description>Valores picklist para oportunidad planificada cuando el medio es Prestamos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppPlanificada/Prestamos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No contactado</fullName>
+                <default>true</default>
+                <label>No contactado</label>
+            </value>
+            <value>
+                <fullName>Envío documentación a FECI</fullName>
+                <default>false</default>
+                <label>Envío documentación a FECI</label>
+            </value>
+            <value>
+                <fullName>Pdte decisión</fullName>
+                <default>false</default>
+                <label>Pdte decisión</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

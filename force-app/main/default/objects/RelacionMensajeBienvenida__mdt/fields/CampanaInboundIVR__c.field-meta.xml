@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CampanaInboundIVR__c</fullName>
+    <description>Código de la campaña del marcador que viene como entrante. Puede ser por transferencia o por llamada directa de cliente, por lo que se usa este campo en lugar del DNIS para saber el argumentario</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Campaña Inbound (VR)</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

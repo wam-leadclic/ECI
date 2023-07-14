@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>AsignoMarcaRevisión</description>
+        <name>AsignoMarcaRevisi_n</name>
+        <label>AsignoMarcaRevisión</label>
+        <locationX>50</locationX>
+        <locationY>1919</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.for_review__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno campos Grabacion manual y el fichero de grabación</description>
+        <name>AssignFieldsGrabacionManual</name>
+        <label>Asigno campos Grabación manual</label>
+        <locationX>50</locationX>
+        <locationY>1583</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.recorded__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.recorded_filename__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.cti_filename__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>MarcaRevision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigna el valor de cess phone y CustomerNumber</description>
+        <name>Set_CESS_Phone_Contact_Number</name>
+        <label>Set CESS Phone &amp; Contact Number</label>
+        <locationX>1172</locationX>
+        <locationY>1247</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CESS_Phone__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_Contact_PhoneMobileNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.CESS_numberrecord__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Contact_Fields.CustomerNumber__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_TieneCMRelacionado</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Informo el asunto de la tarea automáticamente</description>
+        <name>Set_SubjectTask</name>
+        <label>Set Asunto de la tarea</label>
+        <locationX>182</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_CalculoSubjectLlamada</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_CMIdRelleno</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigna los datos a los campos Campaña y Campaña CTI</description>
+        <name>Set_Task_Campaign_Campaign_CTI</name>
+        <label>Set Campaign &amp; Campaign CTI</label>
+        <locationX>842</locationX>
+        <locationY>1823</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.campaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_CMCTI_Relacionado.Campaign__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.CTICampaign__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_CMCTI_Relacionado.Campaign.Name</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigna el valor de cess phone y LeadNumber</description>
+        <name>Set_Task_CESSPhone_LeadNumber</name>
+        <label>Set CESS Phone &amp; Lead Number</label>
+        <locationX>908</locationX>
+        <locationY>1247</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CESS_Phone__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_Lead_PhoneMobileNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.CESS_numberrecord__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Lead_Fields.lead_number__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_TieneCMRelacionado</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigna el WhoId de la tarea en función del CM CTI Relacioando</description>
+        <name>Set_Task_WhoIdContact</name>
+        <label>Set WhoId Contact</label>
+        <locationX>138</locationX>
+        <locationY>1151</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GrabacionManual</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigna El WhoId de la tarea en función del CM CTI Relacionado</description>
+        <name>Set_WhoId_Lead</name>
+        <label>Set WhoId Lead</label>
+        <locationX>402</locationX>
+        <locationY>1151</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.WhoId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.LeadId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GrabacionManual</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Actualizo el campo activity date de la tarea y el asunto</description>
+        <name>UpdateTaskLlamadaPlanicicada</name>
+        <label>Actualizo Tarea Llamada Planificada</label>
+        <locationX>1040</locationX>
+        <locationY>791</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ActivityDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CESS_Fecha_Planificada__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_SubjectLlamadaPlanificada</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Decision_TipoObjetoRelacionado</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Si la llamada tiene CampaignMemberId__c relleno, directamente relleno el whoid con el lead o contacto del miembro de campaña</description>
+        <name>Decision_CMIdRelleno</name>
+        <label>¿Tiene Relleno miembro de campaña?</label>
+        <locationX>182</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>Get_CMCTI_Relacionado_Llamada</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Si</defaultConnectorLabel>
+        <rules>
+            <name>CMIdRelleno_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CampaignMemberId__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GrabacionManual</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si la tarea está cerrada, la fecha de planificación no es nulo y la fecha planificada ha cambiado o es nulo</description>
+        <name>Decision_CumpleCriterios</name>
+        <label>¿Cumple Criterios?</label>
+        <locationX>1172</locationX>
+        <locationY>671</locationY>
+        <defaultConnector>
+            <targetReference>Decision_TipoObjetoRelacionado</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>CumpleCriterios_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CESS_Fecha_Planificada__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CESS_Fecha_Planificada__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CESS_Fecha_Planificada__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateTaskLlamadaPlanicicada</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si se obtiene un registro se actualizan los datos de la tarea, si no se encuentra NO se actualizan, porque se pisan en blanco</description>
+        <name>Decision_ExisteCMCTI</name>
+        <label>¿Existe el CM CTI?</label>
+        <locationX>974</locationX>
+        <locationY>1703</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ExisteCMCTI_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_CMCTI_Relacionado</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Task_Campaign_Campaign_CTI</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprueba DesactiveFlowTask__c de los switches</description>
+        <name>Decision_Switches</name>
+        <label>Decision_Switches</label>
+        <locationX>1403</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Flujo Desactivado</defaultConnectorLabel>
+        <rules>
+            <name>Switches_Activo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowTask__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetORG_ApplicationSettings</targetReference>
+            </connector>
+            <label>Flujo Activo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si tiene relleno el campo CampaignMemberId se obtiene para rellenar la campaña y la campaña CTI. SOLO SI HA CAMBIADO</description>
+        <name>Decision_TieneCMRelacionado</name>
+        <label>¿Tiene Campaign Member Relacionado y ha cambiado?</label>
+        <locationX>1172</locationX>
+        <locationY>1463</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>TieneCMRelacionado_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CampaignMemberId__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CampaignMemberId__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CampaignMemberId__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_CMCTI_Relacionado</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Evalua si la relación es con un lead, una oportunidad o un contacto para rellenar los campos de la tarea. SOLO SI HA CAMBIADO</description>
+        <name>Decision_TipoObjetoRelacionado</name>
+        <label>¿De qué tipo es el Objeto relacionado?</label>
+        <locationX>1172</locationX>
+        <locationY>1007</locationY>
+        <defaultConnector>
+            <targetReference>Decision_TieneCMRelacionado</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Sin Cambios</defaultConnectorLabel>
+        <rules>
+            <name>TipoObjetoRelacionado_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.WhoId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Lead_Fields</targetReference>
+            </connector>
+            <label>Lead</label>
+        </rules>
+        <rules>
+            <name>TipoObjetoRelacionado_Contacto</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>003</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.WhoId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact_Fields</targetReference>
+            </connector>
+            <label>Contacto</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>En función de sus campo indica si es de tipo llamada, planificada u otro tipo</description>
+        <name>Decision_TipoTarea</name>
+        <label>¿Qué tipo de tarea es?</label>
+        <locationX>908</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>Otro</defaultConnectorLabel>
+        <rules>
+            <name>TipoTarea_Llamada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CallObject</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_SubjectTask</targetReference>
+            </connector>
+            <label>Llamada</label>
+        </rules>
+        <rules>
+            <name>TipoTarea_Planificada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Schedule Call</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_CumpleCriterios</targetReference>
+            </connector>
+            <label>Planificada</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Evalua el miembro de campaña de la tarea</description>
+        <name>Evalua_miembro_campa_a_CTI</name>
+        <label>Evalua miembro campaña CTI</label>
+        <locationX>402</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>GrabacionManual</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Otro</defaultConnectorLabel>
+        <rules>
+            <name>Contact_Id_no_nulo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Task_WhoIdContact</targetReference>
+            </connector>
+            <label>Contact Id no nulo</label>
+        </rules>
+        <rules>
+            <name>Lead_id_no_nulo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LeadId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_WhoId_Lead</targetReference>
+            </connector>
+            <label>Lead id no nulo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>¿Se está grabando la llamada?</description>
+        <name>GrabacionManual</name>
+        <label>¿Grabación Manual?</label>
+        <locationX>182</locationX>
+        <locationY>1463</locationY>
+        <defaultConnector>
+            <targetReference>MarcaRevision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesGrabacionManual</name>
+            <conditionLogic>2 AND (1 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.cti_filename__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.cti_filename__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.cti_filename__c</leftValueReference>
+                <operator>EndsWith</operator>
+                <rightValue>
+                    <stringValue>.wav</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.WhatId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignFieldsGrabacionManual</targetReference>
+            </connector>
+            <label>Si Grabacion Manual</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Marca Revisión de la tarea. PB Process Builder - CESS - Call Tasks: Decisiones: Grabación No Asociada a Oportunidad, Transferencia No Asociada y Entrante No Asociada</description>
+        <name>MarcaRevision</name>
+        <label>Marca Revisión</label>
+        <locationX>182</locationX>
+        <locationY>1799</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CumpleCriterios</name>
+            <conditionLogic>(1 AND NOT(2)) OR (3 AND 4 AND 5 AND 6 AND 7 AND 8) OR (3 AND 4 AND 5 AND 9 AND 10)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.recorded_filename__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CallType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Inbound</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhoId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.g_sf_searchvalue__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CallDurationInSeconds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.inin_dnis__c</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>sip:313</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CallDisposition</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Gest</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CallDisposition</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoMarcaRevisi_n</targetReference>
+            </connector>
+            <label>Cumple Criterios</label>
+        </rules>
+    </decisions>
+    <description>Debe saltar antes de guardar el registro
+05/11 MHG: Se incorpora el switch de Tareas para poder desactivarlo
+13/12/22 MMV: Se añade rama para tareas Scheduled Call que actualiza datos en la tarea a partir de Lead, Contacto o Oportunidad relacionada</description>
+    <formulas>
+        <description>Autorrelleno campo Subject para tareas de tipo Llamada</description>
+        <name>For_CalculoSubjectLlamada</name>
+        <dataType>String</dataType>
+        <expression>&quot;Llamada &quot; &amp;  TEXT({!$Record.CallType})  &amp; &quot; - &quot; &amp;  {!$Record.CallDisposition}  &amp; &quot; &quot; &amp; LPAD(TEXT(DAY(DATEVALUE({!$Record.CreatedDate}+VALUE({!GetORG_ApplicationSettings.Value__c})/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; LPAD(TEXT(MONTH(DATEVALUE({!$Record.CreatedDate}+ VALUE({!GetORG_ApplicationSettings.Value__c})/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; TEXT(YEAR(DATEVALUE({!$Record.CreatedDate} +VALUE({!GetORG_ApplicationSettings.Value__c} )/24)))  &amp; &quot; &quot; &amp;
+MID(TEXT({!$Record.CreatedDate}+VALUE({!GetORG_ApplicationSettings.Value__c} )/24), LEN(TEXT({!$Record.CreatedDate}+VALUE({!GetORG_ApplicationSettings.Value__c} )/24))-8,5)</expression>
+    </formulas>
+    <formulas>
+        <description>Contiene el número de teléfono del Contacto, priorizando el MobilePhone</description>
+        <name>For_Contact_PhoneMobileNumber</name>
+        <dataType>String</dataType>
+        <expression>IF( 
+   ISBLANK({!Get_Contact_Fields.MobilePhone}),
+   {!Get_Contact_Fields.Phone},
+   {!Get_Contact_Fields.MobilePhone}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Contiene el número de teléfono del Lead, priorizando el MobilePhone</description>
+        <name>For_Lead_PhoneMobileNumber</name>
+        <dataType>String</dataType>
+        <expression>IF( 
+   ISBLANK({!Get_Lead_Fields.MobilePhone}),
+   {!Get_Lead_Fields.Phone},
+   {!Get_Lead_Fields.MobilePhone}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Autorrelleno del Subject para tareas de llamada planificada</description>
+        <name>For_SubjectLlamadaPlanificada</name>
+        <dataType>String</dataType>
+        <expression>&quot;Llamada Planificada &quot; &amp; LPAD(TEXT(DAY(DATEVALUE({!$Record.CESS_Fecha_Planificada__c} +VALUE({!GetORG_ApplicationSettings.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; LPAD(TEXT(MONTH(DATEVALUE({!$Record.CESS_Fecha_Planificada__c} +VALUE({!GetORG_ApplicationSettings.Value__c} )/24))),2,&quot;0&quot;) &amp; &quot;/&quot; &amp; TEXT(YEAR(DATEVALUE({!$Record.CESS_Fecha_Planificada__c} +VALUE({!GetORG_ApplicationSettings.Value__c})/24)))  &amp; &quot; &quot; &amp;
+MID(TEXT({!$Record.CESS_Fecha_Planificada__c} +VALUE({!GetORG_ApplicationSettings.Value__c} )/24), LEN(TEXT({!$Record.CESS_Fecha_Planificada__c} +VALUE({!GetORG_ApplicationSettings.Value__c} )/24))-8,5)</expression>
+    </formulas>
+    <interviewLabel>On Task Before Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Task Before Insert Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Obtiene el registro de Campaign Member CTI relacionado</description>
+        <name>Get_CMCTI_Relacionado</name>
+        <label>Get CM CTI Relacionado</label>
+        <locationX>974</locationX>
+        <locationY>1583</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_ExisteCMCTI</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CampaignMemberId__c</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Se obtiene el miembro de campaña de la tarea</description>
+        <name>Get_CMCTI_Relacionado_Llamada</name>
+        <label>Get CMCTI Relacionado</label>
+        <locationX>402</locationX>
+        <locationY>911</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Evalua_miembro_campa_a_CTI</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CampaignMemberId__c</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <outputReference>CampaignMemberRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>LeadId</queriedFields>
+        <queriedFields>ContactId</queriedFields>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene los datos necesarios del Contacto</description>
+        <name>Get_Contact_Fields</name>
+        <label>Get Contact Fields</label>
+        <locationX>1172</locationX>
+        <locationY>1127</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_CESS_Phone_Contact_Number</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene la información necesaria del Lead relacionado</description>
+        <name>Get_Lead_Fields</name>
+        <label>Get Lead Fields</label>
+        <locationX>908</locationX>
+        <locationY>1127</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Task_CESSPhone_LeadNumber</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </filters>
+        <object>Lead</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Busco el metadata ORG_Time</description>
+        <name>GetORG_ApplicationSettings</name>
+        <label>Get ORG_ApplicationSettings</label>
+        <locationX>908</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_TipoTarea</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ORG_Time</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Value__c</queriedFields>
+    </recordLookups>
+    <startElementReference>Decision_Switches</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Miembro de campaña de la tarea</description>
+        <name>CampaignMemberRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+</Flow>

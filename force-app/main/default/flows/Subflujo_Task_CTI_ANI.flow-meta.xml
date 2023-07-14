@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <constants>
+        <name>TaskIsNew</name>
+        <dataType>Boolean</dataType>
+    </constants>
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Switch_On</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowTask__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_User</targetReference>
+            </connector>
+            <label>Switch On</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Subflujo Task CTI ANI {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Task CTI ANI</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_User</name>
+        <label>Set User</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.Owner:User.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>cti_ani__c</field>
+            <value>
+                <elementReference>TaskRecord.inin_ani__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>cti_dnis__c</field>
+            <value>
+                <elementReference>TaskRecord.inin_dnis__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>TaskRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

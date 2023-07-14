@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoCualificadoSalientesPrestamos__c</fullName>
+    <description>Valores picklist para motivos de no cualificado cuando el medio es Prestamos y llamada Salientes Básicos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>NoCualificado/SalientesPrestamos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No colabora</fullName>
+                <default>true</default>
+                <label>No colabora</label>
+            </value>
+            <value>
+                <fullName>Ya ha contratado</fullName>
+                <default>false</default>
+                <label>Ya ha contratado</label>
+            </value>
+            <value>
+                <fullName>No compra por teléfono</fullName>
+                <default>false</default>
+                <label>No compra por teléfono</label>
+            </value>
+            <value>
+                <fullName>Consulta NO venta - ATC</fullName>
+                <default>false</default>
+                <label>Consulta NO venta - ATC</label>
+            </value>
+            <value>
+                <fullName>Prefiere ir a Centro comercial</fullName>
+                <default>false</default>
+                <label>Prefiere ir a Centro comercial</label>
+            </value>
+            <value>
+                <fullName>Otros Productos</fullName>
+                <default>false</default>
+                <label>Otros Productos</label>
+            </value>
+            <value>
+                <fullName>Llamada cortada</fullName>
+                <default>false</default>
+                <label>Llamada cortada</label>
+            </value>
+            <value>
+                <fullName>Gestión de Cartera</fullName>
+                <default>false</default>
+                <label>Gestión de Cartera</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

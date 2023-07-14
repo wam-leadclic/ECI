@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>CESS LEAD</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Phone</fieldNames>
+        <fieldNames>MobilePhone</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Contacte al candidato. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;Este proceso normalmente será guiado por la CTI.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Status</fieldNames>
+        <fieldNames>result__c</fieldNames>
+        <info>&lt;p&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Enhorabuena!&lt;/b&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt; Ahora es el momento de convertir el lead en una oportunidad. Luego, continúe el proceso de calificación con su nuevo contacto.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Status</fieldNames>
+        <fieldNames>result__c</fieldNames>
+        <info>&lt;p&gt;Marcar el lead como no cualificado cuando no tiene interés o no es un cliente potencial.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Indique el resultado, permitirá medir la fuente u origen del lead para ser potenciadas o descartadas en función de ello.&lt;/p&gt;</info>
+        <picklistValueName>Unqualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>document_type__c</fieldNames>
+        <fieldNames>document_number__c</fieldNames>
+        <fieldNames>Status</fieldNames>
+        <fieldNames>result__c</fieldNames>
+        <info>&lt;p&gt;&lt;b&gt;Verifique la información de contacto y obtenga información adicional.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Durante el preview:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Confirme si el contacto ya es cliente en CESS.&lt;/li&gt;&lt;li&gt;Valide que no existan duplicados, de existir deberá comprobar si otro persona está procesando el candidato. Reasigne en caso afirmativo.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Al establecer contacto telefónico:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Amplié la información.&lt;/li&gt;&lt;li&gt;Capture el interés para hacerle una oferta.&lt;ul&gt;&lt;li&gt;En caso afirmativo, registrar los datos de identificación para poder convertir el Lead en una Oportunidad (Gestión Comercial).&lt;/li&gt;&lt;li&gt;De no ser el caso, indicar el resultado y marcar el lead No Cualificado.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Working</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>CESS_LeadDefault</recordTypeName>
+</PathAssistant>

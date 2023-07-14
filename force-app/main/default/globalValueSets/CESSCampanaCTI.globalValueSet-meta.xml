@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CP - CESS_LEADS</fullName>
+        <default>false</default>
+        <label>CP - CESS_LEADS</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - CESS_VC</fullName>
+        <default>false</default>
+        <label>CP - CESS_VC</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - CESS_BLECIS_SEV</fullName>
+        <default>false</default>
+        <label>CP - CESS_BLECIS_SEV</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - CESS_PRESTAMOS</fullName>
+        <default>false</default>
+        <label>CP - CESS_PRESTAMOS</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - TEST_CESS_BLECIS_SEV</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP - TEST_CESS_BLECIS_SEV</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - TEST_CESS_LEADS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP - TEST_CESS_LEADS</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - TEST_CESS_PRESTAMOS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP - TEST_CESS_PRESTAMOS</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - TEST_CESS_VC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CP - TEST_CESS_VC</label>
+    </customValue>
+    <description>Relacionado con Lead Campaign_CTI_Picklist__c.</description>
+    <masterLabel>CESS - Campaña - CTI</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

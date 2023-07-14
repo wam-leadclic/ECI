@@ -1,0 +1,63 @@
+<aura:component controller="CESS_CargasMasivasLXCtrl" implements="force:appHostable,flexipage:availableForAllPageTypes">
+	<aura:attribute name="csvObject" type="CESS_csvObject"/>
+	<aura:attribute name="csvString" type="String"/>
+    <aura:attribute name="operacion" type="String"/>
+    <aura:attribute name="infoProcess" type="String"/>
+    <aura:attribute name="selectFile" type="Boolean"/>
+    <aura:attribute name="end" type="String"/>
+    <aura:attribute name="retries" type="Integer" default="0"/>
+    
+	<aura:handler name="change" value="v.csvString" action="{!c.handleGetCSV}"/>
+	
+	<div class="slds-card">
+		<div class="slds-card__header slds-grid">
+			<header class="slds-media slds-media_center slds-has-flexi-truncate">
+				<div class="slds-media__body slds-grid">
+					<h2 class="slds-card__header-title slds-col">
+                        <span>Cargas masivas de Leads.</span>
+					</h2>
+                    
+                    <aura:if isTrue="{!not(empty(v.infoProcess))}">
+                    	<p class="slds-col">{!v.infoProcess}</p>
+                    </aura:if>
+				</div>
+                
+				<button class="slds-button slds-button_destructive" onclick="{!c.cleanData}">Limpiar</button>
+                <button aura:id="btnEjecutar" class="slds-button slds-button_destructive btnEjecutar" onclick="{!c.ejecutar}">Ejecutar</button>
+			</header>
+		</div>
+		<div class="slds-card__body slds-card__body_inner">
+            <lightning:select aura:id="selectFuncion" label="Selecione la operacion a realizar" class='select' onchange="{!c.selectFunction}">
+                    <option value="">...</option>
+                    <option value="Cargar">Cargar</option>
+                   <!-- <option value="Eliminar">Eliminar</option>-->
+                    <option value="Eliminar">Eliminar</option>
+    			</lightning:select>
+            <aura:if isTrue="{! v.selectFile }">
+                <input type="file" class="file" aura:id="file" onchange="{!c.handleUploadFinished}"/>
+                <aura:if isTrue="{!not(empty(v.csvObject))}">
+                     <div class=" slds-scrollable " style="height:100%;margin:2%">
+                    <table class="slds-table  slds-table_bordered slds-table_cell-buffer slds-table--header-fixed">
+                        <thead>
+                            <tr>
+                                <aura:iteration items="{!v.csvObject.headers}" var="header">
+                                    <th>{!header.columnName}</th>
+                                </aura:iteration>
+                            </tr>
+                        </thead>
+                        <tbody id="table_body">
+                            <aura:iteration items="{!v.csvObject.lines}" var="line">
+                                <tr>
+                                    <aura:iteration items="{!line}" var="cell">
+                                        <td>{!cell}</td>
+                                    </aura:iteration>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                    </div>
+                </aura:if>
+             </aura:if>
+		</div>
+	</div>
+</aura:component>

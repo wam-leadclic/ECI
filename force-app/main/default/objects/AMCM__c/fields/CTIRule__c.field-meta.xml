@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTIRule__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Regla CTI</label>
+    <referenceTo>CTI_Rules__c</referenceTo>
+    <relationshipLabel>Miembros de campaña AG</relationshipLabel>
+    <relationshipName>Miembros_de_campana_AG</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

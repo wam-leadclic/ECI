@@ -1,0 +1,14 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:attribute name="recordId" type="String" required="true" default="null"/>
+    <aura:attribute name="logRecord" type="IntegrationLog__c" access="private"/>
+        
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+    
+    <force:recordData aura:id="logRecordData"
+                    recordId="{!v.recordId}"
+                    targetFields="{!v.logRecord}"
+                    fields="Id,Name,identifier__c"
+                    mode="VIEW"
+                    recordUpdated="{!c.doRecordUpdated}"/>          
+    
+</aura:component>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MotivoPerdidaOppAgente__c</fullName>
+    <description>Valores picklist para motivo de perdida de una oportunidad cuando el usuario es agente</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>MotivoPerdidaOppAgente</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prima elevada</fullName>
+                <default>true</default>
+                <label>Prima elevada</label>
+            </value>
+            <value>
+                <fullName>Contraoferta de su Cía</fullName>
+                <default>false</default>
+                <label>Contraoferta de su Cía</label>
+            </value>
+            <value>
+                <fullName>Cobertura insuficiente</fullName>
+                <default>false</default>
+                <label>Cobertura insuficiente</label>
+            </value>
+            <value>
+                <fullName>No aceptación del riesgo</fullName>
+                <default>false</default>
+                <label>No aceptación del riesgo</label>
+            </value>
+            <value>
+                <fullName>Sin decisión / Sin respuesta</fullName>
+                <default>false</default>
+                <label>Sin decisión / Sin respuesta</label>
+            </value>
+            <value>
+                <fullName>Contrata directamente en compañía</fullName>
+                <default>false</default>
+                <label>Contrata directamente en compañía</label>
+            </value>
+            <value>
+                <fullName>Familiar</fullName>
+                <default>false</default>
+                <label>Familiar</label>
+            </value>
+            <value>
+                <fullName>Solo gratuito</fullName>
+                <default>false</default>
+                <label>Solo gratuito</label>
+            </value>
+            <value>
+                <fullName>Mejores coberturas otras Cías</fullName>
+                <default>false</default>
+                <label>Mejores coberturas otras Cías</label>
+            </value>
+            <value>
+                <fullName>No venta por precio</fullName>
+                <default>false</default>
+                <label>No venta por precio</label>
+            </value>
+            <value>
+                <fullName>Cobertura por seguro Hogar</fullName>
+                <default>false</default>
+                <label>Cobertura por seguro Hogar</label>
+            </value>
+            <value>
+                <fullName>Es un regalo</fullName>
+                <default>false</default>
+                <label>Es un regalo</label>
+            </value>
+            <value>
+                <fullName>No seguro Amortización</fullName>
+                <default>false</default>
+                <label>No seguro Amortización</label>
+            </value>
+            <value>
+                <fullName>No validación cliente / KO</fullName>
+                <default>false</default>
+                <label>No validación cliente / KO</label>
+            </value>
+            <value>
+                <fullName>Denegado</fullName>
+                <default>false</default>
+                <label>Denegado</label>
+            </value>
+            <value>
+                <fullName>Contratado en delegación</fullName>
+                <default>false</default>
+                <label>Contratado en delegación</label>
+            </value>
+            <value>
+                <fullName>No interesa al cliente</fullName>
+                <default>false</default>
+                <label>No interesa al cliente</label>
+            </value>
+            <value>
+                <fullName>Número Máximo Intentos CTI</fullName>
+                <default>false</default>
+                <label>Número Máximo Intentos CTI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

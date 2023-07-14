@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filtro_por_ID</fullName>
+    <columns>NAME</columns>
+    <columns>error__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>identifier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>identifier__c</field>
+        <operation>equals</operation>
+        <value>5000N00001cXU9FQAW</value>
+    </filters>
+    <label>Filtro por ID</label>
+</ListView>

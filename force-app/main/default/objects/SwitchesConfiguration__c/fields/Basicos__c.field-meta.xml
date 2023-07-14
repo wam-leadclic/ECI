@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Basicos__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo para reglas de validación  para el perfil CESS-Venta a Distancia (Básicos)</description>
+    <externalId>false</externalId>
+    <label>Basicos</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

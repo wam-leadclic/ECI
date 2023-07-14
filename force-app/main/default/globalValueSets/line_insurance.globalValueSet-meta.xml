@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Autos/Motos</fullName>
+        <default>false</default>
+        <label>Autos/Motos</label>
+    </customValue>
+    <customValue>
+        <fullName>Hogar</fullName>
+        <default>false</default>
+        <label>Hogar</label>
+    </customValue>
+    <customValue>
+        <fullName>Salud</fullName>
+        <default>false</default>
+        <label>Salud</label>
+    </customValue>
+    <customValue>
+        <fullName>Vida</fullName>
+        <default>false</default>
+        <label>Vida</label>
+    </customValue>
+    <customValue>
+        <fullName>Accidentes</fullName>
+        <default>false</default>
+        <label>Accidentes</label>
+    </customValue>
+    <customValue>
+        <fullName>Seguros Especiales</fullName>
+        <default>false</default>
+        <label>Seguros Especiales</label>
+    </customValue>
+    <customValue>
+        <fullName>Otros</fullName>
+        <default>false</default>
+        <label>Otros</label>
+    </customValue>
+    <customValue>
+        <fullName>Home</fullName>
+        <default>false</default>
+        <label>Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Prestamo Personal</fullName>
+        <default>false</default>
+        <label>Prestamo Personal</label>
+    </customValue>
+    <customValue>
+        <fullName>Decesos</fullName>
+        <default>false</default>
+        <label>Decesos</label>
+    </customValue>
+    <customValue>
+        <fullName>Responsabilidad Civil Familiar</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Responsabilidad Civil Familiar</label>
+    </customValue>
+    <customValue>
+        <fullName>Cazador</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Cazador</label>
+    </customValue>
+    <customValue>
+        <fullName>Asistencia Personal</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asistencia Personal</label>
+    </customValue>
+    <customValue>
+        <fullName>Asistencia Mecanica</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Asistencia Mecanica</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensiones</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pensiones</label>
+    </customValue>
+    <masterLabel>Ramo</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

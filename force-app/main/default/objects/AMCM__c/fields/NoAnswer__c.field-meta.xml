@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoAnswer__c</fullName>
+    <description>Campo autocalculado en función del resultado</description>
+    <externalId>false</externalId>
+    <formula>ISPICKVAL( Result__c, &apos;No Contesta / Contestador&apos;)||
+ISPICKVAL(Result__c, &apos;Teléfono Erróneo&apos;)||
+ISPICKVAL(Result__c, &apos;Ilocalizable&apos;) ||
+ISPICKVAL(Result__c, &apos;No Contesta Enviar Email&apos;)</formula>
+    <label>No Contesta</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

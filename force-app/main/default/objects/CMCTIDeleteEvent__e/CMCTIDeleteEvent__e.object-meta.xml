@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Es el evento que gestiona el borrado de un Campaign Member CTI, básicamente lanza la operativa en el Platform Event Triggered Flow para este PE, que lanza el subflujo de borrado del CMCTI y su historificación</description>
+    <eventType>HighVolume</eventType>
+    <label>CM CTI Delete Event</label>
+    <pluralLabel>CM CTI Delete Events</pluralLabel>
+</CustomObject>

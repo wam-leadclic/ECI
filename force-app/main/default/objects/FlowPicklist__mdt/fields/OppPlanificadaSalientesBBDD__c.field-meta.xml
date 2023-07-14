@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppPlanificadaSalientesBBDD__c</fullName>
+    <description>Valores picklist para oportunidad planificada cuando el medio es BBDD y la llamada Salientes Básicos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppPlanificada/SalientesBBDD</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No contactado</fullName>
+                <default>true</default>
+                <label>No contactado</label>
+            </value>
+            <value>
+                <fullName>Pdte decisión</fullName>
+                <default>false</default>
+                <label>Pdte decisión</label>
+            </value>
+            <value>
+                <fullName>Faltan datos</fullName>
+                <default>false</default>
+                <label>Faltan datos</label>
+            </value>
+            <value>
+                <fullName>Vencimiento Futuro</fullName>
+                <default>false</default>
+                <label>Vencimiento Futuro</label>
+            </value>
+            <value>
+                <fullName>Pdte documentación firmada</fullName>
+                <default>false</default>
+                <label>Pdte documentación firmada</label>
+            </value>
+            <value>
+                <fullName>Pdte aceptación Cïa</fullName>
+                <default>false</default>
+                <label>Pdte aceptación Cïa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

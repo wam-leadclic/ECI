@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DatetimeLastCall__c</fullName>
+    <description>Fecha/hora de la última llamada hecha por el marcador a este miembro de campaña CTI</description>
+    <externalId>false</externalId>
+    <label>Fecha/hora última llamada</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

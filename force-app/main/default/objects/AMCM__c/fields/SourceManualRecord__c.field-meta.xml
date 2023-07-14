@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SourceManualRecord__c</fullName>
+    <description>Valores de selección para registro manual.</description>
+    <externalId>false</externalId>
+    <label>Origen - Registro Manual</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>CESSOrigenRegistroManual</valueSetName>
+    </valueSet>
+</CustomField>

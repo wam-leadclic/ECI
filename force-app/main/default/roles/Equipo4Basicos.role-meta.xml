@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Equipo 4 Básicos</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Equipo 4 Básicos</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Coordinador4</parentRole>
+</Role>

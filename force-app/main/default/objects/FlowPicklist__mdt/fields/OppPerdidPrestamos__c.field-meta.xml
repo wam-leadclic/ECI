@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppPerdidPrestamos__c</fullName>
+    <description>Valores picklist para oportunidad perdida cuando el medio es Prestamos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppPerdida/Prestamos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No seguro Amortización</fullName>
+                <default>true</default>
+                <label>No seguro Amortización</label>
+            </value>
+            <value>
+                <fullName>No validación cliente / KO</fullName>
+                <default>false</default>
+                <label>No validación cliente / KO</label>
+            </value>
+            <value>
+                <fullName>Denegado</fullName>
+                <default>false</default>
+                <label>Denegado</label>
+            </value>
+            <value>
+                <fullName>Contratado en delegación</fullName>
+                <default>false</default>
+                <label>Contratado en delegación</label>
+            </value>
+            <value>
+                <fullName>No interesa al cliente</fullName>
+                <default>false</default>
+                <label>No interesa al cliente</label>
+            </value>
+            <value>
+                <fullName>Sin decisión / Sin respuesta</fullName>
+                <default>false</default>
+                <label>Sin decisión / Sin respuesta</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,126 @@
+<!--
+ * @author       Francisco José Pérez - franciscojose.perez@salesforce.com
+ * @date         23/04/2019
+ * @group        Console
+ * @description  Component to display a list of CESS accounts related to a lead
+ * @Revision
+ -->
+ <aura:component description="CESS_ConsultaCESSFromLead"
+ implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,lightning:availableForFlowScreens"
+ controller="CESS_ConsultaCESSFromLeadLXCtrl"
+ access="global">
+
+<!-- ATTRIBUTES -->
+<aura:attribute name="objectRecord" type="Object"/>
+<aura:attribute name="objectFields" type="Object"/>
+<aura:attribute name="recordError" type="String"/>
+<aura:attribute name="cessData" type="Object"/>
+<aura:attribute name="cessColumns" type="List"/>
+<aura:attribute name="selectedRows" type="Object" default=""/>
+
+<aura:attribute name="showSpinner" type="boolean" default="true"/>
+<aura:attribute name="requestNotFound" type="Boolean" default="false"/>
+
+<aura:attribute name="theMap" type="Map" default="{}"/>
+<aura:attribute name="activateButtons" type="boolean" default="false"/>
+<aura:attribute name="reloadRecord" type="boolean" default="true"/>
+
+<!-- Component configuration-->
+<aura:attribute name="a_hideCheckboxColumn" type="Boolean" default="false" />
+<aura:attribute name="a_maxRowSelection" type="String" default = "1"/>
+<aura:attribute name="a_showButtons" type="boolean" default = "true"/>
+
+<!-- Differents fields to query on the differents objects.-->
+<aura:attribute name="leadFieldsQueried" type="String[]" default="Id,identifier_aneto__c, surname_first__c, surname_second__c, birthdate__c, share_personaldata__c, identifier_cess__c,document_number__c,document_type__c, show_cessinfo__c, gender__c, eci_cardnumber__c, Name, Email,Phone, MobilePhone, FirstName, LastName,businesslines_prohibited__c,Bypass_ValidacionConsultaCESS__c"/> <!--businesslines_prohibited__c, -->
+<aura:attribute name="oppFieldsQueried" type="String[]" default="Id,AccountId,
+Account.identifier_aneto__pc, Account.surname_first__pc, Account.surname_second__pc,Account.LastName, Account.birthdate__pc, Account.share_personaldata__pc, Account.identifier_cess__pc,Account.document_type__pc,Account.gender__pc, Account.Name, Account.PersonEmail,Account.Phone, Account.PersonMobilePhone,Account.personal_document__pc,Account.card_eci__pc,Account.businesslines_prohibited__pc"/> <!-- , Account.businesslines_prohibited__pc-->
+<aura:attribute name="accFieldsQueried" type="String[]" default="Id,
+identifier_aneto__pc, surname_first__pc, surname_second__pc,LastName, birthdate__pc, share_personaldata__pc, identifier_cess__pc,document_type__pc,gender__pc, Name, PersonEmail,Phone, PersonMobilePhone, personal_document__pc,card_eci__pc,businesslines_prohibited__pc"/> <!-- businesslines_prohibited__pc, -->
+
+<!--/ ATTRIBUTES -->
+
+<!-- EVENT -->
+<aura:registerEvent name="changePolicy" type="c:CESS_oppClientSelect"/>
+<!--/ EVENT -->
+
+<!-- LIGHTNING DATA SERVICES RECORD HANDLER -->
+<force:recordData aura:id="recordHandler"
+       recordId="{!v.recordId}"
+       fields="{!v.sObjectName == 'Lead' ? v.leadFieldsQueried : ( v.sObjectName == 'Opportunity' ? v.oppFieldsQueried : v.accFieldsQueried) }"
+       targetRecord="{!v.objectRecord}"
+       targetFields="{!v.objectFields}"
+       targetError="{!v.recordError}"
+       mode="EDIT"
+       recordUpdated="{!c.doRefresh}"
+/>
+
+<!--/ LIGHTNING DATA SERVICES RECORD HANDLER -->
+
+<!-- HANDLERS -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+<!--/ HANDLERS -->
+
+<!-- DOM -->
+<!-- CESS Panel -->
+<div class="slds-box slds-box_x-small">
+    <aura:if isTrue="{!v.showSpinner}">
+    <!-- SPINNER -->
+    <div class="slds-spinner_container slds-is-relative" style="height: 50px">
+        <lightning:spinner aura:id="spinner" variant="brand" size="medium"
+                            title="Cargando información de sistema externo..."
+                            alternativeText="Cargando información de sistema externo..."/>
+    </div>
+    <!--/ SPINNER -->
+    <aura:set attribute="else">
+        <lightning:card iconName="standard:client">
+            <aura:set attribute="title">
+                <span class="slds-text-heading_small">
+                    <b>Datos Clientes en CESS</b>
+                </span>
+                <span class="slds-text-heading_small">
+                    <b> ({! v.cessData.length }) </b>
+                </span>
+            </aura:set>
+            <aura:set attribute="actions">
+                <aura:if isTrue="{! v.a_showButtons}">
+                <aura:if isTrue="{! v.activateButtons }">
+                    <lightning:button label="Seleccionar" onclick="{!c.onSelect}"/>
+                    <aura:if isTrue="{!v.sObjectName == 'Lead'}">
+                        <lightning:button label="No Coincide" onclick="{!c.onCancel}"/>
+                    </aura:if>
+                </aura:if>
+                </aura:if>
+            </aura:set>
+            <p class="slds-p-horizontal_small slds-border_top">
+                <aura:if isTrue="{!v.requestNotFound}">
+                    <ui:message title="Información no encontrada" severity="error" closable="false">
+                        No se ha encontrado información con los datos de consulta.
+                    </ui:message>
+                    <ui:message title="Aviso" severity="info" closable="false">
+                        Se ha marcado automáticamente el interés como 'No Coincide'.
+	                </ui:message>
+                <aura:set attribute="else">
+                    <lightning:layout horizontalAlign="center">
+                        <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
+                            <lightning:datatable aura:id="cessDataTable" 
+                                                data="{! v.cessData }"
+                                                columns="{! v.cessColumns }"
+                                                keyField="cessId"
+                                                hideCheckboxColumn="{! v.a_hideCheckboxColumn }"
+                                                maxRowSelection="{! v.a_maxRowSelection }"
+                                                onrowselection="{! c.handleRowSelection }"
+                                                minColumnWidth="100"
+                                                />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </aura:set>
+                </aura:if>
+            </p>
+        </lightning:card>
+    </aura:set>    
+    </aura:if><!--/ spinner-->
+</div>
+
+<!--/ DOM -->
+
+</aura:component>

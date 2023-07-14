@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Presentar Oferta</fullName>
+        <default>false</default>
+        <label>Presentar Oferta</label>
+    </customValue>
+    <customValue>
+        <fullName>Gestión de Cartera</fullName>
+        <default>false</default>
+        <label>Gestión de Cartera</label>
+    </customValue>
+    <customValue>
+        <fullName>No colabora</fullName>
+        <default>false</default>
+        <label>No colabora</label>
+    </customValue>
+    <customValue>
+        <fullName>Ya ha contratado</fullName>
+        <default>false</default>
+        <label>Ya ha contratado</label>
+    </customValue>
+    <customValue>
+        <fullName>Duplicado</fullName>
+        <default>false</default>
+        <label>Duplicado</label>
+    </customValue>
+    <customValue>
+        <fullName>Consulta NO venta - ATC</fullName>
+        <default>false</default>
+        <label>Consulta NO venta - ATC</label>
+    </customValue>
+    <customValue>
+        <fullName>No ha solicitado información</fullName>
+        <default>false</default>
+        <label>No ha solicitado información</label>
+    </customValue>
+    <customValue>
+        <fullName>Otros Productos</fullName>
+        <default>false</default>
+        <label>Otros Productos</label>
+    </customValue>
+    <customValue>
+        <fullName>Lead de Prueba (Test)</fullName>
+        <default>false</default>
+        <label>Lead de Prueba (Test)</label>
+    </customValue>
+    <customValue>
+        <fullName>No Contesta Enviar Email</fullName>
+        <default>false</default>
+        <label>No Contesta Enviar Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Teléfono Erróneo</fullName>
+        <default>false</default>
+        <label>Teléfono Erróneo</label>
+    </customValue>
+    <customValue>
+        <fullName>No asegurable</fullName>
+        <default>false</default>
+        <label>No asegurable</label>
+    </customValue>
+    <customValue>
+        <fullName>Robinson</fullName>
+        <default>false</default>
+        <label>Robinson</label>
+    </customValue>
+    <customValue>
+        <fullName>Llamada cortada</fullName>
+        <default>false</default>
+        <label>Llamada cortada</label>
+    </customValue>
+    <customValue>
+        <fullName>Cambio de Tomador</fullName>
+        <default>false</default>
+        <label>Cambio de Tomador</label>
+    </customValue>
+    <customValue>
+        <fullName>Mercancía devuelta</fullName>
+        <default>false</default>
+        <label>Mercancía devuelta</label>
+    </customValue>
+    <customValue>
+        <fullName>Mercancía al extranjero o de empresa</fullName>
+        <default>false</default>
+        <label>Mercancía al extranjero o de empresa</label>
+    </customValue>
+    <customValue>
+        <fullName>No coinciden datos verificacion</fullName>
+        <default>false</default>
+        <label>No coinciden datos verificacion</label>
+    </customValue>
+    <customValue>
+        <fullName>No dispone datos TECI</fullName>
+        <default>false</default>
+        <label>No dispone datos TECI</label>
+    </customValue>
+    <customValue>
+        <fullName>No coinciden condiciones de la oferta</fullName>
+        <default>false</default>
+        <label>No coinciden condiciones de la oferta</label>
+    </customValue>
+    <customValue>
+        <fullName>Oferta fuera de fecha</fullName>
+        <default>false</default>
+        <label>Oferta fuera de fecha</label>
+    </customValue>
+    <customValue>
+        <fullName>No titular de la oferta</fullName>
+        <default>false</default>
+        <label>No titular de la oferta</label>
+    </customValue>
+    <customValue>
+        <fullName>No compra por teléfono</fullName>
+        <default>false</default>
+        <label>No compra por teléfono</label>
+    </customValue>
+    <customValue>
+        <fullName>Prefiere ir a Centro comercial</fullName>
+        <default>false</default>
+        <label>Prefiere ir a Centro comercial</label>
+    </customValue>
+    <customValue>
+        <fullName>Cliente no habla español</fullName>
+        <default>false</default>
+        <label>Cliente no habla español</label>
+    </customValue>
+    <customValue>
+        <fullName>Cuelga (no argumentado)</fullName>
+        <default>false</default>
+        <label>Cuelga (no argumentado)</label>
+    </customValue>
+    <customValue>
+        <fullName>No contento con ECI</fullName>
+        <default>false</default>
+        <label>No contento con ECI</label>
+    </customValue>
+    <customValue>
+        <fullName>Asegurado en MM</fullName>
+        <default>false</default>
+        <label>Asegurado en MM</label>
+    </customValue>
+    <customValue>
+        <fullName>Cerrado automático</fullName>
+        <default>false</default>
+        <label>Cerrado automático</label>
+    </customValue>
+    <customValue>
+        <fullName>No Contesta</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>No Contesta / Contestador</label>
+    </customValue>
+    <customValue>
+        <fullName>Ilocalizable</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Ilocalizable</label>
+    </customValue>
+    <customValue>
+        <fullName>Comunica</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Comunica</label>
+    </customValue>
+    <customValue>
+        <fullName>Teléfono Erróneo Enviar Email</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Teléfono Erróneo Enviar Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Gestión Anterior CESS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Gestión Anterior CESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Aplazado</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Aplazado</label>
+    </customValue>
+    <customValue>
+        <fullName>Dependiente de Lead status No Cualificado</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Dependiente de Lead status No Cualificado</label>
+    </customValue>
+    <description>Lista global con valores del resultado.</description>
+    <masterLabel>CESS - Resultado</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

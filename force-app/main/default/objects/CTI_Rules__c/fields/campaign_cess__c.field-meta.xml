@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>campaign_cess__c</fullName>
+    <externalId>false</externalId>
+    <label>Campaña - CESS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>campaña_general</fullName>
+                <default>false</default>
+                <label>campaña_general</label>
+            </value>
+            <value>
+                <fullName>campaña_autos</fullName>
+                <default>false</default>
+                <label>campaña_autos</label>
+            </value>
+            <value>
+                <fullName>campaña_ hogar</fullName>
+                <default>false</default>
+                <label>campaña_ hogar</label>
+            </value>
+            <value>
+                <fullName>campaña_salud</fullName>
+                <default>false</default>
+                <label>campaña_salud</label>
+            </value>
+            <value>
+                <fullName>campaña_vida</fullName>
+                <default>false</default>
+                <label>campaña_vida</label>
+            </value>
+            <value>
+                <fullName>campaña_accidentes</fullName>
+                <default>false</default>
+                <label>campaña_accidentes</label>
+            </value>
+            <value>
+                <fullName>campaña_decesos</fullName>
+                <default>false</default>
+                <label>campaña_decesos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

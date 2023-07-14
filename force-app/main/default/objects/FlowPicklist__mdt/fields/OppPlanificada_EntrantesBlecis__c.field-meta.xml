@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppPlanificada_EntrantesBlecis__c</fullName>
+    <description>Valores picklist para oportunidad planificada cuando el medio es Teléfono O Manual y la llamada Entrantes Blecis</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppPlanificada/EntrantesBlecis</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No contactado</fullName>
+                <default>true</default>
+                <label>No contactado</label>
+            </value>
+            <value>
+                <fullName>Faltan datos</fullName>
+                <default>false</default>
+                <label>Faltan datos</label>
+            </value>
+            <value>
+                <fullName>Pdte decisión</fullName>
+                <default>false</default>
+                <label>Pdte decisión</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <description>Comprueba si existen otros intereses generados a parte del de la oportunidad.</description>
+        <name>Decision_Hay_Otros_Intereses</name>
+        <label>¿Hay otros intereses?</label>
+        <locationX>182</locationX>
+        <locationY>998</locationY>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>Decision_Hay_Otros_Intereses_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_CMMKT</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_MCAG_Adicionales</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_PlatformEvent_CMCTIDeleteEvent</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprueba si se ha pasado por Set_OportunidadRelacionadaContactoCMCTI en el flujo principal. Además se comprueba que el CM CTI de la oportunidad recibida sea el mismo que el CM CTI recibido</description>
+        <name>Decision_OportunidadAsociadaContacto</name>
+        <label>¿Oportunidad asociada a Contacto?</label>
+        <locationX>380</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Oportunidad_Aasociada_Contacto_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_IN_OppRelacionadaContacto</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VAR_IN_Oportunidad.relatedCTICampaignMemberId__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_IN_CMCTI.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_RecordTypeId_Gestionado</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprueba si el valor de CESS - CTI - Envío de Opp Planificadas de ORG_ApplicationSettings</description>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>611</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Switch_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_ORG_ApplicationSettings_EnvioOportunidadesPlanificadas.Value__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_OportunidadAsociadaContacto</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Elimina el CMCTI si solo hay intereses de oportunidad.
+25/11/2022 JCB: Se añade asignación campo CMCreatedDate de CM AG, con el valor de CreatedDate de CM CTI
+23/11 MMV: Se quita el filtro por ramo, se añade búsqueda de Adicionales y se evalua que coincida el CM CTI
+29/11 MMV: Se añade la llamada al platform event de borrado de CTI</description>
+    <interviewLabel>Subflow Borrar  CTI {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow_BorrarCMCTI</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Crea un registro del platform event para lanzar el borrado de CM CTI</description>
+        <name>Create_PlatformEvent_CMCTIDeleteEvent</name>
+        <label>Create PlatformEvent CMCTIDeleteEvent</label>
+        <locationX>50</locationX>
+        <locationY>1118</locationY>
+        <inputAssignments>
+            <field>BorrarCMCTI__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IdCMCTI__c</field>
+            <value>
+                <elementReference>Var_IN_CMCTI.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <elementReference>Var_IN_CMCTI.Result__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CMCTIDeleteEvent__e</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Recoge los Campaign Member MKT relacionados con el CTI. Si los hay, entonces no hay que borrar el CM CTI</description>
+        <name>Get_CMMKT</name>
+        <label>Get CM MKT</label>
+        <locationX>182</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_MCAG_Adicionales</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_IN_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene los registros Miembro de campaña adicionales relacionados con el CM CTI</description>
+        <name>Get_MCAG_Adicionales</name>
+        <label>Get MCAG Adicionales</label>
+        <locationX>182</locationX>
+        <locationY>878</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_Hay_Otros_Intereses</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTIAMCMId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_IN_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_RecordTypeId_Adicional.Id</elementReference>
+            </value>
+        </filters>
+        <object>AMCM__c</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recogemos el valor del custom metadata CESS_CTI_EnvioOportunidadesPlanificadas para comprobar si es necesario ejecutar el flow.</description>
+        <name>Get_ORG_ApplicationSettings_EnvioOportunidadesPlanificadas</name>
+        <label>Get ORG_ApplicationSettings EnvioOportunidadesPlanificadas</label>
+        <locationX>611</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Switch</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_EnvioOportunidadesPlanificadas</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Busco el tipo de registro de miembros de campaña Adicional</description>
+        <name>Get_RecordTypeId_Adicional</name>
+        <label>Get RecordTypeId Adicional</label>
+        <locationX>182</locationX>
+        <locationY>638</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_CMMKT</targetReference>
+        </connector>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>AMCM__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Additional</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Busco el tipo de registro de miembros de campaña Gestionado</description>
+        <name>Get_RecordTypeId_Gestionado</name>
+        <label>Get RecordTypeId Gestionado</label>
+        <locationX>182</locationX>
+        <locationY>518</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_RecordTypeId_Adicional</targetReference>
+        </connector>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>AMCM__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Managed</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+    </recordLookups>
+    <startElementReference>Get_ORG_ApplicationSettings_EnvioOportunidadesPlanificadas</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Campaign member CTI recogido al inicio del flujo o creado en el flujo en caso de no existir uno</description>
+        <name>Var_IN_CMCTI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Recibimos la nueva oportunidad creada en la conversión</description>
+        <name>VAR_IN_Oportunidad</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Var que indica si en el flujo principal se ha pasado por Set_OportunidadRelacionadaContactoCMCTI</description>
+        <name>Var_IN_OppRelacionadaContacto</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

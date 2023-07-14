@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>LS Service Operation User</fullName>
+        <default>true</default>
+        <label>LS Service Operation User</label>
+    </customValue>
+    <customValue>
+        <fullName>LS Local Service Operation Manager</fullName>
+        <default>false</default>
+        <label>LS Local Service Operation Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>LS Global Service Operation Manager</fullName>
+        <default>false</default>
+        <label>LS Global Service Operation Manager</label>
+    </customValue>
+    <masterLabel>LsResourceType</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CampaignTypeCESS__c</fullName>
+    <description>Valores de lista para indicar el tipo de campaña.</description>
+    <externalId>false</externalId>
+    <label>Tipo de Campaña - CESS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>CESSTipoCampana</valueSetName>
+    </valueSet>
+</CustomField>

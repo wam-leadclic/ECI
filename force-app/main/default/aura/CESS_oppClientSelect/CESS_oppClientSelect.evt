@@ -1,0 +1,5 @@
+<!-- EVENT -->
+<aura:event type="COMPONENT">
+<aura:attribute name="CESS_oppClientSelect" type="String" default="“”/"></aura:attribute> 
+</aura:event>
+<!--/ EVENT -->

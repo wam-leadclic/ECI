@@ -1,0 +1,74 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome,force:hasSObjectName" 
+controller="CESS_OppLeadReferentLXCtrl"
+access="global">
+
+<aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+<aura:attribute name="recordId" type="Id"/>
+<aura:attribute name="requestNotFound" type="Boolean" default="false"/>
+<aura:attribute name="requestErrorMessage" type="String" default="El servicio no está disponible. Inténtelo de nuevo más tarde por favor."/>
+<aura:attribute name="showSpinner" type="boolean" default="false"/>
+<aura:attribute name="opptyColumns" type="List" />
+<aura:attribute name="oppId" type="String" />
+<aura:attribute name="title" type="String"  default="Datos Lead Origen"/>
+<aura:attribute name="records" type="Object" access="private"/>
+<aura:attribute name="iconName" type="String" access="private"/>    
+
+<!-- Obtenemos la info del lead-->
+<aura:attribute name="Record" type="Object"/>
+<aura:attribute name="RecordError" type="String"/>
+<force:recordData aura:id="recordHandler"
+    recordId="{!v.recordId}"
+    fields="Id,Lead_Referrer__c,Opp_Referrer__c"
+    targetFields="{!v.Record}"
+    targetError="{!v.RecordError}"
+    mode="VIEW"
+    recordUpdated="{!c.init}" 
+/>
+
+<aura:if isTrue="{!v.showSpinner}">
+    <!-- SPINNER -->
+    <div class="slds-spinner_container slds-is-relative" style="height: 50px">
+        <lightning:spinner aura:id="spinner" variant="brand" size="medium"
+                            alternativeText="Cargando información de sistema externo..."/>
+    </div>
+    <!--/ SPINNER -->
+    <aura:set attribute="else">
+        <aura:if isTrue="{!v.requestNotFound}">
+            <ui:message title="Datos Registro Origen" severity="error" closable="false">
+                {!v.requestErrorMessage}
+            </ui:message>
+            <aura:set attribute="else">
+                <!-- Componente con los datos relacionados -->
+                <aura:if isTrue="{!v.oppId != undefined}">
+                        <p class="slds-p-horizontal_none"> 
+                            <lightning:layout multipleRows="true">
+                                <div class="c-container">
+        							<lightning:card class="slds-card_boundary" iconName="{!v.iconName}">           
+                                        <aura:set attribute="title">
+                                            <b><a class="slds-card__header-link">Datos Registro Origen</a></b>
+                                        </aura:set>             
+                                                  
+                                        <aura:if isTrue="{!not(empty(v.records))}">    
+                                            <p class="slds-p-horizontal_small">   
+                                                <div class="slds-scrollable_x">                  
+                                                    <lightning:datatable class="related-list"
+                                                                     columns="{! v.opptyColumns }"
+                                                                     data="{! v.records }"
+                                                                     keyField="id"
+                                                                     hideCheckboxColumn="true"
+                                                                     resizeColumnDisabled="true"
+                                                                     minColumnWidth="100"/>                     
+                                                </div>
+                                            </p>
+                                        </aura:if>            
+        							</lightning:card>
+    							</div>
+                            </lightning:layout>
+                        </p>
+               </aura:if>
+            </aura:set>
+        </aura:if>
+    </aura:set>
+</aura:if>
+
+</aura:component>

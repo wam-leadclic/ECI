@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asigno propietario Lead</description>
+        <name>AsignLeadOwnerId</name>
+        <label>Asigno propietario Lead</label>
+        <locationX>50</locationX>
+        <locationY>2006</locationY>
+        <assignmentItems>
+            <assignToReference>GetLead.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LlamadaFinalizada</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno Fecha Hora primera Llamada a Now()</description>
+        <name>Asigno_Fecha_Hora_primera_Llamada</name>
+        <label>Asigno Fecha Hora primera Llamada</label>
+        <locationX>182</locationX>
+        <locationY>1670</locationY>
+        <assignmentItems>
+            <assignToReference>GetLead.datetime_firstcall__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>StatusLeadisWorking</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno Estado En proceso</description>
+        <name>AsignWorkingStatus</name>
+        <label>Asigno Estado En proceso</label>
+        <locationX>248</locationX>
+        <locationY>638</locationY>
+        <assignmentItems>
+            <assignToReference>CTICampaignMemberVariable.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateCampaignMemberCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno estado En proceso</description>
+        <name>AsignWorkingStatusLead</name>
+        <label>Asigno estado En proceso</label>
+        <locationX>314</locationX>
+        <locationY>2006</locationY>
+        <assignmentItems>
+            <assignToReference>GetLead.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LlamadaFinalizada</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>IsChangedCallDisposition</name>
+        <dataType>Boolean</dataType>
+    </constants>
+    <constants>
+        <name>TaskIsNew</name>
+        <dataType>Boolean</dataType>
+    </constants>
+    <decisions>
+        <description>Comprobamos que el miembro de campaña de tipo CTI es Nuevo o no</description>
+        <name>CampaignMemberCTIIsNew</name>
+        <label>¿Miembro de campaña CTI Nuevo?</label>
+        <locationX>380</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberMKT</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CampaihnMemberCTINew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CTICampaignMemberVariable.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignWorkingStatus</targetReference>
+            </connector>
+            <label>Miembro Campaña CTI Nuevo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Lead tiene no relleno campo Primera llamada</description>
+        <name>FirstCllLeadNull</name>
+        <label>Lead no tiene relleno campo Primera llamada</label>
+        <locationX>314</locationX>
+        <locationY>1550</locationY>
+        <defaultConnector>
+            <targetReference>StatusLeadisWorking</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FirstCallIsNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetLead.datetime_firstcall__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Asigno_Fecha_Hora_primera_Llamada</targetReference>
+            </connector>
+            <label>Primera llamada No Relleno</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>¿La tarea tiene un miembro de campaña CTI asociada?</description>
+        <name>La_tarea_tiene_un_miembro_de_campa_a_CTI_asociada</name>
+        <label>¿La tarea tiene un miembro de campaña CTI asociada?</label>
+        <locationX>534</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>TaskIsrelatedTask</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Miembro_de_campa_a_CTI_de_la_tarea_relleno</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TaskRecord.CampaignMemberId__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetCampaignMemberCTI</targetReference>
+            </connector>
+            <label>Miembro de campaña CTI  de la tarea relleno</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Decisión Process Builder - CESS - Call Tasks</description>
+        <name>LlamadaFinalizada</name>
+        <label>Llamada finalizada</label>
+        <locationX>314</locationX>
+        <locationY>2222</locationY>
+        <defaultConnector>
+            <targetReference>UpdateLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>LlamadaFinalizadaDecision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TaskRecord.CallDurationInSeconds</leftValueReference>
+                <operator>WasSet</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateAsignedToTask</targetReference>
+            </connector>
+            <label>Llamada finalizada</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el estado del Lead es en progreso o no</description>
+        <name>StatusLeadisWorking</name>
+        <label>El estado del Lead es En proceso</label>
+        <locationX>314</locationX>
+        <locationY>1886</locationY>
+        <defaultConnector>
+            <targetReference>LlamadaFinalizada</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>WorkingStatus</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetLead.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Working</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignLeadOwnerId</targetReference>
+            </connector>
+            <label>Estado En proceso</label>
+        </rules>
+        <rules>
+            <name>NewStatus</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetLead.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignWorkingStatusLead</targetReference>
+            </connector>
+            <label>Estado Nuevo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>776</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SwitchOn</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowTask__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>La_tarea_tiene_un_miembro_de_campa_a_CTI_asociada</targetReference>
+            </connector>
+            <label>SwitchOn</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si la tarea está relacionado con un Lead o no</description>
+        <name>TaskIsrelatedTask</name>
+        <label>¿La tarea está relacionado con un Lead?</label>
+        <locationX>534</locationX>
+        <locationY>1310</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Si_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TaskRecord.WhoId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00Q</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetLead</targetReference>
+            </connector>
+            <label>Si Lead</label>
+        </rules>
+    </decisions>
+    <description>Se desencadena cuando el Resultado de la llamada (CallDisposition) no está vacío y la tarea es nueva o ha cambiado el resultado de la tarea (CallDisposition) y la tarea está relacionada con el Lead</description>
+    <interviewLabel>Subflujo Task Llamada Tipificada CTI {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Task Llamada Tipificada CTI</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Miembro de campaña CTI al que está asociado la tarea</description>
+        <name>GetCampaignMemberCTI</name>
+        <label>Busco Miembro de Campaña CTI</label>
+        <locationX>380</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CampaignMemberCTIIsNew</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.CampaignMemberId__c</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <outputReference>CTICampaignMemberVariable</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Busco Lead de la tarea</description>
+        <name>GetLead</name>
+        <label>Busco Lead de la tarea</label>
+        <locationX>314</locationX>
+        <locationY>1430</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>FirstCllLeadNull</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.WhoId</elementReference>
+            </value>
+        </filters>
+        <object>Lead</object>
+    </recordLookups>
+    <recordUpdates>
+        <description>Actualizo Propietario Tarea</description>
+        <name>UpdateAsignedToTask</name>
+        <label>Actualizo Propietario Tarea</label>
+        <locationX>182</locationX>
+        <locationY>2342</locationY>
+        <connector>
+            <targetReference>UpdateLead</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.OwnerId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>cti_ani__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>cti_dnis__c</field>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizamos los miembros de campaña de tipo Adicional que estén asociados al estado Nuevo</description>
+        <name>UpdateCampaignMemberAdicional</name>
+        <label>Actualizo los miembros de campaña de tipo Adicional</label>
+        <locationX>380</locationX>
+        <locationY>1094</locationY>
+        <connector>
+            <targetReference>TaskIsrelatedTask</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTIAMCMId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.CampaignMemberId__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AMCM__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizo Miembro de campaña CTI</description>
+        <name>UpdateCampaignMemberCTI</name>
+        <label>Actualizo Miembro de campaña CTI</label>
+        <locationX>248</locationX>
+        <locationY>758</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberMKT</targetReference>
+        </connector>
+        <inputReference>CTICampaignMemberVariable</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizamos los miembros de campaña de tipo MKT que estén asociados al estado Nuevo</description>
+        <name>UpdateCampaignMemberMKT</name>
+        <label>Actualizo los miembros de campaña de tipo MKT</label>
+        <locationX>380</locationX>
+        <locationY>974</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberAdicional</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskRecord.CampaignMemberId__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizo Lead</description>
+        <name>UpdateLead</name>
+        <label>Actualizo Lead</label>
+        <locationX>314</locationX>
+        <locationY>2558</locationY>
+        <inputReference>GetLead</inputReference>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>CTICampaignMemberVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <name>TaskRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

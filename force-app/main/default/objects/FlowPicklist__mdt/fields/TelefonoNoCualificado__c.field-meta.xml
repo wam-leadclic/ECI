@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TelefonoNoCualificado__c</fullName>
+    <description>Valores &apos;No Cualificado&apos; del picklist de result__c de campaign member</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Telefono/NoCualificado</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consulta NO venta - ATC</fullName>
+                <default>true</default>
+                <label>Consulta NO venta - ATC</label>
+            </value>
+            <value>
+                <fullName>Gestión de Cartera</fullName>
+                <default>false</default>
+                <label>Gestión de Cartera</label>
+            </value>
+            <value>
+                <fullName>No coinciden datos verificacion</fullName>
+                <default>false</default>
+                <label>No coinciden datos verificacion</label>
+            </value>
+            <value>
+                <fullName>No dispone datos TECI</fullName>
+                <default>false</default>
+                <label>No dispone datos TECI</label>
+            </value>
+            <value>
+                <fullName>No coinciden condiciones de la oferta</fullName>
+                <default>false</default>
+                <label>No coinciden condiciones de la oferta</label>
+            </value>
+            <value>
+                <fullName>Oferta fuera de fecha</fullName>
+                <default>false</default>
+                <label>Oferta fuera de fecha</label>
+            </value>
+            <value>
+                <fullName>Llamada cortada</fullName>
+                <default>false</default>
+                <label>Llamada cortada</label>
+            </value>
+            <value>
+                <fullName>No asegurable</fullName>
+                <default>false</default>
+                <label>No asegurable</label>
+            </value>
+            <value>
+                <fullName>Asegurado en MM</fullName>
+                <default>false</default>
+                <label>Asegurado en MM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

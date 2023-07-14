@@ -1,0 +1,120 @@
+<!--
+ * @author       Francisco José Pérez - franciscojose.perez@salesforce.com
+ * @date         07/06/2019
+ * @group        Console
+ * @description  Component to display a list of CESS policies related to a client
+ * @Revision
+ -->
+ <aura:component description="CESS_ConsultaPolizas"
+ implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName"
+ controller="CESS_ConsultaPolizasLXCtrl"
+ access="global">
+
+<!-- ATTRIBUTES -->
+<aura:attribute name="objectRecord" type="Object"/>
+<aura:attribute name="objectFields" type="Object"/>
+<aura:attribute name="recordError" type="String"/>
+<aura:attribute name="selectedRows" type="Object" default=""/>
+
+<aura:attribute name="cessData" type="Object"/>
+<aura:attribute name="cessColumns" type="List"/>
+
+<aura:attribute name="showSpinner" type="boolean" default="true"/>
+<aura:attribute name="requestNotFound" type="Boolean" default="false"/>
+<aura:attribute name="sinCessId" type="Boolean" default="false"/>
+
+<!-- Component configuration-->
+<aura:attribute name="a_hideCheckboxColumn" type="Boolean" default="false" />
+<aura:attribute name="a_maxRowSelection" type="String" default = "1"/>
+<aura:attribute name="a_showButtons" type="boolean" default = "true"/>
+<aura:attribute name="activateButtons" type="boolean" default="false"/>
+
+<!-- Differents fields to query on the differents objects.-->
+<aura:attribute name="leadFieldsQueried" type="String[]" default="Id,identifier_aneto__c,identifier_cess__c"/>
+<aura:attribute name="oppFieldsQueried" type="String[]" default="Id,AccountId,Account.identifier_aneto__pc, Account.identifier_cess__pc,aplication_number__c,opportunity_number__c,policy_certificate__c,Amount,policy_insurancecode__c,policy_productcode__c,policy_number__c"/> 
+<aura:attribute name="accFieldsQueried" type="String[]" default="Id,identifier_aneto__pc, identifier_cess__pc"/>
+
+<!--/ ATTRIBUTES -->
+
+<!-- EVENT 
+<aura:registerEvent name="changePolicy" type="c:CESS_oppClientSelect"/>
+--><!--/ EVENT -->
+
+<!-- LIGHTNING DATA SERVICES RECORD HANDLER -->
+<force:recordData aura:id="recordHandler"
+       recordId="{!v.recordId}"
+       fields="{!v.sObjectName == 'Lead' ? v.leadFieldsQueried : ( v.sObjectName == 'Opportunity' ? v.oppFieldsQueried : v.accFieldsQueried) }"
+       targetRecord="{!v.objectRecord}"
+       targetFields="{!v.objectFields}"
+       targetError="{!v.recordError}"
+       mode="EDIT"
+       recordUpdated="{!c.doRefresh}"
+/>
+<!--/ LIGHTNING DATA SERVICES RECORD HANDLER -->
+
+<!-- HANDLERS 
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+--><!--/ HANDLERS -->
+
+<!-- DOM -->
+<!-- CESS Panel -->
+<div class="slds-box slds-box_x-small">
+    <aura:if isTrue="{!v.showSpinner}">
+    <!-- SPINNER -->
+    <div class="slds-spinner_container slds-is-relative" style="height: 50px">
+        <lightning:spinner aura:id="spinner" variant="brand" size="medium"
+                            title="Cargando información de sistema externo..."
+                            alternativeText="Cargando información de sistema externo..."/>
+    </div>
+    <!--/ SPINNER -->
+    <aura:set attribute="else">
+        <lightning:card iconName="standard:description">
+            <aura:set attribute="title">
+                <span class="slds-text-heading_small">
+                    <b>Datos de pólizas de cliente</b>
+                </span>
+                <span class="slds-text-heading_small">
+                    <b> ({! v.cessData.length })</b>
+             </span>
+            </aura:set>
+            <aura:set attribute="actions">
+                <aura:if isTrue="{! v.a_showButtons }">
+                    <lightning:button label="Seleccionar" onclick="{!c.onSelect}"/>
+                    <!--<lightning:button label="No Coincide" onclick="{!c.onCancel}"/>-->
+                </aura:if>
+            </aura:set>
+            <p class="slds-p-horizontal_small slds-border_top">
+                <aura:if isTrue="{! or(v.requestNotFound,v.sinCessId )}">
+                    <aura:if isTrue="{! v.requestNotFound }">
+                        <ui:message title="Información no encontrada" severity="error" closable="false">
+                            No se ha encontrado información con los datos de consulta.
+                        </ui:message>
+                        <aura:set attribute="else">
+                                <ui:message title="Cliente no seleccionado." severity="warning" closable="false"/>
+                        </aura:set>
+                        </aura:if>
+                    <aura:set attribute="else">
+                    <lightning:layout horizontalAlign="center">
+                        <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
+                            <lightning:datatable aura:id="policyDataTable" 
+                                                data="{! v.cessData }"
+                                                columns="{! v.cessColumns }"
+                                                keyField="cessId"
+                                                hideCheckboxColumn="{! v.a_hideCheckboxColumn }"
+                                                maxRowSelection="{! v.a_maxRowSelection }"
+                                                onrowselection="{! c.handleRowSelection }"
+                                                minColumnWidth="100"
+                                                />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </aura:set>
+                </aura:if>
+            </p>
+        </lightning:card>
+    </aura:set>    
+    </aura:if><!--/ spinner-->
+</div>
+
+<!--/ DOM -->
+
+</aura:component>

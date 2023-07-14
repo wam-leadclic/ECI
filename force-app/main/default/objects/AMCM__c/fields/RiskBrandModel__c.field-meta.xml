@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RiskBrandModel__c</fullName>
+    <description>Describe el modelo y la marca por una fórmula donde concatena riskBrand + riskModel.</description>
+    <externalId>false</externalId>
+    <formula>RiskBrand__c + &apos; &apos; +  RiskModel__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Modelo y Marca</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

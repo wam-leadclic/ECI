@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ImporteAceleradorAutos__c</fullName>
+    <description>Importes de Acelerador ofrecido para Ramo Autos/Motos. Usado en flows donde se den Oportunidades por Ganadas (Básicos)</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>ImporteAceleradorAutos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>25 €</fullName>
+                <default>true</default>
+                <label>25 €</label>
+            </value>
+            <value>
+                <fullName>40 €</fullName>
+                <default>false</default>
+                <label>40 €</label>
+            </value>
+            <value>
+                <fullName>60 €</fullName>
+                <default>false</default>
+                <label>60 €</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Vacía campos Identifier y muestra componente CESS</description>
+        <name>VaciaCamposIdentifierMuestraComponenteCESS</name>
+        <label>Vacía campos Identifier y muestra componente CESS</label>
+        <locationX>50</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.identifier_aneto__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.identifier_cess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.show_cessinfo__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Comrpueba el switch en el Custom Setting (SwitchesConfiguration__c) para automatizaciones de Lead (DesactiveFlowLead__c) y no realiza ninguna acción si el switch está activo</description>
+        <name>Decision_Switches</name>
+        <label>Decision_Switches</label>
+        <locationX>336</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Switches_Activo</defaultConnectorLabel>
+        <rules>
+            <name>Switches_Inactivo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>HaCambiadoDocumentNumber</targetReference>
+            </connector>
+            <label>Switches_Inactivo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si ha cambiado yo no ha cambiado también el Show CESS (es decir, no se ha cambiado desde el componente ConsultaCESSFromLead) hay que vaciar los campos de identifier y mostrar el componente CESS</description>
+        <name>HaCambiadoDocumentNumber</name>
+        <label>¿Ha cambiado el Document Number?</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.document_number__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.document_number__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.show_cessinfo__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.show_cessinfo__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VaciaCamposIdentifierMuestraComponenteCESS</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Se ejecuta en el Before Update de Lead
+17/10 MMV: Se añade a la condición que no haya cambiado también el Mostrar componente CESS para vaciar los identificadores
+06/11 MMV: Se elimina la función de los teléfonos, se hace en el Before Insert/Update para que sea siempre previo a los Aux</description>
+    <interviewLabel>On Lead Before Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Lead Before Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Decision_Switches</startElementReference>
+    <status>Active</status>
+</Flow>

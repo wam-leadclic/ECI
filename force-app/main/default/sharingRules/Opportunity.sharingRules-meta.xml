@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Edici_n_Equipo_BLECIS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>regla que permite a todos los coordinadores BLECIS editar todas las oportunidades de BLECIS</description>
+        <label>Edición Equipo BLECIS</label>
+        <sharedTo>
+            <group>Edici_n_Equipo_BLECIS</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SupervisorCCBLECIS</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edici_n_Equipo_B_sico</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Regla que permite ver y editar todas las oportunidades del equipo básico menos prestamos y backoffice a los coordinadores</description>
+        <label>Edición Equipo Básico</label>
+        <sharedTo>
+            <group>Edici_n_Equipo_B_sico</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Equipo_B_sico</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Equipo_Gesti_n_Cartera_BACKOFFICE</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Permite al equipo de backoffice ver y editar todas las oportunidades del equipo Básico</description>
+        <label>Equipo Gestión Cartera - BACKOFFICE</label>
+        <sharedTo>
+            <role>EquipoBackoffice</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SupervisorCCBasicos</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Lectura_Oportunidades_Cess_Agentes</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>todas las oportunidades cuyo propietario sea  funciones de la antigua jerarquía serán visibles por todos los usuarios de la nueva jerarquía.</description>
+        <label>Lectura Oportunidades Cess Agentes</label>
+        <sharedTo>
+            <roleAndSubordinates>ResponsableContact</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Seguros</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Permisos_lectura_Opp_Basicos_y_Prestamos</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Permisos de lectura a las oportunidades de los equipo de Básicos y Préstamos entre ellos</description>
+        <label>Permisos lectura Opp Basicos y Prestamos</label>
+        <sharedTo>
+            <group>Equipo_Agentes_B_sico</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Equipo_Agentes_B_sico</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Qualities_Lectura_Oportunidades</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>regla que permite ver a Qualities todas las oportunidades</description>
+        <label>Qualities Lectura Oportunidades</label>
+        <sharedTo>
+            <role>Qualities</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ResponsableContact</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

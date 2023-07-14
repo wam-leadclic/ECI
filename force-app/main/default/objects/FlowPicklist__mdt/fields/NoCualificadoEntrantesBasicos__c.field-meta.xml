@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoCualificadoEntrantesBasicos__c</fullName>
+    <description>Valores picklist para motivos de no cualificado para medio Manual o Telefono cuando la llamada es Entrantes Basicos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>NoCualificado/EntrantesBasicos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consulta NO venta - ATC</fullName>
+                <default>true</default>
+                <label>Consulta NO venta - ATC</label>
+            </value>
+            <value>
+                <fullName>Gestión de Cartera</fullName>
+                <default>false</default>
+                <label>Gestión de Cartera</label>
+            </value>
+            <value>
+                <fullName>Llamada cortada</fullName>
+                <default>false</default>
+                <label>Llamada cortada</label>
+            </value>
+            <value>
+                <fullName>No asegurable</fullName>
+                <default>false</default>
+                <label>No asegurable</label>
+            </value>
+            <value>
+                <fullName>Asegurado en MM</fullName>
+                <default>false</default>
+                <label>Asegurado en MM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

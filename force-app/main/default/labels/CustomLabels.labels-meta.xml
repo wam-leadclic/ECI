@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CESS_insertLeadBatchLimit</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Batch size to insert Leads Massive</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_AlreadyExistsSchCall</fullName>
+        <categories>CESS,Task</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text in Schedule Call component  to itell already exists that Schedule Call</shortDescription>
+        <value>Para este registro ya existe una cita para la fecha y hora seleccionadas</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_LeadErrorNoExiste</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Lead no existe</shortDescription>
+        <value>Lead no existe en SF</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_LeadErrorNotNew</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error al eliminar un Lead por su estado</shortDescription>
+        <value>El lead no puede estar en proceso</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_cancelarOldTaskAndCreate</fullName>
+        <categories>CESS,Task</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text in Schedule Call component  to cancell old Task and create new one</shortDescription>
+        <value>Actualmente ya existe una llamada planificada para este registro. Si desea cancelar la llamada ya planificada y crear una nueva con la fecha/hora seleccionada pulse Guardar.</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_dateNotAvailableForSchCall</fullName>
+        <categories>CESS,Task</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text in Schedule Call component  to tell there is not availability to sch call</shortDescription>
+        <value>No quedan disponibilidad de citas para la fecha/hora seleccionadas</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_headerMasivoCargarLead</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Header csv Out cargar Lead Masivo</shortDescription>
+        <value>Linea, Nombre, Apellido, Campaña CTI , Medio, Resultado, Numero Lead, Error</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_headerMasivoElimLeadMasivo</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Header csv eliminación masiva Leads</shortDescription>
+        <value>Linea, Nombre, Apellido, Campaña CTI , Medio, Resultado, Numero Lead, Error</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_notMasivaLead</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Descripcion notificacion masiva Leads</shortDescription>
+        <value>Se ha iniciado el proceso masivo de Leads. Cuando finalice se enviará un email donde se notificará su resultado</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_notMasivaLeadSelectOp</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notificacion texto informacio seleccione Operacion</shortDescription>
+        <value>Seleccione el tipo de operación a realizar</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_proMasLeadEmailAddFrom</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Direccion que envia email del proceso masivo de Leads</shortDescription>
+        <value>soporte.salesforce.eci@iecisa.com</value>
+    </labels>
+    <labels>
+        <fullName>CESS_lbl_procMasLeadEmailAddcc</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Direcciones Email copia proceso masivo Lead</shortDescription>
+        <value>anaves@cess.elcorteingles.com,oscar.larasierra@cess.elcorteingles.com,raquelsanchez@cess.elcorteingles.com,carolinasalazar@cess.elcorteingles.com</value>
+    </labels>
+    <labels>
+        <fullName>CESS_proMasivoLeadBodyEmail</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cuerpo del correo de proceso Masivo Leads</shortDescription>
+        <value>En este correo se adjunta un csv con los resultados del proceso Masivo de Leads</value>
+    </labels>
+    <labels>
+        <fullName>CESS_proMasivoLeadNameCsv</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Nombre del csv del proceso masivo de Leads</shortDescription>
+        <value>procesoMasivoLead.csv</value>
+    </labels>
+    <labels>
+        <fullName>CESS_proMasivoLeadSubjectCarga</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subject email Proceso carga masiva de Leads</shortDescription>
+        <value>Resultado - carga masiva de leads</value>
+    </labels>
+    <labels>
+        <fullName>CESS_proMasivoLeadSubjectElim</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subject email Proceso Eliminacion masiva de Lead</shortDescription>
+        <value>Resultado - Eliminación masiva de leads</value>
+    </labels>
+    <labels>
+        <fullName>CESS_proMasivoLeadSubjectEmail</fullName>
+        <categories>CESS, Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subject email Proceso masiva de Leads</shortDescription>
+        <value>Proceso masivo de Leads</value>
+    </labels>
+    <labels>
+        <fullName>ErrorContactListNotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorContactListNotFound</shortDescription>
+        <value>Contact list not found</value>
+    </labels>
+    <labels>
+        <fullName>InfomracionLegalLocucion</fullName>
+        <categories>Mensaje flow</categories>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Mensaje argumentario reproducir información legal por locución</shortDescription>
+        <value>ATENCIÓN: CLIENTE SIN E-MAIL, NI TELÉFONO MÓVIL, OBLIGATORIO PONER LOCUCIÓN LEGAL.</value>
+    </labels>
+    <labels>
+        <fullName>InformacionLegalEmail</fullName>
+        <categories>Mensaje flow</categories>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Mensaje argumentario enviar información legal por correo</shortDescription>
+        <value>La información legal se enviará por correo electrónico al correo:</value>
+    </labels>
+    <labels>
+        <fullName>InformacionLegalSMS</fullName>
+        <categories>Mensaje flow</categories>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Mensaje argumentario enviar información legal por SMS</shortDescription>
+        <value>La información legal se enviará por SMS al número:</value>
+    </labels>
+    <labels>
+        <fullName>LSAbsenses</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAbsenses</shortDescription>
+        <value>Absenses</value>
+    </labels>
+    <labels>
+        <fullName>LSAccept</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAccept</shortDescription>
+        <value>Accept</value>
+    </labels>
+    <labels>
+        <fullName>LSActive</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSActive</shortDescription>
+        <value>Active</value>
+    </labels>
+    <labels>
+        <fullName>LSAddress</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAddress</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>LSAnonymousUser</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAnonymousUser</shortDescription>
+        <value>Anonymous User</value>
+    </labels>
+    <labels>
+        <fullName>LSAssignServiceDetails</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAssignServiceDetails</shortDescription>
+        <value>Assign Service Details</value>
+    </labels>
+    <labels>
+        <fullName>LSAssignServiceResources</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAssignServiceResources</shortDescription>
+        <value>Assign Service Resources</value>
+    </labels>
+    <labels>
+        <fullName>LSAvailable</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSAvailable</shortDescription>
+        <value>Available</value>
+    </labels>
+    <labels>
+        <fullName>LSCanNotDeleteCenter</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCanNotDeleteCenter</shortDescription>
+        <value>You don&apos;t have permissions to delete a Center. Deactivating it by marking unchecking the Active checkbox instead.</value>
+    </labels>
+    <labels>
+        <fullName>LSCanNotDeleteServiceDetail</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCanNotDeleteServiceDetail</shortDescription>
+        <value>The Service Detail is related to Assignments, it can not be delete. If you want to deactivate it unassign it from the Service Center instead.</value>
+    </labels>
+    <labels>
+        <fullName>LSCancel</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>LSCity</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCity</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>LSClientDocumentField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Document Number</shortDescription>
+        <value>Document number</value>
+    </labels>
+    <labels>
+        <fullName>LSClientLastNameField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>LSClientNameField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>LSClose</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSClose</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>LSConfirmDeleteMsg</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSConfirmDeleteMsg</shortDescription>
+        <value>Are you sure you want to delete the record?</value>
+    </labels>
+    <labels>
+        <fullName>LSConfirmDeleteTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSConfirmDeleteTitle</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateError</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateError</shortDescription>
+        <value>An error has ocurred while creating the record.</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateMsg</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateMsg</shortDescription>
+        <value>The record has been successfully created</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateNewAssignment</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateNewAssignment</shortDescription>
+        <value>Create Assignment</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateNewClientTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>To create new client</shortDescription>
+        <value>Create new Client</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateNewCustomer</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateNewCustomer</shortDescription>
+        <value>Create a new customer</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateOH</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateOH</shortDescription>
+        <value>Create new Operating Hours</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateResource</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateResource</shortDescription>
+        <value>Create new Service Resource</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateSC</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateSC</shortDescription>
+        <value>Create new Service Center</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateSD</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create new Service Detail</shortDescription>
+        <value>Create new Service Detail</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateServiceAbsence</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateServiceAbsence</shortDescription>
+        <value>Create Absence</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateServiceAppointment</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateServiceAppointment</shortDescription>
+        <value>Schedule Service Appointment</value>
+    </labels>
+    <labels>
+        <fullName>LSCreateTS</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCreateTS</shortDescription>
+        <value>Create a new Time Slot</value>
+    </labels>
+    <labels>
+        <fullName>LSCustomOh</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSCustomOh</shortDescription>
+        <value>Customised Operating Hour</value>
+    </labels>
+    <labels>
+        <fullName>LSDayOfWeek</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSDayOfWeek</shortDescription>
+        <value>Day of Week</value>
+    </labels>
+    <labels>
+        <fullName>LSDelete</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSDelete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>LSDeleteError</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSDeleteError</shortDescription>
+        <value>An error ocurred while trying to delete the record. Please try again.</value>
+    </labels>
+    <labels>
+        <fullName>LSDeleteMsg</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSDeleteMsg</shortDescription>
+        <value>The record has been successfully removed</value>
+    </labels>
+    <labels>
+        <fullName>LSDuplicateServiceCenterErrorMsg</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSDuplicateServiceCenterErrorMsg</shortDescription>
+        <value>The Service Center already exist</value>
+    </labels>
+    <labels>
+        <fullName>LSEditServiceDetail</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSEditServiceDetail</shortDescription>
+        <value>Edit Service Detail</value>
+    </labels>
+    <labels>
+        <fullName>LSEditTS</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSEditTS</shortDescription>
+        <value>Edit Time Slot</value>
+    </labels>
+    <labels>
+        <fullName>LSEmailField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>LSEndDate</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSEndDate</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>LSEndTime</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSEndTime</shortDescription>
+        <value>End Time</value>
+    </labels>
+    <labels>
+        <fullName>LSError</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSError</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>LSEstimatedDuration</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Estimated Duration</shortDescription>
+        <value>Estimated Duration</value>
+    </labels>
+    <labels>
+        <fullName>LSFieldsRequired</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSFieldsRequired</shortDescription>
+        <value>First Name and Last Name are required fields.</value>
+    </labels>
+    <labels>
+        <fullName>LSFirstName</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSFirstName</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>LSHoliday</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSHoliday</shortDescription>
+        <value>New holiday</value>
+    </labels>
+    <labels>
+        <fullName>LSInvalidSession</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSInvalidSession</shortDescription>
+        <value>Invalid session, refresh the page. Please make sure you don&apos;t have other session opened with a different user.</value>
+    </labels>
+    <labels>
+        <fullName>LSLogout</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSLogout</shortDescription>
+        <value>Logout</value>
+    </labels>
+    <labels>
+        <fullName>LSMustBeSuperUserPermissionError</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSMustBeSuperUserPermissionError</shortDescription>
+        <value>Don&apos;t have permissions to perform this operation, you must be a Super User or a System Administrator user</value>
+    </labels>
+    <labels>
+        <fullName>LSName</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>LSNew</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSNew</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>LSNext</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSNext</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>LSNotAssignedToAServiceCenterErrorMsg</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSNotAssignedToAServiceCenterErrorMsg</shortDescription>
+        <value>You are not assigned to any Service Center</value>
+    </labels>
+    <labels>
+        <fullName>LSOperatingHours</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSOperatingHours</shortDescription>
+        <value>Operating Hours</value>
+    </labels>
+    <labels>
+        <fullName>LSPhoneField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Phone</shortDescription>
+        <value>Phone number</value>
+    </labels>
+    <labels>
+        <fullName>LSPrefixField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSPrefixField</shortDescription>
+        <value>Country Code</value>
+    </labels>
+    <labels>
+        <fullName>LSPrevious</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSPrevious</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>LSSave</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSave</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>LSSearchField</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectCenterErrorMessage</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectCenterErrorMessage</shortDescription>
+        <value>Error recovering the centers. Please, refresh the page</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectCenterSubTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectCenterSubTitle</shortDescription>
+        <value>Which center are you creating the service appointment for?</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectCenterTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectCenterTitle</shortDescription>
+        <value>Select the center</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectClientTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>To select the client</shortDescription>
+        <value>Select the Client</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectOption</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectOption</shortDescription>
+        <value>Select an option</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceDetailErrorMessage</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceDetailErrorMessage</shortDescription>
+        <value>Error recovering the services. Please, refresh the page</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceDetailSubTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceDetailSubTitle</shortDescription>
+        <value>Which service detail are you creating the service appointment for?</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceDetailTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceDetailTitle</shortDescription>
+        <value>Select the service detail</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceErrorMessage</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceErrorMessage</shortDescription>
+        <value>Error recovering the services. Please, refresh the page</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceSubTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceSubTitle</shortDescription>
+        <value>Which service are you creating the service appointment for?</value>
+    </labels>
+    <labels>
+        <fullName>LSSelectServiceTitle</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelectServiceTitle</shortDescription>
+        <value>Select the service</value>
+    </labels>
+    <labels>
+        <fullName>LSSelected</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSelected</shortDescription>
+        <value>Selected</value>
+    </labels>
+    <labels>
+        <fullName>LSService</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSService</shortDescription>
+        <value>Service</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceAbsence</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceAbsence</shortDescription>
+        <value>Absence</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceCenter</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceCenter</shortDescription>
+        <value>Service Center</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceCenterAssignment</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceCenterAssignment</shortDescription>
+        <value>Service Center Assignments</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceCenters</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceCenters</shortDescription>
+        <value>Service Centers</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceDetail</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceDetail</shortDescription>
+        <value>Service Details</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceDetailList</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Detail List</shortDescription>
+        <value>Service Detail List</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceResource</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceResource</shortDescription>
+        <value>Service Resource</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceResourceList</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceResourceList</shortDescription>
+        <value>Service Resource List</value>
+    </labels>
+    <labels>
+        <fullName>LSServiceResources</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSServiceResources</shortDescription>
+        <value>Service Resources</value>
+    </labels>
+    <labels>
+        <fullName>LSShowDetails</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSShowDetails</shortDescription>
+        <value>Show Details</value>
+    </labels>
+    <labels>
+        <fullName>LSStartDate</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSStartDate</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>LSStartTime</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSStartTime</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>LSStreet</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSStreet</shortDescription>
+        <value>Street</value>
+    </labels>
+    <labels>
+        <fullName>LSSubmit</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSubmit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>LSSuccess</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSSuccess</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>LSTimeZone</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSTimeZone</shortDescription>
+        <value>Time Zone</value>
+    </labels>
+    <labels>
+        <fullName>LSType</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>LSUpdate</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSUpdate</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>LSUpdateRecord</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSUpdateRecord</shortDescription>
+        <value>The record has been successfully updated.</value>
+    </labels>
+    <labels>
+        <fullName>LSUserType</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSUserType</shortDescription>
+        <value>User Type</value>
+    </labels>
+    <labels>
+        <fullName>LSValidEmail</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSValidEmail</shortDescription>
+        <value>Please enter a valid Email</value>
+    </labels>
+    <labels>
+        <fullName>LSValidPhone</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSValidPhone</shortDescription>
+        <value>Please enter a valid Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>LSValidationFieldsError</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSValidationFieldsError</shortDescription>
+        <value>Review the fields and try again</value>
+    </labels>
+    <labels>
+        <fullName>LSValidationRuleAccount</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LSValidationRuleAccount</shortDescription>
+        <value>At least you have to populate one telephone number or email.</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_1</shortDescription>
+        <value>January</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_10</shortDescription>
+        <value>October</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_11</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_11</shortDescription>
+        <value>November</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_12</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_12</shortDescription>
+        <value>December</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_2</shortDescription>
+        <value>February</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_3</shortDescription>
+        <value>March</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_4</shortDescription>
+        <value>April</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_5</shortDescription>
+        <value>May</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_6</shortDescription>
+        <value>June</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_7</shortDescription>
+        <value>July</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_8</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_8</shortDescription>
+        <value>August</value>
+    </labels>
+    <labels>
+        <fullName>Month_of_Year_9</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month_of_Year_9</shortDescription>
+        <value>September</value>
+    </labels>
+    <labels>
+        <fullName>ORG_lbl_csvDel</fullName>
+        <categories>ORG,csv</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV delimitador</shortDescription>
+        <value>&quot;</value>
+    </labels>
+    <labels>
+        <fullName>ORG_lbl_csvMaxLines</fullName>
+        <categories>ORG,csv,limite</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV num maximo lineas mostrar</shortDescription>
+        <value>200</value>
+    </labels>
+    <labels>
+        <fullName>ORG_lbl_csvSep</fullName>
+        <categories>ORG,csv</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV separador</shortDescription>
+        <value>,</value>
+    </labels>
+    <labels>
+        <fullName>SAC_EmailTemplate_AcuseRecibo_Body_Agrad_Sugerencia</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAC_EmailTemplate_AcuseRecibo_Body_Agrad_Sugerencia</shortDescription>
+        <value>&lt;p&gt;Le agradecemos sinceramente sus comentarios y el interés mostrado en la mejora de nuestra Organización.&lt;/p&gt;
+
+&lt;p&gt;Acusamos recibo de su comunicación y se la trasladamos al departamento correspondiente.&lt;/p&gt;
+
+&lt;p&gt;Sin otro particular aprovechamos la ocasión para saludarle atentamente&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>SAC_EmailTemplate_AcuseRecibo_Body_Queja_Reclam_Otros</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAC_EmailTemplate_AcuseRecibo_Body_Queja_Reclam_Otros</shortDescription>
+        <value>&lt;p&lt;Le  informamos que su comunicación ha sido registrada en nuestro sistema con el número de caso arriba indicado, referencia que le rogamos nos indique en cualquier consulta posterior que tuviera que realizar sobre este asunto.&lt;/p&gt;
+
+&lt;p&gt;Asimismo, le notificamos que se han iniciado las gestiones oportunas para su resolución o atención.&lt;/p&gt;
+
+
+&lt;/p&gt;&lt;/p&gt;
+&lt;p&lt;Sin otro particular aprovechamos la ocasión para saludarle atentamente.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>SAC_EmailTemplate_AcuseRecibo_Footer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAC_EmailTemplate_AcuseRecibo_Footer</shortDescription>
+        <value>&lt;p&gt;
+     Servicio de Atención al Cliente &lt;b&gt;{0}&lt;/b&gt;
+     &lt;/br&gt;
+     &lt;p style=&quot;color:rgb(0,152,67);&quot;&gt;&lt;b&gt;El Corte Inglés&lt;/b&gt;&lt;/p&gt;
+     Telf.: 901 122 122 
+     &lt;/br&gt;
+     Mail: servicio_clientes@elcorteingles.es
+     &lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+     Este email ha sido enviado automáticamente, por favor no responda al mismo.
+&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>SAC_EmailTemplate_AcuseRecibo_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAC_EmailTemplate_AcuseRecibo_Subject</shortDescription>
+        <value>ECI - A new case has been opened with number: {0}</value>
+    </labels>
+    <labels>
+        <fullName>VTDVD_interesesErrorUpd</fullName>
+        <categories>VTDVD, Lead</categories>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Intereses no actualizados, detalle de Resultado obligatorio</shortDescription>
+        <value>Es necesario seleccionar un detalle de resultado si se elige un Resultado</value>
+    </labels>
+    <labels>
+        <fullName>VTDVD_interesesSuccessUpd</fullName>
+        <categories>VTDVD, Lead</categories>
+        <language>es</language>
+        <protected>false</protected>
+        <shortDescription>Intereses actualizados</shortDescription>
+        <value>Intereses actualizados</value>
+    </labels>
+    <labels>
+        <fullName>lsSelectAccountErrorMessage</fullName>
+        <categories>LS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LsSelectAccountErrorMessage</shortDescription>
+        <value>An internal error has occurred. Please refresh the page.</value>
+    </labels>
+</CustomLabels>

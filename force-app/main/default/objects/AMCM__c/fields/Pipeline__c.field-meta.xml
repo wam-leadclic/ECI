@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pipeline__c</fullName>
+    <description>Campo fórmula para pipeline.</description>
+    <externalId>false</externalId>
+    <formula>IF(Opportunity__r.IsWon, &quot;06 - Contratado&quot;,
+IF( NOT(ISBLANK( Opportunity__c )) &amp;&amp; NOT(Opportunity__r.IsClosed), &quot;05 - Gestión Comercial&quot;,
+IF( Lead__r.IsConverted , &quot;04 - Útil&quot;,
+IF( Lead__r.is_reachable__c = 1 , &quot;03 - Contactado&quot;,
+IF( TEXT(Lead__r.Status) = &quot;New&quot;, &quot;01 - Nuevos&quot; , &quot;02 - En Proceso&quot; )
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pipeline</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

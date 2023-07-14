@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Miembro de campaña AG</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Miembros de campaña AG</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Formato Miembro de campaña adicional</layout>
+        <sections>
+            <label></label>
+            <section>CTI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información Lead | Cliente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información del sistema</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Origen - Fuente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Otra información Ramos</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Autos/Motos</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Hogar</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Salud</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Seguros Especiales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Formato Miembro de campaña gestionado</layout>
+        <sections>
+            <label></label>
+            <section>CTI</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información Lead | Cliente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información del sistema</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Origen - Fuente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Otra información Ramos</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Autos/Motos</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Hogar</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Salud</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Ramo Seguros Especiales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Vínculos personalizados</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Additional</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Managed</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Lead_Field_Registro_Manual</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Lead_Field_Resultado</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>MiembroAG_Field_Registro_Manual_Adiciona</name>
+    </validationRules>
+</CustomObjectTranslation>

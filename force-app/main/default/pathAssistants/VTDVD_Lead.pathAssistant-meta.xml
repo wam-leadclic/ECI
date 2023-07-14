@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>VTDVD Lead</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Wingdings;&quot;&gt;ü&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt; &lt;/span&gt;Estado: &lt;b&gt;&lt;i&gt;nuevo&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;&quot;&gt;o&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt;  &lt;/span&gt;Si replanificas la llamada, escribe unas breves notas que ayuden a tu compañero a atender la llamada posterior.&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;&quot;&gt;o&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt;  &lt;/span&gt;Si no replanificas la llamada, recuerda tipificar el interés del lead. &lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Wingdings;&quot;&gt;ü&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt; &lt;/span&gt;Estado: &lt;b&gt;&lt;i&gt;en proceso&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;&quot;&gt;o&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt;  &lt;/span&gt;Si tienes que replanificar de nuevo la llamada, escribe unas breves notas que ayuden a tu compañero a atender la llamada posterior.&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;&quot;&gt;o&lt;/span&gt;&lt;span style=&quot;font-size: 7pt;&quot;&gt;  &lt;/span&gt;Si no replanificas la llamada, recuerda tipificar el interés del lead. &lt;/p&gt;</info>
+        <picklistValueName>Working</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>VTDVD_LeadDefault</recordTypeName>
+</PathAssistant>

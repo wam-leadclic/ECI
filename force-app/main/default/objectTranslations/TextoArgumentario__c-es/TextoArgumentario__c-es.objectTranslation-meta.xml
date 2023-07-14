@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Texto de Argumentario</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Textos de Argumentario</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Texto de Argumentario Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Etiquetas (sin formato)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Textos</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

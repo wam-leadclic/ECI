@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <description>Asigna en el registro de oportunidad el valor de motivo de aplazamiento seleccionado</description>
+        <name>Set_Opportunity_MotivoAplazamiento</name>
+        <label>Set Opportunity Motivo Aplazamiento</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>Var_INOUT_Opportunity.PostponementReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_SelectedPostponedReason</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Contiene una pantalla para seleccionar el motivo de aplazamiento. Se hace en subflow porque se reutiliza en varios flujos y no es algo trivial que puede variar en el futuro.
+20/10 AMT: Cambios en las cabeceras de las pantallas
+20/10 AMT: Eliminada variable header</description>
+    <dynamicChoiceSets>
+        <description>Todos los valores del campo para cuando no venga el Medio</description>
+        <name>Choice_MotivoAplazamiento</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>PostponementReason__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores para opp planificada cuando el medio es BBDD</description>
+        <name>Choice_OppPlanificadaBBDD</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaSalientesBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para opp planificada cuando el medio es blecis</description>
+        <name>Choice_OppPlanificadaBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores para opp planificada de entrantes básicos</description>
+        <name>Choice_OppPlanificadaEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores para opp planificada cuando el medio es prestamos</description>
+        <name>Choice_OppPlanificadaPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores para opp planificada para salientes básicos</description>
+        <name>Choice_OppPlanificadaSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPlanificadaSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <description>Valor para opp planificada del picklist que se ha mostrado en el screen</description>
+        <name>For_SelectedPostponedReason</name>
+        <dataType>String</dataType>
+        <expression>IF ( NOT( ISBLANK( {!S01_Picklist_PostponementReasonBBDD}  ) ), {!S01_Picklist_PostponementReasonBBDD},
+ IF ( NOT( ISBLANK( {!S01_Picklist_PostponementReasonBlecis} ) ), {!S01_Picklist_PostponementReasonBlecis},
+  IF( NOT( ISBLANK( {!S01_Picklist_PostponementReasonDefault} ) ), {!S01_Picklist_PostponementReasonDefault},
+   IF( NOT( ISBLANK( {!S01_Picklist_PostponementReasonEntrantesBasicos} ) ), {!S01_Picklist_PostponementReasonEntrantesBasicos},
+    IF( NOT( ISBLANK( {!S01_Picklist_PostponementReasonPrestamos} ) ),{!S01_Picklist_PostponementReasonPrestamos},
+     IF( NOT( ISBLANK( {!S01_Picklist_PostponementReasonSalientesBasicos} ) ), {!S01_Picklist_PostponementReasonSalientesBasicos}, &quot;&quot;
+     )
+    )
+   )
+  )
+ )
+)</expression>
+    </formulas>
+    <interviewLabel>Argumentario_Subflow_OppMotivoAplazamiento {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Argumentario_Subflow_OppMotivoAplazamiento</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <description>Muestra los motivos de aplazamientos disponibles en función del Medio de la Oportunidad</description>
+        <name>S01_SeleccionMotivoAplazamiento</name>
+        <label>S01_SeleccionMotivoAplazamiento</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Set_Opportunity_MotivoAplazamiento</targetReference>
+        </connector>
+        <fields>
+            <name>S01_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonDefault</name>
+            <choiceReferences>Choice_MotivoAplazamiento</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonBlecis</name>
+            <choiceReferences>Choice_OppPlanificadaBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonEntrantesBasicos</name>
+            <choiceReferences>Choice_OppPlanificadaEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonPrestamos</name>
+            <choiceReferences>Choice_OppPlanificadaPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonSalientesBasicos</name>
+            <choiceReferences>Choice_OppPlanificadaSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Picklist_PostponementReasonBBDD</name>
+            <choiceReferences>Choice_OppPlanificadaBBDD</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo Aplazamiento</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>S01_SeleccionMotivoAplazamiento</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Texto de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el nombre de la persona con la que estamos hablando y que vendrá del lead o del contacto.</description>
+        <name>Var_INOUT_Heading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Imagen de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el ícono que se muestra en la cabecera.</description>
+        <name>Var_INOUT_HeadingIcon</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Registro de la oportunidad</description>
+        <name>Var_INOUT_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Texto de subcabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el el interés (Ramo) que se está tratando en ese momento y que depende de dónde provenga el interés.</description>
+        <name>Var_INOUT_SubHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

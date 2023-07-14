@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MiembroAG_Field_Registro_Manual_Adiciona</fullName>
+    <active>false</active>
+    <description>Valida que el medio o el origen deben tener valor. en el tipo de registro Adicional</description>
+    <errorConditionFormula>$Setup.SwitchesConfiguration__c.DesactiveVRMiembrodeCampanaAG__c == FALSE &amp;&amp;
+RecordType.DeveloperName = &quot;Additional&quot;
+&amp;&amp; ISBLANK( TEXT( SourceType__c ))
+&amp;&amp; ISBLANK( TEXT ( SourceManualRecord__c  ))
+&amp;&amp; ISBLANK( $User.cti_ani__c )</errorConditionFormula>
+    <errorDisplayField>SourceManualRecord__c</errorDisplayField>
+    <errorMessage>Debe indicar el origen o el medio.</errorMessage>
+</ValidationRule>

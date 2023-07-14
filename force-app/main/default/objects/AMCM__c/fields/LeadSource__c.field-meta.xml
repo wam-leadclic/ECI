@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadSource__c</fullName>
+    <description>Lista para seleccionar de dónde llega este candidato.</description>
+    <externalId>false</externalId>
+    <label>Origen del candidato</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>CESSOrigenCandidato</valueSetName>
+    </valueSet>
+</CustomField>

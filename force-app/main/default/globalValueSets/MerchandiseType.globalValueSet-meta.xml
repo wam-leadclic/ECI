@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ELECTRONICA</fullName>
+        <default>false</default>
+        <label>ELECTRONICA</label>
+    </customValue>
+    <customValue>
+        <fullName>GAE</fullName>
+        <default>false</default>
+        <label>GAE</label>
+    </customValue>
+    <customValue>
+        <fullName>MOVILES</fullName>
+        <default>false</default>
+        <label>MOVILES</label>
+    </customValue>
+    <customValue>
+        <fullName>PAE</fullName>
+        <default>false</default>
+        <label>PAE</label>
+    </customValue>
+    <customValue>
+        <fullName>TABLET</fullName>
+        <default>false</default>
+        <label>TABLET</label>
+    </customValue>
+    <customValue>
+        <fullName>PORTATIL</fullName>
+        <default>false</default>
+        <label>PORTATIL</label>
+    </customValue>
+    <customValue>
+        <fullName>WATCH</fullName>
+        <default>false</default>
+        <label>WATCH</label>
+    </customValue>
+    <description>Tipo de Mercancía</description>
+    <masterLabel>Tipo de Mercancía</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

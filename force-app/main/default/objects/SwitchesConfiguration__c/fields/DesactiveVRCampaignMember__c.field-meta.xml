@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveVRCampaignMember__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Desactiva las reglas de validación del objeto Campaign Member</description>
+    <externalId>false</externalId>
+    <label>DesactiveVRCampaign Member</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

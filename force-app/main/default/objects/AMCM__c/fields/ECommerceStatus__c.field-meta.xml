@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ECommerceStatus__c</fullName>
+    <description>Muestra por texto el estado del eCommerce.</description>
+    <externalId>false</externalId>
+    <formula>IF(Opportunity__r.IsWon, &quot;6-Ganado&quot;,
+IF(Opportunity__r.IsClosed, &quot;5-Perdido&quot;,
+IF(TEXT(Lead__r.Status) = &quot;Qualified&quot; , &quot;4-En Gestión&quot;,
+IF(TEXT(Lead__r.Status) = &quot;Unqualified&quot;, &quot;3-No Cualificado&quot;,
+IF(TEXT(Lead__r.Status) = &quot;Working&quot;, &quot;2-En Proceso&quot;,
+IF(TEXT(Lead__r.Status) = &quot;New&quot;, &quot;1-Nuevo&quot;, &quot;0-NO DEFINIDO&quot;)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Estado eCommerce</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

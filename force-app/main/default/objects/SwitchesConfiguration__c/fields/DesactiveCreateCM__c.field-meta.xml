@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveCreateCM__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Desactiva, en la creación de un Lead, la creación del interés asociado. Aplicado en el trigger de Leads</description>
+    <externalId>false</externalId>
+    <label>Desactive CreateCM</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

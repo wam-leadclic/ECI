@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Cliente</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Clientes</value>
+    </caseValues>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Formato CESS cuenta personal</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label></label>
+            <section>Datos de Cliente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Formas de Contacto</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información ECI</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Formato de cuenta personal</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Person Account CESS Layout Usabilidad</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label></label>
+            <section>Datos de Cliente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Datos de contacto</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Datos personales</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Información ECI</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>SendEmail_Acc_Agente</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Business_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>LS_Service</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Seguros</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>CESS_Document_type_Pasaporte</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ClienteNoencontrado</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ClienteNombreField</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ClientePhoneOrMobilePhoneFields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ClienteTipoDocumentoField</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ClienteTipoNumeroDocumentoFields</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

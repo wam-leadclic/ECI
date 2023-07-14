@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Aborted</masterLabel>
+        <translation>No cualificado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Completed</masterLabel>
+        <translation>Cualificado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>New</masterLabel>
+        <translation>Nuevo</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Not contacted</masterLabel>
+        <translation>No contactado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Postponed</masterLabel>
+        <translation>Aplazado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Working</masterLabel>
+        <translation>En Proceso</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

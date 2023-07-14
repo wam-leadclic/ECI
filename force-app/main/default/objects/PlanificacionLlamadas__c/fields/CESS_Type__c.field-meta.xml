@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CESS_Type__c</fullName>
+    <description>Indicates if the Record is one of the default Call limits or for a custom day</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Estándar - El valor que se consultara por defecto para ese día de la semana. Debe de existir un registro estándar por cada Area para cada día de la semana. 
+
+Custom - En caso de existir,  los limites de llamadas para la fecha serán los indicados en el registro.</inlineHelpText>
+    <label>Tipo</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Estandar</fullName>
+                <default>false</default>
+                <label>Estandar</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

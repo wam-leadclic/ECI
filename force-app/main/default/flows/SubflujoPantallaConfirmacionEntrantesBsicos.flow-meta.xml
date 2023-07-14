@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <description>Agrega a la lista de oportunidades para actualizar la oportunidad</description>
+        <name>Set_AgregaLista</name>
+        <label>Agrega a la Lista</label>
+        <locationX>754</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>Col_Opp_Actualizar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Opps</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Opps</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Fija los valores de CM CTI con los recogidos y en estado &quot;Aborted&quot; esto propaga la modificación por Triggered Flow a los CM MKT relacionados.</description>
+        <name>Set_CM_CTI_Values</name>
+        <label>Set_CM_CTI_Values</label>
+        <locationX>666</locationX>
+        <locationY>1334</locationY>
+        <assignmentItems>
+            <assignToReference>Var_IN_CMCTI.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Var_IN_CMCTI.Result__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No colabora</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_CM_CTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Marca que se finalice el argumentario tras el subflujo</description>
+        <name>Set_FinalizarArgumentario</name>
+        <label>Set_FinalizarArgumentario</label>
+        <locationX>666</locationX>
+        <locationY>1574</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_FinalizarArgumentario</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigna el valor seleccionado de motivo de perdida en el registro</description>
+        <name>Set_ValorMotivoPerdida</name>
+        <label>Set Valor Motivo Perdida</label>
+        <locationX>754</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Opps.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Perdido</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Loop_Opps.Loss_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>For_MotivoPerdidaValor</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_AgregaLista</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Si</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Si</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>Si es un contacto NO se tiene que mostrar la pantalla de datos Cess y se sale del subflujo</description>
+        <name>Decision_LeadOContacto</name>
+        <label>¿Lead o Contacto?</label>
+        <locationX>182</locationX>
+        <locationY>518</locationY>
+        <defaultConnectorLabel>Contacto</defaultConnectorLabel>
+        <rules>
+            <name>LeadOContacto_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_IN_CMCTI.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PantallaDatosCESS</targetReference>
+            </connector>
+            <label>Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si es la persona de contacto o no</description>
+        <name>EsPersonaDeContacto</name>
+        <label>¿Es la Persona De Contacto?</label>
+        <locationX>424</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>Get_Opps_Abiertas</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiPersonaDeContacto</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PersonaDeContactoCheckbox</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_LeadOContacto</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Muestra preguntas de confirmación de que la persona es el contacto y si esta interesado o no en el seguro (HEADER dinámico incorporado con imagen como recurso estático con texto de objeto texto de argumentario)
+
+20/09 MHG: CAMBIOS DE ORDEN DE PANTALLAS este subflujo ya no recibe los intereses ni muestra/modifica sus datos, para ver lo que hacía antes es necesario revisar las versiones previas a esta
+21/09 MHG: Se incluye la decisión de si es o no Contacto, porque  se muestran los Datos CESS si es solo Lead
+22/09 MHG: Se elimina la selección del motivo de no cualificación y se fija siempre el valor de &quot;No colabora&quot; en resultado
+29/09 AC: Cambio de preguntas por Textos Argumentario variables
+19/10 AMT: Cambio en las cabeceras de las pantallas
+20/10 AMT: Borrado variable Header
+21/10 MMV: Si no es la persona de contacto y tiene oportunidades el agente debe cerrarlas aportando el motivo de pérdida</description>
+    <dynamicChoiceSets>
+        <description>valores del campo Motivo de Pérdida de Oportunidad</description>
+        <name>Choice_OppMotivoPerdida</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Loss_Reason__c</picklistField>
+        <picklistObject>Opportunity</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores del campo Motivo de Pérdida correspondientes con el Medio BBDD</description>
+        <name>Choice_OppPerdidaBBDD</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaSalientesBBDD__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>valores picklist de motivo de perdida para medio blecis</description>
+        <name>Choice_OppPerdidaBlecis</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaBlecis__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de perdida de entrantes basicos</description>
+        <name>Choice_OppPerdidaEntrantesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaEntrantesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para opp perdida con el medio prestamos</description>
+        <name>Choice_OppPerdidaPrestamos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidPrestamos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist para motivo de perdida de salientes basicos</description>
+        <name>Choice_OppPerdidaSalientesBasicos</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>OppPerdidaSalientesBasicos__c</picklistField>
+        <picklistObject>FlowPicklist__mdt</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <description>Identifica el valor rellenado en cada uno de los picklist disponibles y obtiene el valor definitivo</description>
+        <name>For_MotivoPerdidaValor</name>
+        <dataType>String</dataType>
+        <expression>IF ( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaSinMedio} ) ) , {!S02_Picklist_MotivoPerdidaSinMedio}, 
+   IF ( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaBBDD} ) ), {!S02_Picklist_MotivoPerdidaBBDD},
+      IF ( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaBlecis} ) ), {!S02_Picklist_MotivoPerdidaBlecis},
+         IF( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaEntrantesBasicos} ) ), {!S02_Picklist_MotivoPerdidaEntrantesBasicos},
+            IF ( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaPrestamos} ) ), {!S02_Picklist_MotivoPerdidaPrestamos},
+               IF( NOT( ISBLANK( {!S02_Picklist_MotivoPerdidaSalientesBasicos} ) ), {!S02_Picklist_MotivoPerdidaSalientesBasicos},&apos;&apos;
+               )
+            )
+         )
+      )
+   )
+)</expression>
+    </formulas>
+    <interviewLabel>Subflujo Pantalla de confirmación Entrantes (Básicos) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Pantalla de confirmación Entrantes (Básicos)</label>
+    <loops>
+        <description>Itera las oportunidades encontradas para mostrar una pantalla que permita seleccionar el motivo de pérdida</description>
+        <name>Loop_Opps</name>
+        <label>Loop Opps</label>
+        <locationX>666</locationX>
+        <locationY>638</locationY>
+        <collectionReference>Get_Opps_Abiertas</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>S02_PantallaMotivoDePerdida</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Opp_Perdida</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Obtiene las oportunidades abiertas relacionadas a este CM CTI</description>
+        <name>Get_Opps_Abiertas</name>
+        <label>Get Opps Abiertas</label>
+        <locationX>666</locationX>
+        <locationY>518</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Opps</targetReference>
+        </connector>
+        <filters>
+            <field>relatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_IN_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
+        <name>Get_TextosArgumentario</name>
+        <label>Get_TextosArgumentario</label>
+        <locationX>424</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>S01_PantallaPersonaDeContacto</targetReference>
+        </connector>
+        <filters>
+            <field>Flujo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SubflujoPantallaConfirmacionEntrantesBsicos</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Idioma__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.LanguageLocaleKey</elementReference>
+            </value>
+        </filters>
+        <object>TextoArgumentario__c</object>
+    </recordLookups>
+    <recordUpdates>
+        <description>Actualiza el Campaign Member de CTI con los valores recogidos y con estado &quot;Aborted&quot;</description>
+        <name>Update_CM_CTI</name>
+        <label>Update_CM_CTI</label>
+        <locationX>666</locationX>
+        <locationY>1454</locationY>
+        <connector>
+            <targetReference>Set_FinalizarArgumentario</targetReference>
+        </connector>
+        <inputReference>Var_IN_CMCTI</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza las oportunidades con estado perdida y su motivo de pérdida</description>
+        <name>Update_Opp_Perdida</name>
+        <label>Update Opp Perdida</label>
+        <locationX>666</locationX>
+        <locationY>1214</locationY>
+        <connector>
+            <targetReference>Set_CM_CTI_Values</targetReference>
+        </connector>
+        <inputReference>Col_Opp_Actualizar</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>S01_PantallaPersonaDeContacto</name>
+        <label>S01 Pantalla Persona De Contacto</label>
+        <locationX>424</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>EsPersonaDeContacto</targetReference>
+        </connector>
+        <fields>
+            <name>S01_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>PersonaDeContactoCheckbox</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>{!Get_TextosArgumentario.Etiqueta1__c}</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Muestra los motivos de pérdida en función del medio de la oportunidad</description>
+        <name>S02_PantallaMotivoDePerdida</name>
+        <label>S02 Pantalla Motivo de Pérdida</label>
+        <locationX>754</locationX>
+        <locationY>758</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Set_ValorMotivoPerdida</targetReference>
+        </connector>
+        <fields>
+            <name>S02_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_T001_NombreOportunidad</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!Loop_Opps.Name}&lt;/span&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaSinMedio</name>
+            <choiceReferences>Choice_OppMotivoPerdida</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaBBDD</name>
+            <choiceReferences>Choice_OppPerdidaBBDD</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaBlecis</name>
+            <choiceReferences>Choice_OppPerdidaBlecis</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaEntrantesBasicos</name>
+            <choiceReferences>Choice_OppPerdidaEntrantesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaPrestamos</name>
+            <choiceReferences>Choice_OppPerdidaPrestamos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S02_Picklist_MotivoPerdidaSalientesBasicos</name>
+            <choiceReferences>Choice_OppPerdidaSalientesBasicos</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Motivo de Pérdida</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Get_TextosArgumentario</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <description>Invoca el flow Subflujo Pantalla Datos CESS</description>
+        <name>PantallaDatosCESS</name>
+        <label>Pantalla Datos CESS</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <flowName>SubflujoPantallaDatosCESS</flowName>
+        <inputAssignments>
+            <name>inputContactId</name>
+            <value>
+                <elementReference>Var_IN_CMCTI.ContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>inputLeadId</name>
+            <value>
+                <elementReference>Var_IN_CMCTI.LeadId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_Heading</name>
+            <value>
+                <elementReference>Var_INOUT_Heading</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_HeadingIcon</name>
+            <value>
+                <elementReference>Var_INOUT_HeadingIcon</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_INOUT_SubHeading</name>
+            <value>
+                <elementReference>Var_INOUT_SubHeading</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_Heading</assignToReference>
+            <name>Var_INOUT_Heading</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_HeadingIcon</assignToReference>
+            <name>Var_INOUT_HeadingIcon</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var_INOUT_SubHeading</assignToReference>
+            <name>Var_INOUT_SubHeading</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <description>Contiene los registros de las oportunidades modificados para actualizar</description>
+        <name>Col_Opp_Actualizar</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>Registro de Campaign Member de tipo CTI de entrada sobre el que se actualizan los valores si es necesario</description>
+        <name>Var_IN_CMCTI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Texto de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el nombre de la persona con la que estamos hablando y que vendrá del lead o del contacto.</description>
+        <name>Var_INOUT_Heading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Imagen de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el ícono que se muestra en la cabecera.</description>
+        <name>Var_INOUT_HeadingIcon</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de subcabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el el interés (Ramo) que se está tratando en ese momento y que depende de dónde provenga el interés.</description>
+        <name>Var_INOUT_SubHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>En caso de no ser la persona de contacto se finaliza el argumentario</description>
+        <name>Var_OUT_FinalizarArgumentario</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

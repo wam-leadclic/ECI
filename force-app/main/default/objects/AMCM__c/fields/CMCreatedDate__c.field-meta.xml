@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMCreatedDate__c</fullName>
+    <defaultValue>NOW()</defaultValue>
+    <description>Almacena la fecha de creación del Miembro de Campaña de origen a partir del cual es creado el Miembro de Campaña Gestionado (para fines de trazabilidad)</description>
+    <externalId>false</externalId>
+    <label>Fecha de creación del interés</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

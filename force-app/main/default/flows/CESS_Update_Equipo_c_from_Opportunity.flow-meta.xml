@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Actualizar el campo Equipo En la Oportunidad cuando esta se cierra ganada</description>
+    <interviewLabel>CESS - Update Equipo__c from Opportunity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CESS - Update Equipo__c from Opportunity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>ActualizarCampoEquipo</name>
+        <label>Actualizar Campo Equipo</label>
+        <locationX>146</locationX>
+        <locationY>331</locationY>
+        <inputAssignments>
+            <field>Equipo__c</field>
+            <value>
+                <elementReference>$Record.Owner.UserRole.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>ActualizarCampoEquipo</startElementReference>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RiskExpirationDate__c</fullName>
+    <description>Muestra fecha de fin.</description>
+    <externalId>false</externalId>
+    <label>Fecha Vencimiento</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

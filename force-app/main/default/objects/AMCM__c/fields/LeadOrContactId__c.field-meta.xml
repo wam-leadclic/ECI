@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadOrContactId__c</fullName>
+    <description>Devuelve el Id del Lead o del Contacto según esté relleno o no el contacto</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(ISNULL(Contact__c), ISBLANK(Contact__c)),
+    CASESAFEID(Lead__c),
+    CASESAFEID(Contact__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>LeadOrContactId</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

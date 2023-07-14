@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://identity-services.elcorteingles.es/oauth2/authorize</authorizeUrl>
+    <consumerKey>D8g12q0Um36XpkH1DMsfZVt2ZXEa</consumerKey>
+    <consumerSecret>Placeholder_Value</consumerSecret>
+    <friendlyName>WSO2</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>OpenIdConnect</providerType>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>true</sendClientCredentialsInHeader>
+    <tokenUrl>https://identity-services.elcorteingles.es/oauth2/token</tokenUrl>
+</AuthProvider>

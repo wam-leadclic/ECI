@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveVRAccount__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Desactiva las reglas de validación de account y person account</description>
+    <externalId>false</externalId>
+    <label>DesactiveVRAccount</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CESS_Approval_Request</fullName>
+        <ccEmails>lat1n0heat@hotmail.com</ccEmails>
+        <description>Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CESS_OpportunityApprover1__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CESS_OpportunityApprover2__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CESS_OpportunityApprover3__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CESS_OpportunityApprover4__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>CESS_Privado/CESS_OportunidadSolicitudAprobacionMotivoPerdidaFamiliar</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CESS_DateApprovalRequestToday</fullName>
+        <field>CESS_DateApprovalRequest__c</field>
+        <formula>Today()</formula>
+        <name>Date Approval Request - Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_DeleteDateApprovalRequested</fullName>
+        <field>CESS_DateApprovalRequest__c</field>
+        <name>Delete Date Approval Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_SetStageClosedLost</fullName>
+        <field>StageName</field>
+        <literalValue>Perdido</literalValue>
+        <name>Set Stage to Closed Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_SetValidationToAccepted</fullName>
+        <field>CESS_ValidatedCoordinator__c</field>
+        <literalValue>Accepted</literalValue>
+        <name>Set Validation To Accepted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_SetValidationToDefault</fullName>
+        <field>CESS_ValidatedCoordinator__c</field>
+        <literalValue>Not Requested</literalValue>
+        <name>Set Validation To Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_SetValidationToRejected</fullName>
+        <field>CESS_ValidatedCoordinator__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Validation To Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_SetValidationToRequested</fullName>
+        <field>CESS_ValidatedCoordinator__c</field>
+        <literalValue>Request Approval</literalValue>
+        <name>Set Validation To Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_Set_Close_Date_to_Today</fullName>
+        <field>CloseDate</field>
+        <formula>TODAY()</formula>
+        <name>Set Close Date to Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_UpdateApprovalReplyDate</fullName>
+        <field>CESS_DateApprovalClosed__c</field>
+        <formula>Today()</formula>
+        <name>Update Approval Reply Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CESS_UpdateLossReason</fullName>
+        <field>Loss_Reason__c</field>
+        <literalValue>Aprobacion Rechazado</literalValue>
+        <name>Update Loss Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+</Workflow>

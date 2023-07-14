@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asignamos el estado del Lead cuando este no es No cualificado o No contactado</description>
+        <name>AsignamosEstadoLeadNoCerrado</name>
+        <label>Asignamos estado del Lead No cerrado</label>
+        <locationX>600</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>StatusLead</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CondicionesEnvio</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setear_error_reglaCTIdesactivada</name>
+        <label>setear error regla CTI desactivada</label>
+        <locationX>754</locationX>
+        <locationY>1367</locationY>
+        <assignmentItems>
+            <assignToReference>CTIerror</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Error envío CTI. Regla CTI desactivada</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ActualizarCMCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setear_error_sin_telefono</name>
+        <label>setear error sin telefono</label>
+        <locationX>490</locationX>
+        <locationY>1367</locationY>
+        <assignmentItems>
+            <assignToReference>CTIerror</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Error envío CTI. Registro sin Teléfono</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ActualizarCMCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Estado &apos;Nuevo&apos; que se va asignar al Lead</description>
+        <name>StatusNewLead</name>
+        <label>Asignamos estado Nuevo al Lead</label>
+        <locationX>336</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>StatusLead</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CondicionesEnvio</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Condiciones para el crear el platform event que envía el registro a Genesys:
+- El CM tiene RT CTI (comprobado ya en cajas anteriores del flujo)
+- Tiene el campo Phone o MobilePhone relleno
+- Error CTI Campaña desactivada está a false</description>
+        <name>CondicionesEnvio</name>
+        <label>¿Se dan las condiciones de envío?</label>
+        <locationX>468</locationX>
+        <locationY>1127</locationY>
+        <defaultConnector>
+            <targetReference>MarcadoErrores</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.MobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CTIErrorCampDesactivada__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>HayQueEnviarCTI</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobamos si el Lead está con estado No cualificado o No contactado</description>
+        <name>Decision_ClosedLead</name>
+        <label>¿El Lead está cerrado?</label>
+        <locationX>468</locationX>
+        <locationY>791</locationY>
+        <defaultConnector>
+            <targetReference>AsignamosEstadoLeadNoCerrado</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ClosedLead_Si</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contactado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Lead.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Unqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>StatusNewLead</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si el CM está relacionado con un contacto y el contacto está marcado como no contactado le quitamos la marca</description>
+        <name>Decision_ContactoNoContactado</name>
+        <label>¿Es un Contacto No Contactado?</label>
+        <locationX>468</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>Decision_ClosedLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ContactoNoContactado_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contact.notContacted__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Udpate_Contact_Contactado</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si es de CTI hay que mandarlo a Genesys</description>
+        <name>EsCTI</name>
+        <label>¿Es de CTI?</label>
+        <locationX>875</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CTI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_ContactoNoContactado</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si la función de enviar a CTI está activa y el registro tiene relleno el campo Registro Origen Manual vacío se envía a CTI (crear platform event que realiza el envío)</description>
+        <name>HayQueEnviarCTI</name>
+        <label>¿Hay que enviar a CTI?</label>
+        <locationX>182</locationX>
+        <locationY>1247</locationY>
+        <defaultConnector>
+            <targetReference>ActualizarLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiEnvia</name>
+            <conditionLogic>1  AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SourceManualRecord__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveEnvioCTI__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreaPlatformEventQueEnviaGenesys</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Marca los errores en el miembro de campaña</description>
+        <name>MarcadoErrores</name>
+        <label>Marcado de errores</label>
+        <locationX>754</locationX>
+        <locationY>1247</locationY>
+        <defaultConnector>
+            <targetReference>ActualizarLead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>NoTieneTLF</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Phone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.MobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setear_error_sin_telefono</targetReference>
+            </connector>
+            <label>No tiene teléfono</label>
+        </rules>
+        <rules>
+            <name>ReglaCTIDesactivada</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CTIErrorCampDesactivada__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setear_error_reglaCTIdesactivada</targetReference>
+            </connector>
+            <label>Regla CTI desactivada</label>
+        </rules>
+    </decisions>
+    <description>Comprueba si hay que enviar a CTI, y en caso afirmativo lo hace (creando el correspondiente platform event); en caso negativo actualiza el CM CTI y el lead con el error correspondiente
+MMV: Control para que si la función de envío a CTI esta desactivada o el registro tiene el Origen Manual relleno NO se encía a CTI
+03/10 MMV: Se incluye el filtro para que los leads con Origen Registro manual de valor &quot;Referencia&quot; sí se envíen a CTI
+04/10 MMV: Se incluye la actualización del campo No contactado en caso de que el CM sea de Contact
+02/12/22 MMV: Cuando se inserta un CM CTI, se pone a false el campo inprogress_cti__c
+12/12/22 MMV: Cuando se inserta un CM CTI, se vacía el campo Control CTI Automático
+26/04/2023 JCB: Se quita condición CM CTI con Origen R. Manual = Referencia para envío a CTI.</description>
+    <formulas>
+        <name>concatenatedCTIError</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.ctiError__c}+&apos;*&apos;+{!CTIerror}</expression>
+    </formulas>
+    <interviewLabel>On Campaign Member Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Campaign Member Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Esta clase invocada ha de ser capaz de distinguir si lo que hay que hacer es un insert (si sentCti=false) o un update (si sentCti=true) en Genesys</description>
+        <name>CreaPlatformEventQueEnviaGenesys</name>
+        <label>Crea platform event que envía a Genesys</label>
+        <locationX>50</locationX>
+        <locationY>1367</locationY>
+        <connector>
+            <targetReference>ActualizarLead</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Handler__c</field>
+            <value>
+                <stringValue>CESS_InsertCTIIntegrationHandler</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Object_Id__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>System__c</field>
+            <value>
+                <stringValue>CESS-CTI</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CESS_Integration_Event__e</object>
+    </recordCreates>
+    <recordUpdates>
+        <description>Actualiza el miembro de campaña</description>
+        <name>ActualizarCMCTI</name>
+        <label>Actualizar CM CTI</label>
+        <locationX>754</locationX>
+        <locationY>1583</locationY>
+        <connector>
+            <targetReference>ActualizarLead</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CTIError__c</field>
+            <value>
+                <elementReference>concatenatedCTIError</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CTISent__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualiza el campo crlOK del Lead</description>
+        <name>ActualizarLead</name>
+        <label>Actualizar Lead</label>
+        <locationX>468</locationX>
+        <locationY>1799</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.LeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Control_CTIAutomatico__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>StatusLead</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>crl_ok__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>inprogress_cti__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizamos el contacto relacionado para desmarcar el campo No Contactado, ya que tiene un interés nuevo</description>
+        <name>Udpate_Contact_Contactado</name>
+        <label>Udpate Contacto Contactado</label>
+        <locationX>336</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>Decision_ClosedLead</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>notContacted__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <startElementReference>EsCTI</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>CTIerror</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Estado del Lead</description>
+        <name>StatusLead</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

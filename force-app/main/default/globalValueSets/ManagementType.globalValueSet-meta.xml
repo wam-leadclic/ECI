@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Suplementos</fullName>
+        <default>false</default>
+        <label>Suplementos</label>
+    </customValue>
+    <customValue>
+        <fullName>Impagados</fullName>
+        <default>false</default>
+        <label>Impagados</label>
+    </customValue>
+    <customValue>
+        <fullName>Bloqueo contrataciones</fullName>
+        <default>false</default>
+        <label>Bloqueo contrataciones</label>
+    </customValue>
+    <description>Se activará cuando el resultado sea Gestión en cartera</description>
+    <masterLabel>Tipo de Gestión</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

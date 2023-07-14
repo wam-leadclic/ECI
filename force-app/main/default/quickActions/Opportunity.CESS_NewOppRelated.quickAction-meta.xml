@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>AccountId</field>
+        <formula>Opportunity.AccountId</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>CloseDate</field>
+        <formula>Opportunity.CloseDate</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>Opportunity.Account.FirstName &amp; &quot; &quot; &amp;  Opportunity.Account.LastName &amp; &quot; [&quot; &amp;  TEXT(Opportunity.line_insurance__c) &amp; &quot;] &quot; &amp; &quot;Dependiente&quot;</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>source_cess__c</field>
+        <formula>Opportunity.source_cess__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>source_type__c</field>
+        <formula>TEXT(Opportunity.source_type__c)</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>StageName</field>
+        <literalValue>Cualificación</literalValue>
+    </fieldOverrides>
+    <label>Nueva Dependiente</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Type</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>line_insurance__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>Opportunity</targetObject>
+    <targetParentField>main_opportunity__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppGanadaSalientesBasicos__c</fullName>
+    <description>Valores picklist para oportunidad ganada cuando el medio es Web, Adwords, Blog, Display, Email, RRSS, SMS o Corregistro y la llamada Salientes Básicos</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>OppGanada/SalientesBasicos</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Por garantías del producto</fullName>
+                <default>true</default>
+                <label>Por garantías del producto</label>
+            </value>
+            <value>
+                <fullName>Por precio</fullName>
+                <default>false</default>
+                <label>Por precio</label>
+            </value>
+            <value>
+                <fullName>Confianza en ECI</fullName>
+                <default>false</default>
+                <label>Confianza en ECI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

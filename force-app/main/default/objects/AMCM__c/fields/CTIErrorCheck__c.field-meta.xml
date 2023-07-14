@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTIErrorCheck__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Muestra si se ha producido algún fallo al enviar CTI.</description>
+    <externalId>false</externalId>
+    <label>Envio Fallido CTI</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

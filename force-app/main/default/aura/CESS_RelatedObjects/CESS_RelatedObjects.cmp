@@ -1,0 +1,70 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome,force:hasSObjectName" 
+controller="CESS_RelatedObjectsLXCtrl"
+access="global">
+
+<aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+<aura:attribute name="recordId" type="Id"/>
+<aura:attribute name="requestNotFound" type="Boolean" default="false"/>
+<aura:attribute name="requestErrorMessage" type="String" default="El servicio no está disponible. Inténtelo de nuevo más tarde por favor."/>
+<aura:attribute name="showSpinner" type="boolean" default="false"/>
+
+<aura:attribute name="accountRecord" type="Object"/>
+<aura:attribute name="myAccountId" type="Id"/>
+<aura:attribute name="recordLoadError" type="String"/>
+<force:recordData aura:id="accountRecordLoader"
+    recordId="{!v.myAccountId}"
+    fields="Name,Description,Phone,Industry,PersonEmail,total_cards__c,document_type__pc,personal_document__pc"
+    targetFields="{!v.accountRecord}"
+    targetError="{!v.recordLoadError}"
+/>
+
+<aura:attribute name="opptyColumns" type="List" />
+
+<!-- Obtenemos la info del lead-->
+<aura:attribute name="leadRecord" type="Object"/>
+<aura:attribute name="leadrecordError" type="String"/>
+<force:recordData aura:id="leadrecordHandler"
+    recordId="{!v.recordId}"
+    fields="Id,Email,show_cessinfo__c,MobilePhone,document_number__c,identifier_aneto__c,Phone,document_type__c,identifier_cess__c"
+    targetFields="{!v.leadRecord}"
+    targetError="{!v.leadrecordError}"
+    mode="VIEW"
+    recordUpdated="{!c.init}" 
+/>
+
+<aura:if isTrue="{!v.showSpinner}">
+    <!-- SPINNER -->
+    <div class="slds-spinner_container slds-is-relative" style="height: 50px">
+        <lightning:spinner aura:id="spinner" variant="brand" size="medium"
+                            alternativeText="Cargando información de sistema externo..."/>
+    </div>
+    <!--/ SPINNER -->
+    <aura:set attribute="else">
+        <aura:if isTrue="{!v.requestNotFound}">
+            <ui:message title="Gestiones Pendientes" severity="error" closable="false">
+                {!v.requestErrorMessage}
+            </ui:message>
+            <aura:set attribute="else">
+                <!-- Componente con los datos relacionados -->
+                <aura:if isTrue="{!v.accountRecord.Name != undefined}">
+                        <p class="slds-p-horizontal_none"> 
+                            <lightning:layout multipleRows="true">
+                                <lightning:layoutItem size="12">              
+                                    <c:CESS_singleAccOppRelList recordId="{!v.myAccountId}" 
+                                                        sobjectApiName="Opportunity"
+                                                        relatedFieldApiName="AccountId"
+                                                        sortedBy="Name"
+                                                        fields="Name, StageName, CloseDate, Amount, Owner.Name"
+                                                        columns="{!v.opptyColumns}"
+                                                        />
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                        </p>
+               </aura:if>
+                <!--/ Componente con los datos relacionados -->
+            </aura:set>
+        </aura:if>
+    </aura:set>
+</aura:if>
+
+</aura:component>

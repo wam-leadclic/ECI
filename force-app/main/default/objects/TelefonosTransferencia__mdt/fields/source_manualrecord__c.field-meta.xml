@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>source_manualrecord__c</fullName>
+    <description>Campo análogo al de “Origen Manual” del Lead</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Origen - Registro Manual</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Llamada Entrante</fullName>
+                <default>true</default>
+                <label>Llamada Entrante</label>
+            </value>
+            <value>
+                <fullName>Referencia</fullName>
+                <default>false</default>
+                <label>Referencia</label>
+            </value>
+            <value>
+                <fullName>Venta Presencial</fullName>
+                <default>false</default>
+                <label>Venta Presencial</label>
+            </value>
+            <value>
+                <fullName>Gestión de Cartera</fullName>
+                <default>false</default>
+                <label>Gestión de Cartera</label>
+            </value>
+            <value>
+                <fullName>Otros</fullName>
+                <default>false</default>
+                <label>Otros</label>
+            </value>
+            <value>
+                <fullName>Retención CESS</fullName>
+                <default>false</default>
+                <label>Retención CESS</label>
+            </value>
+            <value>
+                <fullName>Retención SECI</fullName>
+                <default>false</default>
+                <label>Retención SECI</label>
+            </value>
+            <value>
+                <fullName>Atención al Cliente CESS</fullName>
+                <default>false</default>
+                <label>Atención al Cliente CESS</label>
+            </value>
+            <value>
+                <fullName>Atención al Cliente SECI</fullName>
+                <default>false</default>
+                <label>Atención al Cliente SECI</label>
+            </value>
+            <value>
+                <fullName>Transcom</fullName>
+                <default>false</default>
+                <label>Transcom</label>
+            </value>
+            <value>
+                <fullName>Transferencia MM</fullName>
+                <default>false</default>
+                <label>Transferencia MM</label>
+            </value>
+            <value>
+                <fullName>Blecis Sevilla</fullName>
+                <default>false</default>
+                <label>Blecis Sevilla</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

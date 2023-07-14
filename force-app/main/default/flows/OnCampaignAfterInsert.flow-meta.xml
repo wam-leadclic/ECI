@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asignación para los estados de la campaña</description>
+        <name>AssigmentCampaignMemberStatus</name>
+        <label>Assigment Campaign Member Status</label>
+        <locationX>270</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>AuxCampaignMember.Label</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopEstadosMiembroCampanaStatus.Label</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AuxCampaignMember.CampaignId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AuxCampaignMember.IsDefault</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopEstadosMiembroCampanaStatus.IsDefault__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AuxCampaignMember.HasResponded</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopEstadosMiembroCampanaStatus.Responded__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListCampaignMemberStatus</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>AuxCampaignMember</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopEstadosMiembroCampanaStatus</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Si hay registros de status para borrar los borramos, sino No.</description>
+        <name>HayRegistrosStatusBorrar</name>
+        <label>¿Hay registros de Status que borrar?</label>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiHayRegistrosStatusBorrar</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetCampaignMemberStatus</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DeleteCampaignMemberStatusAutoCreated_0</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Flujo que permite crear los estados de una campaña al crearla</description>
+    <interviewLabel>On Campaign After Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Campaign After Insert</label>
+    <loops>
+        <description>Loop que permite recorrer todos los registros de CM estados miembro campaña status</description>
+        <name>LoopEstadosMiembroCampanaStatus</name>
+        <label>Loop Estados Miembro Campaña Status</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <collectionReference>GetCMTEstadoMiembrosCampana</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>AssigmentCampaignMemberStatus</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>CreateEstadoMiembroCampana</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>CreateEstadoMiembroCampana</name>
+        <label>Create Estado Miembro Campaña</label>
+        <locationX>182</locationX>
+        <locationY>911</locationY>
+        <connector>
+            <targetReference>HayRegistrosStatusBorrar</targetReference>
+        </connector>
+        <inputReference>ListCampaignMemberStatus</inputReference>
+    </recordCreates>
+    <recordDeletes>
+        <description>Elimina los registros creados automáticamente en el momento de crear una campaña</description>
+        <name>DeleteCampaignMemberStatusAutoCreated_0</name>
+        <label>Delete Campaign Member Status Auto Created</label>
+        <locationX>50</locationX>
+        <locationY>1151</locationY>
+        <inputReference>GetCampaignMemberStatus</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Obtiene los records existentes de un estado en campaña al crearse</description>
+        <name>GetCampaignMemberStatus</name>
+        <label>Get Campaign Member Status</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetCMTEstadoMiembrosCampana</targetReference>
+        </connector>
+        <filters>
+            <field>CampaignId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMemberStatus</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Permite obtener los registros del Custom Metadata Type( Estados Miembros de Campaña)</description>
+        <name>GetCMTEstadoMiembrosCampana</name>
+        <label>Get CMT Estados Miembros de Campaña</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LoopEstadosMiembroCampanaStatus</targetReference>
+        </connector>
+        <object>EstadosMiembroCampana__mdt</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Label</queriedFields>
+        <queriedFields>IsDefault__c</queriedFields>
+        <queriedFields>Responded__c</queriedFields>
+    </recordLookups>
+    <startElementReference>GetCampaignMemberStatus</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>AuxCampaignMember</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMemberStatus</objectType>
+    </variables>
+    <variables>
+        <name>ListCampaignMemberStatus</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMemberStatus</objectType>
+    </variables>
+</Flow>

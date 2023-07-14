@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MarketingStage__c</fullName>
+    <description>usado en reportes de eCommerce.</description>
+    <externalId>false</externalId>
+    <formula>IF(Opportunity__r.IsClosed || TEXT( Status__c ) = &quot;Unqualified&quot; , &quot;Cerrado&quot;,
+IF(TEXT(Opportunity__r.StageName) = &quot;Vencimiento Futuro&quot;, &quot;Vencimiento Futuro&quot;,
+IF(TEXT(Status__c ) = &quot;New&quot;, &quot;Nuevo&quot;, &quot;En Proceso&quot;)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fase Lead</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ORG_INTEGRATION_HANDLERS</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">{&quot;s&quot;: &quot;GDPR-CON&quot;, &quot;c&quot;: &quot;GDPR_ConsentEventHandler&quot;, &quot;a&quot;: true, &quot;async&quot;: true },</value>
+    </values>
+    <values>
+        <field>Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Value_integracion__c</field>
+        <value xsi:type="xsd:string">[{&quot;s&quot;: &quot;SAC-Sales&quot;,&quot;c&quot;: &quot;SAC_IntegrationSalesHandler&quot;,&quot;a&quot;: true, &quot;async&quot;: true},{&quot;s&quot;: &quot;WEB-SAC&quot;,&quot;c&quot;: &quot;WEB_IntegrationHandler&quot;,&quot;a&quot;: true, &quot;async&quot;: true},{&quot;s&quot;: &quot;SAC-SAP&quot;,&quot;c&quot;: &quot;SAC_IncidencesIntegrationHandler&quot;,&quot;a&quot;: true, &quot;async&quot;: true}, 
+{ &quot;s&quot;: &quot;CESS - CTI&quot;, &quot;c&quot;: &quot;CESS_InsertCTIIntegrationHandler&quot;, &quot;a&quot;: true, &quot;async&quot;: true },
+{&quot;s&quot;: &quot;SAC-MKT&quot;,&quot;c&quot;: &quot;VOC_MKIntegrationHandler&quot;,&quot;a&quot;: true, &quot;async&quot;: true}, 
+{ &quot;s&quot;: &quot;VTDVD - CTI&quot;, &quot;c&quot;: &quot;VTDVD_InsertCTIIntegrationHandler&quot;, &quot;a&quot;: true, &quot;async&quot;: true },{&quot;s&quot;:&quot;LS-MKT&quot;,&quot;c&quot;:&quot;LS_MKIntegrationHandler&quot;,&quot;a&quot;:true,&quot;async&quot;:true }]</value>
+    </values>
+</CustomMetadata>

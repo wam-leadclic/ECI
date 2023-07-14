@@ -1,0 +1,142 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome,force:hasSObjectName,lightning:availableForFlowScreens" 
+controller="CESS_AllCESSDataLXCtrl"
+access="global">
+
+<!-- ATTRIBUTES -->
+<aura:attribute name="accountRecord" type="Object"/>
+<aura:attribute name="recordLoadError" type="String"/>
+
+<aura:attribute name="objectRecord" type="Object"/>
+<aura:attribute name="objectFields" type="Object"/>
+<aura:attribute name="recordError" type="String"/>
+
+<aura:attribute name="requestNotFound" type="Boolean" default="false"/>
+<!--/ ATTRIBUTES -->
+
+<!-- Differents fields to query on the differents objects.-->
+<aura:attribute name="leadFieldsQueried" type="String[]" default="Id,identifier_aneto__c, identifier_cess__c,document_number__c,document_type__c, Email,Phone, MobilePhone"/>
+<aura:attribute name="oppFieldsQueried" type="String[]" default="Id,AccountId,
+Account.identifier_aneto__pc, Account.identifier_cess__pc, Account.document_type__pc, Account.PersonEmail,Account.Phone, Account.PersonMobilePhone,Account.personal_document__pc"/>
+<aura:attribute name="accFieldsQueried" type="String[]" default="Id,
+identifier_aneto__pc, identifier_cess__pc, document_type__pc, PersonEmail, Phone, PersonMobilePhone, personal_document__pc"/>
+
+<!-- LIGHTNING DATA SERVICES RECORD HANDLER -->
+<force:recordData aura:id="recordHandler"
+    recordId="{!v.recordId}"
+    fields="{!v.sObjectName == 'Lead' ? v.leadFieldsQueried : ( v.sObjectName == 'Opportunity' ? v.oppFieldsQueried : v.accFieldsQueried) }"
+    targetRecord="{!v.objectRecord}"
+    targetFields="{!v.objectFields}"
+    targetError="{!v.recordError}"
+    recordUpdated="{!c.doRefresh}"
+/>
+
+<aura:attribute name="activeSections" type="List" default="['C']" />
+<aura:attribute name="activeSectionsMessage" type="String" default="" />
+<aura:attribute name="showSpinner" type="boolean" default="true"/>
+
+<!--Atributo de control de la sección que se abre. Sólo para una de ellas. Ejecuta al hacer click y expandir-->
+<aura:attribute name="lanzaCRL" type="Boolean" default="false" />
+<aura:attribute name="lanzaDG" type="Boolean" default="false" />
+<aura:attribute name="lanzaP" type="Boolean" default="false" />
+<aura:attribute name="lanzaCL" type="Boolean" default="false" />
+
+<!--Atributos de control de los datos y columnas de la integración-->
+<aura:attribute name="gestionesData" type="Object"/>
+<aura:attribute name="gestionesColumns" type="List"/> 
+
+<aura:attribute name="PComp" type="Object"/>
+<aura:attribute name="CComp" type="Object"/>
+
+<!--Para confirmar que funciona la consulta rapida de leads CRL-->
+<aura:attribute name="crlData" type="Object"/>
+<aura:attribute name="crlColumns" type="List"/> 
+<aura:attribute name="theMap" type="Map" default="{}"/>
+
+<!-- HANDLERS -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+<!--/ HANDLERS -->
+
+<p>{! v.activeSectionsMessage }</p>
+
+<div class="slds-box slds-box_x-small">
+  <aura:if isTrue="{!v.showSpinner}">
+  <!-- SPINNER -->
+  <div class="slds-spinner_container slds-is-relative" style="height: 50px">
+      <lightning:spinner aura:id="spinner" variant="brand" size="medium"
+                          title="Cargando información de sistema externo..."
+                          alternativeText="Cargando información de sistema externo..."/>
+  </div>
+  <!--/ SPINNER -->
+  <aura:set attribute="else">
+
+    <lightning:accordion
+        aura:id="accordion"
+        allowMultipleSectionsOpen="true"
+        onsectiontoggle="{! c.handleSectionToggle }"
+        activeSectionName="{! v.activeSections }"
+    >
+      <lightning:accordionSection name="C" label="Datos de Cliente">
+        <div>
+            <aura:if isTrue="{!v.lanzaCL}">
+              <lightning:layout horizontalAlign="center">
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
+                    {!v.CComp}
+                  <!--
+                <c:CESS_ConsultaCESSFromLead recordId="{!v.recordId}" sObjectName="{!v.sObjectName}" a_hideCheckboxColumn="true" a_maxRowSelection="0" a_showButtons="false"/>
+                  -->
+              </lightning:layoutItem>
+            </lightning:layout>
+          </aura:if>
+          </div>
+      </lightning:accordionSection>
+      <lightning:accordionSection name="P" label="Pólizas del Cliente">
+        <div>
+            <aura:if isTrue="{!v.lanzaP}">
+              <lightning:layout horizontalAlign="center">
+                  <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
+                    {!v.PComp}
+                    <!--  Se cargaba al crear el componente AllCessData y no al abrir el Accordion.
+                      <c:CESS_ConsultaPolizas recordId="{!v.recordId}" sObjectName="{!v.sObjectName}" a_hideCheckboxColumn="true" a_maxRowSelection="0" a_showButtons="false"/>
+                      -->
+                </lightning:layoutItem>
+              </lightning:layout>
+          </aura:if>
+        </div>
+      </lightning:accordionSection>
+      <lightning:accordionSection name="G" label="Gestiones del Cliente">
+<!--          <aura:if isTrue="{! !(or(v.objectFields.identifier_cess__c,or(v.objectFields.identifier_cess__pc,v.objectFields.Account.identifier_cess__pc))) }">
+-->
+<aura:if isTrue="{! !or((or(v.objectFields.identifier_cess__c,or(v.objectFields.identifier_cess__pc,v.objectFields.Account.identifier_cess__pc))),(or(v.objectFields.identifier_aneto__c,or(v.objectFields.identifier_aneto__pc,v.objectFields.Account.identifier_aneto__pc)))) }">
+    
+            <ui:message title="Cliente no seleccionado." severity="warning" closable="false"/>
+          <aura:set attribute="else">
+            <aura:if isTrue="{!v.requestNotFound}">
+                <ui:message title="Información no encontrada" severity="error" closable="false">
+                    No se ha encontrado información con los datos de consulta.
+                </ui:message>
+            <aura:set attribute="else">
+              <lightning:layout horizontalAlign="center">
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
+                  <div class="slds-scrollable_x">
+                        <lightning:datatable aura:id="gestionesDataTable" 
+                        data="{! v.gestionesData }"
+                        columns="{! v.gestionesColumns }"
+                        keyField="crlId"
+                        hideCheckboxColumn="true"
+                        maxRowSelection="0"
+                        minColumnWidth="150"
+                        />
+                  </div>
+                </lightning:layoutItem>
+              </lightning:layout>
+            </aura:set>
+            </aura:if>
+          </aura:set>
+        </aura:if>
+  </lightning:accordionSection>
+    </lightning:accordion>
+  </aura:set>
+  </aura:if>
+</div>
+
+</aura:component>

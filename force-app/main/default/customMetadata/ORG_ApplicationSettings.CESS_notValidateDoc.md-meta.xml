@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CESS_notValidateDoc</label>
+    <protected>false</protected>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Usuarios que no validan tipo de documento
+INTRODUCIR USERNAMES separado por ;</value>
+    </values>
+    <values>
+        <field>Value__c</field>
+        <value xsi:type="xsd:string">lferrandiz@elcorteingles.es;soporte.salesforce.eci@elcorteingles.es;cess.integration@elcorteingles.es;elcorteingles@leadclic.com.cess;alessandro.dallagata2@cess.elcorteingles.com</value>
+    </values>
+    <values>
+        <field>Value_integracion__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

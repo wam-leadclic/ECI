@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BusinessLinesProhibited__c</fullName>
+    <description>Ramos contratados en lead y cliente viene de la integración con SGC por lo que no podemos trasladar los campos a miembros de campaña, así que recogemos la información a través de campos fórmulas,</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Contact__c ),  Lead__r.businesslines_prohibited__c  ,  Contact__r.businesslines_prohibited__c  )</formula>
+    <label>Ramos Prohibidos</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

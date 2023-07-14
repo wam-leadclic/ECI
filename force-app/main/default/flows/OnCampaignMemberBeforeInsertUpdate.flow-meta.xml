@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asigno Valor Aplazado a la variable de estado</description>
+        <name>AsignoEstadoAplazado</name>
+        <label>Asigno Estado Aplazado</label>
+        <locationX>1722</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Postponed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsChangedResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>AsignoEstadoCualificado</description>
+        <name>AsignoEstadoCualificado</name>
+        <label>Asigno Estado Cualificado</label>
+        <locationX>1436</locationX>
+        <locationY>2207</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asignamos estado No contactado</description>
+        <name>AsignoEstadoNoContactado</name>
+        <label>Asigno Estado No Contactado</label>
+        <locationX>1172</locationX>
+        <locationY>2207</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not contacted</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigno Estado No Cualificado</description>
+        <name>AsignoEstadoNoCualificado</name>
+        <label>Asigno Estado No Cualificado</label>
+        <locationX>908</locationX>
+        <locationY>2207</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asigna el result con No contesta enviar Email</description>
+        <name>AsignoResultadoNoContestaEnviarEmail</name>
+        <label>Asigno Resultado NoContestaEnviarEmail</label>
+        <locationX>50</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Result__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsChangedResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno el valor resultado No Contesta Enviar Email</description>
+        <name>AsignoResultNoContestaEnviarEmail</name>
+        <label>Asigno Result No Contesta Enviar Email</label>
+        <locationX>930</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Result__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsChangedResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno el valor resultado No Contesta Enviar Email</description>
+        <name>AsignoResultNoContestaEnviarEmail2</name>
+        <label>Asigno Result No Contesta Enviar Email</label>
+        <locationX>1194</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Result__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsChangedResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno el valor resultado TeléfonoErróneo</description>
+        <name>AsignoResultTelefonoErroneo</name>
+        <label>Asigno Result TelefonoErroneo</label>
+        <locationX>1458</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Result__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Teléfono Erróneo</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>IsChangedResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno el valor del metadato CESS_CTI_Telefono_Erroneo en una variable</description>
+        <name>AssignCESS_CTI_Telefono_Erroneo</name>
+        <label>Assign CESS_CTI_Telefono_Erroneo</label>
+        <locationX>2074</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>ValueCESS_CTI_Telefono_Erroneo</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopORGApplicationSetting.Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno metadato CESS_CTI_Resultado_Planificada en una variable</description>
+        <name>AssignCESSCTIResultadoPlanificada</name>
+        <label>Assign CESS_CTI_Resultado_Planificada</label>
+        <locationX>2338</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>ValueCESS_CTI_Resultado_Planificada</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopORGApplicationSetting.Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno valor del metadato comunica en una variable</description>
+        <name>AssignComunica</name>
+        <label>Assign Comunica</label>
+        <locationX>1546</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>ValueCESS_CTI_Resultado_Ocupado</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopORGApplicationSetting.Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno valor del metadato CESS_CTI_Resultados_No_Contacto en una variable</description>
+        <name>AssignValueCESS_CTI_Resultados_No_Contacto</name>
+        <label>Assign CESS_CTI_Resultados_No_Contacto</label>
+        <locationX>1810</locationX>
+        <locationY>1031</locationY>
+        <assignmentItems>
+            <assignToReference>ValueCESS_CTI_Resultados_No_Contacto</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>LoopORGApplicationSetting.Value__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Asigno el resultado del miembro de campaña según el último resultado CTI enviado por la CTI</description>
+        <name>AssignCampaignMemberCTIResult</name>
+        <label>Asignación Resultado Miembro Campaña CTI</label>
+        <locationX>1458</locationX>
+        <locationY>1343</locationY>
+        <defaultConnector>
+            <targetReference>IsChangedResult</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Otro</defaultConnectorLabel>
+        <rules>
+            <name>Comunica</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ValueCESS_CTI_Resultado_Ocupado</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>ResultCTIFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoResultNoContestaEnviarEmail</targetReference>
+            </connector>
+            <label>Comunica</label>
+        </rules>
+        <rules>
+            <name>NoContactado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ValueCESS_CTI_Resultados_No_Contacto</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>ResultCTIFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoResultNoContestaEnviarEmail2</targetReference>
+            </connector>
+            <label>No Contactado</label>
+        </rules>
+        <rules>
+            <name>TelefonoErroneo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ValueCESS_CTI_Telefono_Erroneo</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>ResultCTIFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoResultTelefonoErroneo</targetReference>
+            </connector>
+            <label>Telefono Erroneo</label>
+        </rules>
+        <rules>
+            <name>Replanificar</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ValueCESS_CTI_Resultado_Planificada</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.ResultCTI__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoAplazado</targetReference>
+            </connector>
+            <label>Replanificar</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>¿Se cumplen estas condiciones?:  la fecha de última llamada haya cambiado y el número de intentos de contacto sea 1000000, o el Control CTI Automático (campo Lead) sea Máximo intentos Alcanzados</description>
+        <name>CriteriosMaxIntentos</name>
+        <label>¿Ha llegado al Max Intentos?</label>
+        <locationX>930</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>HaCambiadoResultadoCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiCriteriosMaxIntentos</name>
+            <conditionLogic>2 AND (1 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead.Control_CTIAutomatico__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Max_Intentos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.DatetimeLastCall__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.DatetimeLastCall__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>NumeroTotaldeIntentos</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1000000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoResultadoNoContestaEnviarEmail</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>El resultado CTI ha cambiado. En process Builder sólo tiene en cuenta cuando el Lead es en proceso pero hay que tenerlo en cuenta para todos los miembros de campaña: De Lead y de Cliente</description>
+        <name>HaCambiadoResultadoCTI</name>
+        <label>¿Ha cambiado el Resultado CTI?</label>
+        <locationX>1810</locationX>
+        <locationY>551</locationY>
+        <defaultConnector>
+            <targetReference>IsChangedResult</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiHaCambiadoResultadoCTI</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ResultCTI__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.ResultCTI__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetORGApplicationSetting</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Ha cambiado Resultado Miembro de campaña MKT</description>
+        <name>IsChangedResult</name>
+        <label>¿Ha cambiado Resultado?</label>
+        <locationX>1634</locationX>
+        <locationY>1967</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiIsChangedResult</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Result__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Result</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Según el tipo de metadato se guarda en una variable u otra</description>
+        <name>ORGApplicationSettingDecision</name>
+        <label>ORGApplicationSetting Decision</label>
+        <locationX>2074</locationX>
+        <locationY>911</locationY>
+        <defaultConnector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Otros</defaultConnectorLabel>
+        <rules>
+            <name>ResultadoOcupado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopORGApplicationSetting.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CESS_CTI_Resultado_Ocupado</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignComunica</targetReference>
+            </connector>
+            <label>ResultadoOcupado</label>
+        </rules>
+        <rules>
+            <name>ResultNoContactado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopORGApplicationSetting.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CESS_CTI_Resultados_No_Contacto</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignValueCESS_CTI_Resultados_No_Contacto</targetReference>
+            </connector>
+            <label>ResultNoContactado</label>
+        </rules>
+        <rules>
+            <name>ResultadoTelefonoErroneo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopORGApplicationSetting.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CESS_CTI_Telefono_Erroneo</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignCESS_CTI_Telefono_Erroneo</targetReference>
+            </connector>
+            <label>ResultadoTelefonoErroneo</label>
+        </rules>
+        <rules>
+            <name>ResultadoReplanificar</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LoopORGApplicationSetting.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CESS_CTI_Resultado_Planificada</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignCESSCTIResultadoPlanificada</targetReference>
+            </connector>
+            <label>ResultadoReplanificar</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>En función del resultado se actualizará automáticamente el estado.</description>
+        <name>Result</name>
+        <label>¿Cual es el resultado?</label>
+        <locationX>1304</locationX>
+        <locationY>2087</locationY>
+        <defaultConnectorLabel>Otros</defaultConnectorLabel>
+        <rules>
+            <name>Unqualified</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No colabora</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ya ha contratado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No compra por teléfono</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consulta NO venta - ATC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prefiere ir a Centro comercial</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Otros Productos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Llamada cortada</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gestión de Cartera</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No contento con ECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden datos verificacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No dispone datos TECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden condiciones de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Oferta fuera de fecha</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía devuelta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cambio de Tomador</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía al extranjero o de empresa</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contesta Enviar Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoCualificado</targetReference>
+            </connector>
+            <label>No cualificado</label>
+        </rules>
+        <rules>
+            <name>NotContacted</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Teléfono Erróneo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No ha solicitado información</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cuelga (no argumentado)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cliente no habla español</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lead de Prueba (Test)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Robinson</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Duplicado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No asegurable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No titular de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoContactado</targetReference>
+            </connector>
+            <label>No contactado</label>
+        </rules>
+        <rules>
+            <name>Qualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Presentar Oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoCualificado</targetReference>
+            </connector>
+            <label>Cualificado</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Identificar si el miembro de campaña es de tipo CTI o no</description>
+        <name>TipoCTI</name>
+        <label>¿Es de tipo CTI?</label>
+        <locationX>1634</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>IsChangedResult</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SiTipoCTI</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CTI</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CriteriosMaxIntentos</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Salta cuando un miembro de campaña CTI no se envía a CTI debido a un error que devuelve la integración con CTI.
+09/06/2022 MMV: Cuando el resultado del CTI cambia también cambia su estado en función del resultado
+06/07/2022: AC: Solución a cuando cierro la llamada a Contactado se me cierran todos los intereses a No contactado.</description>
+    <formulas>
+        <description>NumeroTotaldeIntentos</description>
+        <name>NumeroTotaldeIntentos</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.AgentAttempts__c}+{!$Record.SystemAttempts__c}</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Concatenación de la siguiente información #, resultado CTI y #</description>
+        <name>ResultCTIFormula</name>
+        <dataType>String</dataType>
+        <expression>&quot;#&quot; &amp;{!$Record.ResultCTI__c} &amp; &quot;#&quot;</expression>
+    </formulas>
+    <interviewLabel>On Campaign Member Before Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Campaign Member Before Insert Update</label>
+    <loops>
+        <description>Itero cada registro para guardarlo en variables</description>
+        <name>LoopORGApplicationSetting</name>
+        <label>Loop ORGApplicationSetting</label>
+        <locationX>1458</locationX>
+        <locationY>791</locationY>
+        <collectionReference>GetORGApplicationSetting</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>ORGApplicationSettingDecision</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>AssignCampaignMemberCTIResult</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Busco los resultados cti relacionados con No contacta, Teléfono erróneo, Comunica y Planificado</description>
+        <name>GetORGApplicationSetting</name>
+        <label>Get ORGApplicationSetting</label>
+        <locationX>1458</locationX>
+        <locationY>671</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LoopORGApplicationSetting</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_Resultados_No_Contacto</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_Telefono_Erroneo</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_Resultado_Ocupado</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTI_Resultado_Planificada</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Value__c</queriedFields>
+        <queriedFields>DeveloperName</queriedFields>
+    </recordLookups>
+    <startElementReference>TipoCTI</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Valor del Metadato CESS_CTI_Resultado_Ocupado</description>
+        <name>ValueCESS_CTI_Resultado_Ocupado</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Metadata CESS_CTI_Resultado_Planificada</description>
+        <name>ValueCESS_CTI_Resultado_Planificada</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Valor MetadataCESS_CTI_Resultados_No_Contacto</description>
+        <name>ValueCESS_CTI_Resultados_No_Contacto</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Metadata CESS_CTI_Telefono_Erroneo</description>
+        <name>ValueCESS_CTI_Telefono_Erroneo</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

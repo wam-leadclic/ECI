@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveVRLead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to disable validation rules in leads</description>
+    <externalId>false</externalId>
+    <label>DesactiveVRLead</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

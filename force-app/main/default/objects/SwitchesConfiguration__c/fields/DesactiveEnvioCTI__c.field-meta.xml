@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveEnvioCTI__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Si se marca desactiva la parte de los flow que crean el platform event CESS_Integration_Event__e, que es el que desencadena el envío de registros CTI a Genesys cuando se inserta o actualza un miembro de campaña CTI.</description>
+    <externalId>false</externalId>
+    <label>Desactive Envío a CTI</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

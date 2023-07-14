@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Llamada Entrante</fullName>
+        <default>false</default>
+        <label>Llamada Entrante</label>
+    </customValue>
+    <customValue>
+        <fullName>Referencia</fullName>
+        <default>false</default>
+        <label>Referencia</label>
+    </customValue>
+    <customValue>
+        <fullName>Venta Presencial</fullName>
+        <default>false</default>
+        <label>Venta Presencial</label>
+    </customValue>
+    <customValue>
+        <fullName>Gestión de Cartera</fullName>
+        <default>false</default>
+        <label>Gestión de Cartera</label>
+    </customValue>
+    <customValue>
+        <fullName>Otros</fullName>
+        <default>false</default>
+        <label>Otros</label>
+    </customValue>
+    <customValue>
+        <fullName>Retención CESS</fullName>
+        <default>false</default>
+        <label>Retención CESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Retención SECI</fullName>
+        <default>false</default>
+        <label>Retención SECI</label>
+    </customValue>
+    <customValue>
+        <fullName>Atención al Cliente CESS</fullName>
+        <default>false</default>
+        <label>Atención al Cliente CESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Atención al Cliente SECI</fullName>
+        <default>false</default>
+        <label>Atención al Cliente SECI</label>
+    </customValue>
+    <customValue>
+        <fullName>Transcom</fullName>
+        <default>false</default>
+        <label>Transcom</label>
+    </customValue>
+    <customValue>
+        <fullName>Transferencia MM</fullName>
+        <default>false</default>
+        <label>Transferencia MM</label>
+    </customValue>
+    <customValue>
+        <fullName>Blecis Sevilla</fullName>
+        <default>false</default>
+        <label>Blecis Sevilla</label>
+    </customValue>
+    <description>Lista global con valores para registro manual.</description>
+    <masterLabel>CESS - Origen - Registro Manual</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

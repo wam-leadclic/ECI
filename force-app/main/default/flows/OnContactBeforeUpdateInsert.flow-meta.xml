@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>Asignamos el valor prior del campo mobile a phone</description>
+        <name>phoneUpdate</name>
+        <label>Phone Actualizado</label>
+        <locationX>314</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Phone</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.PersonMobilePhone</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Asignamos a Document Type AUX el valor de Document Type</description>
+        <name>setDocumentTypeAux_0_0</name>
+        <label>setDocumentTypeAUX</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.TipoDocumentoAUX__pc</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.document_type__pc</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>checkPhones</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Actualizamos el campo mobile</description>
+        <name>updateMobile</name>
+        <label>Mobile Actualizado</label>
+        <locationX>50</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.PersonMobilePhone</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Phone</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Comprobamos si algun campo de teléfono se ha actualizado y cual</description>
+        <name>checkPhones</name>
+        <label>Comprobamos los teléfonos</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Ninguno</defaultConnectorLabel>
+        <rules>
+            <name>phoneUpdated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Phone</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Phone</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PersonMobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PersonMobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>updateMobile</targetReference>
+            </connector>
+            <label>Phone Sustiuido</label>
+        </rules>
+        <rules>
+            <name>mobileUpdated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Phone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PersonMobilePhone</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.PersonMobilePhone</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Phone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>phoneUpdate</targetReference>
+            </connector>
+            <label>Mobile Sustituido</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>si se ha actualizado o insertado este campo hay que copiarlo en el campo AUX</description>
+        <name>HaInsertadoActualizadoTipoDeDocumento</name>
+        <label>¿Ha insertado o actualizado el Tipo de documento?</label>
+        <locationX>314</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>checkPhones</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.document_type__pc</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.document_type__pc</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setDocumentTypeAux_0_0</targetReference>
+            </connector>
+            <label>Si</label>
+        </rules>
+    </decisions>
+    <description>Flujo que asigna el valor del campo Tipo de Documento a Tipo de Documento AUX al insertar un registro o al actualizar el campo Tipo de Documento. Además se encarga del automatismo de reemplazar los telefonos en update.</description>
+    <formulas>
+        <description>Comprobamos si el registro es un insert</description>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>On Contact Before Update/Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Account Before Update/Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>HaInsertadoActualizadoTipoDeDocumento</startElementReference>
+    <status>Active</status>
+</Flow>

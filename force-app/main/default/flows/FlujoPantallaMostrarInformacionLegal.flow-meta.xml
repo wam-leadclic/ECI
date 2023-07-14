@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Flujo de pantalla para mostrar información legal (Email, SMS o locución legal) cuando una oportunidad cumple los requisitos. Se realiza mediante flujo de pantalla porque existen condiciones especiales en la fórmula para el mensaje a mostrar.</description>
+    <formulas>
+        <name>TextoInformacionLegal</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!recordId.Account.PersonEmail})), {!$Label.InformacionLegalEmail}&amp;{!recordId.Account.PersonEmail}, IF( OR( BEGINS({!recordId.Account.PersonMobilePhone}, &quot;6&quot;), BEGINS({!recordId.Account.PersonMobilePhone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!recordId.Account.PersonMobilePhone}, IF(OR(BEGINS({!recordId.Account.Phone}, &quot;6&quot;), BEGINS({!recordId.Account.Phone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!recordId.Account.Phone}, {!$Label.InfomracionLegalLocucion})))</expression>
+    </formulas>
+    <interviewLabel>Pantalla_MostrarInformacionLegal {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flujo Pantalla Mostrar Informacion Legal</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Pantalla_MostrarTextoInformacionLegal</name>
+        <label>Pantalla_MostrarTextoInformacionLegal</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>DisplayText_TextoInformacionLegal</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(12, 137, 87);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;{!TextoInformacionLegal}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Pantalla_MostrarTextoInformacionLegal</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Variable donde se guarda la oportunidad actual.</description>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

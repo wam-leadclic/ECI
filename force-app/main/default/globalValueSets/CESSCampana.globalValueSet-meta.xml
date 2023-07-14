@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ENTRANTES</fullName>
+        <default>false</default>
+        <label>ENTRANTES</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_ general</fullName>
+        <default>false</default>
+        <label>campaña_ general</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_accidentes</fullName>
+        <default>false</default>
+        <label>campaña_accidentes</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_ hogar</fullName>
+        <default>false</default>
+        <label>campaña_ hogar</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_autos</fullName>
+        <default>false</default>
+        <label>campaña_autos</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_salud</fullName>
+        <default>false</default>
+        <label>campaña_salud</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_general</fullName>
+        <default>false</default>
+        <label>campaña_general</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_vida</fullName>
+        <default>false</default>
+        <label>campaña_vida</label>
+    </customValue>
+    <customValue>
+        <fullName>campaña_decesos</fullName>
+        <default>false</default>
+        <label>campaña_decesos</label>
+    </customValue>
+    <description>Valores globales para campaña.</description>
+    <masterLabel>CESS - Campaña</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

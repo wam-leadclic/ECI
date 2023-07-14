@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DesactiveValidationDeleteLead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Permite desactivar la validación del borrado de Leads que comprueba que ya se hayan borrado correctamente de CTI</description>
+    <externalId>false</externalId>
+    <label>DesactiveValidationDeleteLead</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

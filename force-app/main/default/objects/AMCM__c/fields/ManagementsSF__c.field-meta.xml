@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ManagementsSF__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Muestra un check en caso de haber sido gestionado desde Salesforce.</description>
+    <externalId>false</externalId>
+    <label>Gestiones Salesforce</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

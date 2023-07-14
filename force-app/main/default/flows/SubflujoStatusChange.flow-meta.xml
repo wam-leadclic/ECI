@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <description>AsignoEstadoCualificado</description>
+        <name>AsignoEstadoCualificado</name>
+        <label>AsignoEstadoCualificado</label>
+        <locationX>1546</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>AsignoEstadoCualificado</description>
+        <name>AsignoEstadoCualificado_0</name>
+        <label>AsignoEstadoCualificado</label>
+        <locationX>3570</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberAdditionalRecord.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos estado No contactado</description>
+        <name>AsignoEstadoNoContactado</name>
+        <label>AsignoEstadoNoContactado</label>
+        <locationX>1216</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not contacted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ResultadoTelefonoErroneo</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos estado No contactado</description>
+        <name>AsignoEstadoNoContactado_0</name>
+        <label>AsignoEstadoNoContactado</label>
+        <locationX>3240</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberAdditionalRecord.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not contacted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ResultadoTelefonoErroneo_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno Estado No Cualificado</description>
+        <name>AsignoEstadoNoCualificado</name>
+        <label>AsignoEstadoNoCualificado</label>
+        <locationX>402</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GestionDeCarteraResult</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asigno Estado No Cualificado</description>
+        <name>AsignoEstadoNoCualificado_0</name>
+        <label>AsignoEstadoNoCualificado</label>
+        <locationX>2426</locationX>
+        <locationY>518</locationY>
+        <assignmentItems>
+            <assignToReference>CampaignMemberAdditionalRecord.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Aborted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GestionDeCarteraResult_0</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>¿Se está modificando un miembro de campaña o un miembro de campaña adicional?</description>
+        <name>CampaignMemberOrCampaignMemberAdditional</name>
+        <label>¿Miembro de campaña o Miembro de campaña adicional?</label>
+        <locationX>2558</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsCampaignMember</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Result</targetReference>
+            </connector>
+            <label>Miembro de campaña</label>
+        </rules>
+        <rules>
+            <name>IsCampaignMemberAdditional</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Result_0</targetReference>
+            </connector>
+            <label>Miembro de campaña adicional</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Cumple Requisitos para enviar Email</description>
+        <name>CumpleRequisitosEnviarEmail</name>
+        <label>Cumple Requisitos para enviar Email</label>
+        <locationX>446</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesSendEmail</name>
+            <conditionLogic>6 AND 7 AND 8 AND 9 AND 10 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Autos/Motos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hogar</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vida</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accidentes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Marketing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.SourceCess__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Cotizacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Lead.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Lead.EmailBouncedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.EmailSended__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubflujoCampaignMemberSendEmail</targetReference>
+            </connector>
+            <label>Yes Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Cumple Requisitos para enviar Email</description>
+        <name>CumpleRequisitosEnviarEmail_0</name>
+        <label>Cumple Requisitos para enviar Email</label>
+        <locationX>1062</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesSendEmail_0</name>
+            <conditionLogic>6 AND 7 AND 8 AND 9 AND 10 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Autos/Motos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hogar</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vida</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accidentes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Marketing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.SourceCess__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Cotizacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Lead.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Lead.EmailBouncedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.EmailSended__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubflujoCampaignMemberSendEmail_0</targetReference>
+            </connector>
+            <label>Yes Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Cumple Requisitos para enviar Email</description>
+        <name>CumpleRequisitosEnviarEmail_0_0</name>
+        <label>Cumple Requisitos para enviar Email</label>
+        <locationX>2470</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesSendEmail_0_0</name>
+            <conditionLogic>6 AND 7 AND 8 AND 9 AND 10 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Autos/Motos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hogar</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vida</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accidentes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Additional</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.SourceCess__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Cotizacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Lead__r.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Lead__r.EmailBouncedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.EmailSended__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubflujoCampaignMemberSendEmail_0_0</targetReference>
+            </connector>
+            <label>Yes Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Cumple Requisitos para enviar Email</description>
+        <name>CumpleRequisitosEnviarEmail_0_0_0</name>
+        <label>Cumple Requisitos para enviar Email</label>
+        <locationX>3086</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesSendEmail_0_0_0</name>
+            <conditionLogic>6 AND 7 AND 8 AND 9 AND 10 AND (1 OR 2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Autos/Motos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hogar</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Salud</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vida</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.LineInsurance__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accidentes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Additional</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.SourceCess__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Cotizacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Lead__r.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Lead__r.EmailBouncedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.EmailSended__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubflujoCampaignMemberSendEmail_0_0_0</targetReference>
+            </connector>
+            <label>Yes Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si el resultado es Gestión en cartera, se debe crear una tarea</description>
+        <name>GestionDeCarteraResult</name>
+        <label>Es Gestión en cartera</label>
+        <locationX>402</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SiEsGestionDeCartera</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gestión de Cartera</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreoTareaBackOffice</targetReference>
+            </connector>
+            <label>SiEsGestionDeCartera</label>
+        </rules>
+        <rules>
+            <name>ResultNoContestaEnviarEmail</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contesta Enviar Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CumpleRequisitosEnviarEmail</targetReference>
+            </connector>
+            <label>Resultado No contesta Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Si el resultado es Gestión en cartera, se debe crear una tarea</description>
+        <name>GestionDeCarteraResult_0</name>
+        <label>Es Gestión en cartera</label>
+        <locationX>2426</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SiEsGestionDeCartera_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gestión de Cartera</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CreoTareaBackOffice_0</targetReference>
+            </connector>
+            <label>SiEsGestionDeCartera</label>
+        </rules>
+        <rules>
+            <name>ResultadoNoContestaEnviar_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contesta Enviar Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CumpleRequisitosEnviarEmail_0_0</targetReference>
+            </connector>
+            <label>Resultado No contesta Enviar Email</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>En función del resultado se actualizará automáticamente el estado.</description>
+        <name>Result</name>
+        <label>¿Cual es el resultado?</label>
+        <locationX>1106</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unqualified</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No colabora</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ya ha contratado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No compra por teléfono</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consulta NO venta - ATC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prefiere ir a Centro comercial</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Otros Productos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Llamada cortada</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gestión de Cartera</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No contento con ECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden datos verificacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No dispone datos TECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden condiciones de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Oferta fuera de fecha</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía devuelta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cambio de Tomador</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía al extranjero o de empresa</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contesta Enviar Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoCualificado</targetReference>
+            </connector>
+            <label>No cualificado</label>
+        </rules>
+        <rules>
+            <name>NotContacted</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Teléfono Erróneo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No ha solicitado información</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cuelga (no argumentado)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cliente no habla español</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lead de Prueba (Test)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Robinson</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Duplicado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No asegurable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No titular de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoContactado</targetReference>
+            </connector>
+            <label>No contactado</label>
+        </rules>
+        <rules>
+            <name>Qualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Presentar Oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoCualificado</targetReference>
+            </connector>
+            <label>Cualificado</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>En función del resultado se actualizará automáticamente el estado.</description>
+        <name>Result_0</name>
+        <label>¿Cual es el resultado?</label>
+        <locationX>3130</locationX>
+        <locationY>398</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unqualified_0</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No colabora</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ya ha contratado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No compra por teléfono</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consulta NO venta - ATC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prefiere ir a Centro comercial</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Otros Productos</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Llamada cortada</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gestión de Cartera</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No contento con ECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden datos verificacion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No dispone datos TECI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No coinciden condiciones de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Oferta fuera de fecha</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía devuelta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cambio de Tomador</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mercancía al extranjero o de empresa</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Contesta Enviar Email</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoCualificado_0</targetReference>
+            </connector>
+            <label>No cualificado</label>
+        </rules>
+        <rules>
+            <name>NotContacted_0</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Teléfono Erróneo</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No ha solicitado información</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cuelga (no argumentado)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cliente no habla español</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lead de Prueba (Test)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Robinson</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Duplicado</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No asegurable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No titular de la oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoNoContactado_0</targetReference>
+            </connector>
+            <label>No contactado</label>
+        </rules>
+        <rules>
+            <name>Qualified_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Presentar Oferta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AsignoEstadoCualificado_0</targetReference>
+            </connector>
+            <label>Cualificado</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Resultado Teléfono Erróneo</description>
+        <name>ResultadoTelefonoErroneo</name>
+        <label>Resultado Teléfono Erróneo</label>
+        <locationX>1216</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesResultadoTelefonoErroneo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Teléfono Erróneo</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CumpleRequisitosEnviarEmail_0</targetReference>
+            </connector>
+            <label>Resultado Teléfono Erróneo</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Resultado Teléfono Erróneo</description>
+        <name>ResultadoTelefonoErroneo_0</name>
+        <label>Resultado Teléfono Erróneo</label>
+        <locationX>3240</locationX>
+        <locationY>638</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesResultadoTelefonoErroneo_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberAdditionalRecord.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Teléfono Erróneo</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CumpleRequisitosEnviarEmail_0_0_0</targetReference>
+            </connector>
+            <label>Resultado Teléfono Erróneo</label>
+        </rules>
+    </decisions>
+    <description>Actualización automática de cambio de estado según los resultados de miembros de campaña.</description>
+    <formulas>
+        <description>Calcula el WhoId de la tarea</description>
+        <name>LeadOrContactCampaignMember</name>
+        <dataType>String</dataType>
+        <expression>IF({!CampaignMemberRecord.LeadId}==&apos;&apos;, {!CampaignMemberRecord.ContactId},{!CampaignMemberRecord.LeadId})</expression>
+    </formulas>
+    <formulas>
+        <description>Muestra el Id del lead o contacto al que está asociado el miembro de campaña adicional</description>
+        <name>LeadOrContactCampaignMemberAdditional</name>
+        <dataType>String</dataType>
+        <expression>IF({!CampaignMemberAdditionalRecord.Lead__c}==&apos;&apos;,{!CampaignMemberAdditionalRecord.Contact__c}, {!CampaignMemberAdditionalRecord.Lead__c})</expression>
+    </formulas>
+    <interviewLabel>Subflujo - Cambio de estados {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo - Cambio de estados</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>CreoTareaBackOffice</name>
+        <label>CreoTareaBackOffice</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>GetBackOfficeQueue.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Tarea Gestión de Cartera</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>LeadOrContactCampaignMember</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordCreates>
+        <name>CreoTareaBackOffice_0</name>
+        <label>CreoTareaBackOffice</label>
+        <locationX>2074</locationX>
+        <locationY>758</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>GetBackOfficeQueue.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Tarea Gestión de Cartera</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>LeadOrContactCampaignMemberAdditional</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Obtengo la cola backoffice al que tengo que asignar la tarea de backoffice</description>
+        <name>GetBackOfficeQueue</name>
+        <label>GetBackOfficeQueue</label>
+        <locationX>2558</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CampaignMemberOrCampaignMemberAdditional</targetReference>
+        </connector>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BackOffice</stringValue>
+            </value>
+        </filters>
+        <object>Group</object>
+    </recordLookups>
+    <recordUpdates>
+        <description>Actualizo estado del Miembro de campaña</description>
+        <name>UpdateCampaignMemberId</name>
+        <label>UpdateCampaignMemberId</label>
+        <locationX>1106</locationX>
+        <locationY>1286</locationY>
+        <inputReference>CampaignMemberRecord</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizo estado del Miembro de campaña adicional</description>
+        <name>UpdateCampaignMemberIdAdditionalId</name>
+        <label>UpdateCampaignMemberAdditionalId</label>
+        <locationX>3130</locationX>
+        <locationY>1286</locationY>
+        <inputReference>CampaignMemberAdditionalRecord</inputReference>
+    </recordUpdates>
+    <startElementReference>GetBackOfficeQueue</startElementReference>
+    <status>Active</status>
+    <subflows>
+        <description>Subflujo - Campaign Member Send Email</description>
+        <name>SubflujoCampaignMemberSendEmail</name>
+        <label>Subflujo - Campaign Member Send Email</label>
+        <locationX>314</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </connector>
+        <flowName>Subflujo_Campaign_Member_Send_Email</flowName>
+        <inputAssignments>
+            <name>CampaignRecord</name>
+            <value>
+                <elementReference>CampaignMemberRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>Subflujo - Campaign Member Send Email</description>
+        <name>SubflujoCampaignMemberSendEmail_0</name>
+        <label>Subflujo - Campaign Member Send Email</label>
+        <locationX>930</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberId</targetReference>
+        </connector>
+        <flowName>Subflujo_Campaign_Member_Send_Email</flowName>
+        <inputAssignments>
+            <name>CampaignRecord</name>
+            <value>
+                <elementReference>CampaignMemberRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>Subflujo - Campaign Member Send Email</description>
+        <name>SubflujoCampaignMemberSendEmail_0_0</name>
+        <label>Subflujo - Campaign Member Send Email</label>
+        <locationX>2338</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </connector>
+        <flowName>Subflujo_Campaign_Member_Send_Email</flowName>
+        <inputAssignments>
+            <name>CampaignMemberAdditionalId</name>
+            <value>
+                <elementReference>CampaignMemberAdditionalRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>Subflujo - Campaign Member Send Email</description>
+        <name>SubflujoCampaignMemberSendEmail_0_0_0</name>
+        <label>Subflujo - Campaign Member Send Email</label>
+        <locationX>2954</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>UpdateCampaignMemberIdAdditionalId</targetReference>
+        </connector>
+        <flowName>Subflujo_Campaign_Member_Send_Email</flowName>
+        <inputAssignments>
+            <name>CampaignMemberAdditionalId</name>
+            <value>
+                <elementReference>CampaignMemberAdditionalRecord</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Miembro de campaña adicional que me envía el flujo On Campaign Member AG Update</description>
+        <name>CampaignMemberAdditionalRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>AMCM__c</objectType>
+    </variables>
+    <variables>
+        <description>Registro de miembro de campaña que me envía el flujo On Campaign Member Update</description>
+        <name>CampaignMemberRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+</Flow>

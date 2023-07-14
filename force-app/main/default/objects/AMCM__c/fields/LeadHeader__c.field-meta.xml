@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeadHeader__c</fullName>
+    <description>Campo fórmula que concatena lead_number con sourceCess.</description>
+    <externalId>false</externalId>
+    <formula>Lead__r.lead_number__c  &amp; &quot; | &quot; &amp; SourceCess__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Número | Origen</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

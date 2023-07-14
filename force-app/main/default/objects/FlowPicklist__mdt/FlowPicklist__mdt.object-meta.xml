@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Contiene la definición de estructura (no los registros) que permiten aportar valores específicos a los picklist de los flujos de argumentarios. De esta forma el cambio de valores se puede realizar modificando este Custom Metadata Type en vez de hardcodeando el valor en el flujo.</description>
+    <label>Picklist para flujos</label>
+    <pluralLabel>Picklists para flujos</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

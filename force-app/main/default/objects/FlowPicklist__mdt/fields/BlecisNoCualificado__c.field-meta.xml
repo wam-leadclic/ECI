@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BlecisNoCualificado__c</fullName>
+    <description>Valores &apos;No Cualificados&apos; para result__c cuando el campo medio es Blecis</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Blecis/No Cualificado</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No colabora</fullName>
+                <default>true</default>
+                <label>No colabora</label>
+            </value>
+            <value>
+                <fullName>Ya ha contratado</fullName>
+                <default>false</default>
+                <label>Ya ha contratado</label>
+            </value>
+            <value>
+                <fullName>No compra por teléfono</fullName>
+                <default>false</default>
+                <label>No compra por teléfono</label>
+            </value>
+            <value>
+                <fullName>Prefiere ir a Centro comercial</fullName>
+                <default>false</default>
+                <label>Prefiere ir a Centro comercial</label>
+            </value>
+            <value>
+                <fullName>No contento con ECI</fullName>
+                <default>false</default>
+                <label>No contento con ECI</label>
+            </value>
+            <value>
+                <fullName>Llamada cortada</fullName>
+                <default>false</default>
+                <label>Llamada cortada</label>
+            </value>
+            <value>
+                <fullName>Mercancía devuelta</fullName>
+                <default>false</default>
+                <label>Mercancía devuelta</label>
+            </value>
+            <value>
+                <fullName>Cambio de Tomador</fullName>
+                <default>false</default>
+                <label>Cambio de Tomador</label>
+            </value>
+            <value>
+                <fullName>Mercancía al extranjero o de empresa</fullName>
+                <default>false</default>
+                <label>Mercancía al extranjero o de empresa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

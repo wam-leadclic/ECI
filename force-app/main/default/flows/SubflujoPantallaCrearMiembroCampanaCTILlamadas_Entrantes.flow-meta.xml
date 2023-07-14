@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <assignments>
+        <description>Asignamos a CM MKT de salida, no lo hacemos en el GET para poder tener todos los campos</description>
+        <name>AsignaCMMKTSalida</name>
+        <label>Asignamos a CM MKT de salida</label>
+        <locationX>710</locationX>
+        <locationY>2306</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_CMMKT</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetCMMKT</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_MCAG_Adicional</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Incrementamos contador para controlar el error de 100 operaciones DML mientras esperamos</description>
+        <name>IncrementamosContador</name>
+        <label>IncrementamosContador</label>
+        <locationX>446</locationX>
+        <locationY>2186</locationY>
+        <assignmentItems>
+            <assignToReference>ContadorIteraciones</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GetCMCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Reseteamos el contador para controlar el error de 100 operaciones DML mientras esperamos</description>
+        <name>ReseteamosContador</name>
+        <label>ReseteamosContador</label>
+        <locationX>182</locationX>
+        <locationY>2306</locationY>
+        <assignmentItems>
+            <assignToReference>ContadorIteraciones</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GetCMCTI</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Rellena el valor de CMCTI de salida con el CMCTI recién recuperado</description>
+        <name>Set_CMCTIVariable</name>
+        <label>Set_CMCTIVariable</label>
+        <locationX>446</locationX>
+        <locationY>1946</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_CMCTI</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GetCMCTI</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CheckCTICreated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Asignamos a Miembro de campaña adicional de salida, no lo hacemos en el GET para poder tener todos los campos</description>
+        <name>Set_MCAdicionalDeSalida</name>
+        <label>Set MC Adicional de salida</label>
+        <locationX>710</locationX>
+        <locationY>2546</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_MCAdicional</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_MCAG_Adicional</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Guardar como ramo del CM CTI el elegido en la pantalla anterior</description>
+        <name>SetRamoCTI</name>
+        <label>Set Ramo CTI</label>
+        <locationX>578</locationX>
+        <locationY>1430</locationY>
+        <assignmentItems>
+            <assignToReference>RamoCTI</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RamoScreen</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateCMPlatformEvent</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Guardar Seguros Especiales como ramo del CTI.</description>
+        <name>SetRamoCTISegurosEspeciales</name>
+        <label>Set Ramo CTI Seguros Especiales</label>
+        <locationX>314</locationX>
+        <locationY>1430</locationY>
+        <assignmentItems>
+            <assignToReference>RamoCTI</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Seguros Especiales</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CreateCMPlatformEvent</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Comprobar si se ha recogido el CM CTI, al ser asincrono, puede que tarde.</description>
+        <name>CheckCTICreated</name>
+        <label>Check CTI Created</label>
+        <locationX>446</locationX>
+        <locationY>2066</locationY>
+        <defaultConnector>
+            <targetReference>GetCMMKT</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Ya se ha creado el CM CTI</defaultConnectorLabel>
+        <rules>
+            <name>AlcanzaLimiteIteraciones</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_OUT_CMCTI</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ContadorIteraciones</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>80.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>EsperaIteraciones</targetReference>
+            </connector>
+            <label>Más de 80 iteraciones</label>
+        </rules>
+        <rules>
+            <name>VolverBuscar</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_OUT_CMCTI</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IncrementamosContador</targetReference>
+            </connector>
+            <label>Volver a buscar</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobar si se ha elegido Seguros Especiales para el flujo Entrantes Basicos y asignar el ramo elegido para la creacion den CM CTI</description>
+        <name>CheckRamo</name>
+        <label>Check Ramo</label>
+        <locationX>446</locationX>
+        <locationY>1310</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsSegurosEspeciales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsFlujoBlecis</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RamoScreen</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Seguros Especiales</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DisplayErrorSegurosEspeciales</targetReference>
+            </connector>
+            <label>Is Seguros Especiales</label>
+        </rules>
+        <rules>
+            <name>IsBlecis</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsFlujoBlecis</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetRamoCTISegurosEspeciales</targetReference>
+            </connector>
+            <label>Is Blecis</label>
+        </rules>
+        <rules>
+            <name>IsBasicos</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsFlujoBlecis</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SetRamoCTI</targetReference>
+            </connector>
+            <label>Is Basicos</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ExisteCTI</name>
+        <label>Existe CTI?</label>
+        <locationX>600</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>DatosNuevoCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Existe</defaultConnectorLabel>
+        <rules>
+            <name>SiExiste</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetCTI</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Si Existe</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Comprobar si tiene CM CTI</description>
+        <name>TieneCMCTI</name>
+        <label>Tiene CM CTI?</label>
+        <locationX>446</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>GetCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Si tiene CTI</defaultConnectorLabel>
+        <rules>
+            <name>NoCTIOption</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var_OUT_CMCTI</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>DatosNuevoCTI</targetReference>
+            </connector>
+            <label>No tiene CTI</label>
+        </rules>
+    </decisions>
+    <description>Subflujo para la creacion de un miembro de campaña CTI para los argumentarios entrantes (Basicos y Blecis) en caso de no tener ningun miembro de campaña CTI (HEADER dinámico incorporado con imagen como recurso estático)
+
+02/09 MHG: Se incluyen todos los campos del CMCTI creado, para que no falle en otros subflujos que lo usan
+23/09 MMV: Se añade el nuevo campo en la pantalla con el picklist de Campañas CTI y se quita Campaña CESS. En la búsqueda de CTI se busca en la misma campaña CTI creada
+20/10 AMT: Cambios en las cabeceras de las pantallas
+02/11 MMV: En algunos casos la creación puede generar Adicional en lugar de CM MKT</description>
+    <dynamicChoiceSets>
+        <description>Lista de valores del campo CampaignCTI__c del Campaign member</description>
+        <name>CampaignCTIPicklistSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>CampaignCTI__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores del campo Campaña - CESS del objeto CM</description>
+        <name>CampanaCESSPicklistSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>CampaignCess__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores del campo Medio del objeto CM</description>
+        <name>MedioPickilistSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>SourceType__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores del campo Origen - Registro Manual</description>
+        <name>OrigenRegistroManualPicklistSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>SourceManualRecord__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores del campo Ramo del objeto CM</description>
+        <name>RamoPicklistSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>LineInsurance__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Valores picklist del campo Tipo de Mercancia</description>
+        <name>TipoMercanciaChoiceSet</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>MerchandiseType__c</picklistField>
+        <picklistObject>CampaignMember</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <description>Valor por defecto del picklist de Campaña CTI de la pantalla. Si es Blecis o Básicos es diferente</description>
+        <name>For_DefaultValueCampaignCTIPicklist</name>
+        <dataType>String</dataType>
+        <expression>IF({!IsFlujoBlecis},
+    {!Var_CESS_CTIPLANBLECIS_CAMPAIGN} ,
+    {!Var_CESS_CTIPLAN_CAMPAIGN}
+)</expression>
+    </formulas>
+    <interviewLabel>Subflujo Pantalla Crear Miembro de Campaña CTI {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo Pantalla Crear Miembro de Campaña CTI Llamadas Entrantes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Crear CM CTI y sus miembros de campaña a traves del Platform Event</description>
+        <name>CreateCMPlatformEvent</name>
+        <label>Create CM Platform Event</label>
+        <locationX>446</locationX>
+        <locationY>1706</locationY>
+        <connector>
+            <targetReference>GetCMCTI</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorDisplay</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>AmountMerchandise__c</field>
+            <value>
+                <elementReference>ImporteMercanciaScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>MerchandiseType__c</field>
+            <value>
+                <elementReference>TipoMercanciaScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SalesSlip__c</field>
+            <value>
+                <elementReference>TalonVentaScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>campaignCTI__c</field>
+            <value>
+                <elementReference>CampanaCTIScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>lineInsurance__c</field>
+            <value>
+                <elementReference>RamoCTI</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>matchedRecordId__c</field>
+            <value>
+                <elementReference>IdLeadContacto</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>sourceManualrecord__c</field>
+            <value>
+                <elementReference>OrigenRegistroManualScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>sourceType__c</field>
+            <value>
+                <elementReference>MedioScreen</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CMCreationEvent__e</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Obtiene el registro de Miembro de campaña Adicional creado, en caso de haberse creado</description>
+        <name>Get_MCAG_Adicional</name>
+        <label>Get MCAG Adicional</label>
+        <locationX>710</locationX>
+        <locationY>2426</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_MCAdicionalDeSalida</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTIAMCMId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_OUT_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <object>AMCM__c</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene el nombre de la campaña por defecto de Básicos</description>
+        <name>Get_ORG_ApplicationSettings_CESS_CTIPLAN_CAMPAIGN</name>
+        <label>Get ORG_ApplicationSettings CESS_CTIPLAN_CAMPAIGN</label>
+        <locationX>446</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_ORG_ApplicationSettings_CESS_CTIPLANBLECIS_CAMPAIGN</targetReference>
+        </connector>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTIPLAN_CAMPAIGN</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+        <outputAssignments>
+            <assignToReference>Var_CESS_CTIPLAN_CAMPAIGN</assignToReference>
+            <field>Value__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtiene el nombre de la campaña por defecto de BLECIS</description>
+        <name>Get_ORG_ApplicationSettings_CESS_CTIPLANBLECIS_CAMPAIGN</name>
+        <label>Get ORG_ApplicationSettings CESS_CTIPLANBLECIS_CAMPAIGN</label>
+        <locationX>446</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>TextosArgumentario</targetReference>
+        </connector>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CESS_CTIPLANBLECIS_CAMPAIGN</stringValue>
+            </value>
+        </filters>
+        <object>ORG_ApplicationSettings__mdt</object>
+        <outputAssignments>
+            <assignToReference>Var_CESS_CTIPLANBLECIS_CAMPAIGN</assignToReference>
+            <field>Value__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtener el CM CTI creado</description>
+        <name>GetCMCTI</name>
+        <label>Get CM CTI</label>
+        <locationX>446</locationX>
+        <locationY>1826</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_CMCTIVariable</targetReference>
+        </connector>
+        <filters>
+            <field>LeadId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>IdLeadContacto</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>IdRTCTI</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>IdLeadContacto</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CampaignCTI__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CampanaCTIScreen</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtener el CM CTI creado</description>
+        <name>GetCMMKT</name>
+        <label>Get CM MKT</label>
+        <locationX>710</locationX>
+        <locationY>2186</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AsignaCMMKTSalida</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_OUT_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Buscar si el CTI sigue existiendo o se ha borrado</description>
+        <name>GetCTI</name>
+        <label>Get CTI</label>
+        <locationX>600</locationX>
+        <locationY>638</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ExisteCTI</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Var_OUT_CMCTI.Id</elementReference>
+            </value>
+        </filters>
+        <object>CampaignMember</object>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
+        <name>TextosArgumentario</name>
+        <label>TextosArgumentario</label>
+        <locationX>446</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>TieneCMCTI</targetReference>
+        </connector>
+        <filters>
+            <field>Flujo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SubflujoPantallaCrearMiembroCampanaCTILlamadas_Entrantes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Idioma__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.LanguageLocaleKey</elementReference>
+            </value>
+        </filters>
+        <object>TextoArgumentario__c</object>
+    </recordLookups>
+    <screens>
+        <description>Pantalla para recoger los datos del CTI a crear</description>
+        <name>DatosNuevoCTI</name>
+        <label>Datos Nuevo CTI</label>
+        <locationX>446</locationX>
+        <locationY>1190</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>CheckRamo</targetReference>
+        </connector>
+        <fields>
+            <name>S01_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TextoArgumentario</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto1__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>RamoSegurosEspecialesScreen</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;Ramo: Seguros Especiales&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>RamoScreen</name>
+            <choiceReferences>RamoPicklistSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Ramo</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>MedioScreen</name>
+            <choiceReferences>MedioPickilistSet</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Telefono</stringValue>
+            </defaultValue>
+            <fieldText>Medio</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>OrigenRegistroManualScreen</name>
+            <choiceReferences>OrigenRegistroManualPicklistSet</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Llamada Entrante</stringValue>
+            </defaultValue>
+            <fieldText>Origen - Registro Manual</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>CampanaCTIScreen</name>
+            <choiceReferences>CampaignCTIPicklistSet</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>For_DefaultValueCampaignCTIPicklist</elementReference>
+            </defaultValue>
+            <fieldText>Campaña CTI</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TalonVentaScreen</name>
+            <dataType>String</dataType>
+            <fieldText>Talón de Venta</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>TipoMercanciaScreen</name>
+            <choiceReferences>TipoMercanciaChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Tipo de Mercancía</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>ImporteMercanciaScreen</name>
+            <dataType>String</dataType>
+            <fieldText>Importe Mercancía</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Pantalla de error si se elige Seguros Especiales para Entrantes Basicos</description>
+        <name>DisplayErrorSegurosEspeciales</name>
+        <label>Display Error Seguros Especiales</label>
+        <locationX>50</locationX>
+        <locationY>1430</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>DatosNuevoCTI</targetReference>
+        </connector>
+        <fields>
+            <name>S02_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>ErrorMessageSegurosEspeciales</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto2__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Pantalla de error.</description>
+        <name>ErrorDisplay</name>
+        <label>Error Display</label>
+        <locationX>1106</locationX>
+        <locationY>1826</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>S03_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>ErrorMessage</name>
+            <fieldText>&lt;pre class=&quot;ql-syntax&quot; spellcheck=&quot;false&quot;&gt;Se ha producido el siguiente error:
+
+{!$Flow.FaultMessage}
+
+&lt;/pre&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>EsperaIteraciones</name>
+        <label>Espera Iteraciones</label>
+        <locationX>182</locationX>
+        <locationY>2186</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>ReseteamosContador</targetReference>
+        </connector>
+        <fields>
+            <name>S04_Header</name>
+            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>heading</name>
+                <value>
+                    <elementReference>Var_INOUT_Heading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>currentStage</name>
+                <value>
+                    <elementReference>$Flow.CurrentStage</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>iconSize</name>
+                <value>
+                    <stringValue>small</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fontSize</name>
+                <value>
+                    <stringValue>12</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>icon</name>
+                <value>
+                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>stages</name>
+                <value>
+                    <elementReference>$Flow.ActiveStages</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subHeading</name>
+                <value>
+                    <elementReference>Var_INOUT_SubHeading</elementReference>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TextoEspera</name>
+            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto3__c}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Get_ORG_ApplicationSettings_CESS_CTIPLAN_CAMPAIGN</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Para controlar el límite de 100 operaciones DML cuando espera  a la creación del Campaign Member</description>
+        <name>ContadorIteraciones</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Id del lead o del contacto</description>
+        <name>IdLeadContacto</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Id del record type CM CTI</description>
+        <name>IdRTCTI</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Variable para comprobar si se llama desde el argumentario entrantes Blecis o no</description>
+        <name>IsFlujoBlecis</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable Ramo para guardar el ramo de la pantalla de datos CTI</description>
+        <name>RamoCTI</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Nombre de la campaña por defecto de Básicos</description>
+        <name>Var_CESS_CTIPLAN_CAMPAIGN</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Nombre de la campaña CTI por defecto de BLECIS</description>
+        <name>Var_CESS_CTIPLANBLECIS_CAMPAIGN</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el nombre de la persona con la que estamos hablando y que vendrá del lead o del contacto.</description>
+        <name>Var_INOUT_Heading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Imagen de cabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el ícono que se muestra en la cabecera.</description>
+        <name>Var_INOUT_HeadingIcon</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Texto de subcabecera que se utiliza además como parámetro de entrada en todos los subflujos y que se muestra en todas las pantallas. Es siempre Available for Input y Output. Es el el interés (Ramo) que se está tratando en ese momento y que depende de dónde provenga el interés.</description>
+        <name>Var_INOUT_SubHeading</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Variable miembro de campaña CTI</description>
+        <name>Var_OUT_CMCTI</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Miembro de campaña de tipo MKT</description>
+        <name>Var_OUT_CMMKT</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Contiene el registro de Miembro de campaña Adicional creado para el nuevo CM CTI</description>
+        <name>Var_OUT_MCAdicional</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>AMCM__c</objectType>
+    </variables>
+</Flow>
