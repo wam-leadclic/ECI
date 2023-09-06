@@ -341,14 +341,19 @@
             <field>inin_campaign__c</field>
             <table>Activity</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_by_me__c</field>
+            <table>Activity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>RelatedOpportunity__c</field>
+            <table>Activity</table>
+        </columns>
         <masterLabel>Activities</masterLabel>
     </sections>
     <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Propiedad_diferente__c</field>
-            <table>Activity</table>
-        </columns>
         <masterLabel>Actividades</masterLabel>
     </sections>
 </ReportType>

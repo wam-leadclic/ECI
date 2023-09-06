@@ -417,7 +417,8 @@
 28/11 MMV: Cambio para usar IsConverted en lugar de ConvertedContactId
 03/05/2023 JCB: Se añade DisplayText para información legal.
 27/06/2023 JCB: Se añade Lista de selección dependiente AceleradorOfrecido-Ramo-ImporteAcelerador
-30/06/2023 JCB: Se añade Ramo Salud para Acelerador ofrecido.</description>
+30/06/2023 JCB: Se añade Ramo Salud para Acelerador ofrecido.
+10/07/2023 JCB: Se añade enlace a Aplicación Externa para Aceleradores ofrecidos</description>
     <dynamicChoiceSets>
         <description>Valores si/no si se ha ofrecido Acelerador</description>
         <name>AceleradorOfrecido_ChoiceSet</name>
@@ -646,6 +647,12 @@
   )
  )
 )</expression>
+    </formulas>
+    <formulas>
+        <description>Enlace a aplicación externa para registro de Aceleradores Ofrecidos por los agentes.</description>
+        <name>Formula_URLAppAceleradores</name>
+        <dataType>String</dataType>
+        <expression>HYPERLINK({!$Label.Aceleradores_URLAplicacionExterna}, {!$Label.Aceleradores_MensajeEnURL})</expression>
     </formulas>
     <formulas>
         <description>Comprobamos a través de regex que el email tiene el formato correcto</description>
@@ -1250,6 +1257,11 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>displayText_URLAppAceleradores</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;{!Formula_URLAppAceleradores}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>OppWon_Section1</name>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SwitchOff</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ActualizaLead</targetReference>
+            </connector>
+            <label>SwitchOff</label>
+        </rules>
+    </decisions>
+    <description>Cuando se modifica el número de documento, se activa el campo Mostrar componente CESS y se vacían los campos Identificador CESS e Identificador SECI.</description>
+    <interviewLabel>Subflujo - Lead UpdateDNIChanged {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo - Lead UpdateDNIChanged</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Actualiza el lead reiniciando lo campos identifier y mostrando de nuevo el componente CESS</description>
+        <name>ActualizaLead</name>
+        <label>Actualiza Lead</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputLeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>identifier_aneto__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>identifier_cess__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>show_cessinfo__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <description>Parámetro de entrada. Identificador del Lead a actualizar</description>
+        <name>inputLeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

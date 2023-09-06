@@ -49,10 +49,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>standard__LightningInstrumentation</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>standard__LightningBolt</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -129,6 +125,10 @@
         <type>ConnectedApp</type>
     </appMenuItems>
     <appMenuItems>
+        <name>UATs</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>Dataloader_Bulk</name>
         <type>ConnectedApp</type>
     </appMenuItems>
@@ -158,10 +158,6 @@
     </appMenuItems>
     <appMenuItems>
         <name>Workbench</name>
-        <type>ConnectedApp</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>AdWords_Conversion_Import</name>
         <type>ConnectedApp</type>
     </appMenuItems>
 </AppMenu>

@@ -1114,4 +1114,20 @@
         <shortDescription>LsSelectAccountErrorMessage</shortDescription>
         <value>An internal error has occurred. Please refresh the page.</value>
     </labels>
+    <labels>
+        <fullName>Aceleradores_MensajeEnURL</fullName>
+        <categories>Mensajes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mensaje para URL Aceleradores ofrecidos</shortDescription>
+        <value>Pulse aquí para registrar/consultar sus aceleradores.</value>
+    </labels>
+    <labels>
+        <fullName>Aceleradores_URLAplicacionExterna</fullName>
+        <categories>Mensajes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>URL de aplicación Externa de Aceleradores ofrecidos en Oportunidades</shortDescription>
+        <value>//mx0037109pc0004/Aceleradores/Default_CESS.aspx</value>
+    </labels>
 </CustomLabels>

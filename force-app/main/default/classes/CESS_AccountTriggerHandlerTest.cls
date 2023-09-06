@@ -5,8 +5,6 @@
 * @author       	Maria Dolores Sanchez Meroño -mdolores.sanchez@iecisa.com
 * @description  	Test to the CESS_AccountTriggerHandlerTest class
 * @group        	Helper
-* @revision         AUTHOR          DATE        Reason
-                    MHG - LCS       15/11/2022  Fix- La creación de cuentas colisiona con las reglas de duplicados
 **********************************************************************************/
 @isTest
 private class CESS_AccountTriggerHandlerTest {
@@ -20,17 +18,14 @@ private class CESS_AccountTriggerHandlerTest {
         Account acc1 = orgDataUtils.newPersonAccount('acc1');
         acc1.personal_document__pc = '15213308G';
         acc1.document_type__pc = 'NIF';
-        acc1.PersonEmail = 'email15213308G@test.com';
         lstAccs.add(acc1);
         Account acc2 = orgDataUtils.newPersonAccount('acc2');
         acc2.personal_document__pc = 'X7853753N';
         acc2.document_type__pc = 'NIE';
-        acc1.PersonEmail = 'emailX7853753N@test.com';
         lstAccs.add(acc2);
         Account acc3 = orgDataUtils.newPersonAccount('acc3');
         acc3.personal_document__pc = 'G0076915H';
         acc3.document_type__pc = 'CIF';
-        acc1.PersonEmail = 'emailG0076915H@test.com';
         lstAccs.add(acc3);
         insert lstAccs;
     }

@@ -44,7 +44,6 @@
             <value>
                 <fullName>Rechazado Cía</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Rechazado Cía</label>
             </value>
         </valueSetDefinition>

@@ -31,6 +31,11 @@
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>UATs</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
         <visible>true</visible>
@@ -57,11 +62,6 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningBolt</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__LightningInstrumentation</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -115,6 +115,14 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>CEES_GetTelephonyTaskInvocable</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CEES_GetTelephonyTaskInvocableTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>CESS_AccountTriggerHandler</apexClass>
         <enabled>false</enabled>
@@ -617,11 +625,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>AMCM__c.CESS_IDDisplayAdvertisments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>AMCM__c.CMCreatedDate__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -733,6 +736,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>AMCM__c.ConversionDateAG__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AMCM__c.ConversionDate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1307,6 +1315,31 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.Avance_de_este_Bloque__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.NumeroUATsDeEsteBloque__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.PesoBloqueFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.PesoUATIndividual__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>BloqueFuncionalUATs__c.SumaAvances__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>CESS_Integration_Event__e.Data__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1686,6 +1719,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>CTI_Rules__c.campaign__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>CTI_Rules__c.campaign_cess__c</field>
         <readable>false</readable>
@@ -1894,6 +1932,11 @@
         <editable>false</editable>
         <field>CampaignMember.ClientOrLeadNumber__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CampaignMember.ConversionDate__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2257,6 +2300,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ComentariosUAT__c.Comentarios__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ComentariosUAT__c.Fecha__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ComentariosUAT__c.UATId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.AgeFormula__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2434,11 +2492,6 @@
         <editable>false</editable>
         <field>Contact.identifier_uatg__c</field>
         <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Contact.inprogress_cti__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2646,14 +2699,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Event.Propiedad_diferente__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Event.RelatedOpportunity__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2771,9 +2819,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Event.inin_remoteani__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -4137,6 +4185,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity.LinkAppAceleradores__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Opportunity.LoanPurpose__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4536,6 +4589,21 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Snapshot__c.CESS_Equipo_de_Venta__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Snapshot__c.Fecha_de_cierre__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Snapshot__c.Nombre_de_Oportunidad__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Task.CESS_AreaUserAssigned__c</field>
         <readable>false</readable>
@@ -4606,14 +4674,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Task.Propiedad_diferente__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Task.RelatedOpportunity__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -4731,9 +4794,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Task.inin_remoteani__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -4931,9 +4994,9 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>TextoArgumentario__c.IdExterno__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -5042,6 +5105,101 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>UAT__c.Asunto__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Avance__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.CategoriaFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ClaveUATPrincipal__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ClaveUAT__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.DependenciaDeOtrasUATs__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Descripcion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.FechaDeEjecucion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PerfilUsuarioPruebas__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PesoUAT__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PreCondicionesFuncionales__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PreCondicionesTecnicas__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.PruebaEjecutadaPor__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ReferenciaAdopcion__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.ResultadoEsperado__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.StartDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.SubcategoriaFuncional__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.UsuarioDePrueba__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>UAT__c.Version__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>User.CESS_Area__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -5054,6 +5212,11 @@
         <editable>false</editable>
         <field>User.DB_Region__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>User.Equipo__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -5168,6 +5331,9 @@
         <layout>AuthorizationFormText-Authorization Form Text Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>BloqueFuncionalUATs__c-Formato Bloque Funcional UATs</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>BusinessBrand-Formato Marca comercial</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5185,18 +5351,15 @@
         <recordType>Campaign.Marketing</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CampaignMember-CTI</layout>
+        <layout>CampaignMember-Campaign Member Page Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CampaignMember-Campaign Member Page Layout</layout>
         <recordType>CampaignMember.CTI</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CampaignMember-Campaign Member Page Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CampaignMember-Marketing</layout>
         <recordType>CampaignMember.Marketing</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>CampaignMemberStatus-Formato Estado de miembro de campaña</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Case-Case Layout</layout>
@@ -5212,6 +5375,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>CollaborationGroup-Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ComentariosUAT__c-Comentarios UAT Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
@@ -5268,16 +5434,16 @@
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>FlowPicklist__mdt-Formato Picklist para flujos</layout>
+        <layout>FlowInterview-Flow Interview Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowPicklist__mdt-Picklist para flujos Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Idea-Idea Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Image-Formato Imagen</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
@@ -5303,7 +5469,7 @@
         <layout>ORG_ApplicationSettings__mdt-ORG_ApplicationSettings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Opportunity-CESS Opportunity Layout Usabilidad</layout>
+        <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
@@ -5315,15 +5481,18 @@
         <layout>OrderItem-Order Product Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>OutgoingEmail-Formato Correo electrónico saliente</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PersonAccount-Formato de cuenta personal</layout>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>PersonAccount-Formato de cuenta personal</layout>
         <recordType>PersonAccount.Confidential_PersonAccount</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>PersonAccount-Person Account CESS Layout Usabilidad</layout>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>PersonAccount-Person Account CESS Layout Usabilidad</layout>
+        <layout>PersonAccount-Formato de cuenta personal</layout>
         <recordType>PersonAccount.PersonAccount</recordType>
     </layoutAssignments>
     <layoutAssignments>
@@ -5364,9 +5533,6 @@
         <layout>QuoteLineItem-Quote Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Recommendation-Formato Recomendación</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>RelacionMensajeBienvenida__mdt-Formato Relacion Mensaje Bienvenida</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5385,6 +5551,9 @@
         <layout>ServiceContract-Formato del contrato de servicio</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Snapshot__c-Formato Snapshot</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SocialPersona-Social Persona Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5397,10 +5566,13 @@
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>TelefonosTransferencia__mdt-Teléfono Transferencia Layout</layout>
+        <layout>TelefonosTransferencia__mdt-Teléfonos Transferencia Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TextoArgumentario__c-Texto de Argumentario Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>UAT__c-UAT Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>User-User Layout</layout>
@@ -5523,6 +5695,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>BloqueFuncionalUATs__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Buscador_Contactos_y_Leads</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -5548,6 +5724,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>TextoArgumentario__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>UAT__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>CPQ Integration User</userLicense>

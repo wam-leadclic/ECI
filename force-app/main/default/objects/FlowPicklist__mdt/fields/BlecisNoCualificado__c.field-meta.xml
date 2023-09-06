@@ -56,6 +56,12 @@
                 <default>false</default>
                 <label>Mercancía al extranjero o de empresa</label>
             </value>
+            <value>
+                <fullName>No compra por telefono</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No compra por telefono</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -143,11 +143,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>GCLID__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CTIDuplicateCheck__c</field>
             <table>AMCM__c</table>
         </columns>
@@ -163,17 +158,17 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Status__c</field>
+            <table>AMCM__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ECommerceStatus__c</field>
             <table>AMCM__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CTIIntergrationStatus__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Status__c</field>
             <table>AMCM__c</table>
         </columns>
         <columns>
@@ -244,11 +239,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>RiskExpirationDate__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CMCreatedDate__c</field>
             <table>AMCM__c</table>
         </columns>
         <columns>
@@ -788,37 +778,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Lead__c.Email</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact__c.Email</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead__c.lead_number__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Lead__c.document_number__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESS_IDDisplayAdvertisments__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CampaignMemberNumber__c</field>
-            <table>AMCM__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ConversionDateAG__c</field>
             <table>AMCM__c</table>
         </columns>
         <masterLabel>Miembros de campaña AG</masterLabel>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Switch_Off</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowCampaignMember__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateCampaignMember</targetReference>
+            </connector>
+            <label>Switch Off</label>
+        </rules>
+    </decisions>
+    <description>Si el campo Error CTI o Enviar CTI ha cambiado se actualiza el campo  Envio fallido CTI</description>
+    <formulas>
+        <name>EnvioFallidoCTI</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT({!CampaignMemberRecord.CTISent__c}) &amp;&amp; NOT(ISBLANK({!CampaignMemberRecord.CTIError__c}))</expression>
+    </formulas>
+    <interviewLabel>Subflujo- Campaign Member Send CTI Error {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo- Campaign Member Send CTI Error</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateCampaignMember</name>
+        <label>UpdateCampaignMember</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CTIErrorCheck__c</field>
+            <value>
+                <elementReference>EnvioFallidoCTI</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>CampaignMemberRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+</Flow>

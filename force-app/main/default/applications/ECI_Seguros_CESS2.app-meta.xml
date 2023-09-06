@@ -12,514 +12,185 @@
     <navType>Console</navType>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>MFA-Administrador del sistema</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
-        <profile>MFA-Administrador del sistema</profile>
+        <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter External User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter External User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Free User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Moderator User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Chatter Moderator User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>CPQ Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>CPQ Integration User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Guest License User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Guest License User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Identity User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Identity User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Minimum Access - Salesforce</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Minimum Access - Salesforce</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>ORG Integration</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>ORG Integration</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Read Only</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Read Only</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>Standard</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>SolutionManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
-        <type>Flexipage</type>
-        <profile>ContractManager</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CampaignMemberMKTRecordPageUsability</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <recordType>CampaignMember.Marketing</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberCTIRecordPage</content>
+        <content>CESSLeadRecordPageUsabilidad</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.CTI</recordType>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>CESSLeadRecordPageUsabilidad</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CESSLeadRecordPageUsabilidad</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CESSLeadRecordPageUsabilidad</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CESSLeadRecordPageUsabilidad</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CESSLeadRecordPageUsabilidad</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CESSLeadRecordPageUsabilidad</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>CESSLeadRecordPageUsabilidad</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+        <recordType>Lead.CESS_LeadDefault</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>OpportunityRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>OpportunityRecordPageUsability</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>OpportunityRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>OpportunityRecordPageUsability</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
+        <content>OpportunityRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>PersoAccountRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Account</pageOrSobjectType>
-        <recordType>PersonAccount.CESS_cliente_personal</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
     </profileActionOverrides>
@@ -537,46 +208,6 @@
         <formFactor>Small</formFactor>
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>OpportunityRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -584,56 +215,6 @@
         <content>OpportunityRecordPageUsability</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Additional</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Additional</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
     </profileActionOverrides>
@@ -696,6 +277,142 @@
         <content>CampaignMemberAGRecordPageUsability</content>
         <formFactor>Small</formFactor>
         <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Additional</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Additional</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
+        <recordType>AMCM__c.Managed</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberAGRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
         <recordType>AMCM__c.Managed</recordType>
         <type>Flexipage</type>
         <profile>Admin</profile>
@@ -711,188 +428,291 @@
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberAGRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>AMCM__c</pageOrSobjectType>
-        <recordType>AMCM__c.Managed</recordType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>OpportunityRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>OpportunityRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>OpportunityRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>OpportunityRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CampaignMemberMKTRecordPageUsability</content>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.CESS_cliente_personal</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>PersoAccountRecordPageUsability</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.Confidential_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberCTIRecordPage</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
+        <type>Flexipage</type>
+        <profile>CESS - System Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberCTIRecordPage</content>
         <formFactor>Large</formFactor>
         <pageOrSobjectType>CampaignMember</pageOrSobjectType>
-        <recordType>CampaignMember.Marketing</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - Venta a Distancia Sevilla</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
-        <type>Flexipage</type>
-        <profile>Admin</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
-        <formFactor>Small</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
+        <recordType>CampaignMember.CTI</recordType>
         <type>Flexipage</type>
         <profile>CESS - System Administrator</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
-        <type>Flexipage</type>
-        <profile>CESS - System Administrator</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
+        <content>CampaignMemberCTIRecordPage</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
+        <content>CampaignMemberCTIRecordPage</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
+        <content>CampaignMemberCTIRecordPage</content>
         <formFactor>Small</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
     </profileActionOverrides>
     <profileActionOverrides>
         <actionName>View</actionName>
-        <content>CESSLeadRecordPageUsabilidad</content>
+        <content>CampaignMemberCTIRecordPage</content>
         <formFactor>Large</formFactor>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-        <recordType>Lead.CESS_LeadDefault</recordType>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
         <type>Flexipage</type>
         <profile>CESS - Venta a Distancia Sevilla</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberCTIRecordPage</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>CampaignMemberCTIRecordPage</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>CampaignMember</pageOrSobjectType>
+        <recordType>CampaignMember.CTI</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
     </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>standard-Lead</tabs>

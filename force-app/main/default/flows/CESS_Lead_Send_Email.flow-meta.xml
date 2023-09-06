@@ -139,7 +139,7 @@
             </processMetadataValues>
             <name>emailTemplateName</name>
             <value>
-                <elementReference>formula_3_myRule_1_A1_3775408571</elementReference>
+                <elementReference>formula_3_myRule_1_A1_6803146486</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -389,7 +389,7 @@
                 <leftValueReference>myVariable_current.contact_attempts__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_2_myRule_1_2071052384</elementReference>
+                    <elementReference>formula_2_myRule_1_9758921707</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -816,7 +816,7 @@
                 <leftValueReference>myVariable_current.contact_attempts__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>formula_12_myRule_11_5333955999</elementReference>
+                    <elementReference>formula_12_myRule_11_8989479732</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1374,7 +1374,7 @@
                 <stringValue>VALUE($CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cantidad_de_Intentos.Value__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_12_myRule_11_5333955999</name>
+        <name>formula_12_myRule_11_8989479732</name>
         <dataType>Number</dataType>
         <expression>VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cantidad_de_Intentos.Value__c} )</expression>
         <scale>18</scale>
@@ -1386,7 +1386,7 @@
                 <stringValue>VALUE($CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cantidad_de_Intentos.Value__c )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_2071052384</name>
+        <name>formula_2_myRule_1_9758921707</name>
         <dataType>Number</dataType>
         <expression>VALUE({!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cantidad_de_Intentos.Value__c} )</expression>
         <scale>18</scale>
@@ -1404,7 +1404,7 @@
                    &quot;CTI_Hogar&quot; )</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_3775408571</name>
+        <name>formula_3_myRule_1_A1_6803146486</name>
         <dataType>String</dataType>
         <expression>CASE( TEXT({!myVariable_current.line_insurance__c} ),
                    &quot;Autos/Motos&quot;, IF( CONTAINS( UPPER( {!myVariable_current.source_cess__c} ), &quot;MOTO&quot;)    ,&quot;CTI_Moto&quot;,&quot;CTI_Coche&quot;),
@@ -1430,7 +1430,7 @@ NOT(  CONTAINS( $CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cierre_Ges
         <expression>ISCHANGED({!myVariable_current.datetime_lastcall__c} )  &amp;&amp; TEXT({!myVariable_current.Status} ) = &quot;Working&quot; &amp;&amp; {!myVariable_current.RecordType.DeveloperName} &lt;&gt; &quot;VTDVD_LeadDefault&quot; &amp;&amp; 
 NOT(  CONTAINS( {!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cierre_Gestion.Value__c} , &quot;#&quot; &amp; {!myVariable_current.result_cti__c} &amp; &quot;#&quot; ) )</expression>
     </formulas>
-    <interviewLabel>CESS_Lead_Send_Email-3_InterviewLabel</interviewLabel>
+    <interviewLabel>CESS_Lead_Send_Email-4_InterviewLabel</interviewLabel>
     <label>CESS - Lead - End CTI Call</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2035,7 +2035,7 @@ NOT(  CONTAINS( {!$CustomMetadata.ORG_ApplicationSettings__mdt.CESS_CTI_Cierre_G
         <object>Lead</object>
     </recordUpdates>
     <startElementReference>isChangedDecision6_myRule_5_datetime_lastcall_c</startElementReference>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

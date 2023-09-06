@@ -481,11 +481,6 @@
             <field>CESS_Scoring__c</field>
             <table>Opportunity</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESS_OpportunityApprover5__c</field>
-            <table>Opportunity</table>
-        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>
@@ -1291,27 +1286,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>cti_duplicatecheck__c</field>
-            <table>Opportunity.Leads__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>sourceWeb__c</field>
             <table>Opportunity.Leads__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>TransferenciaLlamada__c</field>
-            <table>Opportunity.Leads__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>PhoneAux__c</field>
-            <table>Opportunity.Leads__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>MobilePhoneAux__c</field>
             <table>Opportunity.Leads__r</table>
         </columns>
         <masterLabel>Leads</masterLabel>
@@ -1816,6 +1796,16 @@
         <masterLabel>Contacto</masterLabel>
     </sections>
     <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESS_OpportunityApprover5__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESS_CreatorUser__c</field>
+            <table>Opportunity</table>
+        </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Equipo__c</field>

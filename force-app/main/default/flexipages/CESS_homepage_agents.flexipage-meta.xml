@@ -12,21 +12,10 @@
             </componentInstanceProperties>
             <componentName>desktopDashboards:embeddedDashboard</componentName>
             <visibilityRule>
-                <booleanFilter>1 OR 2 OR 3</booleanFilter>
                 <criteria>
                     <leftValue>{!$User.UserRole.Name}</leftValue>
                     <operator>CONTAINS</operator>
                     <rightValue>Supervisor</rightValue>
-                </criteria>
-                <criteria>
-                    <leftValue>{!$User.UserRole.Name}</leftValue>
-                    <operator>CONTAINS</operator>
-                    <rightValue>Responsable</rightValue>
-                </criteria>
-                <criteria>
-                    <leftValue>{!$User.UserRole.Name}</leftValue>
-                    <operator>CONTAINS</operator>
-                    <rightValue>Coordinador</rightValue>
                 </criteria>
             </visibilityRule>
         </componentInstances>

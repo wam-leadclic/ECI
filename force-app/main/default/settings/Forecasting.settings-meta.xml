@@ -237,6 +237,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -261,7 +273,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -313,7 +325,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -345,7 +357,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -353,7 +365,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -393,11 +405,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -409,7 +421,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -421,11 +433,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -433,11 +449,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -449,11 +465,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -473,11 +489,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -509,7 +525,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -533,7 +549,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -541,7 +557,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -561,11 +577,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -573,7 +589,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -627,13 +643,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -646,7 +665,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -654,9 +673,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -666,28 +685,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -695,23 +715,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -883,6 +903,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -907,7 +939,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -959,7 +991,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -991,7 +1023,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -999,7 +1031,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1039,11 +1071,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1055,7 +1087,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1067,11 +1099,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1079,11 +1115,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1095,11 +1131,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1119,11 +1155,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1155,7 +1191,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1179,7 +1215,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1187,7 +1223,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1207,11 +1243,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1219,7 +1255,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1273,13 +1309,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -1292,7 +1331,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -1300,9 +1339,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -1312,28 +1351,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -1341,23 +1381,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -1533,6 +1573,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -1557,7 +1609,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1609,7 +1661,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1641,7 +1693,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1649,7 +1701,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1689,11 +1741,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1705,7 +1757,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1717,11 +1769,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1729,11 +1785,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1745,11 +1801,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1769,11 +1825,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1805,7 +1861,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1829,7 +1885,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1837,7 +1893,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1857,11 +1913,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1869,7 +1925,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1924,13 +1980,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -1943,7 +2002,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -1951,9 +2010,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -1963,28 +2022,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -1992,23 +2052,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -2180,6 +2240,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -2204,7 +2276,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2256,7 +2328,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2288,7 +2360,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2296,7 +2368,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2336,12 +2408,12 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
-            <label>GCLID</label>
+            <field>00N1X00000RI9yw</field>
+          <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N0900000B5mEu</field>
@@ -2352,7 +2424,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2364,11 +2436,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2376,11 +2452,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2392,11 +2468,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2416,11 +2492,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2452,7 +2528,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2476,7 +2552,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2484,7 +2560,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2504,11 +2580,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2516,7 +2592,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2570,13 +2646,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -2589,7 +2668,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -2597,9 +2676,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -2609,28 +2688,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -2638,23 +2718,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -2830,6 +2910,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -2854,7 +2946,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2906,7 +2998,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2938,7 +3030,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2946,7 +3038,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2986,11 +3078,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3002,7 +3094,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3014,11 +3106,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3026,11 +3122,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3042,11 +3138,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3066,11 +3162,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3102,7 +3198,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3126,7 +3222,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3134,7 +3230,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3154,11 +3250,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3166,7 +3262,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3221,13 +3317,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -3240,7 +3339,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -3248,9 +3347,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -3260,28 +3359,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -3289,23 +3389,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -3477,6 +3577,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -3501,7 +3613,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3553,7 +3665,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3585,7 +3697,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3593,7 +3705,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3633,11 +3745,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3649,7 +3761,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3661,11 +3773,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3673,11 +3789,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3689,11 +3805,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3713,11 +3829,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3749,7 +3865,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3773,7 +3889,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3781,7 +3897,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3801,11 +3917,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3813,7 +3929,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3867,13 +3983,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -3886,7 +4005,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -3894,9 +4013,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -3906,28 +4025,30 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -3935,23 +4056,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -4127,6 +4248,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -4151,7 +4284,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4203,7 +4336,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4235,7 +4368,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4243,7 +4376,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4283,11 +4416,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4299,7 +4432,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4311,11 +4444,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4323,11 +4460,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4339,11 +4476,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4363,11 +4500,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4399,7 +4536,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4423,7 +4560,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4431,7 +4568,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4451,11 +4588,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4463,7 +4600,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4518,13 +4655,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -4537,7 +4677,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -4545,9 +4685,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -4557,28 +4697,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -4586,23 +4727,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>
@@ -4774,6 +4915,18 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca8Rj</field>
+            <label>.</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1y2</field>
+            <label>Acelerador Ofrecido</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000ca1xx</field>
+            <label>Actividad</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N0900000B5Z3G</field>
             <label>Aprobador Del Oportunidad 1</label>
         </opportunityListFieldsLabelMappings>
@@ -4798,7 +4951,7 @@
             <label>Area de Propietario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <label>Bleci Voluntario</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4850,7 +5003,7 @@
             <label>Código de Proyecto</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <label>Código Postal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4882,7 +5035,7 @@
             <label>Descripción del Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <label>Descripción Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4890,7 +5043,7 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <label>Domicilio de Riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4930,11 +5083,11 @@
             <label>Fecha Solicitud Aprobacion Contestado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ30</field>
+            <field>00N1X00000OhI2W</field>
             <label>Finalidad préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000RI9yw</field>
             <label>GCLID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4946,7 +5099,7 @@
             <label>Id del display de anuncios</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <label>Id de miembro de campaña CTI relacionado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4958,11 +5111,15 @@
             <label>Id Tarificacion</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2z</field>
+            <field>00N1X00000ca1y7</field>
+            <label>Importe Acelerador</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00N1X00000OhI2V</field>
             <label>Importe final del préstamo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000OhI2S</field>
             <label>Importe Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4970,11 +5127,11 @@
             <label>Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ39</field>
+            <field>00N1X00000OhI2f</field>
             <label>Localidad</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2d</field>
             <label>Marca Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4986,11 +5143,11 @@
             <label>Medio Registro Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3A</field>
+            <field>00N1X00000OhI2g</field>
             <label>Modelo Vehículo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2a</field>
             <label>Motivo de Aplazamiento</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5010,11 +5167,11 @@
             <label>Número  |  Tipo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ38</field>
+            <field>00N1X00000OhI2e</field>
             <label>Número de Asegurados</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2Y</field>
             <label>Número de cuotas</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5046,7 +5203,7 @@
             <label>Número de Solicitud</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <label>Opción/Capital Asegurado</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5070,7 +5227,7 @@
             <label>Origen - CESS Lead Origen</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <label>Otros datos de riesgo</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5078,7 +5235,7 @@
             <label>Póliza Proceso</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <label>Provincia</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5098,11 +5255,11 @@
             <label>ROI Analysis Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ2v</field>
+            <field>00N1X00000OhI2R</field>
             <label>Seguro amortización</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2j</field>
             <label>Talón de Venta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5110,7 +5267,7 @@
             <label>Telefóno</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <label>Tipo de Mercancía</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5164,13 +5321,16 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00N1X00000ca8Rj</field>
+            <field>00N1X00000ca1y2</field>
+            <field>00N1X00000ca1xx</field>
             <field>00N0900000B5Z3G</field>
             <field>00N0900000B5Z3H</field>
             <field>00N0900000B5Z3I</field>
             <field>00N0900000B5Z3J</field>
             <field>00N1X00000G9P6J</field>
             <field>00N0900000B5Z39</field>
-            <field>00N7Z000007hQ2x</field>
+            <field>00N1X00000OhI2T</field>
             <field>00N0900000AZoB2</field>
             <field>00N0900000B5Z3a</field>
             <field>00N0900000B5Z3b</field>
@@ -5183,7 +5343,7 @@
             <field>00N0900000B5Z3s</field>
             <field>00N0900000B5Z3u</field>
             <field>00N0900000B5Z3v</field>
-            <field>00N7Z000007hQ3C</field>
+            <field>00N1X00000OhI2i</field>
             <field>00N0900000B5Z3f</field>
             <field>00N0900000B5Z38</field>
             <field>00N0900000B5Z3A</field>
@@ -5191,9 +5351,9 @@
             <field>00N0900000B5Z3V</field>
             <field>00N0900000B5Z3O</field>
             <field>00N0900000B5Z41</field>
-            <field>00N7Z000007hQ2y</field>
+            <field>00N1X00000OhI2U</field>
             <field>00N0900000AZoB3</field>
-            <field>00N7Z000007hQ36</field>
+            <field>00N1X00000OhI2c</field>
             <field>00N1X00000HpgP1</field>
             <field>00N0900000B5Z3L</field>
             <field>00N0900000B5Z3Z</field>
@@ -5203,28 +5363,29 @@
             <field>00N0900000B5Z3d</field>
             <field>00N0900000B5Z3m</field>
             <field>00N0900000B5Z3B</field>
-            <field>00N7Z000007hQ30</field>
-            <field>00N7Z000007iyAg</field>
+            <field>00N1X00000OhI2W</field>
+            <field>00N1X00000RI9yw</field>
             <field>00N0900000B5mEu</field>
             <field>00N0900000B5Z3D</field>
-            <field>00N7Z000007hQ3E</field>
+            <field>00N1X00000OhI2k</field>
             <field>00N0900000B5Z3E</field>
             <field>00N0900000B5Z3F</field>
-            <field>00N7Z000007hQ2z</field>
-            <field>00N7Z000007hQ2w</field>
+            <field>00N1X00000ca1y7</field>
+            <field>00N1X00000OhI2V</field>
+            <field>00N1X00000OhI2S</field>
             <field>00N0900000B5Z3P</field>
-            <field>00N7Z000007hQ39</field>
-            <field>00N7Z000007hQ37</field>
+            <field>00N1X00000OhI2f</field>
+            <field>00N1X00000OhI2d</field>
             <field>00N0900000B5Z43</field>
             <field>00N0900000B5Z3z</field>
-            <field>00N7Z000007hQ3A</field>
-            <field>00N7Z000007hQ34</field>
+            <field>00N1X00000OhI2g</field>
+            <field>00N1X00000OhI2a</field>
             <field>00N0900000B5Z3W</field>
             <field>00N0900000AZoB5</field>
             <field>00N0900000B5Z3g</field>
             <field>00N0900000B5Z3R</field>
-            <field>00N7Z000007hQ38</field>
-            <field>00N7Z000007hQ32</field>
+            <field>00N1X00000OhI2e</field>
+            <field>00N1X00000OhI2Y</field>
             <field>00N0900000B5Z3x</field>
             <field>00N0900000B5Z3h</field>
             <field>00N0900000B5Z3o</field>
@@ -5232,23 +5393,23 @@
             <field>00N0900000B5Z3t</field>
             <field>00N0900000B5Z3U</field>
             <field>00N0900000B5Z3Y</field>
-            <field>00N7Z000007hQ3B</field>
+            <field>00N1X00000OhI2h</field>
             <field>00N0900000B5Z3Q</field>
             <field>00N0900000B5Z3k</field>
             <field>00N0900000B5Z3n</field>
             <field>00N0900000B5Z42</field>
             <field>00N0900000B5Z3y</field>
-            <field>00N7Z000007hQ33</field>
+            <field>00N1X00000OhI2Z</field>
             <field>00N0900000B5Z3q</field>
-            <field>00N7Z000007hQ35</field>
+            <field>00N1X00000OhI2b</field>
             <field>00N0900000B5Z3j</field>
             <field>00N0900000B5Z3X</field>
             <field>00N0900000B5Z3i</field>
             <field>00N0900000AZoB4</field>
-            <field>00N7Z000007hQ2v</field>
-            <field>00N7Z000007hQ3D</field>
+            <field>00N1X00000OhI2R</field>
+            <field>00N1X00000OhI2j</field>
             <field>00N0900000B5Z3p</field>
-            <field>00N7Z000007hQ31</field>
+            <field>00N1X00000OhI2X</field>
             <field>00N0900000B5Z3S</field>
             <field>00N0900000B5Z44</field>
             <field>00N1X00000HT7PQ</field>

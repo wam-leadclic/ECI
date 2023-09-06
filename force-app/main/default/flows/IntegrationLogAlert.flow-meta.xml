@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Enviar notificación al usuario Leadclic del error de integración.</description>
+        <name>Action_SendPushLogIntegration</name>
+        <label>Action_SendPushLogIntegration</label>
+        <locationX>50</locationX>
+        <locationY>935</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>Template_NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_CustomNotificacionType_NotificationPush.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>Col_RecipientIDs</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Ha ocurrido un error de integración</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Enviar alerta de la creación del registro.</description>
+        <name>Alert_IntegrationLogAlert</name>
+        <label>Alert_IntegrationLogAlert</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <actionName>IntegrationLog__c.Integration_Log_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Get_User_Leadclic</targetReference>
+        </connector>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <assignments>
+        <description>Asignar valor de Id a la variable Var_RecipientId.</description>
+        <name>Set_RecipientId</name>
+        <label>Set_RecipientId</label>
+        <locationX>50</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>Col_RecipientIDs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_User_Leadclic.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Action_SendPushLogIntegration</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Verificar si el usuario aún existe en SF.</description>
+        <name>Decision_UsuarioExistente</name>
+        <label>Decision_UsuarioExistente</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>UsuarioExistente_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Leadclic.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_CustomNotificacionType_NotificationPush</targetReference>
+            </connector>
+            <label>UsuarioExistente_Si</label>
+        </rules>
+    </decisions>
+    <description>Cunado se crea un registro de Log de Integración se envía una Email Alert y una notificación.</description>
+    <interviewLabel>Integration Log Alert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Integration Log Alert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Obtener tipo de la notificación personalizada para enviar la notificación.</description>
+        <name>Get_CustomNotificacionType_NotificationPush</name>
+        <label>Get_CustomNotificacionType_NotificationPush</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_RecipientId</targetReference>
+        </connector>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>NotificationPush</stringValue>
+            </value>
+        </filters>
+        <object>CustomNotificationType</object>
+    </recordLookups>
+    <recordLookups>
+        <description>Obtener el id del usuario Leadclic y almacenarlo en una variable</description>
+        <name>Get_User_Leadclic</name>
+        <label>Get_User_Leadclic</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_UsuarioExistente</targetReference>
+        </connector>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Usuario Leadclic</stringValue>
+            </value>
+        </filters>
+        <object>User</object>
+    </recordLookups>
+    <startElementReference>Alert_IntegrationLogAlert</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <description>Cuerpo de la plantilla de la notificación que se envía.</description>
+        <name>Template_NotificationBody</name>
+        <text>Sistema - {!$Record.system__c}
+Identificador - {!$Record.identifier__c}
+Error - {!$Record.error__c}</text>
+    </textTemplates>
+    <variables>
+        <description>Variable que contiene el Id de los usuarios al que se envía la notificación</description>
+        <name>Col_RecipientIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

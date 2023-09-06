@@ -141,9 +141,28 @@
         <label>Asegurado en MM</label>
     </customValue>
     <customValue>
-        <fullName>Cerrado automático</fullName>
+        <fullName>Gestión Anterior CESS</fullName>
         <default>false</default>
-        <label>Cerrado automático</label>
+        <isActive>false</isActive>
+        <label>Gestión Anterior CESS</label>
+    </customValue>
+    <customValue>
+        <fullName>Dependiente de Lead status No Cualificado</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Dependiente de Lead status No Cualificado</label>
+    </customValue>
+    <customValue>
+        <fullName>Teléfono Erróneo Enviar Email</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Teléfono Erróneo Enviar Email</label>
+    </customValue>
+    <customValue>
+        <fullName>Comunica</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Comunica</label>
     </customValue>
     <customValue>
         <fullName>No Contesta</fullName>
@@ -158,34 +177,10 @@
         <label>Ilocalizable</label>
     </customValue>
     <customValue>
-        <fullName>Comunica</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Comunica</label>
-    </customValue>
-    <customValue>
-        <fullName>Teléfono Erróneo Enviar Email</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Teléfono Erróneo Enviar Email</label>
-    </customValue>
-    <customValue>
-        <fullName>Gestión Anterior CESS</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Gestión Anterior CESS</label>
-    </customValue>
-    <customValue>
         <fullName>Aplazado</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>Aplazado</label>
-    </customValue>
-    <customValue>
-        <fullName>Dependiente de Lead status No Cualificado</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Dependiente de Lead status No Cualificado</label>
     </customValue>
     <description>Lista global con valores del resultado.</description>
     <masterLabel>CESS - Resultado</masterLabel>

@@ -5,18 +5,12 @@
     <columns>campaign_cti__c</columns>
     <columns>source_type__c</columns>
     <columns>campaign__c</columns>
-    <columns>campaign_cess__c</columns>
     <columns>source_cess__c</columns>
+    <columns>campaign_cess__c</columns>
     <columns>order__c</columns>
     <columns>skill__c</columns>
     <columns>line_insurance__c</columns>
     <columns>active__c</columns>
-    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>active__c</field>
-        <operation>equals</operation>
-        <value>1</value>
-    </filters>
     <label>All</label>
 </ListView>
