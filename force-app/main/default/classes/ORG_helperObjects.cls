@@ -120,10 +120,8 @@ public class ORG_helperObjects {
                             + (Integer.valueOf(cadenaTemporal.substring(1, 2)));
                 }
             }
-
             // Obtiene las unidades de la suma y se las resta a 10, para obtener el digito de control.
             codigoControl = 10 - (math.mod(suma,10)) ;
-
             // Si la letra es K, L, M, N, P, Q, R, S, W entonces al codigo de control le suma 64 y
             // obtengo su ASCII para ver si coincide con la ultima letra del cif.
             if (letraSociedadNumerica.indexOf(primeraLetra) >= 0) {
@@ -133,11 +131,14 @@ public class ORG_helperObjects {
                     codigoControl = 10;
                 }
                 codigoControl = codigoControl + 64;
-
                 // El ultimo digito tiene que coincidir con el digito de control obtenido
                 resultado = (ultimaLetra.getChars()[0] == codigoControl );
 
             } else {
+                //Si el codigo de control es 10,debe pasarse a 0, ya que los indices del array son del 0-9
+                if(codigoControl == 10){ 
+                    codigoControl = 0;
+                }
                 // Para el resto de letras de comienzo de CIF el ultimo digito debe ser:
                 // numerico que coincida con el codigo de control, o debe ser una letra del array sociedadLetraFinal y coincidir en la posicion de codigoControl.
                 resultado = ( (codigoControl == letraControlCIF.indexOf(ultimaLetra)) || 
