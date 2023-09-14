@@ -11,38 +11,24 @@
         <label>CP - CESS_VC</label>
     </customValue>
     <customValue>
-        <fullName>CP - CESS_BLECIS_SEV</fullName>
+        <fullName>CP - TEST_CESS_VC</fullName>
         <default>false</default>
-        <label>CP - CESS_BLECIS_SEV</label>
-    </customValue>
-    <customValue>
-        <fullName>CP - CESS_PRESTAMOS</fullName>
-        <default>false</default>
-        <label>CP - CESS_PRESTAMOS</label>
-    </customValue>
-    <customValue>
-        <fullName>CP - TEST_CESS_BLECIS_SEV</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>CP - TEST_CESS_BLECIS_SEV</label>
+        <label>CP - TEST_CESS_VC</label>
     </customValue>
     <customValue>
         <fullName>CP - TEST_CESS_LEADS</fullName>
         <default>false</default>
-        <isActive>false</isActive>
         <label>CP - TEST_CESS_LEADS</label>
     </customValue>
     <customValue>
-        <fullName>CP - TEST_CESS_PRESTAMOS</fullName>
+        <fullName>CP - TEST_CESS_BLECIS_SEV</fullName>
         <default>false</default>
-        <isActive>false</isActive>
-        <label>CP - TEST_CESS_PRESTAMOS</label>
+        <label>CP - TEST_CESS_BLECIS_SEV</label>
     </customValue>
     <customValue>
-        <fullName>CP - TEST_CESS_VC</fullName>
+        <fullName>CP - CESS_BLECIS_SEV</fullName>
         <default>false</default>
-        <isActive>false</isActive>
-        <label>CP - TEST_CESS_VC</label>
+        <label>CP - CESS_BLECIS_SEV</label>
     </customValue>
     <description>Relacionado con Lead Campaign_CTI_Picklist__c.</description>
     <masterLabel>CESS - Campaña - CTI</masterLabel>

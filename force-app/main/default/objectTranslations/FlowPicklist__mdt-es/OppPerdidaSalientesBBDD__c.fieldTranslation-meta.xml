@@ -23,6 +23,10 @@
         <translation></translation>
     </picklistValues>
     <picklistValues>
+        <masterLabel>Rechazado Cía</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
         <masterLabel>Sin decisión / Sin respuesta</masterLabel>
         <translation></translation>
     </picklistValues>

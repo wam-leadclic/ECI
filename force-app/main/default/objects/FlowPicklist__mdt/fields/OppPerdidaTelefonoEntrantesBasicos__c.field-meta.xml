@@ -42,15 +42,14 @@
                 <label>Familiar</label>
             </value>
             <value>
+                <fullName>Rechazado Cía</fullName>
+                <default>false</default>
+                <label>Rechazado Cía</label>
+            </value>
+            <value>
                 <fullName>No permite fraccionamiento</fullName>
                 <default>false</default>
                 <label>No permite fraccionamiento</label>
-            </value>
-            <value>
-                <fullName>Rechazado Cía</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Rechazado Cía</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -3,10 +3,9 @@
     <fullName>todas</fullName>
     <columns>MasterLabel</columns>
     <columns>CampanaInboundIVR__c</columns>
+    <columns>MensajeBienvenida__c</columns>
     <columns>ScreenFlowName__c</columns>
     <columns>ScreenFlow_URL__c</columns>
-    <columns>Medio__c</columns>
-    <columns>MensajeBienvenida__c</columns>
     <filterScope>Everything</filterScope>
     <label>todas</label>
     <language>en_US</language>

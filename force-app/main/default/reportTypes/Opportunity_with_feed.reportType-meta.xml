@@ -365,11 +365,6 @@
             <field>IsWon</field>
             <table>Opportunity</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CESS_OpportunityApprover5__c</field>
-            <table>Opportunity</table>
-        </columns>
         <masterLabel>Opportunities</masterLabel>
     </sections>
     <sections>
@@ -451,6 +446,16 @@
         <masterLabel>Opportunity Feed</masterLabel>
     </sections>
     <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESS_OpportunityApprover5__c</field>
+            <table>Opportunity</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CESS_CreatorUser__c</field>
+            <table>Opportunity</table>
+        </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Equipo__c</field>

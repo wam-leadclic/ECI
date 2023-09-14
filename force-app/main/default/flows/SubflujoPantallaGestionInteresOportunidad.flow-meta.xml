@@ -567,7 +567,8 @@
 28/11 MMV: Cambio para usar IsConverted en lugar de ConvertedContactId
 29/05/2023 JCB: Se añade pantalla para mostrar información legal para Opps Blecis y Motivo Perdida Solo gratuito.
 27/06/2023 JCB: Se añade Lista de selección dependiente AceleradorOfrecido-Ramo-ImporteAcelerador
-30/06/2023 JCB: Se añade Ramo salud a Acelerador Ofrecido</description>
+30/06/2023 JCB: Se añade Ramo salud a Acelerador Ofrecido
+10/07/2023 JCB: Se añade enlace a Aplicación Externa para Aceleradores ofrecidos</description>
     <dynamicChoiceSets>
         <description>Valores si/no si se ha ofrecido Acelerador</description>
         <name>AceleradorOfrecido_ChoiceSet</name>
@@ -814,6 +815,12 @@
         <name>Formula_TextoInformacionLegal</name>
         <dataType>String</dataType>
         <expression>IF(NOT(ISBLANK({!RecuperamosContact.Email})), {!$Label.InformacionLegalEmail}&amp;{!RecuperamosContact.Email}, IF( OR( BEGINS({!RecuperamosContact.MobilePhone}, &quot;6&quot;), BEGINS({!RecuperamosContact.MobilePhone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!RecuperamosContact.MobilePhone}, IF(OR(BEGINS({!RecuperamosContact.Phone}, &quot;6&quot;), BEGINS({!RecuperamosContact.Phone}, &quot;7&quot;)), {!$Label.InformacionLegalSMS}&amp;{!RecuperamosContact.Phone}, {!$Label.InfomracionLegalLocucion})))</expression>
+    </formulas>
+    <formulas>
+        <description>Enlace a aplicación externa para registro de Aceleradores Ofrecidos por los agentes.</description>
+        <name>Formula_URLAppAceleradores</name>
+        <dataType>String</dataType>
+        <expression>HYPERLINK({!$Label.Aceleradores_URLAplicacionExterna}, {!$Label.Aceleradores_MensajeEnURL})</expression>
     </formulas>
     <formulas>
         <description>Comprobamos a través de regex que el email tiene el formato correcto</description>
@@ -1419,6 +1426,11 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>displayText_URLAppAceleradores</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;{!Formula_URLAppAceleradores}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>Elegir_estado_oportunidad_Section1</name>

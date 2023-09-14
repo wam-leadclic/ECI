@@ -30,23 +30,5 @@
             }
         }
 
-        if(component.get("v.objectFields.CTI_Campaign__c")!= null && component.get("v.objectFields.CTI_Campaign__c").includes('BLECIS') ){
-            component.set("v.showLegalInformation", true);
-            if(component.get("v.objectFields.Account.PersonEmail") != null){
-                component.set("v.legalInformartionMessage",$A.get("$Label.c.InformacionLegalEmail")+component.get("v.objectFields.Account.PersonEmail"));
-            }else if(component.get("v.objectFields.Account.PersonMobilePhone") != null && (component.get("v.objectFields.Account.PersonMobilePhone").startsWith('6') || component.get("v.objectFields.Account.PersonMobilePhone").startsWith('7'))){
-                component.set("v.legalInformartionMessage",$A.get("$Label.c.InformacionLegalSMS")+component.get("v.objectFields.Account.PersonMobilePhone"));
-            }else if(component.get("v.objectFields.Account.Phone") != null && ( component.get("v.objectFields.Account.Phone").startsWith('6') || component.get("v.objectFields.Account.Phone").startsWith('7') )){
-                component.set("v.legalInformartionMessage",$A.get("$Label.c.InformacionLegalSMS")+component.get("v.objectFields.Account.Phone"));
-            }else{
-                component.set("v.legalInformartionMessage",$A.get("$Label.c.InfomracionLegalLocucion"));
-            }
-        }else{
-            component.set("v.showLegalInformation", false);
-        }
-
-
-        
-
     },
 })

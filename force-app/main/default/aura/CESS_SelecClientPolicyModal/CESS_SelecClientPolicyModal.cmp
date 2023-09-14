@@ -7,7 +7,6 @@
                 AUTHOR      DATE        CHANGE
                 MMV - LCS   03/06/2022  Cambio para poder usar el componente en ScreenFlows (Argumentarios)  
                 MMV - LCS   03/06/2022  Cambio para refrescar correctamente el componente 
-                JCB - LCS   04/05/2023  Cambio para añadir mensaje de información Legal (l.74-82).
  -->
 <aura:component description="CESS_SelectClientPolicyModal" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,lightning:availableForFlowScreens">
 
@@ -19,8 +18,6 @@
 <aura:attribute name="objectFields" type="Object"/>
 <aura:attribute name="recordError" type="String"/>
 <aura:attribute name="showSpinner" type="boolean" default="true"/>
-<aura:attribute name="showLegalInformation" type="boolean" default="false"/>
-<aura:attribute name="legalInformartionMessage" type="String"/>
 <!--/ ATTRIBUTES -->
 
 <!-- EVENT -->
@@ -30,24 +27,14 @@
 <!-- LIGHTNING DATA SERVICES RECORD HANDLER -->
 <force:recordData aura:id="recordHandler"
     recordId="{!v.recordId}"
-    fields="Id,AccountId,Account.identifier_aneto__pc, Account.identifier_cess__pc, Account.PersonEmail, Account.PersonMobilePhone, Account.Phone, CTI_Campaign__c"
+    fields="Id,AccountId,Account.identifier_aneto__pc, Account.identifier_cess__pc"
     targetRecord="{!v.objectRecord}"
     targetFields="{!v.objectFields}"
     targetError="{!v.recordError}"
     recordUpdated="{!c.updateRecordHanler}"
 />
 <!--/ LIGHTNING DATA SERVICES RECORD HANDLER -->
-<aura:if isTrue="{!v.showLegalInformation}">
-    <p class="slds-p-horizontal_none"> 
-        <lightning:layout multipleRows="true">
-            <lightning:layoutItem size="12">    
-                    <ui:message title="INFORMACIÓN IMPORTANTE" severity="info" closable="false">
-                        <b style="font-size: 1.2em">{!v.legalInformartionMessage}</b>
-                    </ui:message>
-            </lightning:layoutItem>
-        </lightning:layout>
-    </p>
-</aura:if>
+
     <aura:if isTrue="{!v.showSpinner}">
     <!-- SPINNER -->
     <div class="slds-spinner_container slds-is-relative" style="height: 50px">

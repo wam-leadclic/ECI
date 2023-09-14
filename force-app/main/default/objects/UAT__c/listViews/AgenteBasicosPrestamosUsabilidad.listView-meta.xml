@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AgenteBasicosPrestamosUsabilidad</fullName>
+    <columns>NAME</columns>
+    <columns>ClaveUAT__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>CategoriaFuncional__c</columns>
+    <columns>SubcategoriaFuncional__c</columns>
+    <columns>Estado__c</columns>
+    <columns>FechaDeEjecucion__c</columns>
+    <columns>PruebaEjecutadaPor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PerfilUsuarioPruebas__c</field>
+        <operation>equals</operation>
+        <value>Agente Básicos | Préstamos</value>
+    </filters>
+    <filters>
+        <field>ClaveUAT__c</field>
+        <operation>contains</operation>
+        <value>USB</value>
+    </filters>
+    <filters>
+        <field>Estado__c</field>
+        <operation>notEqual</operation>
+        <value>Nueva</value>
+    </filters>
+    <label>Agente Básicos | Préstamos - USABILIDAD</label>
+</ListView>

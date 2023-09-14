@@ -4,6 +4,9 @@
 * @group        Integrations
 * @description  Client abstract class which contains all necessary methods to interact with ECI.
 * @Revision
+				FECHA       AUTOR       DESCRIPCION<br/>
+				01/06/2022  LCS-JCB     Se añade headers User-Agente y BMECI en BuildRequest, 
+										para control de seguridad necesario en todas las peticiones a WSO2
 **********************************************************************************/
 public abstract with sharing class ORG_AbstractRestClient {
 
@@ -16,7 +19,13 @@ public abstract with sharing class ORG_AbstractRestClient {
      * Authentication mode: ['Custom','Managed']
      */
     private static final String ORG_WSO2_AUTH_METHOD = ORG_AppSettingsUtils.getSetting('ORG_WSO2_AUTH_METHOD');
-
+    
+	/**
+	 * Values new Headers for requests to WSO2
+	 */
+    private static final String ORG_WSO2_USER_AGENT = ORG_AppSettingsUtils.getSetting('ORG_WSO2_USERAGENT');
+    private static final String ORG_WSO2_BMECI = ORG_AppSettingsUtils.getSetting('ORG_WSO2_BMECI');
+    
     //-- VARIABLES
     private String authenticationMethod;
 
@@ -66,7 +75,10 @@ public abstract with sharing class ORG_AbstractRestClient {
         //-- AUTH CONFIG
         if (authenticationMethod == 'Managed') {
             req = new HttpRequest();
-            req.setEndpoint(endpoint);        
+            req.setEndpoint(endpoint); 
+            //Cabeceras nuevas, incluir en las peticiones a WSO2 LCS-JCB 
+			req.setHeader('User-Agent', ORG_WSO2_USER_AGENT );
+            req.setHeader('BMECI', ORG_WSO2_BMECI);
         } else{
              if (authenticationMethod == 'Marketing'){
                  System.debug('1');

@@ -23,11 +23,19 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>CP - CESS_PRESTAMOS</fullName>
+            <fullName>CP - CESS_VC</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>CP - CESS_VC</fullName>
+            <fullName>CP - TEST_CESS_BLECIS_SEV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CP - TEST_CESS_LEADS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CP - TEST_CESS_VC</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -192,7 +200,7 @@
     <picklistValues>
         <picklist>MerchandiseType__c</picklist>
         <values>
-            <fullName>ELECTRONICA</fullName>
+            <fullName>Electrónica</fullName>
             <default>false</default>
         </values>
         <values>
@@ -200,7 +208,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>MOVILES</fullName>
+            <fullName>Móviles</fullName>
             <default>false</default>
         </values>
         <values>
@@ -223,15 +231,7 @@
     <picklistValues>
         <picklist>Result__c</picklist>
         <values>
-            <fullName>Asegurado en MM</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Cambio de Tomador</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Cerrado automático</fullName>
             <default>false</default>
         </values>
         <values>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <description>Comprobamos si el Flujo proviene de On Campaign MemberUpdate</description>
+        <name>OnCampaignMemberUpdateFlowDecision</name>
+        <label>Flujo proviene de On Campaign MemberUpdate</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <defaultConnector>
+            <targetReference>UpdateResultadoMiembroCampanaAdicional_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>YesOnCampaignMemberUpdateFlowDecision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CampaignMemberRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateResultadoMiembroCampanaAdicional_0_0</targetReference>
+            </connector>
+            <label>Flujo proviene de On Campaign MemberUpdate</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SwitchOff</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowCampaignMember__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OnCampaignMemberUpdateFlowDecision</targetReference>
+            </connector>
+            <label>SwitchOff</label>
+        </rules>
+    </decisions>
+    <description>Comprueba si se han superado los intentos máximos y actualiza los registros</description>
+    <interviewLabel>Subflujo - Campaign Member Más Intentos {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo - Campaign Member Más Intentos OBSOLETO</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>UpdateResultadoMiembroCampanaAdicional_0_0</name>
+        <label>Update Resultado Miembro de Campaña Adicional</label>
+        <locationX>50</locationX>
+        <locationY>494</locationY>
+        <connector>
+            <targetReference>UpdateReusltadoMKTCampaignMember_0_0</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTIAMCMId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Lead__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LeadId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AMCM__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateReusltadoCTICampaignMember_0_0</name>
+        <label>Update Resultado CTICampaignMember</label>
+        <locationX>50</locationX>
+        <locationY>734</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>LeadId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LeadId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateReusltadoMKTCampaignMember_0_0</name>
+        <label>Update Resultado MKTCampaignMember</label>
+        <locationX>50</locationX>
+        <locationY>614</locationY>
+        <connector>
+            <targetReference>UpdateReusltadoCTICampaignMember_0_0</targetReference>
+        </connector>
+        <filters>
+            <field>RelatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CampaignMemberRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>LeadId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LeadId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Result__c</field>
+            <value>
+                <stringValue>No Contesta Enviar Email</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>CampaignMemberRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CampaignMember</objectType>
+    </variables>
+    <variables>
+        <description>Id del Lead</description>
+        <name>LeadId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

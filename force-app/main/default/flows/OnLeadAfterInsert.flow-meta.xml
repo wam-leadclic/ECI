@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <description>Comrpueba el switch en el Custom Setting (SwitchesConfiguration__c) para automatizaciones de Lead (DesactiveFlowLead__c) y no realiza ninguna acción si el switch está activo</description>
+        <name>Decision_Switches</name>
+        <label>Decision_Switches</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Switches_Activo</defaultConnectorLabel>
+        <rules>
+            <name>Switches_Inactivo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubflujoLeadCallCESSInvocableLeadLogic_0</targetReference>
+            </connector>
+            <label>Switches_Inactivo</label>
+        </rules>
+    </decisions>
+    <description>Cuando se inserta un Lead nuevo</description>
+    <interviewLabel>On Lead After Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>On Lead After Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <startElementReference>Decision_Switches</startElementReference>
+    <status>Obsolete</status>
+    <subflows>
+        <description>Invocación al subflujo para invocar la llamada a SGC</description>
+        <name>SubflujoLeadCallCESSInvocableLeadLogic_0</name>
+        <label>Subflujo - Lead Call CESS InvocableLeadLogic</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <flowName>Subflujo_Lead_Call_CESS_InvocableLeadLogic</flowName>
+        <inputAssignments>
+            <name>LeadId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

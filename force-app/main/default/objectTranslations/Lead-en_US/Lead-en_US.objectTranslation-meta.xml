@@ -16,6 +16,21 @@
         </sections>
     </layouts>
     <layouts>
+        <layout>Lead CESS Layout Agente</layout>
+        <sections>
+            <label></label>
+            <section>Datos de contacto</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Origen - Fuente</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Proyecto - Oferta</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Lead CESS Layout Usabilidad</layout>
         <sections>
             <label></label>
@@ -72,11 +87,19 @@
     </quickActions>
     <quickActions>
         <label></label>
+        <name>Nuevo_correo</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
         <name>OnlyForSupervisors</name>
     </quickActions>
     <quickActions>
         <label></label>
         <name>Resumen_CESS</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>SendEmail_Lead_Agente</name>
     </quickActions>
     <recordTypes>
         <label></label>
@@ -89,6 +112,10 @@
     <validationRules>
         <errorMessage></errorMessage>
         <name>CESS_Document_type_Pasaporte</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Lead_EnviarCTIoTranferenciaLlamada</name>
     </validationRules>
     <validationRules>
         <errorMessage></errorMessage>
@@ -137,6 +164,10 @@
     <validationRules>
         <errorMessage></errorMessage>
         <name>Lead_TransferenciaDeLlamada</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Lead_no_se_convierte_con_Ramo_Home</name>
     </validationRules>
     <validationRules>
         <errorMessage></errorMessage>

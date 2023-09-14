@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Switch</name>
+        <label>Switch</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Switch_Off</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.SwitchesConfiguration__c.DesactiveFlowLead__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ActualizaLead</targetReference>
+            </connector>
+            <label>Switch Off</label>
+        </rules>
+    </decisions>
+    <description>Si el número de documento está en minúsculas, se actualiza el campo convirtiendo las minúsculas en mayúsculas.</description>
+    <formulas>
+        <description>El mismo document Number del Lead pero en mayúsculas</description>
+        <name>UpperDocumentNumber</name>
+        <dataType>String</dataType>
+        <expression>UPPER({!inputLeadRecord.document_number__c})</expression>
+    </formulas>
+    <interviewLabel>Subflujo - Lead UpdateDNILower {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflujo - Lead UpdateDNILower</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Actualiza el Lead con el documentNumber en mayúsculas</description>
+        <name>ActualizaLead</name>
+        <label>Actualiza Lead</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>inputLeadRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>document_number__c</field>
+            <value>
+                <elementReference>UpperDocumentNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <startElementReference>Switch</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <description>Parámetro de entrada. Registro del Lead aactualizar</description>
+        <name>inputLeadRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

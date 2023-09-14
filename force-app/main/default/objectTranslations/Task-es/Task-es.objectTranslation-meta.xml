@@ -8,13 +8,6 @@
         </sections>
     </layouts>
     <layouts>
-        <layout>Task Layout Admin AD</layout>
-        <sections>
-            <label></label>
-            <section>Related To</section>
-        </sections>
-    </layouts>
-    <layouts>
         <layout>Task Layout CTI</layout>
         <sections>
             <label></label>
@@ -166,7 +159,7 @@
         <name>Llamadas_Planificadas</name>
     </validationRules>
     <webLinks>
-        <label>Reactivar</label>
-        <name>Reactivar</name>
+        <label></label>
+        <name>Reactivate</name>
     </webLinks>
 </CustomObjectTranslation>

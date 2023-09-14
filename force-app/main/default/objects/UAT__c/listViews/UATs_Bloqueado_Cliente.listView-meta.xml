@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UATs_Bloqueado_Cliente</fullName>
+    <columns>NAME</columns>
+    <columns>Asunto__c</columns>
+    <columns>BloqueFuncionalUATs__c</columns>
+    <columns>CategoriaFuncional__c</columns>
+    <columns>SubcategoriaFuncional__c</columns>
+    <columns>ClaveUAT__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Descripcion__c</columns>
+    <columns>Estado__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>FechaDeEjecucion__c</columns>
+    <columns>PruebaEjecutadaPor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Estado__c</field>
+        <operation>equals</operation>
+        <value>Bloqueado Cliente</value>
+    </filters>
+    <label>UATs Bloqueado Cliente</label>
+</ListView>

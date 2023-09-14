@@ -3,10 +3,10 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>CESS Llamadas Planificadas</name>
     <queueMembers>
-        <roleAndSubordinates>
-            <roleAndSubordinate>Seguros</roleAndSubordinate>
-            <roleAndSubordinate>ResponsableContact</roleAndSubordinate>
-        </roleAndSubordinates>
+        <roles>
+            <role>Seguros</role>
+            <role>Agentes</role>
+        </roles>
     </queueMembers>
     <queueSobject>
         <sobjectType>Task</sobjectType>

@@ -168,8 +168,8 @@
                 <booleanFilter>1 AND 2</booleanFilter>
                 <criteria>
                     <leftValue>{!$User.UserRole.Name}</leftValue>
-                    <operator>CONTAINS</operator>
-                    <rightValue>Supervisor</rightValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>CESS - Supervisores</rightValue>
                 </criteria>
                 <criteria>
                     <leftValue>{!Record.businesslines_prohibited__c}</leftValue>
@@ -365,16 +365,10 @@
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
             <visibilityRule>
-                <booleanFilter>1 AND 2</booleanFilter>
                 <criteria>
                     <leftValue>{!$User.UserRole.Name}</leftValue>
                     <operator>EQUAL</operator>
                     <rightValue>CESS - Supervisores</rightValue>
-                </criteria>
-                <criteria>
-                    <leftValue>{!$User.UserRole.Name}</leftValue>
-                    <operator>CONTAINS</operator>
-                    <rightValue>Responsable</rightValue>
                 </criteria>
             </visibilityRule>
         </componentInstances>

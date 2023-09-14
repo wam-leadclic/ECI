@@ -6,10 +6,10 @@
     <authorizationFailureAction>Bounce</authorizationFailureAction>
     <emailServicesAddresses>
         <authorizedSenders>eci.cess@leadclic.com</authorizedSenders>
-        <developerName>emailtosalesforce77</developerName>
+        <developerName>emailtosalesforce</developerName>
         <isActive>true</isActive>
         <localPart>emailtosalesforce</localPart>
-        <runAsUser>elcorteingles@leadclic.com.cess</runAsUser>
+        <runAsUser>elcorteingles@leadclic.com.cess.pre</runAsUser>
     </emailServicesAddresses>
     <functionInactiveAction>Bounce</functionInactiveAction>
     <functionName>EmailToSalesforce</functionName>
