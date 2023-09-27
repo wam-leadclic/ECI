@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asignamos a CM MKT de salida, no lo hacemos en el GET para poder tener todos los campos</description>
         <name>AsignaCMMKTSalida</name>
         <label>Asignamos a CM MKT de salida</label>
         <locationX>710</locationX>
-        <locationY>2306</locationY>
+        <locationY>2072</locationY>
         <assignmentItems>
             <assignToReference>Var_OUT_CMMKT</assignToReference>
             <operator>Assign</operator>
@@ -22,7 +23,7 @@
         <name>IncrementamosContador</name>
         <label>IncrementamosContador</label>
         <locationX>446</locationX>
-        <locationY>2186</locationY>
+        <locationY>1964</locationY>
         <assignmentItems>
             <assignToReference>ContadorIteraciones</assignToReference>
             <operator>Add</operator>
@@ -31,6 +32,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>GetCMCTI</targetReference>
         </connector>
     </assignments>
@@ -39,7 +41,7 @@
         <name>ReseteamosContador</name>
         <label>ReseteamosContador</label>
         <locationX>182</locationX>
-        <locationY>2306</locationY>
+        <locationY>2072</locationY>
         <assignmentItems>
             <assignToReference>ContadorIteraciones</assignToReference>
             <operator>Assign</operator>
@@ -48,6 +50,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>GetCMCTI</targetReference>
         </connector>
     </assignments>
@@ -56,7 +59,7 @@
         <name>Set_CMCTIVariable</name>
         <label>Set_CMCTIVariable</label>
         <locationX>446</locationX>
-        <locationY>1946</locationY>
+        <locationY>1748</locationY>
         <assignmentItems>
             <assignToReference>Var_OUT_CMCTI</assignToReference>
             <operator>Assign</operator>
@@ -73,7 +76,7 @@
         <name>Set_MCAdicionalDeSalida</name>
         <label>Set MC Adicional de salida</label>
         <locationX>710</locationX>
-        <locationY>2546</locationY>
+        <locationY>2288</locationY>
         <assignmentItems>
             <assignToReference>Var_OUT_MCAdicional</assignToReference>
             <operator>Assign</operator>
@@ -87,7 +90,7 @@
         <name>SetRamoCTI</name>
         <label>Set Ramo CTI</label>
         <locationX>578</locationX>
-        <locationY>1430</locationY>
+        <locationY>1274</locationY>
         <assignmentItems>
             <assignToReference>RamoCTI</assignToReference>
             <operator>Assign</operator>
@@ -104,7 +107,7 @@
         <name>SetRamoCTISegurosEspeciales</name>
         <label>Set Ramo CTI Seguros Especiales</label>
         <locationX>314</locationX>
-        <locationY>1430</locationY>
+        <locationY>1274</locationY>
         <assignmentItems>
             <assignToReference>RamoCTI</assignToReference>
             <operator>Assign</operator>
@@ -121,7 +124,7 @@
         <name>CheckCTICreated</name>
         <label>Check CTI Created</label>
         <locationX>446</locationX>
-        <locationY>2066</locationY>
+        <locationY>1856</locationY>
         <defaultConnector>
             <targetReference>GetCMMKT</targetReference>
         </defaultConnector>
@@ -169,7 +172,7 @@
         <name>CheckRamo</name>
         <label>Check Ramo</label>
         <locationX>446</locationX>
-        <locationY>1310</locationY>
+        <locationY>1166</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>IsSegurosEspeciales</name>
@@ -228,7 +231,7 @@
         <name>ExisteCTI</name>
         <label>Existe CTI?</label>
         <locationX>600</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>DatosNuevoCTI</targetReference>
         </defaultConnector>
@@ -251,7 +254,7 @@
         <name>TieneCMCTI</name>
         <label>Tiene CM CTI?</label>
         <locationX>446</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>GetCTI</targetReference>
         </defaultConnector>
@@ -277,7 +280,8 @@
 02/09 MHG: Se incluyen todos los campos del CMCTI creado, para que no falle en otros subflujos que lo usan
 23/09 MMV: Se añade el nuevo campo en la pantalla con el picklist de Campañas CTI y se quita Campaña CESS. En la búsqueda de CTI se busca en la misma campaña CTI creada
 20/10 AMT: Cambios en las cabeceras de las pantallas
-02/11 MMV: En algunos casos la creación puede generar Adicional en lugar de CM MKT</description>
+02/11 MMV: En algunos casos la creación puede generar Adicional en lugar de CM MKT
+08/09/23 JCS: Se quita valor por defecto para campo Origen-RegManual en Pantalla Datos CTI, y se quita el input Campaña CTI (se toman los valores por defecto para este campo). Se desplaza el input Medio a último lugar en esta misma pantalla.</description>
     <dynamicChoiceSets>
         <description>Lista de valores del campo CampaignCTI__c del Campaign member</description>
         <name>CampaignCTIPicklistSet</name>
@@ -332,6 +336,7 @@
         <picklistField>MerchandiseType__c</picklistField>
         <picklistObject>CampaignMember</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <description>Valor por defecto del picklist de Campaña CTI de la pantalla. Si es Blecis o Básicos es diferente</description>
         <name>For_DefaultValueCampaignCTIPicklist</name>
@@ -367,7 +372,7 @@
         <name>CreateCMPlatformEvent</name>
         <label>Create CM Platform Event</label>
         <locationX>446</locationX>
-        <locationY>1706</locationY>
+        <locationY>1532</locationY>
         <connector>
             <targetReference>GetCMCTI</targetReference>
         </connector>
@@ -395,7 +400,7 @@
         <inputAssignments>
             <field>campaignCTI__c</field>
             <value>
-                <elementReference>CampanaCTIScreen</elementReference>
+                <elementReference>For_DefaultValueCampaignCTIPicklist</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -423,17 +428,19 @@
             </value>
         </inputAssignments>
         <object>CMCreationEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <description>Obtiene el registro de Miembro de campaña Adicional creado, en caso de haberse creado</description>
         <name>Get_MCAG_Adicional</name>
         <label>Get MCAG Adicional</label>
         <locationX>710</locationX>
-        <locationY>2426</locationY>
+        <locationY>2180</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_MCAdicionalDeSalida</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -441,18 +448,21 @@
                 <elementReference>Var_OUT_CMCTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el nombre de la campaña por defecto de Básicos</description>
         <name>Get_ORG_ApplicationSettings_CESS_CTIPLAN_CAMPAIGN</name>
         <label>Get ORG_ApplicationSettings CESS_CTIPLAN_CAMPAIGN</label>
         <locationX>446</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_ORG_ApplicationSettings_CESS_CTIPLANBLECIS_CAMPAIGN</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>MasterLabel</field>
             <operator>EqualTo</operator>
@@ -471,11 +481,12 @@
         <name>Get_ORG_ApplicationSettings_CESS_CTIPLANBLECIS_CAMPAIGN</name>
         <label>Get ORG_ApplicationSettings CESS_CTIPLANBLECIS_CAMPAIGN</label>
         <locationX>446</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>TextosArgumentario</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>MasterLabel</field>
             <operator>EqualTo</operator>
@@ -494,11 +505,12 @@
         <name>GetCMCTI</name>
         <label>Get CM CTI</label>
         <locationX>446</locationX>
-        <locationY>1826</locationY>
+        <locationY>1640</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_CMCTIVariable</targetReference>
         </connector>
+        <filterLogic>(1 OR 3) AND 2 AND 4</filterLogic>
         <filters>
             <field>LeadId</field>
             <operator>EqualTo</operator>
@@ -524,21 +536,24 @@
             <field>CampaignCTI__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>CampanaCTIScreen</elementReference>
+                <elementReference>For_DefaultValueCampaignCTIPicklist</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtener el CM CTI creado</description>
         <name>GetCMMKT</name>
         <label>Get CM MKT</label>
         <locationX>710</locationX>
-        <locationY>2186</locationY>
+        <locationY>1964</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>AsignaCMMKTSalida</targetReference>
         </connector>
+        <filterLogic>1</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -546,18 +561,21 @@
                 <elementReference>Var_OUT_CMCTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buscar si el CTI sigue existiendo o se ha borrado</description>
         <name>GetCTI</name>
         <label>Get CTI</label>
         <locationX>600</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ExisteCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -565,19 +583,22 @@
                 <elementReference>Var_OUT_CMCTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
         <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
         <name>TextosArgumentario</name>
         <label>TextosArgumentario</label>
         <locationX>446</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>TieneCMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Flujo__c</field>
             <operator>EqualTo</operator>
@@ -592,14 +613,17 @@
                 <elementReference>$User.LanguageLocaleKey</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>TextoArgumentario__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <description>Pantalla para recoger los datos del CTI a crear</description>
         <name>DatosNuevoCTI</name>
         <label>Datos Nuevo CTI</label>
         <locationX>446</locationX>
-        <locationY>1190</locationY>
+        <locationY>1058</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -652,6 +676,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -663,6 +688,16 @@
             <name>RamoSegurosEspecialesScreen</name>
             <fieldText>&lt;p&gt;&lt;em&gt;Ramo: Seguros Especiales&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>IsFlujoBlecis</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>RamoScreen</name>
@@ -671,6 +706,76 @@
             <fieldText>Ramo</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>IsFlujoBlecis</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>OrigenRegistroManualScreen</name>
+            <choiceReferences>OrigenRegistroManualPicklistSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Origen - Registro Manual</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TalonVentaScreen</name>
+            <dataType>String</dataType>
+            <fieldText>Talón de Venta</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>IsFlujoBlecis</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>TipoMercanciaScreen</name>
+            <choiceReferences>TipoMercanciaChoiceSet</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Tipo de Mercancía</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>IsFlujoBlecis</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>ImporteMercanciaScreen</name>
+            <dataType>String</dataType>
+            <fieldText>Importe Mercancía</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>IsFlujoBlecis</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>MedioScreen</name>
@@ -683,50 +788,7 @@
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
         </fields>
-        <fields>
-            <name>OrigenRegistroManualScreen</name>
-            <choiceReferences>OrigenRegistroManualPicklistSet</choiceReferences>
-            <dataType>String</dataType>
-            <defaultValue>
-                <stringValue>Llamada Entrante</stringValue>
-            </defaultValue>
-            <fieldText>Origen - Registro Manual</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>CampanaCTIScreen</name>
-            <choiceReferences>CampaignCTIPicklistSet</choiceReferences>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>For_DefaultValueCampaignCTIPicklist</elementReference>
-            </defaultValue>
-            <fieldText>Campaña CTI</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>TalonVentaScreen</name>
-            <dataType>String</dataType>
-            <fieldText>Talón de Venta</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>TipoMercanciaScreen</name>
-            <choiceReferences>TipoMercanciaChoiceSet</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Tipo de Mercancía</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>ImporteMercanciaScreen</name>
-            <dataType>String</dataType>
-            <fieldText>Importe Mercancía</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -735,11 +797,12 @@
         <name>DisplayErrorSegurosEspeciales</name>
         <label>Display Error Seguros Especiales</label>
         <locationX>50</locationX>
-        <locationY>1430</locationY>
+        <locationY>1274</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>DatosNuevoCTI</targetReference>
         </connector>
         <fields>
@@ -788,6 +851,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -795,6 +859,7 @@
             <fieldText>&lt;p&gt;{!TextosArgumentario.Texto2__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -803,7 +868,7 @@
         <name>ErrorDisplay</name>
         <label>Error Display</label>
         <locationX>1106</locationX>
-        <locationY>1826</locationY>
+        <locationY>1640</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -853,6 +918,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -864,6 +930,7 @@
 &lt;/pre&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -871,7 +938,7 @@
         <name>EsperaIteraciones</name>
         <label>Espera Iteraciones</label>
         <locationX>182</locationX>
-        <locationY>2186</locationY>
+        <locationY>1964</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -924,6 +991,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -931,10 +999,17 @@
             <fieldText>&lt;p&gt;{!TextosArgumentario.Texto3__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>Get_ORG_ApplicationSettings_CESS_CTIPLAN_CAMPAIGN</startElementReference>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_ORG_ApplicationSettings_CESS_CTIPLAN_CAMPAIGN</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <description>Para controlar el límite de 100 operaciones DML cuando espera  a la creación del Campaign Member</description>
