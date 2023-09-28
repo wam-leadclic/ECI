@@ -44,6 +44,10 @@
                 <field>CESS_OpportunityApprover4__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CESS_OpportunityApprover6__c</field>
+            </layoutItems>
+            <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
         </layoutColumns>
