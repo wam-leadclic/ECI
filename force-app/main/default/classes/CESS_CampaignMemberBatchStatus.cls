@@ -4,6 +4,8 @@
 y no hayan sufrido modificación durante un tiempo determinado (metadato)</br>
 FECHA       AUTOR       DESCRIPCION<br/>
 30/03/2023  LCS-JCB     Creación
+31/08/2023  LCS-JCB     Modificación, se reduce tamaño batch, para evitar limitación de envío de Emails en un mismo proceso.
+28/09/2023  LCS-JCB     Modificación, se trabaja con los CMs Marketing de Leads y tambien de Accounts.
 </pre>
 @author Leadclic Solutions
 @date 30/03/2023             
@@ -18,12 +20,12 @@ public with sharing class CESS_CampaignMemberBatchStatus implements Database.Bat
         ORG_ApplicationSettings__mdt hoursSinceLastActivity = ORG_ApplicationSettings__mdt.getInstance('CESS_HorasInactividadCMWorking');
         String query;
         if(Test.isRunningTest()){
-            query = 'select Id, LeadId, RelatedCTICampaignMemberId__c, Status, Result__c, LastModifiedDate from CampaignMember where Status = \'Working\' and Lead.Id != null and lead.IsConverted = false';
+            query = 'select Id, LeadId, RelatedCTICampaignMemberId__c, Status, Result__c, LastModifiedDate from CampaignMember where Status = \'Working\'';
         }else{
             if(hoursSinceLastActivity != null){
                 DIFERENCIA_HORAS = datetime.now().addHours(Integer.valueOf(hoursSinceLastActivity.Value__c)*-1);
                 System.debug('valor:'+String.valueOf(DIFERENCIA_HORAS));
-            query = 'select Id, LeadId, RelatedCTICampaignMemberId__c, Status, Result__c, LastModifiedDate from CampaignMember where Status = \'Working\' and RecordType.Name = \'Marketing\' and Lead.Id != null and lead.IsConverted = false and LastModifiedDate < :DIFERENCIA_HORAS';
+            query = 'select Id, LeadId, RelatedCTICampaignMemberId__c, Status, Result__c, LastModifiedDate from CampaignMember where Status = \'Working\' and RecordType.Name = \'Marketing\' and LastModifiedDate < :DIFERENCIA_HORAS';
             }
         }
         return query;
@@ -33,7 +35,6 @@ public with sharing class CESS_CampaignMemberBatchStatus implements Database.Bat
     /********* START ******/
     public Iterable<sObject> start(Database.BatchableContext BC){
         String query = getQueryString();
-        System.debug('Query batch:'+query);
         if(query != null){
             return Database.getQueryLocator(getQueryString());
         }else{
@@ -56,7 +57,7 @@ public with sharing class CESS_CampaignMemberBatchStatus implements Database.Bat
         if(cmsToUpdate.size()>0){
             //update cmsToUpdate;
             List<Database.SaveResult> SRWorking = Database.update(cmsToUpdate, false);
-            System.debug('Result Update CMs Working:'+ SRWorking );
+            //System.debug('Result Update CMs Working:'+ SRWorking );
         }
         //Búsqueda si existen CM MKT en estado New con el mismo CM CTI relacionado, para proceder a marcar su envío
         for(CampaignMember cmNew : [SELECT Id,RelatedCTICampaignMemberId__c  FROM CampaignMember WHERE RecordType.Name = 'Marketing' and Status = 'New' and RelatedCTICampaignMemberId__c IN :idsCMCTIRelationed ]){
@@ -72,7 +73,7 @@ public with sharing class CESS_CampaignMemberBatchStatus implements Database.Bat
                 cmsSend.add(c);
             }
             List<Database.SaveResult> SRNew = Database.update(cmsSend, false);
-            System.debug('Result Update CMs News:'+ SRNew );
+            //System.debug('Result Update CMs News:'+ SRNew );
         }
     }
 
@@ -81,7 +82,7 @@ public with sharing class CESS_CampaignMemberBatchStatus implements Database.Bat
     }
 
     public void execute(SchedulableContext sc) {
-        Database.executeBatch(new CESS_CampaignMemberBatchStatus(), 100);
+        Database.executeBatch(new CESS_CampaignMemberBatchStatus(), 10);
     }
 
 }
