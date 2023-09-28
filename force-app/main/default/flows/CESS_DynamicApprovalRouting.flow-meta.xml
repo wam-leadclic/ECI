@@ -20,11 +20,9 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
-        <nameSegment>submit</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>58.0</apiVersion>
     <decisions>
         <name>DEC_ApproverNotNull</name>
         <label>Approver Not Null</label>
@@ -148,7 +146,6 @@
         </rules>
     </decisions>
     <description>09/2023 LCS-JCB: Se añade un 6º Aprobador</description>
-    <environments>Default</environments>
     <interviewLabel>Dynamic Approval Routing {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CESS - Dynamic Approval Routing</label>
     <processMetadataValues>
