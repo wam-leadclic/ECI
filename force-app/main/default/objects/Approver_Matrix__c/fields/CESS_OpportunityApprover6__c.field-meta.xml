@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CESS_OpportunityApprover2__c</fullName>
+    <fullName>CESS_OpportunityApprover6__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
+    <description>Aprobador delegado Oportunidades nº6</description>
     <externalId>false</externalId>
-    <label>Aprobador Del Oportunidad 2</label>
+    <label>Aprobador Del Oportunidad 6</label>
     <lookupFilter>
         <active>true</active>
         <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8</booleanFilter>
@@ -47,12 +48,13 @@
             <operation>equals</operation>
             <value>Coordinador Prestamos</value>
         </filterItems>
-        <isOptional>false</isOptional>
+        <infoMessage>Usuario debe tener rol Supervisor CC B., Coordinador 1..5, Coordinador Préstamos</infoMessage>
+        <isOptional>true</isOptional>
     </lookupFilter>
     <referenceTo>User</referenceTo>
-    <relationshipName>Approver_Matrix2</relationshipName>
+    <relationshipName>Admom_Aprobaciones</relationshipName>
     <required>false</required>
-    <trackHistory>true</trackHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

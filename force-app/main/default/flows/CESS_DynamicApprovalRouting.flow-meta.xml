@@ -4,9 +4,10 @@
         <name>ApprovalLossReasonFamiliar</name>
         <label>Approval Loss Reason Familiar</label>
         <locationX>50</locationX>
-        <locationY>935</locationY>
+        <locationY>863</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>processDefinitionNameOrId</name>
             <value>
@@ -19,12 +20,14 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
+    <apiVersion>58.0</apiVersion>
     <decisions>
         <name>DEC_ApproverNotNull</name>
         <label>Approver Not Null</label>
         <locationX>380</locationX>
-        <locationY>575</locationY>
+        <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OC_NotNull</name>
@@ -59,7 +62,14 @@
             </conditions>
             <conditions>
                 <leftValueReference>Opportunity_Approver.CESS_OpportunityApprover5__r.Id</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opportunity_Approver.CESS_OpportunityApprover6__r.Id</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
@@ -74,7 +84,7 @@
         <name>DEC_EvaluateApprovalCriteria</name>
         <label>Evaluate Approval Criteria</label>
         <locationX>611</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OC_LossReasonFamiliar</name>
@@ -96,7 +106,7 @@
         <name>User_Agente</name>
         <label>User Agente</label>
         <locationX>182</locationX>
-        <locationY>815</locationY>
+        <locationY>755</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OC_AgenteYes</name>
@@ -135,6 +145,7 @@
             <label>Agente yes</label>
         </rules>
     </decisions>
+    <description>09/2023 LCS-JCB: Se añade un 6º Aprobador</description>
     <interviewLabel>Dynamic Approval Routing {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CESS - Dynamic Approval Routing</label>
     <processMetadataValues>
@@ -160,11 +171,12 @@
         <name>Opportunity_Approver</name>
         <label>Opportunity Approver</label>
         <locationX>380</locationX>
-        <locationY>455</locationY>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>DEC_ApproverNotNull</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CESS_LossReason__c</field>
             <operator>EqualTo</operator>
@@ -172,16 +184,19 @@
                 <elementReference>$Record.Loss_Reason__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Approver_Matrix__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>UpdateApproverField</name>
         <label>Update Approver Field</label>
         <locationX>182</locationX>
-        <locationY>695</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>User_Agente</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -219,10 +234,25 @@
                 <elementReference>Opportunity_Approver.CESS_OpportunityApprover5__r.Id</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>CESS_OpportunityApprover6__c</field>
+            <value>
+                <elementReference>Opportunity_Approver.CESS_OpportunityApprover6__r.Id</elementReference>
+            </value>
+        </inputAssignments>
         <object>Opportunity</object>
     </recordUpdates>
-    <startElementReference>DEC_EvaluateApprovalCriteria</startElementReference>
-    <status>Active</status>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>DEC_EvaluateApprovalCriteria</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
     <variables>
         <name>UserID</name>
         <dataType>String</dataType>

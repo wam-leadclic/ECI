@@ -21,6 +21,14 @@
             <field>CESS_OpportunityApprover4__c</field>
             <type>userLookup</type>
         </recipients>
+        <recipients>
+            <field>CESS_OpportunityApprover5__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CESS_OpportunityApprover6__c</field>
+            <type>userLookup</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>CESS_Privado/CESS_OportunidadSolicitudAprobacionMotivoPerdidaFamiliar</template>
     </alerts>
