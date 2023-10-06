@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transference__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Casilla que se marca a verdadero si la llamada ha sido transferida.</description>
+    <externalId>false</externalId>
+    <label>Transferencia</label>
+    <type>Checkbox</type>
+</CustomField>
