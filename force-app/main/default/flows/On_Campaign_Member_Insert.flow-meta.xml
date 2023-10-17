@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asignamos el estado del Lead cuando este no es No cualificado o No contactado</description>
         <name>AsignamosEstadoLeadNoCerrado</name>
         <label>Asignamos estado del Lead No cerrado</label>
         <locationX>600</locationX>
-        <locationY>911</locationY>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>StatusLead</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +22,7 @@
         <name>setear_error_reglaCTIdesactivada</name>
         <label>setear error regla CTI desactivada</label>
         <locationX>754</locationX>
-        <locationY>1367</locationY>
+        <locationY>1655</locationY>
         <assignmentItems>
             <assignToReference>CTIerror</assignToReference>
             <operator>Assign</operator>
@@ -37,7 +38,7 @@
         <name>setear_error_sin_telefono</name>
         <label>setear error sin telefono</label>
         <locationX>490</locationX>
-        <locationY>1367</locationY>
+        <locationY>1655</locationY>
         <assignmentItems>
             <assignToReference>CTIerror</assignToReference>
             <operator>Assign</operator>
@@ -54,7 +55,7 @@
         <name>StatusNewLead</name>
         <label>Asignamos estado Nuevo al Lead</label>
         <locationX>336</locationX>
-        <locationY>911</locationY>
+        <locationY>1247</locationY>
         <assignmentItems>
             <assignToReference>StatusLead</assignToReference>
             <operator>Assign</operator>
@@ -74,7 +75,7 @@
         <name>CondicionesEnvio</name>
         <label>¿Se dan las condiciones de envío?</label>
         <locationX>468</locationX>
-        <locationY>1127</locationY>
+        <locationY>1439</locationY>
         <defaultConnector>
             <targetReference>MarcadoErrores</targetReference>
         </defaultConnector>
@@ -114,7 +115,7 @@
         <name>Decision_ClosedLead</name>
         <label>¿El Lead está cerrado?</label>
         <locationX>468</locationX>
-        <locationY>791</locationY>
+        <locationY>1139</locationY>
         <defaultConnector>
             <targetReference>AsignamosEstadoLeadNoCerrado</targetReference>
         </defaultConnector>
@@ -147,7 +148,7 @@
         <name>Decision_ContactoNoContactado</name>
         <label>¿Es un Contacto No Contactado?</label>
         <locationX>468</locationX>
-        <locationY>455</locationY>
+        <locationY>839</locationY>
         <defaultConnector>
             <targetReference>Decision_ClosedLead</targetReference>
         </defaultConnector>
@@ -169,11 +170,44 @@
         </rules>
     </decisions>
     <decisions>
+        <description>Comprobar si existe llamada transferida en los últimos 60 minutos y que el usuario no es Carga General.</description>
+        <name>Decision_TareaTransferidaRecienteYNoCarga</name>
+        <label>Decision_Llamada transferida reciente y no Carga General</label>
+        <locationX>875</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>EsCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>TareaRecienteYNoCarga_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_UserName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>CARGA GENERAL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_LastTask</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_CM_Transference</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Si es de CTI hay que mandarlo a Genesys</description>
         <name>EsCTI</name>
         <label>¿Es de CTI?</label>
         <locationX>875</locationX>
-        <locationY>335</locationY>
+        <locationY>731</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Si_0</name>
@@ -196,7 +230,7 @@
         <name>HayQueEnviarCTI</name>
         <label>¿Hay que enviar a CTI?</label>
         <locationX>182</locationX>
-        <locationY>1247</locationY>
+        <locationY>1547</locationY>
         <defaultConnector>
             <targetReference>ActualizarLead</targetReference>
         </defaultConnector>
@@ -229,8 +263,9 @@
         <name>MarcadoErrores</name>
         <label>Marcado de errores</label>
         <locationX>754</locationX>
-        <locationY>1247</locationY>
+        <locationY>1547</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>ActualizarLead</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
@@ -278,11 +313,25 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
 04/10 MMV: Se incluye la actualización del campo No contactado en caso de que el CM sea de Contact
 02/12/22 MMV: Cuando se inserta un CM CTI, se pone a false el campo inprogress_cti__c
 12/12/22 MMV: Cuando se inserta un CM CTI, se vacía el campo Control CTI Automático
-26/04/2023 JCB: Se quita condición CM CTI con Origen R. Manual = Referencia para envío a CTI.</description>
+26/04/2023 JCB: Se quita condición CM CTI con Origen R. Manual = Referencia para envío a CTI.
+04/10/2023 MSC: Marcar el campo Transference__c del CM si la llamada es transferida.</description>
+    <environments>Default</environments>
     <formulas>
         <name>concatenatedCTIError</name>
         <dataType>String</dataType>
         <expression>{!$Record.ctiError__c}+&apos;*&apos;+{!CTIerror}</expression>
+    </formulas>
+    <formulas>
+        <description>Formula que calcula la fecha actual y le resta 60 minutos.</description>
+        <name>For_HoraActualMinus60Min</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() - (60/1440)</expression>
+    </formulas>
+    <formulas>
+        <description>Formula que devuelve el nombre completo del usuario.</description>
+        <name>For_UserName</name>
+        <dataType>String</dataType>
+        <expression>{!$User.FirstName} + &apos; &apos; + {!$User.LastName}</expression>
     </formulas>
     <interviewLabel>On Campaign Member Insert {!$Flow.CurrentDateTime}</interviewLabel>
     <label>On Campaign Member Insert</label>
@@ -310,7 +359,7 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
         <name>CreaPlatformEventQueEnviaGenesys</name>
         <label>Crea platform event que envía a Genesys</label>
         <locationX>50</locationX>
-        <locationY>1367</locationY>
+        <locationY>1655</locationY>
         <connector>
             <targetReference>ActualizarLead</targetReference>
         </connector>
@@ -333,13 +382,59 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
             </value>
         </inputAssignments>
         <object>CESS_Integration_Event__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <description>Obtener la última tarea relacionada al Lead o Contact del Campaign Member.</description>
+        <name>Get_LastTask</name>
+        <label>Get_LastTask</label>
+        <locationX>875</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_TareaTransferidaRecienteYNoCarga</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND 3 AND 4</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.LeadId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>For_HoraActualMinus60Min</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Transference__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Task</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <description>Actualiza el miembro de campaña</description>
         <name>ActualizarCMCTI</name>
         <label>Actualizar CM CTI</label>
         <locationX>754</locationX>
-        <locationY>1583</locationY>
+        <locationY>1847</locationY>
         <connector>
             <targetReference>ActualizarLead</targetReference>
         </connector>
@@ -362,7 +457,8 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
         <name>ActualizarLead</name>
         <label>Actualizar Lead</label>
         <locationX>468</locationX>
-        <locationY>1799</locationY>
+        <locationY>2039</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -401,10 +497,11 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
         <name>Udpate_Contact_Contactado</name>
         <label>Udpate Contacto Contactado</label>
         <locationX>336</locationX>
-        <locationY>575</locationY>
+        <locationY>947</locationY>
         <connector>
             <targetReference>Decision_ClosedLead</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -420,7 +517,33 @@ MMV: Control para que si la función de envío a CTI esta desactivada o el regis
         </inputAssignments>
         <object>Contact</object>
     </recordUpdates>
-    <startElementReference>EsCTI</startElementReference>
+    <recordUpdates>
+        <description>Marcar el campo Transference__c del CM.</description>
+        <name>Update_CM_Transference</name>
+        <label>Update_CM_Transferencia</label>
+        <locationX>743</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>EsCTI</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Transference__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>749</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_LastTask</targetReference>
+        </connector>
+        <object>CampaignMember</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
     <status>Active</status>
     <variables>
         <name>CTIerror</name>

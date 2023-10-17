@@ -11,6 +11,7 @@
         <connector>
             <targetReference>Decision_BorrarCMCTI</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>cmId</name>
             <value>
@@ -24,6 +25,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>55.0</apiVersion>
     <assignments>
         <name>Asignaci_n_CM_MKT_Coleccion</name>
         <label>Asignación CM MKT Colección</label>
@@ -631,6 +633,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>CM_MKT_Crea_gestionados_y_borra_originales.GCLID__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CM_MKTs_Equivalentes_Gestionados.Transference__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CM_MKT_Crea_gestionados_y_borra_originales.Transference__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -1278,6 +1287,13 @@
                 <elementReference>CM_AG_Ad_MKT_Crea_gestionados_y_borra_originales.GCLID__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CM_AG_Adic_MKTs_Equivalentes_Gestionados.Transference__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CM_AG_Ad_MKT_Crea_gestionados_y_borra_originales.Transference__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Asignacion_CM_AG_Ad_MKT_coleccion</targetReference>
         </connector>
@@ -1679,7 +1695,9 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
 14/12/2022 MMV: Itera las tareas asociadas para establecer con status Cancelled las que sean planificadas a futuro.
 02/06/2023 RNP: Añadimos campo CampaignMemberNumber__c en el get CMAGAdicionalRelacionadoCMCTI
 02/06/2023 RNP: Añadimos assignacion CampaignMemberNumber__c en el Asignacion_unitaria_CM_AG_Ad_MKT
-03/07/2023 JCB: Se añade campo GCLID__c</description>
+03/07/2023 JCB: Se añade campo GCLID__c
+04/10/2023 MSC: Se añade la asignación del campo Transference__c
+17/10/2023 MSC: Se añade la asignación del campo Transference__c de CTI también</description>
     <formulas>
         <description>Según el valor de CMCTIStatus, se calcula el stado de la opp</description>
         <name>OppStatus</name>
@@ -2058,6 +2076,12 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
                 <elementReference>GetCMCTI.TotalAttempts__c</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Transference__c</field>
+            <value>
+                <elementReference>GetCMCTI.Transference__c</elementReference>
+            </value>
+        </inputAssignments>
         <object>AMCM__c</object>
     </recordCreates>
     <recordDeletes>
@@ -2075,6 +2099,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <label>Elimina CM CTI Original</label>
         <locationX>50</locationX>
         <locationY>5390</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2104,6 +2129,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>CreaCMCTIGestionado</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND ((3 AND 4) OR (5 AND 6))</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2146,7 +2172,9 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busca los miembros de campaña adicionales (siempre son de MKT) relacionados con el Campaign Member CTI</description>
@@ -2158,6 +2186,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>OportundadesRelacionadasCMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2273,6 +2302,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <queriedFields>CampaignMemberNumber__c</queriedFields>
         <queriedFields>GCLID__c</queriedFields>
         <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>Transference__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <description>Busca todos los miembros de campaña en cualquier estado relacionados con el campaign member CTI</description>
@@ -2284,6 +2314,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>CMAGAdicionalRelacionadoCMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2403,6 +2434,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <queriedFields>Type</queriedFields>
         <queriedFields>CreatedDate</queriedFields>
         <queriedFields>GCLID__c</queriedFields>
+        <queriedFields>Transference__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <description>Se obtienen las tareas que tengan referencia el CM CTI que se va a historificar para sustituirlo por el miembro historico que se acaba de crear</description>
@@ -2414,6 +2446,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>BuscoOtrosMiembrosCampanaCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2421,9 +2454,11 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
                 <elementReference>$Record.IdCMCTI__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Task</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busca el registro de campaign member CTI que viene como parámetro</description>
@@ -2435,6 +2470,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>Decision_ExisteCMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2449,7 +2485,9 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
                 <elementReference>$Record.IdCMCTI__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>GuardoRecordTypes</description>
@@ -2461,6 +2499,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>LoopRecordTypes</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -2475,9 +2514,11 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
                 <stringValue>AMCM__c</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>RecordType</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>DeveloperName</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busca las oportunidades Abiertas relacionadas con el Campaign member CTI</description>
@@ -2489,6 +2530,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>Get_Task_CMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2539,6 +2581,7 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         <connector>
             <targetReference>Contact_tiene_alguna_oportunidad</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2554,7 +2597,16 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
-    <startElementReference>GetRecordTypes</startElementReference>
+    <runInMode>DefaultMode</runInMode>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetRecordTypes</targetReference>
+        </connector>
+        <object>CMCTIDeleteEvent__e</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
     <status>Active</status>
     <variables>
         <name>CM_AG_Ad_MKTs</name>
