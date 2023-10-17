@@ -95,6 +95,9 @@ public class RedirectToNewLeadCtrl {
                 }
             }
             if( keyTelefono != null ){
+                // Como la tarea es de transferencia, marcamos el campo de transferencia de la tarea y la actualizamos.
+                taskList[0].Transference__c = true;
+                update (taskList);
                 //Redirigimos al flujo de búsqueda de clientes pasamos parametros taskList[0].Id => var_inTaskId, phoneCMTMap.get(key).source_manualrecord__c => var_inSourceManualRecord
                 redirectURL = '/lightning/n/Buscador_Contactos_y_Leads?c__var_inTaskId='+taskList[0].Id+'&c__var_inSourceManualRecord='+phoneCMTMap.get(keyTelefono).source_manualrecord__c+'&c__var_inCampaignInbound='+phoneCMTMap.get(keyTelefono).CampanaInboundIVR__c;
 

@@ -10,6 +10,7 @@
         <connector>
             <targetReference>Crea_oportunidad_nuevo_cliente</targetReference>
         </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>existingacc</name>
             <value>
@@ -40,7 +41,9 @@
                 <elementReference>$Record.LeadId</elementReference>
             </value>
         </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Agrega el registro a la lista de MKT para enviar el email</description>
         <name>AgregaRegistroLista</name>
@@ -665,6 +668,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 </rightValue>
             </conditions>
             <connector>
+                <isGoTo>true</isGoTo>
                 <targetReference>Create_PlatformEvent_BorradoCMCTI</targetReference>
             </connector>
             <label>Cierran intereses</label>
@@ -877,6 +881,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <locationX>578</locationX>
         <locationY>3671</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>ActualizarCMCTI</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Otro</defaultConnectorLabel>
@@ -1070,7 +1075,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
 26/04/2023 JCB: Se quita condición CM CTI con Origen R. Manual = Referencia para envío a CTI.
 01/06/2023 RNP: Añadimos campo CampaignMemberNumber__c cuando creamos el Miembro de campaña AG
 01/06/2023 RNP: Añadimos campo CampaignMemberNumber__c cuando creamos el Miembro de campaña AG V2
-03/07/2023 JCB:  Se añade campo GCLID__c</description>
+03/07/2023 JCB:  Se añade campo GCLID__c
+04/10/2023 MSC: Añadimos campo Transference__c cuando creamos el Miembro de campaña AG</description>
+    <environments>Default</environments>
     <formulas>
         <name>concatenatedCTIError</name>
         <dataType>String</dataType>
@@ -1211,7 +1218,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>ContactId__NotFound</field>
+            <field>ContactId</field>
             <value>
                 <elementReference>$Record.ContactId</elementReference>
             </value>
@@ -1390,7 +1397,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>ContactId__NotFound</field>
+            <field>ContactId</field>
             <value>
                 <elementReference>Convertir_Lead.contactId</elementReference>
             </value>
@@ -1539,6 +1546,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <object>CESS_Integration_Event__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crea CM AG con RT gestionado y tipo MKT</description>
@@ -1976,12 +1984,19 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Transference__c</field>
+            <value>
+                <elementReference>$Record.Transference__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>WebSource__c</field>
             <value>
                 <elementReference>$Record.WebSource__c</elementReference>
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crea el registro de Platform Event que borrará asíncronamente este registro e historificará los CM MKT relacionados</description>
@@ -2014,6 +2029,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <object>CMCTIDeleteEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <name>Create_Task</name>
@@ -2060,6 +2076,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
             </value>
         </inputAssignments>
         <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordDeletes>
         <description>Borra el CM MKT que disparó este flujo porque ya se ha volcado en el histórico (CM AG Gestionado)</description>
@@ -2079,6 +2096,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>BuscOtrosMiembrosCampaCTIAbiertos</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2100,7 +2118,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay más hijos del miembro de campaña CTI de tipo Miembro de campaña Adicional</description>
@@ -2112,6 +2132,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>BuscoOportunidadesAbiertasMiMiembroCampanaCTI</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND 3 AND ((4 AND 5) OR (6 AND 7))</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -2161,7 +2182,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay más hijos del miembro de campaña CTI de tipo Campaign Member</description>
@@ -2173,6 +2196,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>BuscoOtrosMiembrosCampanAdicionalesMiMiembroCampanaCTI</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND ((5 AND 7) OR (6 AND 8))</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2229,7 +2253,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay oto miembros de campaña CTI Abierto</description>
@@ -2241,6 +2267,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>GetBackOfficeQueue</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND ((3 AND 5) OR (4 AND 6))</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2283,7 +2310,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el CM CTI relacionado con el CM MKT</description>
@@ -2295,6 +2324,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Get_OtrosCMMKTNoAplazados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2302,7 +2332,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <elementReference>$Record.RelatedCTICampaignMemberId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay oportunidades abiertas en el CM CTI</description>
@@ -2314,6 +2346,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Get_OtroCMCTINoAplazado</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2335,7 +2368,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay otro campaign member CTI No aplazado</description>
@@ -2347,6 +2382,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Decision_OtrosInteresesMismoCMCTI</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND ((3 AND 5) OR (4 AND 6)) AND 7</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -2396,7 +2432,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>Postponed</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busco si hay más Campaign member de MKT sin aplazar</description>
@@ -2408,6 +2446,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Get_OtrosMCAGAdicionalNoAplazados</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND ((5 AND 7) OR (6 AND 8)) AND 9</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -2471,7 +2510,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>Postponed</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buenos Miembros de campañas Adicionales No aplazados</description>
@@ -2483,6 +2524,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Get_OportunidadesAbiertas</targetReference>
         </connector>
+        <filterLogic>1 AND 2 AND 3 AND ((4 AND 5) OR (6 AND 7)) AND 8</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -2539,7 +2581,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>Postponed</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtengo la cola backoffice al que tengo que asignar la tarea de backoffice</description>
@@ -2551,6 +2595,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>CampaignMemberMKTMismoCTIAbiertos</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
@@ -2565,7 +2610,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>BackOffice</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el valor del registro CESS - CTI - Cierre Gestion del metadata ORG_Application Settings</description>
@@ -2577,6 +2624,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>ConGestionCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>MasterLabel</field>
             <operator>EqualTo</operator>
@@ -2584,7 +2632,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>CESS - CTI - Cierre Gestion</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el valor del registro CESS - CTI - Numero maximo de intentos del metadata ORG_Application Settings</description>
@@ -2596,6 +2646,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>CumpleCriteriosCierre</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
@@ -2603,7 +2654,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>TotalAtempts</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>GuardoRecordTypes</description>
@@ -2615,6 +2668,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>LoopRecordTypes</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -2629,9 +2683,11 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <stringValue>AMCM__c</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>RecordType</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>DeveloperName</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Obtener_CM_CTI_Relacionado</name>
@@ -2642,6 +2698,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>BuscoOtrosMiembrosCampanaMKTMiMiembroCampanaCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2649,7 +2706,9 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
                 <elementReference>$Record.RelatedCTICampaignMemberId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Actualiza_Es_Fraudulento_cliente</name>
@@ -2659,6 +2718,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2682,6 +2742,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2730,6 +2791,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <label>Actualizar lead</label>
         <locationX>578</locationX>
         <locationY>4079</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2782,6 +2844,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <label>Actualizo CM CTI Relacionado</label>
         <locationX>2822</locationX>
         <locationY>3803</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2806,6 +2869,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>CreaCMAGRTGestionadoTipoMKT</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Lead__c</field>
             <operator>EqualTo</operator>
@@ -2830,6 +2894,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Decision_OtrosCMCTINoAplazados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2851,6 +2916,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <label>Actualizo Lead Aplazado</label>
         <locationX>1898</locationX>
         <locationY>3203</locationY>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2875,6 +2941,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>Asigno_Miembros_Campa_a_AG_al_cliente</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>WhoId</field>
             <operator>EqualTo</operator>
@@ -2899,6 +2966,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>SeHaMarcadoEnviarCTI</targetReference>
         </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4)</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -2944,6 +3012,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>HaCambiadoResult</targetReference>
         </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -2982,6 +3051,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>UpdateCMAdditionalNuevoResultado</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -3006,6 +3076,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>UpdateCMAdditionalStatusPostponed</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -3030,6 +3101,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <connector>
             <targetReference>EstadoMiembroCampanaMKTCerrado</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -3045,7 +3117,16 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
-    <startElementReference>GetRecordTypes</startElementReference>
+    <start>
+        <locationX>2146</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetRecordTypes</targetReference>
+        </connector>
+        <object>CampaignMember</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
     <status>Active</status>
     <subflows>
         <description>Subflujo - Campaign Member Send Email</description>
