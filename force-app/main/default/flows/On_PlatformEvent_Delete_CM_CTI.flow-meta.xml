@@ -1696,8 +1696,8 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
 02/06/2023 RNP: Añadimos campo CampaignMemberNumber__c en el get CMAGAdicionalRelacionadoCMCTI
 02/06/2023 RNP: Añadimos assignacion CampaignMemberNumber__c en el Asignacion_unitaria_CM_AG_Ad_MKT
 03/07/2023 JCB: Se añade campo GCLID__c
-04/10/2023 MSC: Se añade la asignación del campo Transference__c</description>
-    <environments>Default</environments>
+04/10/2023 MSC: Se añade la asignación del campo Transference__c
+17/10/2023 MSC: Se añade la asignación del campo Transference__c de CTI también</description>
     <formulas>
         <description>Según el valor de CMCTIStatus, se calcula el stado de la opp</description>
         <name>OppStatus</name>
@@ -2074,6 +2074,12 @@ LOS PLATFORM EVENT TRIGGERED FLOWS no admiten invocación de subflujos, por lo q
             <field>TotalAttempts__c</field>
             <value>
                 <elementReference>GetCMCTI.TotalAttempts__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Transference__c</field>
+            <value>
+                <elementReference>GetCMCTI.Transference__c</elementReference>
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
