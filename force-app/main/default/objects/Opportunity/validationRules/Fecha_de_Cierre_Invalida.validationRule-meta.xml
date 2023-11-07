@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fecha_de_Cierre_Invalida</fullName>
+    <active>true</active>
+    <description>No se puede crear o actualizar una oportunidad con fecha de cierre inferior a fecha de la creación</description>
+    <errorConditionFormula>OR (
+   AND(
+      CloseDate &lt; TODAY(), 
+      ISNEW()
+   ),
+   AND(
+      ISCHANGED(CloseDate),
+      CloseDate &lt; DATEVALUE(CreatedDate) 
+   )
+)</errorConditionFormula>
+    <errorDisplayField>CloseDate</errorDisplayField>
+    <errorMessage>La fecha de cierre no puede ser inferior a la fecha de la creación.</errorMessage>
+</ValidationRule>
