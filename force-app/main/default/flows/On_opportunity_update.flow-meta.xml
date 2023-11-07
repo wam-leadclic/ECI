@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Fijamos el estado del CM CTI a cualificado antes de borrarlo</description>
         <name>Set_CMCTIStatus</name>
         <label>Set_CMCTIStatus</label>
         <locationX>182</locationX>
-        <locationY>1295</locationY>
+        <locationY>1487</locationY>
         <assignmentItems>
             <assignToReference>Get_CampaignMember_CTI.Status</assignToReference>
             <operator>Assign</operator>
@@ -18,11 +19,58 @@
         </connector>
     </assignments>
     <decisions>
+        <description>Comprobar si la oportunidad se ha cerrado.</description>
+        <name>Decision_OportunidadSeCierra</name>
+        <label>Decision_Oportunidad Se Cierra</label>
+        <locationX>479</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>OpportunityIsClosed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>OportunidadSeCierra_Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Vencimiento Futuro</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Cualificación</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Propuesta</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Oportunidad_FechaCierre</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Se comprueba que no se ha borrado ya CM CTI</description>
         <name>Existe_CM_CTI</name>
         <label>Existe CM CTI</label>
         <locationX>248</locationX>
-        <locationY>695</locationY>
+        <locationY>947</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Si</name>
@@ -44,7 +92,7 @@
         <name>M_s_opps_no_cerradas_en_la_misma_camp_CTI</name>
         <label>Más opps no cerradas en la misma camp CTI?</label>
         <locationX>50</locationX>
-        <locationY>1175</locationY>
+        <locationY>1379</locationY>
         <defaultConnector>
             <targetReference>Set_CMCTIStatus</targetReference>
         </defaultConnector>
@@ -81,7 +129,7 @@
         <name>OpportunityIsClosed</name>
         <label>¿La oportunidad está cerrada?</label>
         <locationX>479</locationX>
-        <locationY>335</locationY>
+        <locationY>623</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OppCloseWithCampaignMemberCTI</name>
@@ -123,7 +171,9 @@
     <description>Busca miembro de campaña CTI del mismo cliente y campaña que la oportunidad, y si sólo hay uno, crea un CM AG Gestionado de tipo CTI con la misma información que tiene el CM CTI, y elimina el CM CTI
 
 19/09 MHG: Se sustituye el borrado de CM CTI por la creación del Platform Event que borra e historifica
-06/11 MMV: Se añade control para no buscar más intereses si no existe el CM CTI (evitar query no selectiva)</description>
+06/11 MMV: Se añade control para no buscar más intereses si no existe el CM CTI (evitar query no selectiva)
+06/11/23 MSC: Se añade el proceso para cambiar la fecha de cierre a cuando se cierra la oportunidad.</description>
+    <environments>Default</environments>
     <interviewLabel>On opportunity update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>On Opportunity update</label>
     <processMetadataValues>
@@ -150,7 +200,7 @@
         <name>Create_PlatformEvent_BorradoCMCTI</name>
         <label>Create_PlatformEvent_BorradoCMCTI</label>
         <locationX>182</locationX>
-        <locationY>1535</locationY>
+        <locationY>1703</locationY>
         <inputAssignments>
             <field>BorrarCMCTI__c</field>
             <value>
@@ -176,17 +226,19 @@
             </value>
         </inputAssignments>
         <object>CMCTIDeleteEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <description>Obtener el CM CTI para el mismo contacto y Campaign CTI de la opp</description>
         <name>Get_CampaignMember_CTI</name>
         <label>Get_CampaignMember_CTI</label>
         <locationX>248</locationX>
-        <locationY>575</locationY>
+        <locationY>839</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Existe_CM_CTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -194,18 +246,21 @@
                 <elementReference>$Record.relatedCTICampaignMemberId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtener Miembros de campaña Adicionales de miembro de campaña CTI</description>
         <name>Obtener_Miembros_de_campa_a_Adicionales_de_miembro_de_campa_a_CTI_0</name>
         <label>Obtener CM Adicionales del CM CTI de Opp</label>
         <locationX>50</locationX>
-        <locationY>1055</locationY>
+        <locationY>1271</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>M_s_opps_no_cerradas_en_la_misma_camp_CTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RelatedCTIAMCMId__c</field>
             <operator>EqualTo</operator>
@@ -234,18 +289,21 @@
                 <stringValue>Aborted</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtener Miembros de campaña MKT de miembro de campaña CTI</description>
         <name>Obtener_Miembros_de_campa_a_MKT_de_miembro_de_campa_a_CTI</name>
         <label>Obtener CM MKT del CM CTI de Opp</label>
         <locationX>50</locationX>
-        <locationY>935</locationY>
+        <locationY>1163</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Obtener_Miembros_de_campa_a_Adicionales_de_miembro_de_campa_a_CTI_0</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RelatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -260,18 +318,21 @@
                 <elementReference>Get_CampaignMember_CTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Se obtienen todas las oportunidades que se están gestionando con el CM CTI, y que están abiertas</description>
         <name>Obtener_opps_del_cliente_en_misma_campa_a_CTI</name>
         <label>Obtener Opps abiertas del CM CTI de Opp</label>
         <locationX>50</locationX>
-        <locationY>815</locationY>
+        <locationY>1055</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Obtener_Miembros_de_campa_a_MKT_de_miembro_de_campa_a_CTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -293,17 +354,20 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Obtener_RT_Id_CM_AG_gestionado</name>
         <label>Obtener RT Id CM AG gestionado</label>
         <locationX>248</locationX>
-        <locationY>455</locationY>
+        <locationY>731</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_CampaignMember_CTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -318,19 +382,47 @@
                 <stringValue>Managed</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <description>Actualizamos el CM CTI justo antes de borrarlo</description>
         <name>Update_CampaingMember_CTI</name>
         <label>Update_CampaingMember_CTI</label>
         <locationX>182</locationX>
-        <locationY>1415</locationY>
+        <locationY>1595</locationY>
         <connector>
             <targetReference>Create_PlatformEvent_BorradoCMCTI</targetReference>
         </connector>
         <inputReference>Get_CampaignMember_CTI</inputReference>
     </recordUpdates>
-    <startElementReference>OpportunityIsClosed</startElementReference>
+    <recordUpdates>
+        <description>Actualizar la oportunidad asignando la fecho de hoy al campo &quot;Fecha de cierre&quot;.</description>
+        <name>Update_Oportunidad_FechaCierre</name>
+        <label>Update_Oportunidad_Fecha Cierre</label>
+        <locationX>347</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>OpportunityIsClosed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>353</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_OportunidadSeCierra</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
     <status>Active</status>
 </Flow>
