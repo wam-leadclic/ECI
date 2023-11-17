@@ -19,9 +19,9 @@
         </connector>
     </assignments>
     <decisions>
-        <description>Comprobar si la oportunidad se ha cerrado.</description>
-        <name>Decision_OportunidadSeCierra</name>
-        <label>Decision_Oportunidad Se Cierra</label>
+        <description>Comprobar si la oportunidad se ha cerrado o se ha reabierto.</description>
+        <name>Decision_OportunidadCierraOAbre</name>
+        <label>Decision_Oportunidad Se Cierra o Se Abre</label>
         <locationX>479</locationX>
         <locationY>323</locationY>
         <defaultConnector>
@@ -29,7 +29,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
         <rules>
-            <name>OportunidadSeCierra_Si</name>
+            <name>OportunidadSeCierraOAbre_SeCierra</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
@@ -52,17 +52,41 @@
                     <stringValue>Propuesta</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Update_Oportunidad_FechaCierreReal</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Se Cierra</label>
+        </rules>
+        <rules>
+            <name>OportunidadSeCierraOAbre_SeAbre</name>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.StageName</leftValueReference>
-                <operator>IsChanged</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Vencimiento Futuro</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cualificación</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Propuesta</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Oportunidad_FechaCierre</targetReference>
+                <targetReference>Update_Oportunidad_BlanquearFechaCierreReal</targetReference>
             </connector>
-            <label>Sí</label>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Se Abre</label>
         </rules>
     </decisions>
     <decisions>
@@ -172,7 +196,8 @@
 
 19/09 MHG: Se sustituye el borrado de CM CTI por la creación del Platform Event que borra e historifica
 06/11 MMV: Se añade control para no buscar más intereses si no existe el CM CTI (evitar query no selectiva)
-06/11/23 MSC: Se añade el proceso para cambiar la fecha de cierre a cuando se cierra la oportunidad.</description>
+06/11/23 MSC: Se añade el proceso para cambiar la fecha de cierre a cuando se cierra la oportunidad.
+16/11/23 MSC: Se cambia proceso para cambiar la fecha de cierre a cuando se cierra la oportunidad para usar el nuevo campo fecha de cierre real.</description>
     <environments>Default</environments>
     <interviewLabel>On opportunity update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>On Opportunity update</label>
@@ -398,16 +423,30 @@
         <inputReference>Get_CampaignMember_CTI</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <description>Actualizar la oportunidad asignando la fecho de hoy al campo &quot;Fecha de cierre&quot;.</description>
-        <name>Update_Oportunidad_FechaCierre</name>
-        <label>Update_Oportunidad_Fecha Cierre</label>
-        <locationX>347</locationX>
+        <description>Actualizar la oportunidad blanqueando el campo &quot;Fecha de cierre real&quot;.</description>
+        <name>Update_Oportunidad_BlanquearFechaCierreReal</name>
+        <label>Update_Oportunidad_Blanquear Fecha Cierre Real</label>
+        <locationX>479</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>OpportunityIsClosed</targetReference>
         </connector>
         <inputAssignments>
-            <field>CloseDate</field>
+            <field>RealCloseDate__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizar la oportunidad asignando la fecha de hoy al campo &quot;Fecha de cierre real&quot;.</description>
+        <name>Update_Oportunidad_FechaCierreReal</name>
+        <label>Update_Oportunidad_Fecha Cierre Real</label>
+        <locationX>215</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>OpportunityIsClosed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>RealCloseDate__c</field>
             <value>
                 <elementReference>$Flow.CurrentDate</elementReference>
             </value>
@@ -418,7 +457,7 @@
         <locationX>353</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Decision_OportunidadSeCierra</targetReference>
+            <targetReference>Decision_OportunidadCierraOAbre</targetReference>
         </connector>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>

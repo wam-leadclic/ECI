@@ -93,6 +93,10 @@
                 <behavior>Edit</behavior>
                 <field>PostponementReason__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RealCloseDate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
