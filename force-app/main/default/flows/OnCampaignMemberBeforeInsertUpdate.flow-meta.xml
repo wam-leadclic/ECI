@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asigno Valor Aplazado a la variable de estado</description>
         <name>AsignoEstadoAplazado</name>
         <label>Asigno Estado Aplazado</label>
         <locationX>1722</locationX>
-        <locationY>1463</locationY>
+        <locationY>1319</locationY>
         <assignmentItems>
             <assignToReference>$Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -22,7 +23,7 @@
         <name>AsignoEstadoCualificado</name>
         <label>Asigno Estado Cualificado</label>
         <locationX>1436</locationX>
-        <locationY>2207</locationY>
+        <locationY>1979</locationY>
         <assignmentItems>
             <assignToReference>$Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -36,7 +37,7 @@
         <name>AsignoEstadoNoContactado</name>
         <label>Asigno Estado No Contactado</label>
         <locationX>1172</locationX>
-        <locationY>2207</locationY>
+        <locationY>1979</locationY>
         <assignmentItems>
             <assignToReference>$Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -50,7 +51,7 @@
         <name>AsignoEstadoNoCualificado</name>
         <label>Asigno Estado No Cualificado</label>
         <locationX>908</locationX>
-        <locationY>2207</locationY>
+        <locationY>1979</locationY>
         <assignmentItems>
             <assignToReference>$Record.Status</assignToReference>
             <operator>Assign</operator>
@@ -64,7 +65,7 @@
         <name>AsignoResultadoNoContestaEnviarEmail</name>
         <label>Asigno Resultado NoContestaEnviarEmail</label>
         <locationX>50</locationX>
-        <locationY>551</locationY>
+        <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.Result__c</assignToReference>
             <operator>Assign</operator>
@@ -81,7 +82,7 @@
         <name>AsignoResultNoContestaEnviarEmail</name>
         <label>Asigno Result No Contesta Enviar Email</label>
         <locationX>930</locationX>
-        <locationY>1463</locationY>
+        <locationY>1319</locationY>
         <assignmentItems>
             <assignToReference>$Record.Result__c</assignToReference>
             <operator>Assign</operator>
@@ -98,7 +99,7 @@
         <name>AsignoResultNoContestaEnviarEmail2</name>
         <label>Asigno Result No Contesta Enviar Email</label>
         <locationX>1194</locationX>
-        <locationY>1463</locationY>
+        <locationY>1319</locationY>
         <assignmentItems>
             <assignToReference>$Record.Result__c</assignToReference>
             <operator>Assign</operator>
@@ -115,7 +116,7 @@
         <name>AsignoResultTelefonoErroneo</name>
         <label>Asigno Result TelefonoErroneo</label>
         <locationX>1458</locationX>
-        <locationY>1463</locationY>
+        <locationY>1319</locationY>
         <assignmentItems>
             <assignToReference>$Record.Result__c</assignToReference>
             <operator>Assign</operator>
@@ -132,7 +133,7 @@
         <name>AssignCESS_CTI_Telefono_Erroneo</name>
         <label>Assign CESS_CTI_Telefono_Erroneo</label>
         <locationX>2074</locationX>
-        <locationY>1031</locationY>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>ValueCESS_CTI_Telefono_Erroneo</assignToReference>
             <operator>Assign</operator>
@@ -149,7 +150,7 @@
         <name>AssignCESSCTIResultadoPlanificada</name>
         <label>Assign CESS_CTI_Resultado_Planificada</label>
         <locationX>2338</locationX>
-        <locationY>1031</locationY>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>ValueCESS_CTI_Resultado_Planificada</assignToReference>
             <operator>Assign</operator>
@@ -166,7 +167,7 @@
         <name>AssignComunica</name>
         <label>Assign Comunica</label>
         <locationX>1546</locationX>
-        <locationY>1031</locationY>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>ValueCESS_CTI_Resultado_Ocupado</assignToReference>
             <operator>Assign</operator>
@@ -183,7 +184,7 @@
         <name>AssignValueCESS_CTI_Resultados_No_Contacto</name>
         <label>Assign CESS_CTI_Resultados_No_Contacto</label>
         <locationX>1810</locationX>
-        <locationY>1031</locationY>
+        <locationY>935</locationY>
         <assignmentItems>
             <assignToReference>ValueCESS_CTI_Resultados_No_Contacto</assignToReference>
             <operator>Assign</operator>
@@ -200,7 +201,7 @@
         <name>AssignCampaignMemberCTIResult</name>
         <label>Asignación Resultado Miembro Campaña CTI</label>
         <locationX>1458</locationX>
-        <locationY>1343</locationY>
+        <locationY>1211</locationY>
         <defaultConnector>
             <targetReference>IsChangedResult</targetReference>
         </defaultConnector>
@@ -271,7 +272,7 @@
         <name>CriteriosMaxIntentos</name>
         <label>¿Ha llegado al Max Intentos?</label>
         <locationX>930</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoResultadoCTI</targetReference>
         </defaultConnector>
@@ -311,7 +312,7 @@
         <name>HaCambiadoResultadoCTI</name>
         <label>¿Ha cambiado el Resultado CTI?</label>
         <locationX>1810</locationX>
-        <locationY>551</locationY>
+        <locationY>503</locationY>
         <defaultConnector>
             <targetReference>IsChangedResult</targetReference>
         </defaultConnector>
@@ -337,7 +338,7 @@
         <name>IsChangedResult</name>
         <label>¿Ha cambiado Resultado?</label>
         <locationX>1634</locationX>
-        <locationY>1967</locationY>
+        <locationY>1763</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>SiIsChangedResult</name>
@@ -360,7 +361,7 @@
         <name>ORGApplicationSettingDecision</name>
         <label>ORGApplicationSetting Decision</label>
         <locationX>2074</locationX>
-        <locationY>911</locationY>
+        <locationY>827</locationY>
         <defaultConnector>
             <targetReference>LoopORGApplicationSetting</targetReference>
         </defaultConnector>
@@ -431,7 +432,7 @@
         <name>Result</name>
         <label>¿Cual es el resultado?</label>
         <locationX>1304</locationX>
-        <locationY>2087</locationY>
+        <locationY>1871</locationY>
         <defaultConnectorLabel>Otros</defaultConnectorLabel>
         <rules>
             <name>Unqualified</name>
@@ -555,6 +556,13 @@
                     <stringValue>No Contesta Enviar Email</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Asegurado en MM</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>AsignoEstadoNoCualificado</targetReference>
             </connector>
@@ -626,6 +634,13 @@
                     <stringValue>No titular de la oferta</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Result__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cerrado automático</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>AsignoEstadoNoContactado</targetReference>
             </connector>
@@ -652,7 +667,7 @@
         <name>TipoCTI</name>
         <label>¿Es de tipo CTI?</label>
         <locationX>1634</locationX>
-        <locationY>311</locationY>
+        <locationY>287</locationY>
         <defaultConnector>
             <targetReference>IsChangedResult</targetReference>
         </defaultConnector>
@@ -675,7 +690,8 @@
     </decisions>
     <description>Salta cuando un miembro de campaña CTI no se envía a CTI debido a un error que devuelve la integración con CTI.
 09/06/2022 MMV: Cuando el resultado del CTI cambia también cambia su estado en función del resultado
-06/07/2022: AC: Solución a cuando cierro la llamada a Contactado se me cierran todos los intereses a No contactado.</description>
+06/07/2022: AC: Solución a cuando cierro la llamada a Contactado se me cierran todos los intereses a No contactado.
+17/10/2023: LCS-JCB: Se añade valores nuevos de Resultado (Result__c: Asegurado en MM, Cerrado automático).</description>
     <formulas>
         <description>NumeroTotaldeIntentos</description>
         <name>NumeroTotaldeIntentos</name>
@@ -696,7 +712,7 @@
         <name>LoopORGApplicationSetting</name>
         <label>Loop ORGApplicationSetting</label>
         <locationX>1458</locationX>
-        <locationY>791</locationY>
+        <locationY>719</locationY>
         <collectionReference>GetORGApplicationSetting</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -730,11 +746,12 @@
         <name>GetORGApplicationSetting</name>
         <label>Get ORGApplicationSetting</label>
         <locationX>1458</locationX>
-        <locationY>671</locationY>
+        <locationY>611</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>LoopORGApplicationSetting</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
@@ -763,12 +780,23 @@
                 <stringValue>CESS_CTI_Resultado_Planificada</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>Value__c</queriedFields>
         <queriedFields>DeveloperName</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <startElementReference>TipoCTI</startElementReference>
+    <start>
+        <locationX>1508</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>TipoCTI</targetReference>
+        </connector>
+        <object>CampaignMember</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
     <status>Active</status>
     <variables>
         <description>Valor del Metadato CESS_CTI_Resultado_Ocupado</description>
