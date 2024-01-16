@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Fecha_de_Cierre_Invalida</fullName>
-    <active>true</active>
+    <active>false</active>
     <description>No se puede crear o actualizar una oportunidad con fecha de cierre inferior a fecha de la creación</description>
     <errorConditionFormula>OR (
    AND(
