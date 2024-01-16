@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunningArgument__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo Check que se pone a true cuando los comerciales inician el argumentario y no lo finalizan.</description>
+    <externalId>false</externalId>
+    <label>Ejecutando argumentario</label>
+    <type>Checkbox</type>
+</CustomField>
