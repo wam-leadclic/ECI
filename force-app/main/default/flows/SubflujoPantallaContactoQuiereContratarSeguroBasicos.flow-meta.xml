@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Como no quiere aceptar la oportunidad o quiere planificar la llamada, marcamos este interés como exluido</description>
         <name>MarcaInteresExlucido</name>
         <label>MarcaInteresExlucido</label>
-        <locationX>740</locationX>
-        <locationY>2678</locationY>
+        <locationX>377</locationX>
+        <locationY>2390</locationY>
         <assignmentItems>
             <assignToReference>InteresExcluido</assignToReference>
             <operator>Assign</operator>
@@ -18,8 +19,8 @@
         <description>Marca la variable de PlanificarLlamada para que el flujo superior controle que se debe pasar por la planificación</description>
         <name>MarcaPlanificarLlamada</name>
         <label>MarcaPlanificarLlamada</label>
-        <locationX>578</locationX>
-        <locationY>998</locationY>
+        <locationX>182</locationX>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -34,8 +35,8 @@
     <assignments>
         <name>OpportunityToLost</name>
         <label>Opportunity to lost</label>
-        <locationX>1359</locationX>
-        <locationY>878</locationY>
+        <locationX>963</locationX>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>OpportunityVariable.StageName</assignToReference>
             <operator>Assign</operator>
@@ -58,8 +59,8 @@
         <description>Asignamos al contacto el nuevo email</description>
         <name>Set_Email</name>
         <label>Set_Email</label>
-        <locationX>1546</locationX>
-        <locationY>1718</locationY>
+        <locationX>1150</locationX>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>Recuperamos_el_Contact.Email</assignToReference>
             <operator>Assign</operator>
@@ -75,8 +76,8 @@
         <description>Asignamos true a la variable para mostrar el mensaje de error para email duplicado</description>
         <name>Set_MostrarErrorEmailDuplicadoTrue</name>
         <label>Set_MostrarErrorEmailDuplicadoTrue</label>
-        <locationX>1282</locationX>
-        <locationY>1718</locationY>
+        <locationX>886</locationX>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>Var_MostrarErrorEmailDuplicado</assignToReference>
             <operator>Assign</operator>
@@ -92,6 +93,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>InsuranceHire</targetReference>
         </connector>
     </assignments>
@@ -99,8 +101,8 @@
         <description>Asignamos true a la variable mostrar error email validacion para que muestre el mensaje de error y reasignamos al campo email en el screen el valor introducido</description>
         <name>Set_MostrarErrorEmailValidacionTrue</name>
         <label>Set_MostrarErrorEmailValidacionTrue</label>
-        <locationX>1810</locationX>
-        <locationY>1358</locationY>
+        <locationX>1414</locationX>
+        <locationY>1214</locationY>
         <assignmentItems>
             <assignToReference>Var_MostrarErrorValidacion</assignToReference>
             <operator>Assign</operator>
@@ -116,6 +118,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>InsuranceHire</targetReference>
         </connector>
     </assignments>
@@ -123,8 +126,8 @@
         <description>Marca la variable de PlanificarLlamada para que el flujo superior controle que se debe pasar por la planificación</description>
         <name>Set_PlanificarLlamada</name>
         <label>Set Planificar Llamada</label>
-        <locationX>842</locationX>
-        <locationY>998</locationY>
+        <locationX>446</locationX>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -140,8 +143,8 @@
         <description>Almacenamos los valores introducidos en el screen</description>
         <name>Set_VariablesEntrada</name>
         <label>Set_Variables de Entrada</label>
-        <locationX>1612</locationX>
-        <locationY>1118</locationY>
+        <locationX>1216</locationX>
+        <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>Var_EntradaEmail</assignToReference>
             <operator>Assign</operator>
@@ -177,8 +180,8 @@
     <assignments>
         <name>SetMostrarIntereses</name>
         <label>Set MostrarIntereses</label>
-        <locationX>740</locationX>
-        <locationY>2558</locationY>
+        <locationX>377</locationX>
+        <locationY>2282</locationY>
         <assignmentItems>
             <assignToReference>MostrarIntereses</assignToReference>
             <operator>Assign</operator>
@@ -209,8 +212,8 @@
     <decisions>
         <name>CloseOppDecision</name>
         <label>Close Opportunity Decision</label>
-        <locationX>380</locationX>
-        <locationY>758</locationY>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>PlanificacionLlamada</targetReference>
         </defaultConnector>
@@ -226,7 +229,8 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>EmailSentDecision</targetReference>
+                <isGoTo>true</isGoTo>
+                <targetReference>MarcaInteresExlucido</targetReference>
             </connector>
             <label>Sí</label>
         </rules>
@@ -235,8 +239,8 @@
         <description>Comprobamos que el email tiene un formato válido</description>
         <name>Decision_EmailValido</name>
         <label>Decision_EmailValido</label>
-        <locationX>1612</locationX>
-        <locationY>1238</locationY>
+        <locationX>1216</locationX>
+        <locationY>1106</locationY>
         <defaultConnector>
             <targetReference>Set_MostrarErrorEmailValidacionTrue</targetReference>
         </defaultConnector>
@@ -268,8 +272,8 @@
         <description>Comprobamos si el email está informado.</description>
         <name>Decision_EstaEmailRelleno</name>
         <label>Decision_EstaEmailRelleno?</label>
-        <locationX>1359</locationX>
-        <locationY>998</locationY>
+        <locationX>963</locationX>
+        <locationY>890</locationY>
         <defaultConnector>
             <targetReference>Set_VariablesEntrada</targetReference>
         </defaultConnector>
@@ -294,8 +298,8 @@
         <description>Comprobamos si ya existe algún registro con el email introducido</description>
         <name>Decision_Hay_duplicados</name>
         <label>Decision_¿Hay duplicados?</label>
-        <locationX>1414</locationX>
-        <locationY>1598</locationY>
+        <locationX>1018</locationX>
+        <locationY>1430</locationY>
         <defaultConnector>
             <targetReference>Set_Email</targetReference>
         </defaultConnector>
@@ -327,8 +331,8 @@
         <description>Si ha indicado que quiere que se le llame en otro momento marcamos la planificación de llamada y aplazamos la oportunidad</description>
         <name>Decision_QuiereLlamadaEnOtroMomento</name>
         <label>¿Quiere llamada en otro momento?</label>
-        <locationX>1100</locationX>
-        <locationY>758</locationY>
+        <locationX>704</locationX>
+        <locationY>674</locationY>
         <defaultConnector>
             <targetReference>OpportunityToLost</targetReference>
         </defaultConnector>
@@ -350,37 +354,11 @@
         </rules>
     </decisions>
     <decisions>
-        <description>Si ha marcado ha enviado correo o no</description>
-        <name>EmailSentDecision</name>
-        <label>¿Ha enviado correo?</label>
-        <locationX>182</locationX>
-        <locationY>878</locationY>
-        <defaultConnector>
-            <targetReference>PantallaAvisoPresupuesto</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>SiEmailSentDecision</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>EmailSentQuestion</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Yes</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>PantallaAvisoDescarguePresupuesto</targetReference>
-            </connector>
-            <label>Sí</label>
-        </rules>
-    </decisions>
-    <decisions>
         <description>Si se ha marcado quieres contratar seguro o no</description>
         <name>InsuranceHireDecision</name>
         <label>¿Quiere Contratar Seguro?</label>
-        <locationX>740</locationX>
-        <locationY>638</locationY>
+        <locationX>377</locationX>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Decision_QuiereLlamadaEnOtroMomento</targetReference>
         </defaultConnector>
@@ -404,8 +382,8 @@
     <decisions>
         <name>Switch</name>
         <label>Switch</label>
-        <locationX>1407</locationX>
-        <locationY>158</locationY>
+        <locationX>1027</locationX>
+        <locationY>134</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>SwitchOff</name>
@@ -432,7 +410,8 @@
 18/10 NRG: Añadido consolidación de pantallas
 20/10 AMT: Cambios en las cabeceras de las pantallas
 28/11 MMV: Cambio para usar IsConverted en lugar de ConvertedContactId
-10/02/2023 LCS-JCB: Inserción de enlace a Oportunidad Creada en pantalla</description>
+10/02/2023 LCS-JCB: Inserción de enlace a Oportunidad Creada en pantalla
+21/12/2023 LCS-MSC: Eliminación de la Pantalla Aviso Descargue Presupuesto.</description>
     <dynamicChoiceSets>
         <description>Valores picklist para el campo motivo de perdida cuando el usuario es Agente</description>
         <name>Choice_MotivoPerdidaOppAgente</name>
@@ -496,6 +475,7 @@
         <picklistField>OppPerdidaSalientesBasicos__c</picklistField>
         <picklistObject>FlowPicklist__mdt</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <description>Fórmula para calcular el enlace para acceder a la oportunidad creada recientemente.</description>
         <name>Formula_EnlaceOportunidadCreada</name>
@@ -558,12 +538,13 @@
         <description>Buscamos si existe algún contacto en la bbdd con este email</description>
         <name>Get_ContactosDuplicados</name>
         <label>Get_ContactosDuplicados</label>
-        <locationX>1414</locationX>
-        <locationY>1358</locationY>
+        <locationX>1018</locationX>
+        <locationY>1214</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_LeadsDuplicados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Email</field>
             <operator>EqualTo</operator>
@@ -585,18 +566,21 @@
                 <elementReference>OpportunityVariable.Account.PersonContactId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buscamos en Leads registros con el mismo email</description>
         <name>Get_LeadsDuplicados</name>
         <label>Get_LeadsDuplicados</label>
-        <locationX>1414</locationX>
-        <locationY>1478</locationY>
+        <locationX>1018</locationX>
+        <locationY>1322</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_Hay_duplicados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Email</field>
             <operator>EqualTo</operator>
@@ -618,18 +602,21 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recuperamos el contacto relacionada con la oportunidad</description>
         <name>Recuperamos_el_Contact</name>
         <label>Recuperamos el Contact</label>
-        <locationX>740</locationX>
-        <locationY>398</locationY>
+        <locationX>377</locationX>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>InsuranceHire</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -637,18 +624,21 @@
                 <elementReference>OpportunityVariable.Account.PersonContactId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
         <name>TextosArgumentario</name>
         <label>TextosArgumentario</label>
-        <locationX>740</locationX>
-        <locationY>278</locationY>
+        <locationX>377</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Recuperamos_el_Contact</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Flujo__c</field>
             <operator>EqualTo</operator>
@@ -663,14 +653,16 @@
                 <elementReference>$User.LanguageLocaleKey</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>TextoArgumentario__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <description>Actualizamos el contacto con el nuevo email</description>
         <name>ActualizamosContacto</name>
         <label>Actualizamos el Contacto</label>
-        <locationX>1546</locationX>
-        <locationY>1838</locationY>
+        <locationX>1150</locationX>
+        <locationY>1646</locationY>
         <connector>
             <targetReference>UpdateOpportunity</targetReference>
         </connector>
@@ -679,18 +671,19 @@
     <recordUpdates>
         <name>UpdateOpportunity</name>
         <label>Update opportunity</label>
-        <locationX>1100</locationX>
-        <locationY>2342</locationY>
+        <locationX>704</locationX>
+        <locationY>2090</locationY>
         <connector>
             <targetReference>SetMostrarIntereses</targetReference>
         </connector>
         <inputReference>OpportunityVariable</inputReference>
     </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>InsuranceHire</name>
         <label>Pantalla Contratar Seguro</label>
-        <locationX>740</locationX>
-        <locationY>518</locationY>
+        <locationX>377</locationX>
+        <locationY>458</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -743,6 +736,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -773,6 +767,16 @@
             <fieldText>{!TextosArgumentario.Etiqueta4__c}</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>InsuranceHireQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>No</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>CloseOppQuestion</name>
@@ -782,6 +786,16 @@
             <fieldText>{!TextosArgumentario.Etiqueta2__c}</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>InsuranceHireQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>EmailSentQuestion</name>
@@ -791,6 +805,16 @@
             <fieldText>{!TextosArgumentario.Etiqueta3__c}</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>CloseOppQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>ScreenLossReasonAgente</name>
@@ -802,172 +826,404 @@
             <fieldText>Motivo de perdida</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>PreguntaQuiereLlamadaEnOtroMomento</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>No</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Var_UserRole</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>Agentes</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>InsuranceHire_Section1</name>
             <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>InsuranceHire_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ScreenLossReasonDefault</name>
+                    <choiceReferences>LossReasonPicklistChoiceSet</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ScreenLossReasonBlecis</name>
+                    <choiceReferences>PicklistOppPerdidaBlecis</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BLECIS</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ScreenLossReasonEntrantesBasicos</name>
+                    <choiceReferences>PicklistOppPerdidaEntrantesBasicos</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Telefono</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Manual</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ScreenLossReasonPrestamos</name>
+                    <choiceReferences>PicklistOppPerdidaPrestamos</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>PRÉSTAMOS</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ScreenLossReasonSalientesBasicos</name>
+                    <choiceReferences>PicklistOppPerdidaSalientesBasicos</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Adwords</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Blog</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Display</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Email</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>RRSS</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>SMS</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Corregistros</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Referencia</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Web</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ScreenLossReasonBBDD</name>
+                    <choiceReferences>PicklistOppPerdidaBBDD</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Var_EntradaMotivoPerdida</elementReference>
+                    </defaultValue>
+                    <fieldText>Motivo de perdida</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BBDD</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OpportunityVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BBDD 2</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>1 AND NOT(2)</conditionLogic>
+                <conditions>
+                    <leftValueReference>PreguntaQuiereLlamadaEnOtroMomento</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>No</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Var_UserRole</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>Agentes</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>InsuranceHire_Section2</name>
             <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>InsuranceHire_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>textoArgumentario9</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto9__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>screenContactEmail</name>
+                    <extensionName>flowruntime:email</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Var_EntradaEmail</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>errorEmailValidacion</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto10__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Var_MostrarErrorValidacion</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>errorEmailDuplicado</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto11__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Var_MostrarErrorEmailDuplicado</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8 OR  9)</conditionLogic>
+                <conditions>
+                    <leftValueReference>Recuperamos_el_Contact.Email</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>PreguntaQuiereLlamadaEnOtroMomento</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>No</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonAgente</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonDefault</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonBlecis</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonEntrantesBasicos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonPrestamos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonSalientesBasicos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenLossReasonBBDD</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>PantallaAvisoDescarguePresupuesto</name>
-        <label>Pantalla Aviso Descargue Presupuesto</label>
-        <locationX>50</locationX>
-        <locationY>998</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+    <start>
+        <locationX>901</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>MarcaInteresExlucido</targetReference>
+            <targetReference>Switch</targetReference>
         </connector>
-        <fields>
-            <name>S02_Header</name>
-            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>heading</name>
-                <value>
-                    <elementReference>Var_INOUT_Heading</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>iconSize</name>
-                <value>
-                    <stringValue>small</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fontSize</name>
-                <value>
-                    <stringValue>12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>icon</name>
-                <value>
-                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>subHeading</name>
-                <value>
-                    <elementReference>Var_INOUT_SubHeading</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>AvisoDescarguePresupuestoYMas</name>
-            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto5__c}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>ReviseDatosTarificacion</name>
-            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto6__c}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>PantallaAvisoPresupuesto</name>
-        <label>Pantalla Aviso Presupuesto</label>
-        <locationX>314</locationX>
-        <locationY>998</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>MarcaInteresExlucido</targetReference>
-        </connector>
-        <fields>
-            <name>S03_Header</name>
-            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>heading</name>
-                <value>
-                    <elementReference>Var_INOUT_Heading</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>iconSize</name>
-                <value>
-                    <stringValue>small</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fontSize</name>
-                <value>
-                    <stringValue>12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>icon</name>
-                <value>
-                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>subHeading</name>
-                <value>
-                    <elementReference>Var_INOUT_SubHeading</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>AvisoDescarguePresupuesto</name>
-            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto7__c}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>RevisionDatosTarificacion</name>
-            <fieldText>&lt;p&gt;{!TextosArgumentario.Texto8__c}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <startElementReference>Switch</startElementReference>
+    </start>
     <status>Active</status>
     <subflows>
         <description>Argumentario_Subflow_OppMotivoAplazamiento</description>
         <name>Argumentario_Subflow_OppMotivoAplazamiento</name>
         <label>Argumentario_Subflow_OppMotivoAplazamiento</label>
-        <locationX>842</locationX>
-        <locationY>878</locationY>
+        <locationX>446</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Set_PlanificarLlamada</targetReference>
         </connector>
@@ -1016,8 +1272,8 @@
     <subflows>
         <name>PlanificacionLlamada</name>
         <label>Planificación de Llamada</label>
-        <locationX>578</locationX>
-        <locationY>878</locationY>
+        <locationX>182</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>MarcaPlanificarLlamada</targetReference>
         </connector>
