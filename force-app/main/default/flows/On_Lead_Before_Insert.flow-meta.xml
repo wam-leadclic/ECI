@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asigno la descripción del riesgo con la información: 
 Fecha Nacimiento Asegurado(s)
@@ -7,7 +8,7 @@ Sexo del Riesgo</description>
         <name>AsignoRiskDescriptionAccidentes</name>
         <label>AsignoRiskDescriptionAccidentes</label>
         <locationX>1106</locationX>
-        <locationY>2903</locationY>
+        <locationY>2603</locationY>
         <assignmentItems>
             <assignToReference>$Record.risk_description__c</assignToReference>
             <operator>Assign</operator>
@@ -24,7 +25,7 @@ Medio con valor Web</description>
         <name>AssignClickToCallValues</name>
         <label>AssignClickToCallValues</label>
         <locationX>1040</locationX>
-        <locationY>2447</locationY>
+        <locationY>2195</locationY>
         <assignmentItems>
             <assignToReference>$Record.campaign__c</assignToReference>
             <operator>Assign</operator>
@@ -60,7 +61,7 @@ Medio con el valor Manual</description>
         <name>AssignManualRecordOnLead</name>
         <label>AssignManualRecordOnLead</label>
         <locationX>842</locationX>
-        <locationY>2015</locationY>
+        <locationY>1811</locationY>
         <assignmentItems>
             <assignToReference>$Record.campaign__c</assignToReference>
             <operator>Assign</operator>
@@ -96,7 +97,7 @@ Medio con el valor Manual</description>
         <name>AssignManualRecordOnLead_0</name>
         <label>AssignManualRecordOnLead</label>
         <locationX>1106</locationX>
-        <locationY>2015</locationY>
+        <locationY>1811</locationY>
         <assignmentItems>
             <assignToReference>$Record.campaign__c</assignToReference>
             <operator>Assign</operator>
@@ -134,7 +135,7 @@ Medio con el valor Manual</description>
         <name>assignReglaCTIValuesToLead</name>
         <label>Asignamos Valores de la Regla CTI al Lead</label>
         <locationX>655</locationX>
-        <locationY>1247</locationY>
+        <locationY>1127</locationY>
         <assignmentItems>
             <assignToReference>$Record.line_insurance__c</assignToReference>
             <operator>Assign</operator>
@@ -172,7 +173,7 @@ Medio con el valor Manual</description>
         <name>assignReglaCTIValuesToLeadWithSkillOrder</name>
         <label>Asignamos Valores de la Regla CTI al Lead</label>
         <locationX>919</locationX>
-        <locationY>1247</locationY>
+        <locationY>1127</locationY>
         <assignmentItems>
             <assignToReference>$Record.line_insurance__c</assignToReference>
             <operator>Assign</operator>
@@ -228,7 +229,7 @@ Código Postal si está relleno</description>
         <name>AssignRiskDescriprionSalud</name>
         <label>AssignRiskDescriprionSalud</label>
         <locationX>578</locationX>
-        <locationY>2903</locationY>
+        <locationY>2603</locationY>
         <assignmentItems>
             <assignToReference>$Record.risk_description__c</assignToReference>
             <operator>Assign</operator>
@@ -245,7 +246,7 @@ Código Postal si está relleno</description>
         <name>AssignRiskDescriptionAutos</name>
         <label>AssignRiskDescriptionAutos</label>
         <locationX>50</locationX>
-        <locationY>2903</locationY>
+        <locationY>2603</locationY>
         <assignmentItems>
             <assignToReference>$Record.risk_description__c</assignToReference>
             <operator>Assign</operator>
@@ -262,7 +263,7 @@ Código Postal si está relleno</description>
         <name>AssignRiskDescriptionHogar</name>
         <label>AssignRiskDescriptionHogar</label>
         <locationX>314</locationX>
-        <locationY>2903</locationY>
+        <locationY>2603</locationY>
         <assignmentItems>
             <assignToReference>$Record.risk_description__c</assignToReference>
             <operator>Assign</operator>
@@ -278,7 +279,7 @@ Sexo del Riesgo</description>
         <name>AssignRiskDescriptionVida</name>
         <label>AssignRiskDescriptionVida</label>
         <locationX>842</locationX>
-        <locationY>2903</locationY>
+        <locationY>2603</locationY>
         <assignmentItems>
             <assignToReference>$Record.risk_description__c</assignToReference>
             <operator>Assign</operator>
@@ -292,7 +293,7 @@ Sexo del Riesgo</description>
         <name>Set_CampaignCTI</name>
         <label>Set Campaign CTI</label>
         <locationX>1304</locationX>
-        <locationY>551</locationY>
+        <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.campaign_cti__c</assignToReference>
             <operator>Assign</operator>
@@ -309,7 +310,7 @@ Sexo del Riesgo</description>
         <name>Set_CampaignCTIPicklist</name>
         <label>Set Campaign CTI Picklist</label>
         <locationX>1040</locationX>
-        <locationY>551</locationY>
+        <locationY>503</locationY>
         <assignmentItems>
             <assignToReference>$Record.Campaign_CTI_Picklist__c</assignToReference>
             <operator>Assign</operator>
@@ -333,7 +334,7 @@ Sexo del Riesgo</description>
         <name>CampanaVacia</name>
         <label>¿Campaña vacía ?</label>
         <locationX>1172</locationX>
-        <locationY>1775</locationY>
+        <locationY>1595</locationY>
         <defaultConnector>
             <targetReference>IsClickToCallLead</targetReference>
         </defaultConnector>
@@ -359,7 +360,7 @@ Sexo del Riesgo</description>
         <name>Decision_CampaignCTIPicklistVacio</name>
         <label>¿Campaign CTI Picklist vacio?</label>
         <locationX>1172</locationX>
-        <locationY>431</locationY>
+        <locationY>395</locationY>
         <defaultConnector>
             <targetReference>Set_CampaignCTI</targetReference>
         </defaultConnector>
@@ -385,7 +386,7 @@ Sexo del Riesgo</description>
         <name>Decision_EsBlecis</name>
         <label>Es Blecis?</label>
         <locationX>787</locationX>
-        <locationY>1127</locationY>
+        <locationY>1019</locationY>
         <defaultConnector>
             <targetReference>assignReglaCTIValuesToLeadWithSkillOrder</targetReference>
         </defaultConnector>
@@ -411,7 +412,7 @@ Sexo del Riesgo</description>
         <name>Decision_medioOrigenCESSRelleno</name>
         <label>Están Medio y Origen CESS rellenos?</label>
         <locationX>1172</locationX>
-        <locationY>767</locationY>
+        <locationY>695</locationY>
         <defaultConnector>
             <targetReference>ORG_ApplicationSetting_0</targetReference>
         </defaultConnector>
@@ -444,7 +445,7 @@ Sexo del Riesgo</description>
         <name>existsReglaCTI</name>
         <label>Encontró registro?</label>
         <locationX>985</locationX>
-        <locationY>1007</locationY>
+        <locationY>911</locationY>
         <defaultConnector>
             <targetReference>ORG_ApplicationSetting_0</targetReference>
         </defaultConnector>
@@ -470,7 +471,7 @@ Sexo del Riesgo</description>
         <name>IsClickToCallLead</name>
         <label>IsClickToCallLead</label>
         <locationX>1172</locationX>
-        <locationY>2327</locationY>
+        <locationY>2087</locationY>
         <defaultConnector>
             <targetReference>RiskDescriptionIsNull</targetReference>
         </defaultConnector>
@@ -496,7 +497,7 @@ Sexo del Riesgo</description>
         <name>RiskDescriptionIsNull</name>
         <label>RiskDescriptionIsNull</label>
         <locationX>1172</locationX>
-        <locationY>2663</locationY>
+        <locationY>2387</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>YesRiskDescriptionIsNull</name>
@@ -519,7 +520,7 @@ Sexo del Riesgo</description>
         <name>SourceManualRecordIsFilled</name>
         <label>SourceManualRecordIsFilled</label>
         <locationX>974</locationX>
-        <locationY>1895</locationY>
+        <locationY>1703</locationY>
         <defaultConnector>
             <targetReference>AssignManualRecordOnLead_0</targetReference>
         </defaultConnector>
@@ -551,7 +552,7 @@ Sexo del Riesgo</description>
         <name>SwitchOff</name>
         <label>SwitchOff</label>
         <locationX>1535</locationX>
-        <locationY>311</locationY>
+        <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>SwitchOffLead</name>
@@ -574,7 +575,7 @@ Sexo del Riesgo</description>
         <name>WhatLineInsurance</name>
         <label>WhatLineInsurance</label>
         <locationX>710</locationX>
-        <locationY>2783</locationY>
+        <locationY>2495</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Autos</name>
@@ -656,7 +657,8 @@ Sexo del Riesgo</description>
 05/10 MMV: Se rellena Campaign CTI Picklist (si no viene relleno) con el dato de campaign_cti
 11/11 MMV: Se busca la regla CTI solo por source_type__c y source_cess__c
 24/01 MSC: Se dejan como están los campos Orden y Skill si vienen rellenados
-09/02 MSC: Modificar para dejar Orden y Skill sin modificación si es de BLECIS.</description>
+09/02 MSC: Modificar para dejar Orden y Skill sin modificación si es de BLECIS.
+1/2024: LCS-JCB Modificación obtener Regla CTI, se añade condición que esté activa.</description>
     <formulas>
         <name>AccidentesFormula</name>
         <dataType>String</dataType>
@@ -746,11 +748,12 @@ IF( ISBLANK({!$Record.risk_postalcode__c}  ) , &quot;&quot;, &quot;[&quot; &amp;
         <name>getReglasCTI</name>
         <label>Obtenemos Reglas CTI</label>
         <locationX>985</locationX>
-        <locationY>887</locationY>
+        <locationY>803</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>existsReglaCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>source_type__c</field>
             <operator>EqualTo</operator>
@@ -765,17 +768,27 @@ IF( ISBLANK({!$Record.risk_postalcode__c}  ) , &quot;&quot;, &quot;[&quot; &amp;
                 <elementReference>$Record.source_cess__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CTI_Rules__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>ORG_ApplicationSetting_0</name>
         <label>ORG ApplicationSetting</label>
         <locationX>1172</locationX>
-        <locationY>1655</locationY>
+        <locationY>1487</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CampanaVacia</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
@@ -789,7 +802,16 @@ IF( ISBLANK({!$Record.risk_postalcode__c}  ) , &quot;&quot;, &quot;[&quot; &amp;
             <field>Value__c</field>
         </outputAssignments>
     </recordLookups>
-    <startElementReference>SwitchOff</startElementReference>
+    <start>
+        <locationX>1409</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SwitchOff</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
     <status>Active</status>
     <variables>
         <name>ClickToCall</name>
