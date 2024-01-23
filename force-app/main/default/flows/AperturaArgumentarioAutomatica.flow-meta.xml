@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asignamos valor a las variables auxiliares donde se almacena el mensaje de bienvenida y el nombre del screenflow</description>
         <name>Asignaci_n_msg_y_nombre_screenflow</name>
         <label>Asignación msg y nombre screenflow</label>
         <locationX>402</locationX>
-        <locationY>2390</locationY>
+        <locationY>2138</locationY>
         <assignmentItems>
             <assignToReference>Var_MensajeBienvenidaAUX</assignToReference>
             <operator>Assign</operator>
@@ -28,8 +29,8 @@
         <description>Incrementamos el contador hasta las iteraciones que determinamos de espera ante de que falle el hilo de ejecución (por ejemplo 90)</description>
         <name>IncrementamosContador</name>
         <label>Incrementamos Contador</label>
-        <locationX>1502</locationX>
-        <locationY>1790</locationY>
+        <locationX>1678</locationX>
+        <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>IteracionActualBusquedaTareas</assignToReference>
             <operator>Add</operator>
@@ -42,11 +43,28 @@
         </connector>
     </assignments>
     <assignments>
+        <description>Se asigna valor con el nombre de la campaña Inbound que servirá para recuperar Texto de Argumentario especifico en subflujo Entrantes Básicos</description>
+        <name>Set_CampaignInbound</name>
+        <label>Set_CampaignInbound</label>
+        <locationX>578</locationX>
+        <locationY>2462</locationY>
+        <assignmentItems>
+            <assignToReference>Var_OUT_InboundCampaign</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getMetadataViaIVR.CampanaInboundIVR__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>EntrantesBasicos</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Añadir el SourceCess al Header del argumentario.</description>
         <name>Set_Header</name>
         <label>Set_Header</label>
         <locationX>138</locationX>
-        <locationY>2750</locationY>
+        <locationY>2462</locationY>
         <assignmentItems>
             <assignToReference>Var_INOUT_Heading</assignToReference>
             <operator>Assign</operator>
@@ -63,7 +81,7 @@
         <name>Set_Header01</name>
         <label>Set_Header</label>
         <locationX>402</locationX>
-        <locationY>2750</locationY>
+        <locationY>2462</locationY>
         <assignmentItems>
             <assignToReference>Var_INOUT_Heading</assignToReference>
             <operator>Assign</operator>
@@ -80,7 +98,7 @@
         <name>Set_Header02</name>
         <label>Set_Header</label>
         <locationX>314</locationX>
-        <locationY>2510</locationY>
+        <locationY>2246</locationY>
         <assignmentItems>
             <assignToReference>Var_INOUT_Heading</assignToReference>
             <operator>Assign</operator>
@@ -96,8 +114,8 @@
         <description>Añadir el SourceCess al Header del argumentario.</description>
         <name>Set_Header03</name>
         <label>Set_Header</label>
-        <locationX>578</locationX>
-        <locationY>2510</locationY>
+        <locationX>710</locationX>
+        <locationY>2246</locationY>
         <assignmentItems>
             <assignToReference>Var_INOUT_Heading</assignToReference>
             <operator>Assign</operator>
@@ -106,15 +124,15 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>EntrantesBasicos</targetReference>
+            <targetReference>Decision_ComprobamosTextoArgumentarioEspecifico</targetReference>
         </connector>
     </assignments>
     <assignments>
         <description>Se asignan los valores para las variables de las cabeceras.</description>
         <name>Set_Headers</name>
         <label>Set_Headers</label>
-        <locationX>974</locationX>
-        <locationY>1430</locationY>
+        <locationX>1095</locationX>
+        <locationY>1274</locationY>
         <assignmentItems>
             <assignToReference>Var_INOUT_SubHeading</assignToReference>
             <operator>Assign</operator>
@@ -158,8 +176,8 @@
         <description>Reiniciamos el número de iteraciones</description>
         <name>Set_ReinicioIteraciones</name>
         <label>Set Reinicio Iteraciones</label>
-        <locationX>1370</locationX>
-        <locationY>2030</locationY>
+        <locationX>1546</locationX>
+        <locationY>1814</locationY>
         <assignmentItems>
             <assignToReference>IteracionActualBusquedaTareas</assignToReference>
             <operator>Assign</operator>
@@ -176,7 +194,7 @@
         <name>Set_SourceCessCM</name>
         <label>Set_SourceCessCM</label>
         <locationX>138</locationX>
-        <locationY>2630</locationY>
+        <locationY>2354</locationY>
         <assignmentItems>
             <assignToReference>Var_NombreSourceCess</assignToReference>
             <operator>Assign</operator>
@@ -193,7 +211,7 @@
         <name>Set_SourceCessCM01</name>
         <label>Set_SourceCessCM</label>
         <locationX>402</locationX>
-        <locationY>2630</locationY>
+        <locationY>2354</locationY>
         <assignmentItems>
             <assignToReference>Var_NombreSourceCess</assignToReference>
             <operator>Assign</operator>
@@ -210,7 +228,7 @@
         <name>Set_SourceCessCM02</name>
         <label>Set_SourceCessCM</label>
         <locationX>314</locationX>
-        <locationY>2390</locationY>
+        <locationY>2138</locationY>
         <assignmentItems>
             <assignToReference>Var_NombreSourceCess</assignToReference>
             <operator>Assign</operator>
@@ -226,8 +244,8 @@
         <description>Asignar a la variable el valor de SourceCess__c de la CM.</description>
         <name>Set_SourceCessCM03</name>
         <label>Set_SourceCessCM</label>
-        <locationX>578</locationX>
-        <locationY>2390</locationY>
+        <locationX>710</locationX>
+        <locationY>2138</locationY>
         <assignmentItems>
             <assignToReference>Var_NombreSourceCess</assignToReference>
             <operator>Assign</operator>
@@ -243,8 +261,8 @@
         <description>Se setea el whoid en una variable para realizar la búsqueda de la tarea por ese whoid. Valido para buscar leads</description>
         <name>SetTaskWhoid</name>
         <label>SetTaskWhoid</label>
-        <locationX>1172</locationX>
-        <locationY>638</locationY>
+        <locationX>1293</locationX>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>taskWhoId</assignToReference>
             <operator>Assign</operator>
@@ -260,7 +278,7 @@
         <name>Buscar_mensaje_bienvenida</name>
         <label>Buscar mensaje bienvenida</label>
         <locationX>666</locationX>
-        <locationY>2270</locationY>
+        <locationY>2030</locationY>
         <defaultConnector>
             <targetReference>Iterar_metadata</targetReference>
         </defaultConnector>
@@ -291,8 +309,8 @@
     <decisions>
         <name>checkArgumentary</name>
         <label>Comprobamos el Argumentario a mostrar</label>
-        <locationX>578</locationX>
-        <locationY>2150</locationY>
+        <locationX>666</locationX>
+        <locationY>1922</locationY>
         <defaultConnector>
             <targetReference>NoMatcheaConMetadata</targetReference>
         </defaultConnector>
@@ -331,8 +349,8 @@
     <decisions>
         <name>checkCampaignMemberId</name>
         <label>Comprobamos si miembro de campaña está informado</label>
-        <locationX>446</locationX>
-        <locationY>1790</locationY>
+        <locationX>512</locationX>
+        <locationY>1598</locationY>
         <defaultConnector>
             <targetReference>checkInboundVR</targetReference>
         </defaultConnector>
@@ -356,8 +374,8 @@
     <decisions>
         <name>checkInboundVR</name>
         <label>Comprobamos si el campo inbound VR está informado</label>
-        <locationX>842</locationX>
-        <locationY>1910</locationY>
+        <locationX>974</locationX>
+        <locationY>1706</locationY>
         <defaultConnectorLabel>No informado</defaultConnectorLabel>
         <rules>
             <name>informado</name>
@@ -379,8 +397,9 @@
         <name>Comprobamos_campaign_member</name>
         <label>Comprobamos campaign member</label>
         <locationX>402</locationX>
-        <locationY>2510</locationY>
+        <locationY>2246</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>NoMatcheaConMetadata</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Error</defaultConnectorLabel>
@@ -416,11 +435,36 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Decision_ComprobamosTextoArgumentarioEspecifico</name>
+        <label>Comprobamos Texto Argumentario especifico</label>
+        <locationX>710</locationX>
+        <locationY>2354</locationY>
+        <defaultConnector>
+            <targetReference>EntrantesBasicos</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resultado predeterminado</defaultConnectorLabel>
+        <rules>
+            <name>Si_TextoArgumentarioEspecifico</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getMetadataViaIVR.requiereTextoArgumentarioEspecifico__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_CampaignInbound</targetReference>
+            </connector>
+            <label>Sí_TextoArgumentarioEspecifico</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Comprobamos si es un lead convertido</description>
         <name>Decision_EsLeadConvertido</name>
         <label>Decision_EsLeadConvertido?</label>
-        <locationX>1172</locationX>
-        <locationY>878</locationY>
+        <locationX>1293</locationX>
+        <locationY>782</locationY>
         <defaultConnector>
             <targetReference>Set_Headers</targetReference>
         </defaultConnector>
@@ -445,9 +489,10 @@
         <description>Si llevamos 80, reiniciamos el contador y volvemos a buscar, mostrando pantalla al usuario para refrescar límites</description>
         <name>Decision_SuperadoNumeroIteraciones</name>
         <label>¿Se ha superado el número de iteraciones?</label>
-        <locationX>1502</locationX>
-        <locationY>1910</locationY>
+        <locationX>1678</locationX>
+        <locationY>1706</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>getTask</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
@@ -471,8 +516,8 @@
         <description>Comprobamos si ha encontrado una tarea</description>
         <name>Decision_TareaEncontrada</name>
         <label>¿Hemos encontrado una tarea?</label>
-        <locationX>974</locationX>
-        <locationY>1670</locationY>
+        <locationX>1095</locationX>
+        <locationY>1490</locationY>
         <defaultConnector>
             <targetReference>IncrementamosContador</targetReference>
         </defaultConnector>
@@ -497,8 +542,8 @@
         <description>Se decide si el tipo de objeto es una cuenta o un lead. Si es una cuenta tenemos que en la tarea se ha relacionado el whoid con el contacto y no con la cuenta por eso hay que buscar el personcontactid para buscarlo en la tarea</description>
         <name>TipoObjeto</name>
         <label>TipoObjeto</label>
-        <locationX>974</locationX>
-        <locationY>518</locationY>
+        <locationX>1095</locationX>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>SetTaskWhoid</targetReference>
         </defaultConnector>
@@ -531,7 +576,10 @@
 26/10 AMT: Eliminado help text cabecera
 22/11 MSC: Añadido SourceCess__c en la cabecera
 28/11 MMV: Cambio para usar IsConverted en lugar de ConvertedContactId
-30/12 MSC:  Añadido el LeadOrContactId para CM en entrantes</description>
+30/12 MSC:  Añadido el LeadOrContactId para CM en entrantes
+12/2023 JCB: Modificación para Texto de Argumentario especifico en Entrantes básicos
+15/12/2023 MSC: Pasar la tarea a los flujos Blecis para el control del campo &quot;Ejecutando argumentario&quot;.</description>
+    <environments>Default</environments>
     <formulas>
         <description>Añadir el Origen Cess al Header del argumentario.</description>
         <name>For_Heading</name>
@@ -557,13 +605,14 @@
         <name>Iterar_metadata</name>
         <label>Iterar metada</label>
         <locationX>50</locationX>
-        <locationY>2150</locationY>
+        <locationY>1922</locationY>
         <collectionReference>getMetadataViaURL</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Buscar_mensaje_bienvenida</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Comprobamos_campaign_member</targetReference>
         </noMoreValuesConnector>
     </loops>
@@ -590,12 +639,13 @@
         <description>Recogemos el Lead que inició el flujo</description>
         <name>Get_Lead</name>
         <label>Get_Lead</label>
-        <locationX>1172</locationX>
-        <locationY>758</locationY>
+        <locationX>1293</locationX>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_EsLeadConvertido</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -625,12 +675,13 @@
         <description>Obtiene el valor del metadata para filtrar por ese tiempo las tareas</description>
         <name>Get_ORG_ApplicationSettings_TiempoHabilTarea</name>
         <label>Get ORG_ApplicationSettings Tiempo Hábil de Tarea</label>
-        <locationX>974</locationX>
-        <locationY>398</locationY>
+        <locationX>1095</locationX>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>TipoObjeto</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>DeveloperName</field>
             <operator>EqualTo</operator>
@@ -638,18 +689,21 @@
                 <stringValue>ArgumentarioTiempoHabilTarea</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el registro miembro de campaña</description>
         <name>getCampaignMember</name>
         <label>getCampaignMember</label>
         <locationX>50</locationX>
-        <locationY>1910</locationY>
+        <locationY>1706</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>getMetadataViaURL</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -657,18 +711,21 @@
                 <elementReference>getTask.CampaignMemberId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el registro miembro de campaña</description>
         <name>getCampaignMember01</name>
         <label>getCampaignMember</label>
         <locationX>314</locationX>
-        <locationY>2270</locationY>
+        <locationY>2030</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_SourceCessCM02</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>SourceType__c</field>
             <operator>EqualTo</operator>
@@ -690,20 +747,23 @@
                 <stringValue>CTI</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el registro miembro de campaña</description>
         <name>getCampaignMember02</name>
         <label>getCampaignMember</label>
-        <locationX>578</locationX>
-        <locationY>2270</locationY>
+        <locationX>710</locationX>
+        <locationY>2030</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_SourceCessCM03</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>SourceType__c</field>
             <operator>NotEqualTo</operator>
@@ -725,20 +785,23 @@
                 <stringValue>CTI</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el contacto de la cuenta, para buscar en la tarea por el contacto</description>
         <name>GetContact</name>
         <label>GetContact</label>
-        <locationX>776</locationX>
-        <locationY>638</locationY>
+        <locationX>897</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Headers</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -764,12 +827,13 @@
         <description>Obtenemos el registro de nuestro Custom Metadata Type</description>
         <name>getMetadataViaIVR</name>
         <label>getMetadataViaIVR</label>
-        <locationX>578</locationX>
-        <locationY>2030</locationY>
+        <locationX>666</locationX>
+        <locationY>1814</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>checkArgumentary</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CampanaInboundIVR__c</field>
             <operator>EqualTo</operator>
@@ -777,18 +841,21 @@
                 <elementReference>getTask.CampanaInboundIVR__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>RelacionMensajeBienvenida__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el registro de nuestro Custom Metadata Type</description>
         <name>getMetadataViaURL</name>
         <label>getMetadataViaURL</label>
         <locationX>50</locationX>
-        <locationY>2030</locationY>
+        <locationY>1814</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterar_metadata</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>ScreenFlow_URL__c</field>
             <operator>EqualTo</operator>
@@ -796,22 +863,25 @@
                 <elementReference>getCampaignMember.SFURLPop__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>RelacionMensajeBienvenida__mdt</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>MensajeBienvenida__c</queriedFields>
         <queriedFields>ScreenFlowName__c</queriedFields>
         <queriedFields>Medio__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el tipo de objeto de Record id, según el prefijo del objeto. (Puede ser un cliente o un lead)</description>
         <name>GetObjectType</name>
         <label>GetObjectType</label>
-        <locationX>974</locationX>
-        <locationY>158</locationY>
+        <locationX>1095</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>TextosArgumentario</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>KeyPrefix</field>
             <operator>EqualTo</operator>
@@ -819,18 +889,21 @@
                 <elementReference>IdPrefixRecordId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>EntityDefinition</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos la tarea que se inserta al saltar la llamada al agente</description>
         <name>getTask</name>
         <label>Get callback task</label>
-        <locationX>974</locationX>
-        <locationY>1550</locationY>
+        <locationX>1095</locationX>
+        <locationY>1382</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_TareaEncontrada</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>OwnerId</field>
             <operator>EqualTo</operator>
@@ -873,20 +946,23 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Task</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
         <name>TextosArgumentario</name>
         <label>TextosArgumentario</label>
-        <locationX>974</locationX>
-        <locationY>278</locationY>
+        <locationX>1095</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_ORG_ApplicationSettings_TiempoHabilTarea</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Flujo__c</field>
             <operator>EqualTo</operator>
@@ -901,14 +977,17 @@
                 <elementReference>$User.LanguageLocaleKey</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>TextoArgumentario__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <description>NO matchea con Metadata</description>
         <name>NoMatcheaConMetadata</name>
         <label>NO Matchea con Metadata</label>
-        <locationX>842</locationX>
-        <locationY>2270</locationY>
+        <locationX>1018</locationX>
+        <locationY>2030</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -940,6 +1019,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -947,18 +1027,20 @@
             <fieldText>&lt;p&gt;{!TextosArgumentario.Texto3__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Finalizar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>PantallaEsperaTareas</name>
         <label>PantallaEsperaTareas</label>
-        <locationX>1370</locationX>
-        <locationY>2150</locationY>
+        <locationX>1546</locationX>
+        <locationY>1922</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>getTask</targetReference>
         </connector>
         <fields>
@@ -989,6 +1071,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -996,14 +1079,15 @@
             <fieldText>&lt;p&gt;{!TextosArgumentario.Texto2__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>SM_LeadConvertido</name>
         <label>SM_LeadConvertido</label>
-        <locationX>1040</locationX>
-        <locationY>998</locationY>
+        <locationX>1161</locationX>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1035,6 +1119,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1045,13 +1130,19 @@
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>GetObjectType</startElementReference>
+    <start>
+        <locationX>969</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetObjectType</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <subflows>
         <name>EntrantesBasicos</name>
         <label>Entrantes Basicos</label>
-        <locationX>578</locationX>
-        <locationY>2630</locationY>
+        <locationX>710</locationX>
+        <locationY>2654</locationY>
         <flowName>FlujoLlamadaEntrantesBasicos</flowName>
         <inputAssignments>
             <name>MensajeBienvenidaVariable</name>
@@ -1063,6 +1154,12 @@
             <name>Var_IN_CallbackTaskRecord</name>
             <value>
                 <elementReference>getTask</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_IN_CampaignInbound</name>
+            <value>
+                <elementReference>Var_OUT_InboundCampaign</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1106,7 +1203,7 @@
         <name>EntrantesBlecis</name>
         <label>Entrantes Blecis</label>
         <locationX>314</locationX>
-        <locationY>2630</locationY>
+        <locationY>2354</locationY>
         <flowName>FlujoLlamadaEntrantesBlecis</flowName>
         <inputAssignments>
             <name>inputWhoId</name>
@@ -1138,6 +1235,12 @@
                 <elementReference>Var_INOUT_SubHeading</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <name>Var_IN_CallbackTaskRecord</name>
+            <value>
+                <elementReference>getTask</elementReference>
+            </value>
+        </inputAssignments>
         <outputAssignments>
             <assignToReference>Var_INOUT_Heading</assignToReference>
             <name>Var_INOUT_Heading</name>
@@ -1155,7 +1258,7 @@
         <name>Salientes_Basicos</name>
         <label>Salientes Basicos</label>
         <locationX>402</locationX>
-        <locationY>2870</locationY>
+        <locationY>2570</locationY>
         <flowName>Flujo_Llamadas_Salientes_Basicos</flowName>
         <inputAssignments>
             <name>inputCMCTIRecord</name>
@@ -1216,7 +1319,7 @@
         <name>SalientesBlecis</name>
         <label>Salientes Blecis</label>
         <locationX>138</locationX>
-        <locationY>2870</locationY>
+        <locationY>2570</locationY>
         <flowName>Flujo_Llamada_Salientes_Blecis</flowName>
         <inputAssignments>
             <name>inputCMCTIRecord</name>
@@ -1252,6 +1355,12 @@
             <name>Var_INOUT_SubHeading</name>
             <value>
                 <elementReference>Var_INOUT_SubHeading</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Var_IN_CallbackTaskRecord</name>
+            <value>
+                <elementReference>getTask</elementReference>
             </value>
         </inputAssignments>
         <outputAssignments>
@@ -1384,6 +1493,14 @@
     <variables>
         <description>Variable que almacena el valor de SourceCess__c de la CM para añadir al Header de la tarea</description>
         <name>Var_NombreSourceCess</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Variable donde se indica la Campaña Inbound en el caso de que se especifique el uso de un Texto de Argumentario diferente.</description>
+        <name>Var_OUT_InboundCampaign</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

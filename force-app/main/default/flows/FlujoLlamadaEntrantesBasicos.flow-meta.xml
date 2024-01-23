@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Actualiza los intereses excluidos que vienen del subflujo, usamos assignment porque para otros outputs no se está guardando sobre variable.</description>
         <name>ActualizaInteresesExcluidosOpp</name>
         <label>Actualiza Intereses Excluidos del SubFlujo</label>
         <locationX>784</locationX>
-        <locationY>4358</locationY>
+        <locationY>4118</locationY>
         <assignmentItems>
             <assignToReference>Var_InteresesExcluidos</assignToReference>
             <operator>Add</operator>
@@ -25,11 +26,45 @@
         </connector>
     </assignments>
     <assignments>
+        <description>Poner el campo ejecutando argumentario de la tarea a false.</description>
+        <name>Assign_RunningArgument_False</name>
+        <label>Assign_RunningArgument_False</label>
+        <locationX>334</locationX>
+        <locationY>7208</locationY>
+        <assignmentItems>
+            <assignToReference>Var_IN_CallbackTaskRecord.RunningArgument__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Task_02</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Poner el campo ejecutando argumentario de la tarea a true.</description>
+        <name>Assign_RunningArgument_True</name>
+        <label>Assign_RunningArgument_True</label>
+        <locationX>334</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>Var_IN_CallbackTaskRecord.RunningArgument__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Task_01</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Establece la planificación de llamada, hay que tener en cuenta que podemos pasar por varios intereses y que no se marque la planificación de llamada más que en uno (raro, pero puede pasar)</description>
         <name>EstablecerPlanificarLlamadaContratar</name>
         <label>EstablecerPlanificarLlamadaContratar</label>
         <locationX>1510</locationX>
-        <locationY>5534</locationY>
+        <locationY>5174</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -46,7 +81,7 @@
         <name>EstablecerPlanificarLlamadaOportunidad</name>
         <label>EstablecerPlanificarLlamadaOportunidad</label>
         <locationX>652</locationX>
-        <locationY>4598</locationY>
+        <locationY>4334</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -63,7 +98,7 @@
         <name>Set_CMCTI_LabelChoice</name>
         <label>Set CMCTI Label y Choice</label>
         <locationX>442</locationX>
-        <locationY>1478</locationY>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>Loop_CMCTIs_Varios.CallIdentifier__c</assignToReference>
             <operator>Assign</operator>
@@ -87,7 +122,7 @@
         <name>Set_CMCTI_Size</name>
         <label>Set CMCTI Size</label>
         <locationX>334</locationX>
-        <locationY>758</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>Var_GetCMCTISize</assignToReference>
             <operator>AssignCount</operator>
@@ -104,7 +139,7 @@
         <name>Set_CMCTI_Variable</name>
         <label>Set CM CTI Variable</label>
         <locationX>138</locationX>
-        <locationY>1478</locationY>
+        <locationY>1538</locationY>
         <assignmentItems>
             <assignToReference>Var_CMCTI</assignToReference>
             <operator>Assign</operator>
@@ -121,7 +156,7 @@
         <name>Set_CMCTISeleccionadoVariable</name>
         <label>Set CM CTI Seleccionado Variable</label>
         <locationX>354</locationX>
-        <locationY>1934</locationY>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>Var_CMCTI</assignToReference>
             <operator>Assign</operator>
@@ -138,7 +173,7 @@
         <name>Set_InteresesExcluidos_ContactoInformado</name>
         <label>Set_InteresesExcluidos_ContactoInformado</label>
         <locationX>1411</locationX>
-        <locationY>4358</locationY>
+        <locationY>4118</locationY>
         <assignmentItems>
             <assignToReference>Var_InteresesExcluidos</assignToReference>
             <operator>Add</operator>
@@ -162,7 +197,7 @@
         <name>Set_InteresesExcluidos_GanarOpp</name>
         <label>Set_InteresesExcluidos_GanarOpp</label>
         <locationX>1840</locationX>
-        <locationY>6110</locationY>
+        <locationY>5690</locationY>
         <assignmentItems>
             <assignToReference>Var_InteresesExcluidos</assignToReference>
             <operator>Add</operator>
@@ -186,7 +221,7 @@
         <name>Set_InteresesExcluidosQuiereContratar</name>
         <label>Set_InteresesExcluidosQuiereContratar</label>
         <locationX>1642</locationX>
-        <locationY>5294</locationY>
+        <locationY>4958</locationY>
         <assignmentItems>
             <assignToReference>Var_InteresesExcluidos</assignToReference>
             <operator>Add</operator>
@@ -210,7 +245,7 @@
         <name>Set_InteresOportunidad</name>
         <label>Set_InteresOportunidadCMCTI</label>
         <locationX>1642</locationX>
-        <locationY>4934</locationY>
+        <locationY>4634</locationY>
         <assignmentItems>
             <assignToReference>VAR_OUT_InteresOportunidadCMCTI</assignToReference>
             <operator>Assign</operator>
@@ -227,7 +262,7 @@
         <name>Set_PlanificarLlamada_ContactoInformado</name>
         <label>Set_PlanificarLlamada_ContactoInformado</label>
         <locationX>1279</locationX>
-        <locationY>4598</locationY>
+        <locationY>4334</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -244,7 +279,7 @@
         <name>Set_PlanificarLlamada_Intereses</name>
         <label>Set_PlanificarLlamada_Intereses</label>
         <locationX>655</locationX>
-        <locationY>3662</locationY>
+        <locationY>3494</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -261,7 +296,7 @@
         <name>Set_PlanificarLlamadaColaboracion</name>
         <label>Set_PlanificarLlamadaColaboracion</label>
         <locationX>202</locationX>
-        <locationY>2390</locationY>
+        <locationY>2354</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -278,7 +313,7 @@
         <name>Set_PlanificarLlamadaGanarOpp</name>
         <label>Set_PlanificarLlamadaGanarOpp</label>
         <locationX>1708</locationX>
-        <locationY>6350</locationY>
+        <locationY>5906</locationY>
         <assignmentItems>
             <assignToReference>Var_PlanificarLlamada</assignToReference>
             <operator>Assign</operator>
@@ -295,7 +330,7 @@
         <name>Set_Stage_01</name>
         <label>Set_Stage_01</label>
         <locationX>334</locationX>
-        <locationY>278</locationY>
+        <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -312,7 +347,7 @@
         <name>Set_Stage_02</name>
         <label>Set_Stage_02</label>
         <locationX>334</locationX>
-        <locationY>998</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -329,7 +364,7 @@
         <name>Set_Stage_03</name>
         <label>Set_Stage_03</label>
         <locationX>787</locationX>
-        <locationY>3302</locationY>
+        <locationY>3170</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -346,7 +381,7 @@
         <name>Set_Stage_05</name>
         <label>Set_Stage_05</label>
         <locationX>1411</locationX>
-        <locationY>4118</locationY>
+        <locationY>3902</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -363,7 +398,7 @@
         <name>Set_Stage_061</name>
         <label>Set_Stage_061</label>
         <locationX>784</locationX>
-        <locationY>4118</locationY>
+        <locationY>3902</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -380,7 +415,7 @@
         <name>Set_Stage_062</name>
         <label>Set_Stage_062</label>
         <locationX>1840</locationX>
-        <locationY>5870</locationY>
+        <locationY>5474</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -397,7 +432,7 @@
         <name>Set_Stage_071</name>
         <label>Set_Stage_071</label>
         <locationX>652</locationX>
-        <locationY>4718</locationY>
+        <locationY>4442</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -406,6 +441,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -414,7 +450,7 @@
         <name>Set_Stage_072</name>
         <label>Set_Stage_072</label>
         <locationX>916</locationX>
-        <locationY>4598</locationY>
+        <locationY>4334</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -423,6 +459,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -431,7 +468,7 @@
         <name>Set_Stage_073</name>
         <label>Set_Stage_073</label>
         <locationX>1180</locationX>
-        <locationY>4934</locationY>
+        <locationY>4634</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -440,6 +477,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -448,7 +486,7 @@
         <name>Set_Stage_074</name>
         <label>Set_Stage_074</label>
         <locationX>1444</locationX>
-        <locationY>5870</locationY>
+        <locationY>5474</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -457,6 +495,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -465,7 +504,7 @@
         <name>Set_Stage_075</name>
         <label>Set_Stage_075</label>
         <locationX>1708</locationX>
-        <locationY>6470</locationY>
+        <locationY>6014</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -474,6 +513,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -482,7 +522,7 @@
         <name>Set_Stage_076</name>
         <label>Set_Stage_076</label>
         <locationX>1972</locationX>
-        <locationY>6350</locationY>
+        <locationY>5906</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -491,6 +531,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>Subflow_INTERESES_SalientesBasicos</targetReference>
         </connector>
     </assignments>
@@ -499,7 +540,7 @@
         <name>Set_Stage_08</name>
         <label>Set_Stage_08</label>
         <locationX>334</locationX>
-        <locationY>7322</locationY>
+        <locationY>6776</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -516,7 +557,7 @@
         <name>Decision_ExisteCMCTI</name>
         <label>¿Hay algún CM CTI?</label>
         <locationX>334</locationX>
-        <locationY>1238</locationY>
+        <locationY>1322</locationY>
         <defaultConnector>
             <targetReference>SubflujoPantallaCrearMiembrodeCampanaCTILlamadasEntrantes</targetReference>
         </defaultConnector>
@@ -557,7 +598,7 @@
         <name>Decision_Finalizar</name>
         <label>¿Finalizar Argumentario?</label>
         <locationX>787</locationX>
-        <locationY>3878</locationY>
+        <locationY>3686</locationY>
         <defaultConnector>
             <targetReference>InteresOportunidadSeleccionado</targetReference>
         </defaultConnector>
@@ -583,7 +624,7 @@
         <name>Decision_Finalizar_Colaboracion</name>
         <label>¿Finalizar Argumentario?</label>
         <locationX>334</locationX>
-        <locationY>2606</locationY>
+        <locationY>2546</locationY>
         <defaultConnector>
             <targetReference>PantallaDatosContactoInteres</targetReference>
         </defaultConnector>
@@ -609,7 +650,7 @@
         <name>Decision_Finalizar_Confirmacion</name>
         <label>¿Finalizar Argumentario?</label>
         <locationX>543</locationX>
-        <locationY>3182</locationY>
+        <locationY>3062</locationY>
         <defaultConnector>
             <targetReference>Set_Stage_03</targetReference>
         </defaultConnector>
@@ -635,7 +676,7 @@
         <name>Decision_LeadOContacto</name>
         <label>Decision_Lead o Contacto?</label>
         <locationX>543</locationX>
-        <locationY>2846</locationY>
+        <locationY>2762</locationY>
         <defaultConnector>
             <targetReference>Decision_Finalizar_Confirmacion</targetReference>
         </defaultConnector>
@@ -661,7 +702,7 @@
         <name>Decision_PlanificarLlamada_Colaboracion</name>
         <label>¿Planificar llamada?</label>
         <locationX>334</locationX>
-        <locationY>2270</locationY>
+        <locationY>2246</locationY>
         <defaultConnector>
             <targetReference>Decision_Finalizar_Colaboracion</targetReference>
         </defaultConnector>
@@ -687,7 +728,7 @@
         <name>Decision_PlanificarLlamada_ContactoInformado</name>
         <label>¿Planificar llamada Contacto Informado?</label>
         <locationX>1411</locationX>
-        <locationY>4478</locationY>
+        <locationY>4226</locationY>
         <defaultConnector>
             <targetReference>Decision_VolverIntereses_ContactoInformado</targetReference>
         </defaultConnector>
@@ -713,7 +754,7 @@
         <name>Decision_PlanificarLlamada_Contratar</name>
         <label>¿Planificar llamada Contratar?</label>
         <locationX>1642</locationX>
-        <locationY>5414</locationY>
+        <locationY>5066</locationY>
         <defaultConnector>
             <targetReference>VolverPantallaInteresesContratarSeguro</targetReference>
         </defaultConnector>
@@ -739,7 +780,7 @@
         <name>Decision_PlanificarLlamada_GanarOPP</name>
         <label>¿Planificar llamada Ganar Opp?</label>
         <locationX>1840</locationX>
-        <locationY>6230</locationY>
+        <locationY>5798</locationY>
         <defaultConnector>
             <targetReference>Set_Stage_076</targetReference>
         </defaultConnector>
@@ -765,7 +806,7 @@
         <name>Decision_PlanificarLlamada_Intereses</name>
         <label>¿Planificar llamada?</label>
         <locationX>787</locationX>
-        <locationY>3542</locationY>
+        <locationY>3386</locationY>
         <defaultConnector>
             <targetReference>Decision_Finalizar</targetReference>
         </defaultConnector>
@@ -791,7 +832,7 @@
         <name>Decision_PlanificarLlamada_Oportunidad</name>
         <label>¿Planificar llamada Oportunidad?</label>
         <locationX>784</locationX>
-        <locationY>4478</locationY>
+        <locationY>4226</locationY>
         <defaultConnector>
             <targetReference>Set_Stage_072</targetReference>
         </defaultConnector>
@@ -817,7 +858,7 @@
         <name>Decision_VolverIntereses_ContactoInformado</name>
         <label>¿Volver a pantalla de intereses?</label>
         <locationX>1411</locationX>
-        <locationY>4814</locationY>
+        <locationY>4526</locationY>
         <defaultConnector>
             <targetReference>Set_InteresOportunidad</targetReference>
         </defaultConnector>
@@ -843,7 +884,7 @@
         <name>InteresOportunidadSeleccionado</name>
         <label>¿Interes de tipo oportunidad seleccionado?</label>
         <locationX>1097</locationX>
-        <locationY>3998</locationY>
+        <locationY>3794</locationY>
         <defaultConnector>
             <targetReference>Set_Stage_05</targetReference>
         </defaultConnector>
@@ -868,7 +909,7 @@
         <name>VolverPantallaInteresesContratarSeguro</name>
         <label>Volver a pantalla de intereses?</label>
         <locationX>1642</locationX>
-        <locationY>5750</locationY>
+        <locationY>5366</locationY>
         <defaultConnector>
             <targetReference>Set_Stage_062</targetReference>
         </defaultConnector>
@@ -904,7 +945,9 @@
 27/10 AMT: Se añade redirección a la pantalla de intereses salientes básicos.
 02/11 NRG: Cambio en las formulas del planificador de llamada para solucionar una incidencia
 02/11 MMV: Cambios necesarios por cambio en parámetros de Subflujo Pantalla Crear Miembro de Campaña CTI
-21/11 AMT: Añadido el Subflow Borrar CMCTI</description>
+21/11 AMT: Añadido el Subflow Borrar CMCTI
+05/12/2023 JCS: Se modifica para recuperar Texto de argumentario especifico cuando se indique.
+15/12/2023 MSC: Añadir el control del campo &quot;Ejecutando argumentario&quot; de la tarea.</description>
     <dynamicChoiceSets>
         <description>Contiene los CM CTIs encontrados</description>
         <name>Choice_CMCTIsCollection</name>
@@ -914,11 +957,17 @@
         <object>CampaignMember</object>
         <valueField>Id</valueField>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <description>Contiene la etiqueta personaliza (Campaña CTI + Ramo) para mostrar en el radio button</description>
         <name>For_LabelCMCTIRadioButton</name>
         <dataType>String</dataType>
         <expression>TEXT({!Loop_CMCTIs_Varios.CampaignCTI__c}) + &apos; - &apos; + TEXT({!Loop_CMCTIs_Varios.LineInsurance__c})</expression>
+    </formulas>
+    <formulas>
+        <name>For_NombreTextoArgumentario</name>
+        <dataType>String</dataType>
+        <expression>IF(ISNULL({!Var_IN_CampaignInbound}) || ISBLANK({!Var_IN_CampaignInbound}), &quot;FlujoLlamadaEntrantesBasicos&quot;, {!Var_IN_CampaignInbound})</expression>
     </formulas>
     <formulas>
         <description>Se comprueba si el registro CM CTI es un Lead o un Contacto y devolvemos &apos;Lead&apos; o &apos;Contact&apos; para pasarselo como variable de entrada al planificador de llamada.</description>
@@ -951,7 +1000,7 @@
         <name>Loop_CMCTIs_Unico</name>
         <label>Loop CMCTIs</label>
         <locationX>50</locationX>
-        <locationY>1358</locationY>
+        <locationY>1430</locationY>
         <collectionReference>Get_CMCTI</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -966,7 +1015,7 @@
         <name>Loop_CMCTIs_Varios</name>
         <label>Loop CMCTIs</label>
         <locationX>354</locationX>
-        <locationY>1358</locationY>
+        <locationY>1430</locationY>
         <collectionReference>Get_CMCTI</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1000,11 +1049,12 @@
         <name>Get_CMCTI</name>
         <label>Get_CMCTI</label>
         <locationX>334</locationX>
-        <locationY>638</locationY>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_CMCTI_Size</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -1033,18 +1083,21 @@
                 <stringValue>CP - TEST_CESS_BLECIS_SEV</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene el registro de CM CTI seleccionad</description>
         <name>Get_CMCTI_Seleccionado</name>
         <label>Get CM CTI Seleccionado</label>
         <locationX>354</locationX>
-        <locationY>1814</locationY>
+        <locationY>1838</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_CMCTISeleccionadoVariable</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -1052,18 +1105,21 @@
                 <elementReference>S02_Radio_CMCTICollection</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Se obtiene el CM CTI Actualizado para mandar los datos actualizados al planificador</description>
         <name>Get_CMCTIActualizado</name>
         <label>Get CMCTI Actualizado</label>
         <locationX>334</locationX>
-        <locationY>7442</locationY>
+        <locationY>6884</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Opportunity_RelatedCMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -1071,18 +1127,21 @@
                 <elementReference>Var_CMCTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos la nueva oportunidad creada en la conversión</description>
         <name>Get_Opportunity_Nueva</name>
         <label>Get_Opportunity_Nueva</label>
         <locationX>1642</locationX>
-        <locationY>5054</locationY>
+        <locationY>4742</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Subflow_QuiereContratarSeguro</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -1090,20 +1149,23 @@
                 <elementReference>Var_CMCTI.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Opportunity</object>
         <sortField>CreatedDate</sortField>
         <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene las oportunidades ABIERTAS relacionadas con el CM CTI actualizado</description>
         <name>Get_Opportunity_RelatedCMCTI</name>
         <label>Get Opportunity Related CM CTI</label>
         <locationX>334</locationX>
-        <locationY>7562</locationY>
+        <locationY>6992</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Subflow_BorrarCMCTI</targetReference>
         </connector>
+        <filterLogic>( ( 1 AND 5 ) OR 2 OR 3) AND 4</filterLogic>
         <filters>
             <field>relatedCTICampaignMemberId__c</field>
             <operator>EqualTo</operator>
@@ -1148,11 +1210,12 @@
         <name>Get_RT_CMCTI</name>
         <label>Get_RT_CMCTI</label>
         <locationX>334</locationX>
-        <locationY>518</locationY>
+        <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_CMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -1167,23 +1230,26 @@
                 <stringValue>CTI</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
         <name>Get_TextosArgumentario</name>
         <label>Get_TextosArgumentario</label>
         <locationX>334</locationX>
-        <locationY>398</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_RT_CMCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Flujo__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>FlujoLlamadaEntrantesBasicos</stringValue>
+                <elementReference>For_NombreTextoArgumentario</elementReference>
             </value>
         </filters>
         <filters>
@@ -1193,18 +1259,43 @@
                 <elementReference>$User.LanguageLocaleKey</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>TextoArgumentario__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <description>Actualizar la tarea con el nuevo valor del campo ejecutando argumentario a true.</description>
+        <name>Update_Task_01</name>
+        <label>Update_Task_01</label>
+        <locationX>334</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>Set_Stage_02</targetReference>
+        </connector>
+        <inputReference>Var_IN_CallbackTaskRecord</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualizar la tarea con el nuevo valor del campo ejecutando argumentario a false.</description>
+        <name>Update_Task_02</name>
+        <label>Update_Task_02</label>
+        <locationX>334</locationX>
+        <locationY>7316</locationY>
+        <connector>
+            <targetReference>S03_PantallaFinalizar</targetReference>
+        </connector>
+        <inputReference>Var_IN_CallbackTaskRecord</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>Bienvenida</name>
         <label>Bienvenida</label>
         <locationX>334</locationX>
-        <locationY>878</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Set_Stage_02</targetReference>
+            <targetReference>Assign_RunningArgument_True</targetReference>
         </connector>
         <fields>
             <name>S01_Header</name>
@@ -1252,6 +1343,7 @@
                     <elementReference>$Flow.ActiveStages</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1259,6 +1351,7 @@
             <fieldText>&lt;p&gt;{!Get_TextosArgumentario.Texto1__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -1267,7 +1360,7 @@
         <name>S02_PantallaSeleccionCMCTI</name>
         <label>S02_Pantalla de Selección CMCTI</label>
         <locationX>354</locationX>
-        <locationY>1694</locationY>
+        <locationY>1730</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1320,6 +1413,7 @@
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1338,7 +1432,7 @@
         <name>S03_PantallaFinalizar</name>
         <label>S03 Pantalla de Finalización</label>
         <locationX>334</locationX>
-        <locationY>7802</locationY>
+        <locationY>7424</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1388,6 +1482,7 @@
                     <elementReference>$Flow.ActiveStages</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1422,19 +1517,38 @@
                     <elementReference>For_PlanificadorRecordId</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Var_PlanificarLlamada</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
+        <nextOrFinishButtonLabel>Finalizar</nextOrFinishButtonLabel>
         <showFooter>false</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>Argumentario_Subflow_DefinicionStages</startElementReference>
+    <start>
+        <locationX>208</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Argumentario_Subflow_DefinicionStages</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <subflows>
         <description>Llamada al subflow Argumentario_Subflow_DefinicionStages que habilita hacer la asignación del current Stage en cualquier Subflow</description>
         <name>Argumentario_Subflow_DefinicionStages</name>
         <label>Argumentario_Subflow_DefinicionStages</label>
         <locationX>334</locationX>
-        <locationY>158</locationY>
+        <locationY>134</locationY>
         <connector>
             <targetReference>Set_Stage_01</targetReference>
         </connector>
@@ -1451,7 +1565,7 @@
         <name>PantallaDatosContactoInteres</name>
         <label>Pantalla datos de contacto e interes</label>
         <locationX>543</locationX>
-        <locationY>2726</locationY>
+        <locationY>2654</locationY>
         <connector>
             <targetReference>Decision_LeadOContacto</targetReference>
         </connector>
@@ -1504,9 +1618,9 @@
         <name>Subflow_BorrarCMCTI</name>
         <label>Subflow_BorrarCMCTI</label>
         <locationX>334</locationX>
-        <locationY>7682</locationY>
+        <locationY>7100</locationY>
         <connector>
-            <targetReference>S03_PantallaFinalizar</targetReference>
+            <targetReference>Assign_RunningArgument_False</targetReference>
         </connector>
         <flowName>Subflow_BorrarCMCTI</flowName>
         <inputAssignments>
@@ -1533,7 +1647,7 @@
         <name>Subflow_ColaboracionCliente</name>
         <label>Subflow_ColaboracionCliente</label>
         <locationX>334</locationX>
-        <locationY>2150</locationY>
+        <locationY>2138</locationY>
         <connector>
             <targetReference>Decision_PlanificarLlamada_Colaboracion</targetReference>
         </connector>
@@ -1594,7 +1708,7 @@
         <name>Subflow_DatosContacto</name>
         <label>Subflow_DatosContacto</label>
         <locationX>334</locationX>
-        <locationY>1118</locationY>
+        <locationY>1214</locationY>
         <connector>
             <targetReference>Decision_ExisteCMCTI</targetReference>
         </connector>
@@ -1641,7 +1755,7 @@
         <name>Subflow_GanarOportunidad</name>
         <label>Subflow_GanarOportunidad</label>
         <locationX>1840</locationX>
-        <locationY>5990</locationY>
+        <locationY>5582</locationY>
         <connector>
             <targetReference>Set_InteresesExcluidos_GanarOpp</targetReference>
         </connector>
@@ -1708,7 +1822,7 @@
         <name>Subflow_INTERESES_SalientesBasicos</name>
         <label>Subflow_INTERESES_SalientesBasicos</label>
         <locationX>787</locationX>
-        <locationY>3422</locationY>
+        <locationY>3278</locationY>
         <connector>
             <targetReference>Decision_PlanificarLlamada_Intereses</targetReference>
         </connector>
@@ -1797,7 +1911,7 @@
         <name>Subflow_PantallaContactoInformado</name>
         <label>Subflow_PantallaContactoInformado</label>
         <locationX>1411</locationX>
-        <locationY>4238</locationY>
+        <locationY>4010</locationY>
         <connector>
             <targetReference>Set_InteresesExcluidos_ContactoInformado</targetReference>
         </connector>
@@ -1880,7 +1994,7 @@
         <name>Subflow_PantallaGestionOportunidad</name>
         <label>Subflow_PantallaGestionOportunidad</label>
         <locationX>784</locationX>
-        <locationY>4238</locationY>
+        <locationY>4010</locationY>
         <connector>
             <targetReference>ActualizaInteresesExcluidosOpp</targetReference>
         </connector>
@@ -1941,7 +2055,7 @@
         <name>Subflow_QuiereContratarSeguro</name>
         <label>Subflow_QuiereContratarSeguro</label>
         <locationX>1642</locationX>
-        <locationY>5174</locationY>
+        <locationY>4850</locationY>
         <connector>
             <targetReference>Set_InteresesExcluidosQuiereContratar</targetReference>
         </connector>
@@ -2005,7 +2119,7 @@
         <name>Subflujo_PantallaDatosCESS</name>
         <label>Subflujo Pantalla Datos CESS</label>
         <locationX>411</locationX>
-        <locationY>2966</locationY>
+        <locationY>2870</locationY>
         <connector>
             <targetReference>Decision_Finalizar_Confirmacion</targetReference>
         </connector>
@@ -2058,7 +2172,7 @@
         <name>SubflujoPantallaCrearMiembrodeCampanaCTILlamadasEntrantes</name>
         <label>Subflujo Pantalla Crear Miembro de Campaña CTI Llamadas Entrantes</label>
         <locationX>618</locationX>
-        <locationY>1358</locationY>
+        <locationY>1430</locationY>
         <connector>
             <targetReference>Subflow_ColaboracionCliente</targetReference>
         </connector>
@@ -2198,6 +2312,14 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <description>Variable que si esta rellena se recuperará un Texto de Argumentario diferente al de por defecto.</description>
+        <name>Var_IN_CampaignInbound</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <description>Who Id, viene de la apertura de argumentario</description>
