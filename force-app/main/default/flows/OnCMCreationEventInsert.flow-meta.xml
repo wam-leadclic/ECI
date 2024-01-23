@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asigna el Order por defecto para BLECIS.</description>
         <name>Asigna_CTIBLECIS_ORDER</name>
@@ -1158,7 +1159,8 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
 09/02/2023 MSC: Se modifica la asignación del Order y Skill solo para BLECIS si vienen rellenados.
 28/02/2023 JCB: Se modifica casuística para encontrar CM duplicados, solo se utiliza el campo Ramo.
 06/03/2023 MSC: Se modifica la asignación del Order y Skill solo para BLECIS si vienen rellenados aunque no encuentre regla CTI.
-03/07/2023 JCB: Se añade campo GCLID__c en la creación de CM MKT, Adicionales, Gestionados e IntegrationLog</description>
+03/07/2023 JCB: Se añade campo GCLID__c en la creación de CM MKT, Adicionales, Gestionados e IntegrationLog
+01/2024 LCS-JCB: Se añade condición que  Regla CTI esté activa en Get.</description>
     <formulas>
         <description>Información sobre el registro fallido en formato CSV para poderlo cargar fácilmente</description>
         <name>For_CSVRecordData</name>
@@ -1773,6 +1775,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crea un Campaign Member MKT relacionado con el Lead</description>
@@ -2102,6 +2105,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crear miembro de campaña AG con RT adicional y de tipo MKT, relacionado con un lead</description>
@@ -2467,6 +2471,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crear miembro de campaña AG con RT adicional y de tipo MKT, relacionado con un cliente</description>
@@ -2826,6 +2831,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Crea un registro de Integration Log con la información necesaria para cargar los registros</description>
@@ -2858,6 +2864,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>IntegrationLog__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Creamos un CM AG Gestionado relacionado con un Cliente</description>
@@ -3223,6 +3230,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <description>Creamos un CM AG Gestionado relacionado con un lead</description>
@@ -3594,6 +3602,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
             </value>
         </inputAssignments>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <description>Busca si hay algún Campaign Member en la campaña de MKT relacionado con Registro Origen (Lead o Contacto)</description>
@@ -3605,6 +3614,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>EstaYaCampMKT</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CampaignId</field>
             <operator>EqualTo</operator>
@@ -3619,7 +3629,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.matchedRecordId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busca campaign members del mismo registro (Lead o Contacto) en la campaña CTI</description>
@@ -3631,6 +3643,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>EstaYaEnCampCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>CampaignId</field>
             <operator>EqualTo</operator>
@@ -3645,7 +3658,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.matchedRecordId__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buscamos si existe algún CampaignMember creado ya, con el mismo Ramo (LineInsurance__c), Ignoramos el campo Descripción del Riesgo ya que no está informado.</description>
@@ -3657,6 +3672,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>existeCMMismoRamo</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>LineInsurance__c</field>
             <operator>NotEqualTo</operator>
@@ -3685,7 +3701,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.lineInsurance__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>AMCM__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buscamos si existe algún CampaignMember creado ya con el mismo ramo, se ignora el campo Descripción del Riesgo ya que no esta informado.</description>
@@ -3697,6 +3715,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>BuscarCMAGMismoRamo</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>LineInsurance__c</field>
             <operator>NotEqualTo</operator>
@@ -3725,7 +3744,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.lineInsurance__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene la campaña CTI por defecto</description>
@@ -3737,6 +3758,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>Asignar_campana_CTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
@@ -3744,7 +3766,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>OrgAppSett_CESS_CTIPLAN_CAMPAIGN</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>Obtener_campa_a_por_defecto</name>
@@ -3755,6 +3779,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>AsignarCampanaMKTDefecto</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
@@ -3762,7 +3787,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>OrgAppSett_CESS_MKTPLAN_CAMPAIGN</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene la campaña CTI que coincide con la regla matcheadas</description>
@@ -3774,6 +3801,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>ExisteCampanaCTI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
@@ -3781,7 +3809,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>ObtenerMatchReglaCTI.campaign_cti__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene la campaña de CTI indicada en el Lead</description>
@@ -3793,6 +3823,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>ExisteLaCampana</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Name</field>
             <operator>EqualTo</operator>
@@ -3800,7 +3831,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.campaignCTI__c</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Se obtiene la campaña de MKT correspondiente en función del ramo</description>
@@ -3812,6 +3845,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>ExisteCampanaMKTParaRamo</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>LineInsurance__c</field>
             <operator>EqualTo</operator>
@@ -3826,7 +3860,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>RTIdCampanaMKT</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos los Identificadores de los tipos de registro de los objetos necesarios</description>
@@ -3838,6 +3874,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>LoopRecordTypes</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>SobjectType</field>
             <operator>EqualTo</operator>
@@ -3859,7 +3896,9 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <stringValue>Campaign</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Busca una coincidencia en al objeto reglas CTI</description>
@@ -3871,6 +3910,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>ReglaCTIActivaONoMatch</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>source_cess__c</field>
             <operator>EqualTo</operator>
@@ -3885,7 +3925,16 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <elementReference>$Record.sourceType__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>CTI_Rules__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtiene todos los datos que necesitamos del metadata</description>
@@ -3897,6 +3946,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <connector>
             <targetReference>LoopORGApplicationSettings</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>MasterLabel</field>
             <operator>EqualTo</operator>
@@ -3939,10 +3989,12 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
                 <stringValue>CESS_CTIBLECIS_SKILL</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>Value__c</queriedFields>
         <queriedFields>MasterLabel</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Actualiza_CM_CTI_con_orden</name>
@@ -3955,6 +4007,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <faultConnector>
             <targetReference>Create_IntegrationLog</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>LeadOrContactId</field>
             <operator>EqualTo</operator>
@@ -4012,6 +4065,7 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         <faultConnector>
             <targetReference>Create_IntegrationLog</targetReference>
         </faultConnector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>LeadOrContactId</field>
             <operator>EqualTo</operator>
@@ -4052,7 +4106,15 @@ VERSION MARIO: Añado el control para no enviar el miembro de campaña (campo Or
         </inputAssignments>
         <object>CampaignMember</object>
     </recordUpdates>
-    <startElementReference>ObtenerIdsTIposDeRegistro</startElementReference>
+    <start>
+        <locationX>1508</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ObtenerIdsTIposDeRegistro</targetReference>
+        </connector>
+        <object>CMCreationEvent__e</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
     <status>Active</status>
     <variables>
         <name>CMCTIToUpdate</name>
