@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Asigna el motivo seleccionado en la pantalla al campos de la oportunidad</description>
         <name>AsignaMotivoGanado</name>
         <label>Asigna el Motivo de Ganado</label>
         <locationX>127</locationX>
-        <locationY>1538</locationY>
+        <locationY>1430</locationY>
         <assignmentItems>
             <assignToReference>OppVariable.Win_Reason__c</assignToReference>
             <operator>Assign</operator>
@@ -57,7 +58,7 @@
         <name>MarcaInteresExluido</name>
         <label>MarcaInteresExluido</label>
         <locationX>993</locationX>
-        <locationY>3236</locationY>
+        <locationY>3128</locationY>
         <assignmentItems>
             <assignToReference>InteresExcluido</assignToReference>
             <operator>Assign</operator>
@@ -88,7 +89,7 @@
         <name>mostrarErrorPoliza</name>
         <label>Mostrar Mensaje Error Poliza</label>
         <locationX>1106</locationX>
-        <locationY>1214</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>mostrarMensajeErrorPoliza</assignToReference>
             <operator>Assign</operator>
@@ -97,6 +98,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>PantallaAsignarPoliza</targetReference>
         </connector>
     </assignments>
@@ -105,7 +107,7 @@
         <name>Set_Email</name>
         <label>Set_Email</label>
         <locationX>314</locationX>
-        <locationY>2294</locationY>
+        <locationY>2186</locationY>
         <assignmentItems>
             <assignToReference>RecuperamosContact.Email</assignToReference>
             <operator>Assign</operator>
@@ -122,7 +124,7 @@
         <name>Set_MostrarErrorEmailDuplicadoTrue</name>
         <label>Set_MostrarErrorEmailDuplicadoTrue</label>
         <locationX>50</locationX>
-        <locationY>2294</locationY>
+        <locationY>2186</locationY>
         <assignmentItems>
             <assignToReference>Var_MostrarErrorEmailDuplicado</assignToReference>
             <operator>Assign</operator>
@@ -138,6 +140,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>OppWon</targetReference>
         </connector>
     </assignments>
@@ -146,7 +149,7 @@
         <name>Set_MostrarErrorEmailValidacionTrue</name>
         <label>Set_MostrarErrorEmailValidacionTrue</label>
         <locationX>578</locationX>
-        <locationY>1970</locationY>
+        <locationY>1862</locationY>
         <assignmentItems>
             <assignToReference>Var_MostrarErrorEmailValidacion</assignToReference>
             <operator>Assign</operator>
@@ -162,6 +165,7 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>OppWon</targetReference>
         </connector>
     </assignments>
@@ -170,7 +174,7 @@
         <name>Set_Opp_Variable</name>
         <label>Set Opp Variable</label>
         <locationX>127</locationX>
-        <locationY>1214</locationY>
+        <locationY>1106</locationY>
         <assignmentItems>
             <assignToReference>OppVariable</assignToReference>
             <operator>Assign</operator>
@@ -204,7 +208,7 @@
         <name>Set_VariablesEntrada</name>
         <label>Set_VariablesEntrada</label>
         <locationX>380</locationX>
-        <locationY>1754</locationY>
+        <locationY>1646</locationY>
         <assignmentItems>
             <assignToReference>Var_EntradaEmail</assignToReference>
             <operator>Assign</operator>
@@ -251,7 +255,7 @@
         <name>Decision_EmailValido</name>
         <label>Decision_EmailValido</label>
         <locationX>380</locationX>
-        <locationY>1862</locationY>
+        <locationY>1754</locationY>
         <defaultConnector>
             <targetReference>Set_MostrarErrorEmailValidacionTrue</targetReference>
         </defaultConnector>
@@ -277,7 +281,7 @@
         <name>Decision_EstaEmailRelleno</name>
         <label>Decision_EstaEmailRelleno?</label>
         <locationX>127</locationX>
-        <locationY>1646</locationY>
+        <locationY>1538</locationY>
         <defaultConnector>
             <targetReference>Set_VariablesEntrada</targetReference>
         </defaultConnector>
@@ -303,7 +307,7 @@
         <name>Decision_Hay_duplicados</name>
         <label>Decision_¿Hay duplicados?</label>
         <locationX>182</locationX>
-        <locationY>2186</locationY>
+        <locationY>2078</locationY>
         <defaultConnector>
             <targetReference>Set_Email</targetReference>
         </defaultConnector>
@@ -352,7 +356,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>DisponeDatosScreen</targetReference>
+                <targetReference>PantallaAsignarPoliza</targetReference>
             </connector>
             <label>Si</label>
         </rules>
@@ -362,7 +366,7 @@
         <name>polizaInformada</name>
         <label>Se ha informado la póliza?</label>
         <locationX>616</locationX>
-        <locationY>1106</locationY>
+        <locationY>998</locationY>
         <defaultConnector>
             <targetReference>mostrarErrorPoliza</targetReference>
         </defaultConnector>
@@ -418,7 +422,7 @@
 03/05/2023 JCB: Se añade DisplayText para información legal.
 27/06/2023 JCB: Se añade Lista de selección dependiente AceleradorOfrecido-Ramo-ImporteAcelerador
 30/06/2023 JCB: Se añade Ramo Salud para Acelerador ofrecido.
-10/07/2023 JCB: Se añade enlace a Aplicación Externa para Aceleradores ofrecidos</description>
+21/06/2023 MSC: Eliminación de la Pantalla Dispone Datos Screen.</description>
     <dynamicChoiceSets>
         <description>Valores si/no si se ha ofrecido Acelerador</description>
         <name>AceleradorOfrecido_ChoiceSet</name>
@@ -616,6 +620,7 @@
         <picklistField>Win_Reason__c</picklistField>
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
+    <environments>Default</environments>
     <formulas>
         <description>Valor para opp planificada del picklist que se ha mostrado en el screen</description>
         <name>For_SelectedPostponedReason</name>
@@ -647,12 +652,6 @@
   )
  )
 )</expression>
-    </formulas>
-    <formulas>
-        <description>Enlace a aplicación externa para registro de Aceleradores Ofrecidos por los agentes.</description>
-        <name>Formula_URLAppAceleradores</name>
-        <dataType>String</dataType>
-        <expression>HYPERLINK({!$Label.Aceleradores_URLAplicacionExterna}, {!$Label.Aceleradores_MensajeEnURL})</expression>
     </formulas>
     <formulas>
         <description>Comprobamos a través de regex que el email tiene el formato correcto</description>
@@ -716,11 +715,12 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <name>Get_ContactosDuplicados</name>
         <label>Get_ContactosDuplicados</label>
         <locationX>182</locationX>
-        <locationY>1970</locationY>
+        <locationY>1862</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_LeadsDuplicados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Email</field>
             <operator>EqualTo</operator>
@@ -742,18 +742,21 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <elementReference>OppVariable.Account.PersonContactId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Buscamos en Leads registros con el mismo email</description>
         <name>Get_LeadsDuplicados</name>
         <label>Get_LeadsDuplicados</label>
         <locationX>182</locationX>
-        <locationY>2078</locationY>
+        <locationY>1970</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_Hay_duplicados</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Email</field>
             <operator>EqualTo</operator>
@@ -775,7 +778,9 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el mensaje de aviso de domiciliacion bancaria</description>
@@ -787,6 +792,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <connector>
             <targetReference>OppAdvanceQuestion</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Label</field>
             <operator>EqualTo</operator>
@@ -794,7 +800,9 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <stringValue>Argumentario - Aviso Domiciliacion Banco</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Obtenemos el mensaje de aviso de tarjeta ECI del metadata</description>
@@ -806,6 +814,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <connector>
             <targetReference>getMetadataAvisoDomiciliacion</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Label</field>
             <operator>EqualTo</operator>
@@ -813,18 +822,21 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <stringValue>Argumentario - Aviso Tarjeta ECI</stringValue>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>ORG_ApplicationSettings__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recuperamos el contacto relacionada con la oportunidad</description>
         <name>RecuperamosContact</name>
         <label>Recuperamos el Contact</label>
         <locationX>127</locationX>
-        <locationY>1322</locationY>
+        <locationY>1214</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>OppWon</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -832,18 +844,21 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <elementReference>OppVariable.Account.PersonContactId</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recuperamos la oportunidad con los valores actualizados para comprobar si se ha asignado póliza</description>
         <name>recuperamosOportunidad</name>
         <label>Recuperamos La Oportunidad</label>
         <locationX>616</locationX>
-        <locationY>998</locationY>
+        <locationY>890</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>polizaInformada</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -851,7 +866,9 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <elementReference>OppVariable.Id</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <description>Recoge los textos de Argumentario que se usan en las pantallas de ESTE Flujo</description>
@@ -863,6 +880,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <connector>
             <targetReference>getMetadataAvisoTarjetaECI</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Flujo__c</field>
             <operator>EqualTo</operator>
@@ -877,14 +895,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                 <elementReference>$User.LanguageLocaleKey</elementReference>
             </value>
         </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>TextoArgumentario__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <description>Actualizamos el contacto con el nuevo email</description>
         <name>ActualizamosContacto</name>
         <label>Actualizamos Contacto</label>
         <locationX>314</locationX>
-        <locationY>2402</locationY>
+        <locationY>2294</locationY>
         <connector>
             <targetReference>OppWonUpdate</targetReference>
         </connector>
@@ -894,7 +914,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <name>OppWonUpdate</name>
         <label>Opp Won Update</label>
         <locationX>127</locationX>
-        <locationY>2762</locationY>
+        <locationY>2654</locationY>
         <connector>
             <targetReference>MarcaInteresExluido</targetReference>
         </connector>
@@ -914,73 +934,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         </connector>
         <inputReference>OppVariable</inputReference>
     </recordUpdates>
-    <screens>
-        <name>DisponeDatosScreen</name>
-        <label>Dispone Datos Screen</label>
-        <locationX>616</locationX>
-        <locationY>782</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>PantallaAsignarPoliza</targetReference>
-        </connector>
-        <fields>
-            <name>S02_Header</name>
-            <extensionName>dhfpi:lwcFlowHeaderWithProgress</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>heading</name>
-                <value>
-                    <elementReference>Var_INOUT_Heading</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>iconSize</name>
-                <value>
-                    <stringValue>small</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>fontSize</name>
-                <value>
-                    <stringValue>12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>icon</name>
-                <value>
-                    <elementReference>Var_INOUT_HeadingIcon</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>subHeading</name>
-                <value>
-                    <elementReference>Var_INOUT_SubHeading</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>TextEnlaceSGC</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto4__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <description>Pregunta del flujo de recopilación de datos</description>
         <name>OppAdvanceQuestion</name>
@@ -1039,12 +993,74 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
             <name>OppAdvanceQuestion_Section1</name>
             <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>OppAdvanceQuestion_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>formaPagoRadioButton</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>{!TextosArgumentario.Etiqueta2__c}</fieldText>
+                    <fieldType>RadioButtons</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>mensajeTarjetaECI</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!getMetadataAvisoTarjetaECI.Value__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>formaPagoRadioButton</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Yes</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>mensajeDomiciliacionBancaria</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!getMetadataAvisoDomiciliacion.Value__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>formaPagoRadioButton</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>No</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>inputEsFlujoBasicos</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>DataOppCompleteQuestion</name>
@@ -1054,12 +1070,280 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>{!TextosArgumentario.Etiqueta1__c}</fieldText>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>formaPagoRadioButton</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>inputEsFlujoBasicos</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>OppAdvanceQuestion_Section2</name>
             <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>OppAdvanceQuestion_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonDefault</name>
+                    <choiceReferences>Choice_MotivoAplazamiento</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonBlecis</name>
+                    <choiceReferences>Choice_OppPlanificadaBlecis</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BLECIS</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonEntrantesBasicos</name>
+                    <choiceReferences>Choice_OppPlanificadaEntrantesBasicos</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Telefono</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Manual</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonPrestamos</name>
+                    <choiceReferences>Choice_OppPlanificadaPrestamos</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>PRÉSTAMOS</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonSalientesBasicos</name>
+                    <choiceReferences>Choice_OppPlanificadaSalientesBasicos</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Web</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Adwords</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Blog</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Corregistros</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Display</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Email</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>RRSS</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>SMS</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Referencia</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S01_Picklist_PostponementReasonBBDD</name>
+                    <choiceReferences>Choice_OppPlanificadaBBDD</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Motivo Aplazamiento</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BBDD</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>BBDD 2</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>TextoPlanificarLlamada2</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto3__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonDefault</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonBlecis</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonEntrantesBasicos</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonPrestamos</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonSalientesBasicos</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S01_Picklist_PostponementReasonBBDD</leftValueReference>
+                            <operator>IsNull</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>DataOppCompleteQuestion</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>No</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -1068,7 +1352,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <name>OppWon</name>
         <label>OppWon</label>
         <locationX>127</locationX>
-        <locationY>1430</locationY>
+        <locationY>1322</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1121,6 +1405,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1133,6 +1418,23 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Motivo de Ganancia</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>BLECIS</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>WinReasonEntrantesBasicos</name>
@@ -1144,6 +1446,23 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Motivo de Ganancia</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Telefono</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Manual</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>WinReasonPrestamos</name>
@@ -1155,6 +1474,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Motivo de Ganancia</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>PRÉSTAMOS</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>WinReasonSalientesBasicos</name>
@@ -1166,6 +1495,72 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Motivo de Ganancia</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Web</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Adwords</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Blog</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Corregistros</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Display</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Email</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>RRSS</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>SMS</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Referencia</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>WinReasonBBDD</name>
@@ -1177,6 +1572,23 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Motivo de Ganancia</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>BBDD</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.source_type__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>BBDD 2</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>ScreenStageName</name>
@@ -1201,6 +1613,23 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>NOT(1 OR 2)</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.CTI_Campaign__c</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>BLECIS</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>OppVariable.CTI_Campaign__c</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>PRESTAMOS</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_RamoAceleradorOfrecido</name>
@@ -1209,6 +1638,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Ramo</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_AceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Sí</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_ImporteAutos</name>
@@ -1217,6 +1656,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Autos/Motos</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_AceleradorHogar</name>
@@ -1225,6 +1674,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Hogar</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_AceleradorVida</name>
@@ -1233,6 +1692,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Vida</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_AceleradorAccidentes</name>
@@ -1241,6 +1710,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Accidentes</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_AceleradorDecesos</name>
@@ -1249,6 +1728,16 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Decesos</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Picklist_AceleradorSalud</name>
@@ -1257,22 +1746,157 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>Importe acelerador ofrecido</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>displayText_URLAppAceleradores</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;{!Formula_URLAppAceleradores}&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Picklist_RamoAceleradorOfrecido</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Salud</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>OppWon_Section1</name>
             <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>OppWon_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>textoArgumentario9</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto9__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>screenContactEmail</name>
+                    <extensionName>flowruntime:email</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Var_EntradaEmail</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>errorEmailValidacion</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto10__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Var_MostrarErrorEmailValidacion</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>errorEmailDuplicado</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!TextosArgumentario.Texto11__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Var_MostrarErrorEmailDuplicado</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>7 AND (1 OR 2 OR 3 OR 4 OR 5) AND  6</conditionLogic>
+                <conditions>
+                    <leftValueReference>WinReasonDefault</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>WinReasonEntrantesBasicos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>WinReasonPrestamos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>WinReasonSalientesBasicos</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>WinReasonBBDD</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>ScreenStageName</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>RecuperamosContact.Email</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>mensajeInformacionLegal</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(43, 92, 49);&quot;&gt;{!TextoInformacionLegal}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>OppVariable.CTI_Campaign__c</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>BLECIS</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
@@ -1281,7 +1905,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <name>PantallaAsignarPoliza</name>
         <label>Asignar poliza</label>
         <locationX>616</locationX>
-        <locationY>890</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1334,6 +1958,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                     <elementReference>Var_INOUT_SubHeading</elementReference>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1352,7 +1977,9 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                     <stringValue>Opportunity</stringValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>errorPoliza</name>
@@ -1367,11 +1994,12 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
         <name>PantallaMostrarMensajeError</name>
         <label>Pantalla Mostrar Mensaje Error</label>
         <locationX>842</locationX>
-        <locationY>2870</locationY>
+        <locationY>2762</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>OppWon</targetReference>
         </connector>
         <fields>
@@ -1426,6 +2054,7 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
                     <booleanValue>false</booleanValue>
                 </value>
             </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -1433,10 +2062,17 @@ IF( NOT( ISBLANK(  {!Picklist_AceleradorSalud}  ) ), {!Picklist_AceleradorSalud}
             <fieldText>&lt;p&gt;{!TextosArgumentario.Texto7__c}&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
+        <nextOrFinishButtonLabel>Continuar</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <startElementReference>Switch</startElementReference>
+    <start>
+        <locationX>1187</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Switch</targetReference>
+        </connector>
+    </start>
     <status>Active</status>
     <variables>
         <description>Parámetro de entrada. Identificador del Campaign Member CTI. Se utiliza para la pantalla del planificador de llamadas</description>
