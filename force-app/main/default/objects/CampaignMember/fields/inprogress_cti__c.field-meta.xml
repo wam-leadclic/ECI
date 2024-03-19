@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>inprogress_cti__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Campo (actualizable desde CTI) utilizado en automatización para el cambio de estado de CM CTI y CMs Marketing a &apos;En progreso&apos;, de estar relacionado con un Lead también se cambiará éste al mismo estado.</description>
+    <externalId>false</externalId>
+    <label>En Progreso</label>
+    <type>Checkbox</type>
+</CustomField>
