@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Convertir_Lead</name>
         <label>Convertir Lead</label>
-        <locationX>1370</locationX>
+        <locationX>1810</locationX>
         <locationY>2447</locationY>
         <actionName>ConvertLeadsInvocable</actionName>
         <actionType>apex</actionType>
@@ -41,14 +41,16 @@
                 <elementReference>$Record.LeadId</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>ConvertLeadsInvocable</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>54.0</apiVersion>
     <assignments>
         <description>Agrega el registro a la lista de MKT para enviar el email</description>
         <name>AgregaRegistroLista</name>
         <label>Agrega el registro a la lista</label>
-        <locationX>2824</locationX>
+        <locationX>3264</locationX>
         <locationY>1823</locationY>
         <assignmentItems>
             <assignToReference>MiembrosCampanaMKTEnvioEmail</assignToReference>
@@ -65,7 +67,7 @@
         <description>Asigno el Id del tipo de registro de miembro de campaña AG de tipo Adicional a una variable</description>
         <name>AssignRecordTypeAdditionalCampaignMemberAGId</name>
         <label>AssignRecordTypeAdditionalCampaignMemberAGId</label>
-        <locationX>2888</locationX>
+        <locationX>3086</locationX>
         <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>RecordTypeIdAdditionalCampaignMemberAG</assignToReference>
@@ -82,7 +84,7 @@
         <description>Asigno el Id del tipo de registro de miembro de campaña de tipo CTI a una variable</description>
         <name>AssignRecordTypeCTIId</name>
         <label>AssignRecordTypeCTIId</label>
-        <locationX>2360</locationX>
+        <locationX>2558</locationX>
         <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>RecordTypeCampaignMemberCTIId</assignToReference>
@@ -99,7 +101,7 @@
         <description>Asigno el Id del tipo de registro de miembro de campaña AG de tipo Gestionado</description>
         <name>AssignRecordTypeManagedCampaignMemberAG</name>
         <label>AssignRecordTypeManagedCampaignMemberAG</label>
-        <locationX>3152</locationX>
+        <locationX>3350</locationX>
         <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>RecordTypeIdCampaignMemberManaged</assignToReference>
@@ -116,7 +118,7 @@
         <description>Asigno el Id del tipo de registro de miembro de campaña de tipo MKT a una variable</description>
         <name>AssignRecordTypeMKTId</name>
         <label>AssignRecordTypeMKTId</label>
-        <locationX>2624</locationX>
+        <locationX>2822</locationX>
         <locationY>647</locationY>
         <assignmentItems>
             <assignToReference>RecordTypeCampaignMemberMKTId</assignToReference>
@@ -132,8 +134,8 @@
     <assignments>
         <name>setear_error_reglaCTIdesactivada</name>
         <label>setear error regla CTI desactivada</label>
-        <locationX>578</locationX>
-        <locationY>3779</locationY>
+        <locationX>1018</locationX>
+        <locationY>3887</locationY>
         <assignmentItems>
             <assignToReference>CTIerror</assignToReference>
             <operator>Assign</operator>
@@ -148,8 +150,8 @@
     <assignments>
         <name>setear_error_sin_telefono</name>
         <label>setear error sin telefono</label>
-        <locationX>314</locationX>
-        <locationY>3779</locationY>
+        <locationX>754</locationX>
+        <locationY>3887</locationY>
         <assignmentItems>
             <assignToReference>CTIerror</assignToReference>
             <operator>Assign</operator>
@@ -165,7 +167,7 @@
         <description>Comprobamos si el miembro de campaña CTI tiene oportunidades, miembros de campaña MKT o Miembros de campaña adicionales abiertos para cerrarlo</description>
         <name>CampaignMemberMKTMismoCTIAbiertos</name>
         <label>¿El miembro de campaña CTI tiene otros hijos abiertos?</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2987</locationY>
         <defaultConnector>
             <targetReference>CreaCMAGRTGestionadoTipoMKT</targetReference>
@@ -204,8 +206,8 @@
 - El Switch para desactivar el envío a CTI está a false</description>
         <name>CondicionesDeEnvio</name>
         <label>¿Se dan las condiciones de envío?</label>
-        <locationX>314</locationX>
-        <locationY>3563</locationY>
+        <locationX>754</locationX>
+        <locationY>3671</locationY>
         <defaultConnector>
             <targetReference>Marcado_de_errores</targetReference>
         </defaultConnector>
@@ -258,8 +260,8 @@
         <description>Si el Resultado CTI está contenido en el metadata y el estado es en proceso cambiado el propietario del Lead</description>
         <name>ConGestionCTI</name>
         <label>¿Con Gestión en CTI?</label>
-        <locationX>556</locationX>
-        <locationY>2063</locationY>
+        <locationX>996</locationX>
+        <locationY>2171</locationY>
         <defaultConnector>
             <targetReference>ResultadoCTIReplanificar</targetReference>
         </defaultConnector>
@@ -290,7 +292,7 @@
     <decisions>
         <name>CTI_o_MKT</name>
         <label>CTI o MKT?</label>
-        <locationX>2272</locationX>
+        <locationX>2470</locationX>
         <locationY>923</locationY>
         <defaultConnectorLabel>Sin definir</defaultConnectorLabel>
         <rules>
@@ -304,7 +306,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>HaCambiadoNumeroIntentos</targetReference>
+                <targetReference>Decision_MarcadoAEnProgreso</targetReference>
             </connector>
             <label>CTI</label>
         </rules>
@@ -333,7 +335,7 @@
 - El Lead tiene Email</description>
         <name>CumpleCondicionesEnvioEmail</name>
         <label>¿Cumple condiciones para el envío de Email?</label>
-        <locationX>2956</locationX>
+        <locationX>3396</locationX>
         <locationY>1715</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoEstado</targetReference>
@@ -394,8 +396,8 @@
         <description>Si cumple los criterios para el cierre: que el número de intentos supere el máximo establecido en el metadata y el resultado es igual al incluido en el metadata</description>
         <name>CumpleCriteriosCierre</name>
         <label>¿Cumple criterios para el cierre?</label>
-        <locationX>556</locationX>
-        <locationY>1247</locationY>
+        <locationX>996</locationX>
+        <locationY>1355</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoUltimoResultadoCTI</targetReference>
         </defaultConnector>
@@ -424,10 +426,43 @@
         </rules>
     </decisions>
     <decisions>
+        <description>Revisión del campo booleano inprogress_cti__c. Este campo se actualiza desde CTI mediante API estándar de CampaignMember</description>
+        <name>Decision_MarcadoAEnProgreso</name>
+        <label>¿Marcado a En Progreso?</label>
+        <locationX>666</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>HaCambiadoNumeroIntentos</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Si</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.inprogress_cti__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.inprogress_cti__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_CMsMarketing</targetReference>
+            </connector>
+            <label>Sí</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>En función del nuevo estado hacemos unas cosas u otras</description>
         <name>Decision_NuevoEstado</name>
         <label>¿Cuál es el Nuevo Estado?</label>
-        <locationX>2343</locationX>
+        <locationX>2783</locationX>
         <locationY>2231</locationY>
         <defaultConnector>
             <targetReference>Obtener_CM_CTI_Relacionado</targetReference>
@@ -468,7 +503,7 @@
         <description>Si NO hay otros Campaign Member CTI para ese Lead actualizamos el estado del Lead a Aplazado</description>
         <name>Decision_OtrosCMCTINoAplazados</name>
         <label>¿Hay otros CM CTI No Aplazados?</label>
-        <locationX>2030</locationX>
+        <locationX>2470</locationX>
         <locationY>3095</locationY>
         <defaultConnectorLabel>Si</defaultConnectorLabel>
         <rules>
@@ -500,7 +535,7 @@
 Si no tiene actualizamos el CM CTI como aplazado</description>
         <name>Decision_OtrosInteresesMismoCMCTI</name>
         <label>¿El miembro de campaña CTI tiene otros intereses abiertos?</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2879</locationY>
         <defaultConnectorLabel>Si</defaultConnectorLabel>
         <rules>
@@ -527,9 +562,42 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         </rules>
     </decisions>
     <decisions>
+        <description>Evaluación si esta relacionado con Lead o Cliente.</description>
+        <name>Decision_RelacionadoConLeadOCliente</name>
+        <label>¿Relacionado con Lead o Cliente?</label>
+        <locationX>182</locationX>
+        <locationY>1355</locationY>
+        <defaultConnector>
+            <targetReference>Update_CurrentCMCTI</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Cliente</defaultConnectorLabel>
+        <rules>
+            <name>LeadRelated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Related</targetReference>
+            </connector>
+            <label>Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Es_fraudulento</name>
         <label>Es fraudulento?</label>
-        <locationX>2769</locationX>
+        <locationX>3209</locationX>
         <locationY>1139</locationY>
         <defaultConnector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
@@ -555,7 +623,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Comprobamos si el miembro de campaña está asociado a un Lead o cliente ya que si está asociado a un Lead deberá realizar la conversión del mismo</description>
         <name>EsLeadCliente</name>
         <label>¿Es un Lead o Cliente?</label>
-        <locationX>1502</locationX>
+        <locationX>1942</locationX>
         <locationY>2339</locationY>
         <defaultConnector>
             <targetReference>Crea_oportunidad_cliente_existente</targetReference>
@@ -581,7 +649,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si esta asociado a un lead</description>
         <name>EstaAsociadoLead</name>
         <label>¿Esta asociado a un lead?</label>
-        <locationX>2571</locationX>
+        <locationX>3011</locationX>
         <locationY>1247</locationY>
         <defaultConnector>
             <targetReference>Actualiza_Es_Fraudulento_cliente</targetReference>
@@ -614,7 +682,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Comprobamos si el miembro de campaña MKT es cerrado</description>
         <name>EstadoMiembroCampanaMKTCerrado</name>
         <label>El estado del miembro de campaña es cerrado</label>
-        <locationX>2976</locationX>
+        <locationX>3416</locationX>
         <locationY>3395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -644,8 +712,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si el estado es No contactado o No cualificado, se cierran intereses</description>
         <name>EstadoNoCualificadooNoContactado</name>
         <label>Estado No cualificado o No contactado</label>
-        <locationX>512</locationX>
-        <locationY>2963</locationY>
+        <locationX>952</locationX>
+        <locationY>3071</locationY>
         <defaultConnector>
             <targetReference>UpdateCMMKTNuevoResultado</targetReference>
         </defaultConnector>
@@ -678,7 +746,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Comprobamos si hay que actualizar el estado del Lead o no</description>
         <name>ExisteOtroMiembroCampanaCTIYEresLead</name>
         <label>¿Existe otro miembro de campaña CTI y eres un Lead?</label>
-        <locationX>2976</locationX>
+        <locationX>3416</locationX>
         <locationY>3095</locationY>
         <defaultConnector>
             <targetReference>EstadoMiembroCampanaMKTCerrado</targetReference>
@@ -711,7 +779,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si ha cambiado el estado a Completado</description>
         <name>HaCambiadoEstado</name>
         <label>¿Ha Cambiado el Estado?</label>
-        <locationX>2956</locationX>
+        <locationX>3396</locationX>
         <locationY>2123</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -762,8 +830,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si ha cambiado el campo SystemAttempts__c o el AgentAttempts__c</description>
         <name>HaCambiadoNumeroIntentos</name>
         <label>¿Ha Cambiado el Número de Intentos?</label>
-        <locationX>710</locationX>
-        <locationY>1031</locationY>
+        <locationX>1150</locationX>
+        <locationY>1139</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoUltimoResultadoCTI</targetReference>
         </defaultConnector>
@@ -795,8 +863,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si ha cambiado el campo result replicamos el cambio en los registros de MKT y Adicionales relacionados</description>
         <name>HaCambiadoResult</name>
         <label>¿Ha cambiado Result?</label>
-        <locationX>710</locationX>
-        <locationY>2855</locationY>
+        <locationX>1150</locationX>
+        <locationY>2963</locationY>
         <defaultConnector>
             <targetReference>SeHaMarcadoEnviarCTI</targetReference>
         </defaultConnector>
@@ -820,7 +888,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <decisions>
         <name>HaCambiadoResultado</name>
         <label>¿Ha Cambiado el Resultado?</label>
-        <locationX>2956</locationX>
+        <locationX>3396</locationX>
         <locationY>1031</locationY>
         <defaultConnector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
@@ -853,8 +921,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si ha cambiado el campo ResultCTI__c</description>
         <name>HaCambiadoUltimoResultadoCTI</name>
         <label>¿Ha cambiado el Último Resultado CTI?</label>
-        <locationX>710</locationX>
-        <locationY>1847</locationY>
+        <locationX>1150</locationX>
+        <locationY>1955</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoResult</targetReference>
         </defaultConnector>
@@ -878,8 +946,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <decisions>
         <name>Marcado_de_errores</name>
         <label>Marcado de errores</label>
-        <locationX>578</locationX>
-        <locationY>3671</locationY>
+        <locationX>1018</locationX>
+        <locationY>3779</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>ActualizarCMCTI</targetReference>
@@ -927,8 +995,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si el resultado CTI es Replanificar se cambian los miembros de campaña a Postponed</description>
         <name>ResultadoCTIReplanificar</name>
         <label>¿Resultado CTI es Replanificar?</label>
-        <locationX>556</locationX>
-        <locationY>2363</locationY>
+        <locationX>996</locationX>
+        <locationY>2471</locationY>
         <defaultConnector>
             <targetReference>HaCambiadoResult</targetReference>
         </defaultConnector>
@@ -953,7 +1021,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>El Resultado es Gestión en Cartera</description>
         <name>ResultGestionCarteraClient</name>
         <label>El Resultado es Gestión de Cartera</label>
-        <locationX>2822</locationX>
+        <locationX>3262</locationX>
         <locationY>3503</locationY>
         <defaultConnector>
             <targetReference>ActualizoCMCTIRelacionado</targetReference>
@@ -979,8 +1047,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Si se ha marcado enviar a CTI</description>
         <name>SeHaMarcadoEnviarCTI</name>
         <label>¿Se ha marcado Enviar a CTI?</label>
-        <locationX>710</locationX>
-        <locationY>3455</locationY>
+        <locationX>1150</locationX>
+        <locationY>3563</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>SiSeHaMarcadoEnviarCTI</name>
@@ -1009,7 +1077,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>En función del tipo de registro voy guardando los Id en diferentes variables</description>
         <name>WhatRecordTypeIs</name>
         <label>WhatRecordTypeIs</label>
-        <locationX>2756</locationX>
+        <locationX>2954</locationX>
         <locationY>539</locationY>
         <defaultConnector>
             <targetReference>AssignRecordTypeManagedCampaignMemberAG</targetReference>
@@ -1076,7 +1144,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
 01/06/2023 RNP: Añadimos campo CampaignMemberNumber__c cuando creamos el Miembro de campaña AG
 01/06/2023 RNP: Añadimos campo CampaignMemberNumber__c cuando creamos el Miembro de campaña AG V2
 03/07/2023 JCB:  Se añade campo GCLID__c
-04/10/2023 MSC: Añadimos campo Transference__c cuando creamos el Miembro de campaña AG</description>
+04/10/2023 MSC: Añadimos campo Transference__c cuando creamos el Miembro de campaña AG
+02/2024 JCB-LCS: Gestión de campo inprogress_cti__c, actualización de CMs relacionados a estado &apos;Working&apos; tambien Lead si corresponde desde cualquier estado.</description>
     <environments>Default</environments>
     <formulas>
         <name>concatenatedCTIError</name>
@@ -1130,7 +1199,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>BucleRecordType</description>
         <name>LoopRecordTypes</name>
         <label>LoopRecordTypes</label>
-        <locationX>2272</locationX>
+        <locationX>2470</locationX>
         <locationY>431</locationY>
         <collectionReference>GetRecordTypes</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1163,7 +1232,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordCreates>
         <name>Crea_oportunidad_cliente_existente</name>
         <label>Crea oportunidad cliente existente</label>
-        <locationX>1634</locationX>
+        <locationX>2074</locationX>
         <locationY>2447</locationY>
         <assignRecordIdToReference>IdOportunidad</assignRecordIdToReference>
         <connector>
@@ -1342,7 +1411,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordCreates>
         <name>Crea_oportunidad_nuevo_cliente</name>
         <label>Crea oportunidad nuevo cliente</label>
-        <locationX>1370</locationX>
+        <locationX>1810</locationX>
         <locationY>2555</locationY>
         <assignRecordIdToReference>IdOportunidad</assignRecordIdToReference>
         <connector>
@@ -1522,8 +1591,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Esta clase invocada ha de ser capaz de distinguir si lo que hay que hacer es un insert (si sentCti=false) o un update (si sentCti=true) en Genesys</description>
         <name>Crea_platform_event_que_envia_a_Genesys</name>
         <label>Crea platform event que envía a Genesys</label>
-        <locationX>50</locationX>
-        <locationY>3671</locationY>
+        <locationX>490</locationX>
+        <locationY>3779</locationY>
         <connector>
             <targetReference>ActualizarCMCTI</targetReference>
         </connector>
@@ -1552,7 +1621,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Crea CM AG con RT gestionado y tipo MKT</description>
         <name>CreaCMAGRTGestionadoTipoMKT</name>
         <label>Crea CM AG con RT gestionado y tipo MKT</label>
-        <locationX>2343</locationX>
+        <locationX>2783</locationX>
         <locationY>4271</locationY>
         <connector>
             <targetReference>EliminaCMMKT</targetReference>
@@ -2002,8 +2071,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Crea el registro de Platform Event que borrará asíncronamente este registro e historificará los CM MKT relacionados</description>
         <name>Create_PlatformEvent_BorradoCMCTI</name>
         <label>Create_PlatformEvent_BorradoCMCTI</label>
-        <locationX>424</locationX>
-        <locationY>1463</locationY>
+        <locationX>864</locationX>
+        <locationY>1571</locationY>
         <inputAssignments>
             <field>BorrarCMCTI__c</field>
             <value>
@@ -2034,7 +2103,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordCreates>
         <name>Create_Task</name>
         <label>Create Task Gestion Cartera</label>
-        <locationX>2690</locationX>
+        <locationX>3130</locationX>
         <locationY>3611</locationY>
         <connector>
             <targetReference>ActualizoCMCTIRelacionado</targetReference>
@@ -2082,7 +2151,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Borra el CM MKT que disparó este flujo porque ya se ha volcado en el histórico (CM AG Gestionado)</description>
         <name>EliminaCMMKT</name>
         <label>Elimina CM MKT</label>
-        <locationX>2343</locationX>
+        <locationX>2783</locationX>
         <locationY>4379</locationY>
         <inputReference>$Record</inputReference>
     </recordDeletes>
@@ -2090,7 +2159,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay oportunidades abiertas para poder cerrar el miembro de campaña CTI o no</description>
         <name>BuscoOportunidadesAbiertasMiMiembroCampanaCTI</name>
         <label>Busco Oportunidades abiertas Mi Miembro Campaña CTI</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2663</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2126,7 +2195,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay más hijos del miembro de campaña CTI de tipo Miembro de campaña Adicional</description>
         <name>BuscoOtrosMiembrosCampanAdicionalesMiMiembroCampanaCTI</name>
         <label>Busco otros Miembros de campaña AG Mi Miembro de campaña CTI</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2555</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2190,7 +2259,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay más hijos del miembro de campaña CTI de tipo Campaign Member</description>
         <name>BuscoOtrosMiembrosCampanaMKTMiMiembroCampanaCTI</name>
         <label>Busco otros Miembros de campaña MKT Mi Miembro de campaña CTI</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2447</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2261,7 +2330,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay oto miembros de campaña CTI Abierto</description>
         <name>BuscOtrosMiembrosCampaCTIAbiertos</name>
         <label>Busco otros Miembros de campaña CTI Abiertos</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2771</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2318,7 +2387,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Obtenemos el CM CTI relacionado con el CM MKT</description>
         <name>Get_CMCTIRelacionado</name>
         <label>Get CM CTI Relacionado</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2339</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2340,7 +2409,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay oportunidades abiertas en el CM CTI</description>
         <name>Get_OportunidadesAbiertas</name>
         <label>Get Oportunidades abiertas</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2663</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2376,7 +2445,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay otro campaign member CTI No aplazado</description>
         <name>Get_OtroCMCTINoAplazado</name>
         <label>Get Otro CM CTI del Lead/Contact No Aplazado</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2771</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2440,7 +2509,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Busco si hay más Campaign member de MKT sin aplazar</description>
         <name>Get_OtrosCMMKTNoAplazados</name>
         <label>Get Otros CM MKT NoAplazados</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2447</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2518,7 +2587,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Buenos Miembros de campañas Adicionales No aplazados</description>
         <name>Get_OtrosMCAGAdicionalNoAplazados</name>
         <label>Get otros MCAG Adicional NoAplazados</label>
-        <locationX>2228</locationX>
+        <locationX>2668</locationX>
         <locationY>2555</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2589,7 +2658,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Obtengo la cola backoffice al que tengo que asignar la tarea de backoffice</description>
         <name>GetBackOfficeQueue</name>
         <label>GetBackOfficeQueue</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2879</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2618,8 +2687,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Obtiene el valor del registro CESS - CTI - Cierre Gestion del metadata ORG_Application Settings</description>
         <name>GetOrgAppSettCESSCTICierreGestion</name>
         <label>Get OrgAppSett CESS - CTI - Cierre Gestion</label>
-        <locationX>556</locationX>
-        <locationY>1955</locationY>
+        <locationX>996</locationX>
+        <locationY>2063</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ConGestionCTI</targetReference>
@@ -2640,8 +2709,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Obtiene el valor del registro CESS - CTI - Numero maximo de intentos del metadata ORG_Application Settings</description>
         <name>GetOrgAppSettCESSCTINumeroMaximoIntentos</name>
         <label>Get OrgAppSett CESS - CTI - Numero maximo de intentos</label>
-        <locationX>556</locationX>
-        <locationY>1139</locationY>
+        <locationX>996</locationX>
+        <locationY>1247</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CumpleCriteriosCierre</targetReference>
@@ -2662,7 +2731,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>GuardoRecordTypes</description>
         <name>GetRecordTypes</name>
         <label>GetRecordTypes</label>
-        <locationX>2272</locationX>
+        <locationX>2470</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2692,7 +2761,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordLookups>
         <name>Obtener_CM_CTI_Relacionado</name>
         <label>Obtener CM CTI Relacionado</label>
-        <locationX>3185</locationX>
+        <locationX>3625</locationX>
         <locationY>2339</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -2713,7 +2782,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordUpdates>
         <name>Actualiza_Es_Fraudulento_cliente</name>
         <label>Actualiza Es Fraudulento - cliente</label>
-        <locationX>2703</locationX>
+        <locationX>3143</locationX>
         <locationY>1355</locationY>
         <connector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
@@ -2737,7 +2806,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordUpdates>
         <name>Actualiza_Es_Fraudulento_lead</name>
         <label>Actualiza Es Fraudulento - lead</label>
-        <locationX>2439</locationX>
+        <locationX>2879</locationX>
         <locationY>1355</locationY>
         <connector>
             <targetReference>CumpleCondicionesEnvioEmail</targetReference>
@@ -2761,8 +2830,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordUpdates>
         <name>Actualizar_CM_CTI</name>
         <label>Actualizar CM CTI</label>
-        <locationX>578</locationX>
-        <locationY>3971</locationY>
+        <locationX>1018</locationX>
+        <locationY>4079</locationY>
         <connector>
             <targetReference>Actualizar_lead</targetReference>
         </connector>
@@ -2789,8 +2858,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
     <recordUpdates>
         <name>Actualizar_lead</name>
         <label>Actualizar lead</label>
-        <locationX>578</locationX>
-        <locationY>4079</locationY>
+        <locationX>1018</locationX>
+        <locationY>4187</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -2811,8 +2880,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Se actualiza el status de CM CTI</description>
         <name>Actualizar_Status_CM_CTI</name>
         <label>Actualizar Status CM CTI</label>
-        <locationX>424</locationX>
-        <locationY>1355</locationY>
+        <locationX>864</locationX>
+        <locationY>1463</locationY>
         <connector>
             <targetReference>Create_PlatformEvent_BorradoCMCTI</targetReference>
         </connector>
@@ -2828,8 +2897,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualiza el SendCTI a False</description>
         <name>ActualizarCMCTI</name>
         <label>Actualizar CM CTI</label>
-        <locationX>50</locationX>
-        <locationY>3779</locationY>
+        <locationX>490</locationX>
+        <locationY>3887</locationY>
         <inputAssignments>
             <field>CTISend__c</field>
             <value>
@@ -2842,7 +2911,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizo el CMC CTI Relacionado con el resultado del Miembro de campaña MKT</description>
         <name>ActualizoCMCTIRelacionado</name>
         <label>Actualizo CM CTI Relacionado</label>
-        <locationX>2822</locationX>
+        <locationX>3262</locationX>
         <locationY>3803</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2864,7 +2933,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Asigno Miembros Campaña AG al cliente</description>
         <name>Asigno_Miembros_Campa_a_AG_al_cliente</name>
         <label>Asigno Miembros Campaña AG al cliente</label>
-        <locationX>1370</locationX>
+        <locationX>1810</locationX>
         <locationY>2771</locationY>
         <connector>
             <targetReference>CreaCMAGRTGestionadoTipoMKT</targetReference>
@@ -2889,7 +2958,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizo el CMC CTI Relacionado con el status aplazado</description>
         <name>Update_CMCTIAplazado</name>
         <label>Actualizo CM CTI Aplazado</label>
-        <locationX>2030</locationX>
+        <locationX>2470</locationX>
         <locationY>2987</locationY>
         <connector>
             <targetReference>Decision_OtrosCMCTINoAplazados</targetReference>
@@ -2911,10 +2980,87 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <object>CampaignMember</object>
     </recordUpdates>
     <recordUpdates>
+        <description>Actualización de los CMs Adicionales de tipo Marketing relacionados al CM CTI.</description>
+        <name>Update_CMsAdditionalsMarketing</name>
+        <label>Update CMs Additionals Marketing</label>
+        <locationX>182</locationX>
+        <locationY>1247</locationY>
+        <connector>
+            <targetReference>Decision_RelacionadoConLeadOCliente</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RelatedCTIAMCMId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Tipo__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Marketing</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <object>AMCM__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Actualización de los CMs Marketing relacionados al CM CTI</description>
+        <name>Update_CMsMarketing</name>
+        <label>Update CMs Marketing</label>
+        <locationX>182</locationX>
+        <locationY>1139</locationY>
+        <connector>
+            <targetReference>Update_CMsAdditionalsMarketing</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RelatedCTICampaignMemberId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Restablecemos el valor de inprogress_cti__c a false, para que pueda accionarse nuevamente este proceso desde CTI.</description>
+        <name>Update_CurrentCMCTI</name>
+        <label>Update Current CM CTI</label>
+        <locationX>182</locationX>
+        <locationY>1655</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>inprogress_cti__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <description>Actualizo el estado del Lead a Aplazado</description>
         <name>Update_Lead_Aplazado</name>
         <label>Actualizo Lead Aplazado</label>
-        <locationX>1898</locationX>
+        <locationX>2338</locationX>
         <locationY>3203</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2933,10 +3079,34 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <object>Lead</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Lead_Related</name>
+        <label>Update Lead Related</label>
+        <locationX>50</locationX>
+        <locationY>1463</locationY>
+        <connector>
+            <targetReference>Update_CurrentCMCTI</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.LeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
         <description>Actualiza las tareas que sigan asignadas al Lead al contacto que se ha creado en la conversión. Esto lo hace de forma estándar, pero a veces ha fallado, por eso se hace aquí, por el doble check</description>
         <name>Update_Task_to_Contact</name>
         <label>Update Task to Contact</label>
-        <locationX>1370</locationX>
+        <locationX>1810</locationX>
         <locationY>2663</locationY>
         <connector>
             <targetReference>Asigno_Miembros_Campa_a_AG_al_cliente</targetReference>
@@ -2961,8 +3131,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizamos Resultado Miembros Campaña Adicionales que estén abiertos al nuevo valor</description>
         <name>UpdateCMAdditionalNuevoResultado</name>
         <label>Update CM Additional nuevo Resultado</label>
-        <locationX>644</locationX>
-        <locationY>3179</locationY>
+        <locationX>1084</locationX>
+        <locationY>3287</locationY>
         <connector>
             <targetReference>SeHaMarcadoEnviarCTI</targetReference>
         </connector>
@@ -3007,8 +3177,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizamos Estado Miembros Campaña Adicionales  a Postponed</description>
         <name>UpdateCMAdditionalStatusPostponed</name>
         <label>Update CM Additional Status Postponed</label>
-        <locationX>424</locationX>
-        <locationY>2579</locationY>
+        <locationX>864</locationX>
+        <locationY>2687</locationY>
         <connector>
             <targetReference>HaCambiadoResult</targetReference>
         </connector>
@@ -3046,8 +3216,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizamos Resultado Miembros Campaña MKT al nuevo valor</description>
         <name>UpdateCMMKTNuevoResultado</name>
         <label>Update CM MKT nuuevo Resultado</label>
-        <locationX>644</locationX>
-        <locationY>3071</locationY>
+        <locationX>1084</locationX>
+        <locationY>3179</locationY>
         <connector>
             <targetReference>UpdateCMAdditionalNuevoResultado</targetReference>
         </connector>
@@ -3071,8 +3241,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizamos estado a Aplazado</description>
         <name>UpdateCMMKTStatusPosponed</name>
         <label>Update CM MKT Status Posponed</label>
-        <locationX>424</locationX>
-        <locationY>2471</locationY>
+        <locationX>864</locationX>
+        <locationY>2579</locationY>
         <connector>
             <targetReference>UpdateCMAdditionalStatusPostponed</targetReference>
         </connector>
@@ -3096,7 +3266,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Actualizo Estado Lead</description>
         <name>UpdateStatusLead</name>
         <label>Actualizo Estado Lead</label>
-        <locationX>2844</locationX>
+        <locationX>3284</locationX>
         <locationY>3203</locationY>
         <connector>
             <targetReference>EstadoMiembroCampanaMKTCerrado</targetReference>
@@ -3118,7 +3288,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <object>Lead</object>
     </recordUpdates>
     <start>
-        <locationX>2146</locationX>
+        <locationX>2344</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>GetRecordTypes</targetReference>
@@ -3132,7 +3302,7 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Subflujo - Campaign Member Send Email</description>
         <name>Subflujo_Campaign_Member_Send_Email_0</name>
         <label>Subflujo - Campaign Member Send Email</label>
-        <locationX>2824</locationX>
+        <locationX>3264</locationX>
         <locationY>1931</locationY>
         <connector>
             <targetReference>HaCambiadoEstado</targetReference>
@@ -3149,8 +3319,8 @@ Si no tiene actualizamos el CM CTI como aplazado</description>
         <description>Invoca al subflujo para actualizar el propietario del lead al usuario de creación</description>
         <name>SubflujoCampaignMemberConGestionCTI</name>
         <label>Subflujo- Campaign Member Con Gestión CTI</label>
-        <locationX>424</locationX>
-        <locationY>2171</locationY>
+        <locationX>864</locationX>
+        <locationY>2279</locationY>
         <connector>
             <targetReference>ResultadoCTIReplanificar</targetReference>
         </connector>
